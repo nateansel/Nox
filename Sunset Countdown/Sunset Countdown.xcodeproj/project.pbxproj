@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8015D121B028B7900DC381D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8015D111B028B7900DC381D /* main.m */; };
+		D8015D151B028B7900DC381D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8015D141B028B7900DC381D /* AppDelegate.m */; };
+		D8015D181B028B7900DC381D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8015D171B028B7900DC381D /* ViewController.m */; };
+		D8015D1B1B028B7900DC381D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8015D191B028B7900DC381D /* Main.storyboard */; };
+		D8015D1D1B028B7900DC381D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8015D1C1B028B7900DC381D /* Images.xcassets */; };
+		D8015D201B028B7900DC381D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8015D1E1B028B7900DC381D /* LaunchScreen.xib */; };
+		D8015D2C1B028B7900DC381D /* Sunset_CountdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8015D2B1B028B7900DC381D /* Sunset_CountdownTests.m */; };
+		D8DD548A1B03D5470081D695 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DD54891B03D5470081D695 /* CoreLocation.framework */; };
+		D8DD549C1B03DFE10081D695 /* MathAdditions.c in Sources */ = {isa = PBXBuildFile; fileRef = D8DD54901B03DFE10081D695 /* MathAdditions.c */; };
+		D8DD549D1B03DFE10081D695 /* AstronomicalCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD54931B03DFE10081D695 /* AstronomicalCalculator.m */; };
+		D8DD549E1B03DFE10081D695 /* AstronomicalCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD54951B03DFE10081D695 /* AstronomicalCalendar.m */; };
+		D8DD549F1B03DFE10081D695 /* EarthViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD54971B03DFE10081D695 /* EarthViewer.m */; };
+		D8DD54A01B03DFE10081D695 /* GeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD54991B03DFE10081D695 /* GeoLocation.m */; };
+		D8DD54A11B03DFE10081D695 /* SunriseAndSunset.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD549B1B03DFE10081D695 /* SunriseAndSunset.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8015D261B028B7900DC381D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8015D041B028B7900DC381D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8015D0B1B028B7900DC381D;
+			remoteInfo = "Sunset Countdown";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8015D0C1B028B7900DC381D /* Sunset Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sunset Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8015D101B028B7900DC381D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8015D111B028B7900DC381D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D8015D131B028B7900DC381D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D8015D141B028B7900DC381D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D8015D161B028B7900DC381D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D8015D171B028B7900DC381D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D8015D1A1B028B7900DC381D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8015D1C1B028B7900DC381D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D8015D1F1B028B7900DC381D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D8015D251B028B7900DC381D /* Sunset CountdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sunset CountdownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8015D2A1B028B7900DC381D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8015D2B1B028B7900DC381D /* Sunset_CountdownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sunset_CountdownTests.m; sourceTree = "<group>"; };
+		D8DD54891B03D5470081D695 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D8DD548F1B03DFE10081D695 /* KosherCocoaConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KosherCocoaConstants.h; sourceTree = "<group>"; };
+		D8DD54901B03DFE10081D695 /* MathAdditions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MathAdditions.c; sourceTree = "<group>"; };
+		D8DD54911B03DFE10081D695 /* MathAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathAdditions.h; sourceTree = "<group>"; };
+		D8DD54921B03DFE10081D695 /* AstronomicalCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalCalculator.h; sourceTree = "<group>"; };
+		D8DD54931B03DFE10081D695 /* AstronomicalCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalCalculator.m; sourceTree = "<group>"; };
+		D8DD54941B03DFE10081D695 /* AstronomicalCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalCalendar.h; sourceTree = "<group>"; };
+		D8DD54951B03DFE10081D695 /* AstronomicalCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalCalendar.m; sourceTree = "<group>"; };
+		D8DD54961B03DFE10081D695 /* EarthViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EarthViewer.h; sourceTree = "<group>"; };
+		D8DD54971B03DFE10081D695 /* EarthViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EarthViewer.m; sourceTree = "<group>"; };
+		D8DD54981B03DFE10081D695 /* GeoLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoLocation.h; sourceTree = "<group>"; };
+		D8DD54991B03DFE10081D695 /* GeoLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLocation.m; sourceTree = "<group>"; };
+		D8DD549A1B03DFE10081D695 /* SunriseAndSunset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunriseAndSunset.h; sourceTree = "<group>"; };
+		D8DD549B1B03DFE10081D695 /* SunriseAndSunset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunriseAndSunset.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8015D091B028B7900DC381D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8DD548A1B03D5470081D695 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8015D221B028B7900DC381D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8015D031B028B7900DC381D = {
+			isa = PBXGroup;
+			children = (
+				D8DD54891B03D5470081D695 /* CoreLocation.framework */,
+				D8015D0E1B028B7900DC381D /* Sunset Countdown */,
+				D8015D281B028B7900DC381D /* Sunset CountdownTests */,
+				D8015D0D1B028B7900DC381D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8015D0D1B028B7900DC381D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8015D0C1B028B7900DC381D /* Sunset Countdown.app */,
+				D8015D251B028B7900DC381D /* Sunset CountdownTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8015D0E1B028B7900DC381D /* Sunset Countdown */ = {
+			isa = PBXGroup;
+			children = (
+				D8015D131B028B7900DC381D /* AppDelegate.h */,
+				D8015D141B028B7900DC381D /* AppDelegate.m */,
+				D8015D161B028B7900DC381D /* ViewController.h */,
+				D8015D171B028B7900DC381D /* ViewController.m */,
+				D8015D191B028B7900DC381D /* Main.storyboard */,
+				D8015D1C1B028B7900DC381D /* Images.xcassets */,
+				D8015D1E1B028B7900DC381D /* LaunchScreen.xib */,
+				D8015D0F1B028B7900DC381D /* Supporting Files */,
+			);
+			path = "Sunset Countdown";
+			sourceTree = "<group>";
+		};
+		D8015D0F1B028B7900DC381D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8DD548F1B03DFE10081D695 /* KosherCocoaConstants.h */,
+				D8DD54901B03DFE10081D695 /* MathAdditions.c */,
+				D8DD54911B03DFE10081D695 /* MathAdditions.h */,
+				D8DD54921B03DFE10081D695 /* AstronomicalCalculator.h */,
+				D8DD54931B03DFE10081D695 /* AstronomicalCalculator.m */,
+				D8DD54941B03DFE10081D695 /* AstronomicalCalendar.h */,
+				D8DD54951B03DFE10081D695 /* AstronomicalCalendar.m */,
+				D8DD54961B03DFE10081D695 /* EarthViewer.h */,
+				D8DD54971B03DFE10081D695 /* EarthViewer.m */,
+				D8DD54981B03DFE10081D695 /* GeoLocation.h */,
+				D8DD54991B03DFE10081D695 /* GeoLocation.m */,
+				D8DD549A1B03DFE10081D695 /* SunriseAndSunset.h */,
+				D8DD549B1B03DFE10081D695 /* SunriseAndSunset.m */,
+				D8015D101B028B7900DC381D /* Info.plist */,
+				D8015D111B028B7900DC381D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8015D281B028B7900DC381D /* Sunset CountdownTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8015D2B1B028B7900DC381D /* Sunset_CountdownTests.m */,
+				D8015D291B028B7900DC381D /* Supporting Files */,
+			);
+			path = "Sunset CountdownTests";
+			sourceTree = "<group>";
+		};
+		D8015D291B028B7900DC381D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8015D2A1B028B7900DC381D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8015D0B1B028B7900DC381D /* Sunset Countdown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8015D2F1B028B7900DC381D /* Build configuration list for PBXNativeTarget "Sunset Countdown" */;
+			buildPhases = (
+				D8015D081B028B7900DC381D /* Sources */,
+				D8015D091B028B7900DC381D /* Frameworks */,
+				D8015D0A1B028B7900DC381D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sunset Countdown";
+			productName = "Sunset Countdown";
+			productReference = D8015D0C1B028B7900DC381D /* Sunset Countdown.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8015D241B028B7900DC381D /* Sunset CountdownTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8015D321B028B7900DC381D /* Build configuration list for PBXNativeTarget "Sunset CountdownTests" */;
+			buildPhases = (
+				D8015D211B028B7900DC381D /* Sources */,
+				D8015D221B028B7900DC381D /* Frameworks */,
+				D8015D231B028B7900DC381D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8015D271B028B7900DC381D /* PBXTargetDependency */,
+			);
+			name = "Sunset CountdownTests";
+			productName = "Sunset CountdownTests";
+			productReference = D8015D251B028B7900DC381D /* Sunset CountdownTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8015D041B028B7900DC381D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Nathan Ansel";
+				TargetAttributes = {
+					D8015D0B1B028B7900DC381D = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					D8015D241B028B7900DC381D = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = D8015D0B1B028B7900DC381D;
+					};
+				};
+			};
+			buildConfigurationList = D8015D071B028B7900DC381D /* Build configuration list for PBXProject "Sunset Countdown" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8015D031B028B7900DC381D;
+			productRefGroup = D8015D0D1B028B7900DC381D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8015D0B1B028B7900DC381D /* Sunset Countdown */,
+				D8015D241B028B7900DC381D /* Sunset CountdownTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8015D0A1B028B7900DC381D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8015D1B1B028B7900DC381D /* Main.storyboard in Resources */,
+				D8015D201B028B7900DC381D /* LaunchScreen.xib in Resources */,
+				D8015D1D1B028B7900DC381D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8015D231B028B7900DC381D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8015D081B028B7900DC381D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8015D181B028B7900DC381D /* ViewController.m in Sources */,
+				D8DD549C1B03DFE10081D695 /* MathAdditions.c in Sources */,
+				D8015D151B028B7900DC381D /* AppDelegate.m in Sources */,
+				D8DD549E1B03DFE10081D695 /* AstronomicalCalendar.m in Sources */,
+				D8DD54A01B03DFE10081D695 /* GeoLocation.m in Sources */,
+				D8015D121B028B7900DC381D /* main.m in Sources */,
+				D8DD549F1B03DFE10081D695 /* EarthViewer.m in Sources */,
+				D8DD54A11B03DFE10081D695 /* SunriseAndSunset.m in Sources */,
+				D8DD549D1B03DFE10081D695 /* AstronomicalCalculator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8015D211B028B7900DC381D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8015D2C1B028B7900DC381D /* Sunset_CountdownTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8015D271B028B7900DC381D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8015D0B1B028B7900DC381D /* Sunset Countdown */;
+			targetProxy = D8015D261B028B7900DC381D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8015D191B028B7900DC381D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8015D1A1B028B7900DC381D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D8015D1E1B028B7900DC381D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8015D1F1B028B7900DC381D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8015D2D1B028B7900DC381D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D8015D2E1B028B7900DC381D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8015D301B028B7900DC381D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sunset Countdown/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D8015D311B028B7900DC381D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sunset Countdown/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D8015D331B028B7900DC381D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sunset CountdownTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sunset Countdown.app/Sunset Countdown";
+			};
+			name = Debug;
+		};
+		D8015D341B028B7900DC381D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sunset CountdownTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sunset Countdown.app/Sunset Countdown";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8015D071B028B7900DC381D /* Build configuration list for PBXProject "Sunset Countdown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8015D2D1B028B7900DC381D /* Debug */,
+				D8015D2E1B028B7900DC381D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8015D2F1B028B7900DC381D /* Build configuration list for PBXNativeTarget "Sunset Countdown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8015D301B028B7900DC381D /* Debug */,
+				D8015D311B028B7900DC381D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8015D321B028B7900DC381D /* Build configuration list for PBXNativeTarget "Sunset CountdownTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8015D331B028B7900DC381D /* Debug */,
+				D8015D341B028B7900DC381D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8015D041B028B7900DC381D /* Project object */;
+}

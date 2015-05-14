@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="custom text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orD-b8-nGH">
+                                <rect key="frame" x="194" y="244" width="212" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="0jA-zR-wNB"/>
+                                    <constraint firstAttribute="height" constant="57" id="D1a-6j-ZLi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="custom text 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXg-ih-wC5">
+                                <rect key="frame" x="194" y="309" width="212" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="7Kk-vV-A7v"/>
+                                    <constraint firstAttribute="height" constant="54" id="KhW-bN-3XA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lon:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x63-Cp-c6O">
+                                <rect key="frame" x="144" y="325" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBd-mf-Q1X">
+                                <rect key="frame" x="144" y="262" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-Kz-Ohf">
+                                <rect key="frame" x="194" y="123" width="212" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="JQd-85-vOQ"/>
+                                    <constraint firstAttribute="height" constant="63" id="Om9-pz-SYU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkF-A6-6EY">
+                                <rect key="frame" x="274" y="385" width="53" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="ZfU-T8-JPk"/>
+                                    <constraint firstAttribute="height" constant="30" id="gLf-iX-TNu"/>
+                                </constraints>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fbE-qy-tqc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun will set at:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMI-3H-d6J">
+                                <rect key="frame" x="160" y="94" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HdL-Wc-icV"/>
+                                    <constraint firstAttribute="width" constant="280" id="RhR-EP-dOz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time until sunset/sunrise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZO-WH-ohK">
+                                <rect key="frame" x="160" y="215" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="YdA-ca-yg1"/>
+                                    <constraint firstAttribute="height" constant="21" id="nJb-P2-6CQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GXg-ih-wC5" firstAttribute="leading" secondItem="x63-Cp-c6O" secondAttribute="trailing" constant="16" id="0RZ-dT-q7P"/>
+                            <constraint firstItem="GXg-ih-wC5" firstAttribute="top" secondItem="orD-b8-nGH" secondAttribute="bottom" constant="8" id="1CD-Zj-N8a"/>
+                            <constraint firstAttribute="centerX" secondItem="YZO-WH-ohK" secondAttribute="centerX" id="1F6-me-W2U"/>
+                            <constraint firstItem="FTc-Kz-Ohf" firstAttribute="top" secondItem="uMI-3H-d6J" secondAttribute="bottom" constant="8" id="5Cy-1o-AyV"/>
+                            <constraint firstAttribute="centerX" secondItem="uMI-3H-d6J" secondAttribute="centerX" id="6lk-xS-t0i"/>
+                            <constraint firstAttribute="centerX" secondItem="GXg-ih-wC5" secondAttribute="centerX" id="KQw-DH-25M"/>
+                            <constraint firstItem="kkF-A6-6EY" firstAttribute="top" secondItem="GXg-ih-wC5" secondAttribute="bottom" constant="22" id="NtY-2k-GRr"/>
+                            <constraint firstItem="HBd-mf-Q1X" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="242" id="SCW-3Z-MIg"/>
+                            <constraint firstAttribute="centerX" secondItem="orD-b8-nGH" secondAttribute="centerX" id="VDa-sX-bqt"/>
+                            <constraint firstItem="orD-b8-nGH" firstAttribute="top" secondItem="YZO-WH-ohK" secondAttribute="bottom" constant="8" id="Wch-K9-Z1G"/>
+                            <constraint firstItem="orD-b8-nGH" firstAttribute="leading" secondItem="HBd-mf-Q1X" secondAttribute="trailing" constant="21" id="buY-lf-hAv"/>
+                            <constraint firstItem="x63-Cp-c6O" firstAttribute="top" secondItem="HBd-mf-Q1X" secondAttribute="bottom" constant="42" id="fhr-tx-66m"/>
+                            <constraint firstItem="uMI-3H-d6J" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="74" id="hxW-TX-Khw"/>
+                            <constraint firstAttribute="centerX" secondItem="kkF-A6-6EY" secondAttribute="centerX" id="nV2-XH-aUK"/>
+                            <constraint firstAttribute="centerX" secondItem="FTc-Kz-Ohf" secondAttribute="centerX" id="x9g-0O-IyF"/>
+                            <constraint firstItem="YZO-WH-ohK" firstAttribute="top" secondItem="FTc-Kz-Ohf" secondAttribute="bottom" constant="29" id="yEy-3U-Z7s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lat" destination="orD-b8-nGH" id="0zO-kg-rks"/>
+                        <outlet property="lon" destination="GXg-ih-wC5" id="IjI-HW-2f6"/>
+                        <outlet property="sunsetOrSunriseLabel" destination="uMI-3H-d6J" id="WJo-Db-rAJ"/>
+                        <outlet property="timeLabel" destination="FTc-Kz-Ohf" id="9oy-B5-35Z"/>
+                        <outlet property="timeUntilSunEvent" destination="YZO-WH-ohK" id="sIY-eb-Rp1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
