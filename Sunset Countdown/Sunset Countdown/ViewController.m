@@ -12,78 +12,69 @@
 
 @implementation ViewController
 
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations {
-  double tempTimeNum;
-  int hours, minutes;
+- (void)updateView {
+  [sunEvent updateLocation];
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:@"h:mm a"];
   
-  // If it's a relatively recent event, turn off updates to save power.
-  CLLocation* location = [locations lastObject];
-  NSDate* eventDate = location.timestamp;
-  NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-  if (fabs(howRecent) < 15.0) {
-    // If the event is recent, do something with it.
-//    NSLog(@"latitude %+.6f, longitude %+.6f\n",
-//          location.coordinate.latitude,
-//          location.coordinate.longitude);
-    lat.text = [NSString stringWithFormat:@"%+.6f", location.coordinate.latitude];
-    lon.text = [NSString stringWithFormat:@"%+.6f", location.coordinate.longitude];
-    
-    GeoLocation* currentLocation = [[GeoLocation alloc] initWithName:@"CURRENT"
-                                     andLatitude:location.coordinate.latitude
-                                     andLongitude:location.coordinate.longitude
-                                     andTimeZone:[NSTimeZone systemTimeZone]];
-    AstronomicalCalendar* astronomicalCalendar = [[AstronomicalCalendar alloc]
-                                                   initWithLocation:currentLocation];
-    NSDate *sunset = [astronomicalCalendar sunset];
-    NSDate *todaySunrise = [astronomicalCalendar sunrise];
-    
-    astronomicalCalendar.workingDate = [NSDate dateWithTimeIntervalSinceNow:kSecondsInADay*1];
-    NSDate *tomorrowSunrise = [astronomicalCalendar sunrise];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"h:mm a"];
-    
-    if ([todaySunrise timeIntervalSinceNow] > 0) {
-      // the sun has not risen today
-      sunsetOrSunriseLabel.text = @"The sun will rise at:";
-      timeLabel.text = [dateFormatter stringFromDate:todaySunrise];
-      tempTimeNum = [todaySunrise timeIntervalSinceNow];
-      hours = tempTimeNum / 3600;
-      minutes = (tempTimeNum - (hours * 3600)) / 60;
-      timeUntilSunEvent.text = [NSString stringWithFormat:@"%d:%d until the sun rises.", hours, minutes];
-    } else if ([sunset timeIntervalSinceNow] > 0) {
-      // the sun has not set today
-      sunsetOrSunriseLabel.text = @"The sun will set at:";
-      timeLabel.text = [dateFormatter stringFromDate:sunset];
-      tempTimeNum = [sunset timeIntervalSinceNow];
-      hours = tempTimeNum / 3600;
-      minutes = (tempTimeNum - (hours * 3600)) / 60;
-      timeUntilSunEvent.text = [NSString stringWithFormat:@"%d:%d until the sun sets.", hours, minutes];
-    } else {
-      // the sun has already set today
-      sunsetOrSunriseLabel.text = @"The sun will rise tomorrow at:";
-      timeLabel.text = [dateFormatter stringFromDate:tomorrowSunrise];
-      tempTimeNum = [tomorrowSunrise timeIntervalSinceNow];
-      hours = tempTimeNum / 3600;
-      minutes = (tempTimeNum - (hours * 3600)) / 60;
-      timeUntilSunEvent.text = [NSString stringWithFormat:@"%d:%d until the sun rises.", hours, minutes];
-    }
+  if (![sunEvent hasSunRisenToday]) {
+    NSDate *todaySunrise = [sunEvent getTodaySunrise];
+    sunsetOrSunriseLabel.text = @"The sun will rise at:";
+    timeLabel.text = [dateFormatter stringFromDate:todaySunrise];
+    timeUntilSunEvent.text = [self getTimeDifference:todaySunrise];
+  } else if (![sunEvent hasSunSetToday]) {
+    // the sun has not set today
+    NSDate *todaySunset = [sunEvent getTodaySunset];
+    sunsetOrSunriseLabel.text = @"The sun will set at:";
+    timeLabel.text = [dateFormatter stringFromDate:todaySunset];
+    timeUntilSunEvent.text = [self getTimeDifference:todaySunset];
+  } else {
+    // the sun has already set today
+    NSDate *tomorrowSunrise = [sunEvent getTomorrowSunrise];
+    sunsetOrSunriseLabel.text = @"The sun will rise tomorrow at:";
+    timeLabel.text = [dateFormatter stringFromDate:tomorrowSunrise];
+    timeUntilSunEvent.text = [self getTimeDifference:tomorrowSunrise];
   }
+  
+  lat.text = [NSString stringWithFormat:@"%.6f", [sunEvent getLatitude]];
+  lon.text = [NSString stringWithFormat:@"%.6f", [sunEvent getLongitude]];
 }
 
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-  UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error"
-                              message:@"There was an error retrieving your location"
-                              delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles: nil];
-  [errorAlert show];
-  NSLog(@"Error: %@",error.description);
+
+- (NSString*) getTimeDifference: (NSDate*) date {
+  double tempTimeNum;
+  int hours, minutes;
+  NSString *minuteString, *riseOrSet;
+  
+  tempTimeNum = [date timeIntervalSinceNow];
+  hours = tempTimeNum / 3600;
+  minutes = (tempTimeNum - (hours * 3600)) / 60;
+  
+  if (![sunEvent hasSunRisenToday] || [sunEvent hasSunSetToday]) {
+    riseOrSet = @"until the sun rises";
+  } else {
+    riseOrSet = @"of sun left";
+  }
+  
+  if (hours > 0) {
+    if (minutes > 45) {
+      minuteString = @"";
+    } else if (minutes > 30) {
+      minuteString = @"¾";
+    } else if (minutes > 15) {
+      minuteString = @"½";
+    } else {
+      minuteString = @"¼";
+    }
+    
+    return [NSString stringWithFormat:@"%d%@ hours %@.", hours, minuteString, riseOrSet];
+  }
+  
+  return [NSString stringWithFormat:@"%d minutes %@", minutes, riseOrSet];
 }
 
 - (IBAction)buttonPressed:(id)sender {
-  [locationManager startUpdatingLocation];
+  [self updateView];
 }
 
 
@@ -92,12 +83,8 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
   
-  locationManager = [[CLLocationManager alloc] init];
-  locationManager.delegate = self;
-  locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-  locationManager.distanceFilter = 500; // meters
-  [locationManager requestWhenInUseAuthorization];
-  [locationManager startUpdatingLocation];
+  sunEvent = [[SunEvent alloc] init];
+  [self updateView];
 }
 
 - (void)didReceiveMemoryWarning {

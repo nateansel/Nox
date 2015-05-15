@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@import CoreLocation;
-#import "AstronomicalCalendar.h"
-#import "GeoLocation.h"
+#import "SunEvent.h"
 
 @interface ViewController : UIViewController {
   IBOutlet UILabel *lat;
@@ -18,12 +16,11 @@
   IBOutlet UILabel *sunsetOrSunriseLabel;
   IBOutlet UILabel *timeUntilSunEvent;
   CLLocationManager *locationManager;
+  SunEvent *sunEvent;
 }
 
 - (IBAction)buttonPressed:(id)sender;
-- (void) locationManager:(CLLocationManager*) manager
-      didUpdateLocations:(NSArray *)locations;
-- (void)locationManager:(CLLocationManager*)manager
-      didFailWithError:(NSError *)error;
+- (void)updateView;
+- (NSString*)getTimeDifference:(NSDate*) date;
 
 @end
