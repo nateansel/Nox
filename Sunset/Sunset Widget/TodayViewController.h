@@ -19,5 +19,6 @@
 
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets;
 - (NSString *)getTimeLeftString: (NSString *) nextTimeString;
+- (IBAction)openApp:(id)sender;
 
 @end

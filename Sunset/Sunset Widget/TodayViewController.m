@@ -20,6 +20,11 @@
   return UIEdgeInsetsZero;
 }
 
+- (IBAction)openApp:(id)sender {
+  NSURL *appURL = [NSURL URLWithString:@"sunset://"];
+  [self.extensionContext openURL:appURL completionHandler:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
