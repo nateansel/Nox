@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 Nathan Ansel. All rights reserved.
 //
 
+<<<<<<< Updated upstream:Old Project/Sunset Countdown/Sunset Countdown/SunEvent.h
 //#ifndef Sunset_Countdown_SunEvent_h
 //#define Sunset_Countdown_SunEvent_h
+=======
+#ifndef Sunset_Countdown_SunEvent
+#define Sunset_Countdown_SunEvent
+>>>>>>> Stashed changes:Sunset Countdown/Sunset Countdown/SunEvent.h
 
 #import <CoreLocation/CoreLocation.h>
 #import "KosherCocoa.h"
@@ -37,4 +42,4 @@
 
 @end
 
-//#endif
+#endif

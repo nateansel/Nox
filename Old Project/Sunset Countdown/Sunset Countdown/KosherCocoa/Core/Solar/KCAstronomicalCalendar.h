@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "KCGeoLocation.h"
+//#import "KCGeoLocation.h"
 #import "KCSunriseAndSunsetCalculator.h"
 
 /** A class that calculates various sunrise and sunset values. */

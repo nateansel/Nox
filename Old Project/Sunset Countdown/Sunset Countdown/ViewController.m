@@ -81,7 +81,9 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
   
-  sunEvent = [[SunEvent alloc] init];
+  if (sunEvent == NULL) {
+    sunEvent = [[SunEvent alloc] init];
+  }
   [self updateView];
 }
 

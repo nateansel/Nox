@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "SunEvent.h"
+<<<<<<< Updated upstream:Old Project/Sunset Countdown/Sunset Countdown/SunEvent.m
+=======
+
+>>>>>>> Stashed changes:Sunset Countdown/Sunset Countdown/SunEvent.m
 
 @implementation SunEvent
 
