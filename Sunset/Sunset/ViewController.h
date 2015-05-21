@@ -15,7 +15,6 @@
   IBOutlet UILabel *timeUntil;
   IBOutlet UILabel *willSet;
   IBOutlet UILabel *noLocation;
-  __weak IBOutlet UIButton *roundedButton;
   
   NSUserDefaults *myDefaults;
   
@@ -26,9 +25,6 @@
   // times as well as the location of the device
   SunEvent *sunEventObject;
 }
-
-// This method refreshes when the button is pressed
-- (IBAction)getLocation:(id)sender;
 
 // Starts the location service
 - (void)refresh;

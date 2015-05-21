@@ -14,6 +14,7 @@
   [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
                                                       object:nil];
   [self dismissViewControllerAnimated:YES completion:nil];
+  [statusBarTimer invalidate];
 }
 
 - (IBAction)changeSunsetNotificationSetting:(id)sender {
@@ -62,6 +63,10 @@
   return YES;
 }
 
+- (void)changeStatusBarColor {
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
@@ -103,6 +108,8 @@
   [self.view addSubview:fixItView];
 
   notificationTime.text = [self makeStringFromMinuteInt:(int) stepper.value];
+  
+  statusBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeStatusBarColor) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {

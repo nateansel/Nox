@@ -15,6 +15,7 @@
   IBOutlet UILabel *longitude;
   IBOutlet UILabel *notificationTime;
   IBOutlet UIStepper *stepper;
+  NSTimer *statusBarTimer;
   NSUserDefaults *myDefaults;
 }
 
@@ -26,5 +27,6 @@
 - (BOOL)notificationsEnabled;
 - (NSString *)makeStringFromMinuteInt: (int) minutes;
 - (IBAction)bishopButton:(id)sender;
+- (void)changeStatusBarColor;
 
 @end

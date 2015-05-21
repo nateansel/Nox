@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 AM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="XeR-4i-D8e">
-                                <rect key="frame" x="72" y="37" width="176" height="53"/>
-                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="35"/>
+                                <rect key="frame" x="24" y="37" width="272" height="53"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -59,7 +59,7 @@
                             <constraint firstItem="SG8-qT-qwk" firstAttribute="centerX" secondItem="XeR-4i-D8e" secondAttribute="centerX" id="BfO-8O-TPH"/>
                             <constraint firstItem="SG8-qT-qwk" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="14" id="Cch-gO-N8Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fwm-QN-fbm" secondAttribute="trailing" constant="-16" id="Nsd-LO-hdR"/>
-                            <constraint firstItem="XeR-4i-D8e" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="56" id="ZN7-sF-ZKy"/>
+                            <constraint firstItem="XeR-4i-D8e" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="ZN7-sF-ZKy"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Fwm-QN-fbm" secondAttribute="bottom" id="eCG-In-g5O"/>
                             <constraint firstItem="Fwm-QN-fbm" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="ijH-5X-cdT"/>
                             <constraint firstItem="xtO-FR-Sx1" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="jlh-SA-F22"/>

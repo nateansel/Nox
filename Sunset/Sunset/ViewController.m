@@ -11,10 +11,6 @@
 
 @implementation ViewController
 
-- (IBAction)getLocation:(id)sender {
-  [self refresh];
-}
-
 - (void)updateView:(NSNotification *) notification {
   NSMutableDictionary *data = [sunEventObject updateDictionary];
   
@@ -49,10 +45,6 @@
   
   // synchronize the settings
   [myDefaults synchronize];
-  
-  if(self.navigationController.visibleViewController == [self.navigationController.viewControllers objectAtIndex:1]) {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-  }
 }
 
 - (void)noLocationWarning {
@@ -118,12 +110,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
-  
-  // This code creates the rounded button corners. Can be removed if we decide to
-  // remove the button entirely (right now it's just hidden)
-  CALayer *btnLayer = [roundedButton layer];
-  [btnLayer setMasksToBounds:YES];
-  [btnLayer setCornerRadius:5.0f];
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
   
