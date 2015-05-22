@@ -35,7 +35,7 @@
 - (NSDate *)getTodaySunriseDate;
 - (NSDate *)getTomorrowSunriseDate;
 - (NSString *)getRiseOrSetTimeString;
-- (NSString *)getTimeLeftString: (NSDate*) date;
+- (NSString *)getTimeLeftString: (NSDate *) date;
 - (BOOL)hasSunRisenToday;
 - (BOOL)hasSunSetToday;
 - (double)getLatitude;

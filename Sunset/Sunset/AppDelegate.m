@@ -30,12 +30,15 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
   ViewController *viewController = (ViewController *)self.window.rootViewController;
+  NSUserDefaults *myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
-  UILocalNotification *notification = [[UILocalNotification alloc] init];
-  notification.fireDate = [NSDate dateWithTimeInterval:10 sinceDate:[NSDate date]];
-  notification.alertBody = @"Sunset just completed a background refresh.";
-  notification.soundName = UILocalNotificationDefaultSoundName;
-  [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+  if ([myDefaults boolForKey:@"backgroundNotifications"]) {
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate dateWithTimeInterval:10 sinceDate:[NSDate date]];
+    notification.alertBody = @"Sunset just completed a background refresh.";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+  }
   
   [viewController fetchNewDataWithCompletionHandler:^(UIBackgroundFetchResult result) {
     completionHandler(result);

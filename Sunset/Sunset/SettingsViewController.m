@@ -130,6 +130,7 @@
   // Set the initial state for on-screen objects and labels
   sunsetNotificationSetting.on = [[myDefaults objectForKey:@"sunsetNotificationSetting"] boolValue];
   sunriseNotificationSetting.on = [[myDefaults objectForKey:@"sunriseNotificationSetting"] boolValue];
+  backgroundNotifications.on = [myDefaults boolForKey:@"backgroundNotifications"];
   latitide.text = [NSString stringWithFormat:@"Lat: %.5f", [[myDefaults objectForKey:@"lat"] doubleValue]];
   longitude.text = [NSString stringWithFormat:@"Long: %.5f", [[myDefaults objectForKey:@"long"] doubleValue]];
   
@@ -137,6 +138,7 @@
   if(![self notificationsEnabled]) {
     sunsetNotificationSetting.on = NO;
     sunriseNotificationSetting.on = NO;
+    backgroundNotifications.on = NO;
   }
   
   // set the value of the stepper to the saved value in myDefaults
@@ -189,13 +191,27 @@
 
 /**
  * A hidden gem! Click it (x2) to see what it is!
- * @author Nate
+ * @author Chase
  *
  */
 - (IBAction)bishopButton:(id)sender {
   NSString *URL = @"http://d.pr/i/13KHZ+";
   NSURL *myURL = [NSURL URLWithString:URL];
   [[UIApplication sharedApplication] openURL:myURL];
+}
+
+- (IBAction)changeBackgroundNotificationsSetting:(id)sender {
+  // Check to see if notifications are allowed or not
+  [self checkNotifications];
+  
+  // Change the settings in myDefaults based on the switch's position
+  if ([backgroundNotifications isOn]) {
+    [myDefaults setBool:YES forKey:@"backgroundNotifications"];
+    [myDefaults synchronize];
+  } else {
+    [myDefaults setBool:NO forKey:@"backgroundNotifications"];
+    [myDefaults synchronize];
+  }
 }
 
 /*

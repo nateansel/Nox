@@ -17,6 +17,8 @@
   IBOutlet UIStepper *stepper;
   NSTimer *statusBarTimer;
   NSUserDefaults *myDefaults;
+  
+  IBOutlet UISwitch *backgroundNotifications;
 }
 
 - (IBAction)dismissSettingsView:(id)sender;
@@ -28,5 +30,7 @@
 - (NSString *)makeStringFromMinuteInt: (int) minutes;
 - (IBAction)bishopButton:(id)sender;
 - (void)changeStatusBarColor;
+
+- (IBAction)changeBackgroundNotificationsSetting:(id)sender;
 
 @end
