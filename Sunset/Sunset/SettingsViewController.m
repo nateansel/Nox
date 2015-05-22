@@ -17,9 +17,16 @@
   [statusBarTimer invalidate];
 }
 
+/**
+ * When the sunset notification switch is triggered, this function updates the settings in myDefaults.
+ * @author Nate
+ *
+ */
 - (IBAction)changeSunsetNotificationSetting:(id)sender {
+  // Check to see if notifications are allowed or not
   [self checkNotifications];
   
+  // Change the settings in myDefaults based on the switch's position
   if ([sunsetNotificationSetting isOn]) {
     [myDefaults setObject:@"YES" forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
@@ -29,9 +36,16 @@
   }
 }
 
+/**
+ * When the sunrise notification switch is triggered, this function updates the settings in myDefaults.
+ * @author Nate
+ *
+ */
 - (IBAction)changeSunriseNotificationSetting:(id)sender {
+  // Check to see if notifications are allowed or not
   [self checkNotifications];
   
+  // Change the settings in myDefaults based on the switch's position
   if ([sunriseNotificationSetting isOn]) {
     [myDefaults setObject:@"YES" forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
@@ -41,7 +55,13 @@
   }
 }
 
+/**
+ * Check to see if notifications are enabled, if not set the switches to "off" and notify the user that they cannot turn on notifications.
+ * @author Nate
+ *
+ */
 - (void)checkNotifications {
+  // If notifications are not enabled in Settings.app, notify the user and turn the switches back off.
   if(![self notificationsEnabled]) {
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                          message:@"You have notifications disabled. Please turn them on in Settings.app and try again."
@@ -54,7 +74,14 @@
   }
 }
 
+/**
+ * Used to test if a the user has allowed notifications for this app.
+ * @author Nate
+ *
+ * @return A bool valued for notifications being enabled
+ */
 - (BOOL)notificationsEnabled {
+  // Check to see if notifications are enabled in Settings.app for this app
   UIUserNotificationSettings *notificationSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
   
   if (!notificationSettings || (notificationSettings.types == UIUserNotificationTypeNone)) {
@@ -63,10 +90,21 @@
   return YES;
 }
 
+/**
+ * Changes the status bar color every second while in the Settings View.
+ * (A fix for the root view refreshing while the Settings View is still pulled up)
+ * @author Nate
+ *
+ */
 - (void)changeStatusBarColor {
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 
+/**
+ * Load the view and initialize all functions and states for objects.
+ * @author Nate
+ *
+ */
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
@@ -75,6 +113,7 @@
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
+  // If there are no values for some settings in myDefaults, initialize them
   if ([myDefaults objectForKey:@"sunsetNotificationSetting"] == nil) {
     [myDefaults setObject:@"NO" forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
@@ -88,17 +127,19 @@
     [myDefaults synchronize];
   }
   
+  // Set the initial state for on-screen objects and labels
   sunsetNotificationSetting.on = [[myDefaults objectForKey:@"sunsetNotificationSetting"] boolValue];
   sunriseNotificationSetting.on = [[myDefaults objectForKey:@"sunriseNotificationSetting"] boolValue];
-  
   latitide.text = [NSString stringWithFormat:@"Lat: %.5f", [[myDefaults objectForKey:@"lat"] doubleValue]];
   longitude.text = [NSString stringWithFormat:@"Long: %.5f", [[myDefaults objectForKey:@"long"] doubleValue]];
   
+  // Quick check to see if notifications are enabled or not
   if(![self notificationsEnabled]) {
     sunsetNotificationSetting.on = NO;
     sunriseNotificationSetting.on = NO;
   }
   
+  // set the value of the stepper to the saved value in myDefaults
   stepper.value = [[myDefaults objectForKey:@"notificationTimeCustomization"] doubleValue];
   
   // Fix for off colored status bar in settings page
@@ -117,13 +158,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+/**
+ * Detects when the stepper value is changed and updates the notificationTime label to match.
+ * @author Nate
+ *
+ */
 - (IBAction)stepperChange:(id)sender {
   notificationTime.text = [self makeStringFromMinuteInt:(int) stepper.value];
   [myDefaults setObject:[NSString stringWithFormat:@"%d",(int) stepper.value] forKey:@"notificationTimeCustomization"];
   [myDefaults synchronize];
 }
 
+/**
+ * Creates a string representation of the time from minutes to hours and minutes.
+ * @author Nate
+ *
+ * @param Minutes to be converted to a string
+ * @return A string representation of those minutes
+ */
 - (NSString *)makeStringFromMinuteInt: (int) minutes {
+  // If less than an hour, display minutes, otherwise display "1 hour" for 60 minutes and hour and minutes for everything else
   if (minutes < 60) {
     return [NSString stringWithFormat:@"%d minutes", minutes];
   } else if (minutes == 60) {
@@ -132,6 +187,11 @@
   return [NSString stringWithFormat:@"1 hour and %d minutes",(minutes - 60)];
 }
 
+/**
+ * A hidden gem! Click it (x2) to see what it is!
+ * @author Nate
+ *
+ */
 - (IBAction)bishopButton:(id)sender {
   NSString *URL = @"http://d.pr/i/13KHZ+";
   NSURL *myURL = [NSURL URLWithString:URL];

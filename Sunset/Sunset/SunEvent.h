@@ -23,7 +23,7 @@
   NSMutableDictionary *data;
 }
 
-- (SunEvent*)init;
+- (SunEvent *)init;
 - (void)locationManager:(CLLocationManager *) manager
         didUpdateLocations:(NSArray *)locations;
 - (void)locationManager:(CLLocationManager *)manager

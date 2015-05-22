@@ -17,20 +17,22 @@
  *
  * @return A newly created SunEvent instance
  */
-- (SunEvent*)init {
+- (SunEvent *)init {
   // Always initialize the superclass
   self =  [super init];
+  
+  // Set up myDefaults and initialize the data
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
-  if (data == nil) {
-    data = [[NSMutableDictionary alloc] init];
-  }
+  data = [[NSMutableDictionary alloc] init];
+  
+  // Update the location and calendar immediately
   [self updateLocation];
   [self updateCalendar];
   return self;
 }
 
-- (void)locationManager:(CLLocationManager*) manager
-        didUpdateLocations:(NSArray *)locations{
+- (void)locationManager:(CLLocationManager *) manager
+     didUpdateLocations:(NSArray *)locations{
   currentLocation = [locations lastObject];
   [self updateCalendar];
   [self updateDictionary];
@@ -175,7 +177,7 @@
  * Creates and returns a string representation of the time left until the next sun event.
  * @author Nate
  *
- * @param A date to compare to the current time/date
+ * @param date A date to compare to the current time/date
  * @return A string representation of the difference in time between now and the date passed in
  */
 - (NSString *)getTimeLeftString: (NSDate*) date {
