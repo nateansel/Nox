@@ -95,11 +95,13 @@
 /**
  * Changes the status bar color every second while in the Settings View.
  * (A fix for the root view refreshing while the Settings View is still pulled up)
- * @author Nate
+ * @author Chase
  *
  */
 - (void)changeStatusBarColor {
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+  latitide.text = [NSString stringWithFormat:@"Lat: %.5f", [myDefaults doubleForKey:@"lat"]];
+  longitude.text = [NSString stringWithFormat:@"Long: %.5f", [myDefaults doubleForKey:@"long"]];
 }
 
 /**
