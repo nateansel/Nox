@@ -28,10 +28,10 @@
   
   // Change the settings in myDefaults based on the switch's position
   if ([sunsetNotificationSetting isOn]) {
-    [myDefaults setObject:@"YES" forKey:@"sunsetNotificationSetting"];
+    [myDefaults setBool:YES forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
   } else {
-    [myDefaults setObject:@"NO" forKey:@"sunsetNotificationSetting"];
+    [myDefaults setBool:NO forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
   }
 }
@@ -47,10 +47,10 @@
   
   // Change the settings in myDefaults based on the switch's position
   if ([sunriseNotificationSetting isOn]) {
-    [myDefaults setObject:@"YES" forKey:@"sunriseNotificationSetting"];
+    [myDefaults setBool:YES forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
   } else {
-    [myDefaults setObject:@"NO" forKey:@"sunriseNotificationSetting"];
+    [myDefaults setBool:NO forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
   }
 }
@@ -70,6 +70,7 @@
                                                otherButtonTitles: nil];
     sunsetNotificationSetting.on = NO;
     sunriseNotificationSetting.on = NO;
+    backgroundNotifications.on = NO;
     [errorAlert show];
   }
 }
@@ -84,6 +85,7 @@
   // Check to see if notifications are enabled in Settings.app for this app
   UIUserNotificationSettings *notificationSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
   
+  UIUserNotificationType *notifi = [notificationSettings types];
   if (!notificationSettings || (notificationSettings.types == UIUserNotificationTypeNone)) {
     return NO;
   }
@@ -114,27 +116,21 @@
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
   // If there are no values for some settings in myDefaults, initialize them
-  if ([myDefaults objectForKey:@"sunsetNotificationSetting"] == nil) {
-    [myDefaults setObject:@"NO" forKey:@"sunsetNotificationSetting"];
-    [myDefaults synchronize];
-  }
-  if ([myDefaults objectForKey:@"sunriseNotificationSetting"] == nil) {
-    [myDefaults setObject:@"NO" forKey:@"sunriseNotificationSetting"];
-    [myDefaults synchronize];
-  }
-  if ([myDefaults objectForKey:@"notificationTimeCustomization"] == nil) {
-    [myDefaults setObject:@"60" forKey:@"notificationTimeCustomization"];
+  // The default values for BOOL values in myDefaults is NO, which is the default values
+  //   for our switches, no reason to initialize them here
+  if ([myDefaults doubleForKey:@"notificationTimeCustomization"] == 0) {
+    [myDefaults setDouble:60.0 forKey:@"notificationTimeCustomization"];
     [myDefaults synchronize];
   }
   
   // Set the initial state for on-screen objects and labels
-  sunsetNotificationSetting.on = [[myDefaults objectForKey:@"sunsetNotificationSetting"] boolValue];
-  sunriseNotificationSetting.on = [[myDefaults objectForKey:@"sunriseNotificationSetting"] boolValue];
+  sunsetNotificationSetting.on = [myDefaults boolForKey:@"sunsetNotificationSetting"];
+  sunriseNotificationSetting.on = [myDefaults boolForKey:@"sunriseNotificationSetting"];
   backgroundNotifications.on = [myDefaults boolForKey:@"backgroundNotifications"];
-  latitide.text = [NSString stringWithFormat:@"Lat: %.5f", [[myDefaults objectForKey:@"lat"] doubleValue]];
-  longitude.text = [NSString stringWithFormat:@"Long: %.5f", [[myDefaults objectForKey:@"long"] doubleValue]];
+  latitide.text = [NSString stringWithFormat:@"Lat: %.5f", [myDefaults doubleForKey:@"lat"]];
+  longitude.text = [NSString stringWithFormat:@"Long: %.5f", [myDefaults doubleForKey:@"long"]];
   
-  // Quick check to see if notifications are enabled or not
+  // Quick check to see if notifications are enabled, if not turn off all notifications
   if(![self notificationsEnabled]) {
     sunsetNotificationSetting.on = NO;
     sunriseNotificationSetting.on = NO;
@@ -142,7 +138,7 @@
   }
   
   // set the value of the stepper to the saved value in myDefaults
-  stepper.value = [[myDefaults objectForKey:@"notificationTimeCustomization"] doubleValue];
+  stepper.value = [myDefaults doubleForKey:@"notificationTimeCustomization"];
   
   // Fix for off colored status bar in settings page
   UIView *fixItView = [[UIView alloc] init];
@@ -168,7 +164,7 @@
  */
 - (IBAction)stepperChange:(id)sender {
   notificationTime.text = [self makeStringFromMinuteInt:(int) stepper.value];
-  [myDefaults setObject:[NSString stringWithFormat:@"%d",(int) stepper.value] forKey:@"notificationTimeCustomization"];
+  [myDefaults setDouble:stepper.value forKey:@"notificationTimeCustomization"];
   [myDefaults synchronize];
 }
 
@@ -186,7 +182,7 @@
   } else if (minutes == 60) {
     return @"1 hour";
   }
-  return [NSString stringWithFormat:@"1 hour and %d minutes",(minutes - 60)];
+  return [NSString stringWithFormat:@"1 hour and %d minutes", (minutes - 60)];
 }
 
 /**

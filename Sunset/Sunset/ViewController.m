@@ -34,14 +34,17 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
   }
   
-  [myDefaults setValue:[data objectForKey:@"lat"] forKey:@"lat"];
-  [myDefaults setValue:[data objectForKey:@"long"] forKey:@"long"];
+  [myDefaults setDouble:[[data objectForKey:@"lat"] doubleValue] forKey:@"lat"];
+  [myDefaults setDouble:[[data objectForKey:@"long"] doubleValue] forKey:@"long"];
   
   // make a string representation of the next sun event for the today widget
-  NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-  [formatter setDateFormat:@"MM/dd/yyyy hh:mm a"];
-  NSLog([formatter stringFromDate:[sunEventObject getNextEvent]]);
-  [myDefaults setObject:[formatter stringFromDate:[sunEventObject getNextEvent]] forKey:@"nextSunEvent"];
+//  NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+//  [formatter setDateFormat:@"MM/dd/yyyy hh:mm a"];
+//  NSLog([formatter stringFromDate:[sunEventObject getNextEvent]]);
+//  [myDefaults setObject:[sunEventObject getNextEvent] forKey:@"nextSunEvent"];
+  
+  [myDefaults setObject:[sunEventObject getNextSunrise] forKey:@"nextSunrise"];
+  [myDefaults setObject:[sunEventObject getNextSunset] forKey:@"nextSunset"];
   
   // synchronize the settings
   [myDefaults synchronize];
@@ -98,13 +101,13 @@
 }
 
 - (BOOL)getNotificationSetting {
-  return [[myDefaults objectForKey:@"notificationSetting"] boolValue];
+  return [myDefaults boolForKey:@"notificationSetting"];
 }
 
 - (void)setNotifications {
-  [sunEventObject setNotificationsWithSeconds: (int) (60 * [[myDefaults objectForKey:@"notificationTimeCustomization"] integerValue])
-                                    andSunset: [[myDefaults objectForKey:@"sunsetNotificationSetting"] boolValue]
-                                   andSunrise: [[myDefaults objectForKey:@"sunriseNotificationSetting"] boolValue]];
+  [sunEventObject setNotificationsWithSeconds: (int) (60 * [myDefaults doubleForKey:@"notificationTimeCustomization"])
+                                    andSunset: [myDefaults boolForKey:@"sunsetNotificationSetting"]
+                                   andSunrise: [myDefaults boolForKey:@"sunriseNotificationSetting"]];
 }
 
 - (void)viewDidLoad {

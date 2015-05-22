@@ -43,7 +43,7 @@
                                         object:nil];
   
   [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
-  [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude]forKey:@"long"];
+  [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
 }
 
 - (void)locationManager:(CLLocationManager*)manager
@@ -144,6 +144,17 @@
 - (NSDate *)getTomorrowSunriseDate {
   [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:86400]];
   return [calendar sunrise];
+}
+
+/**
+ * Retrieve a NSDate object of tomorrow's sunset.
+ * @author Nate
+ *
+ * @return A NSDate object of tomorrow's sunset
+ */
+- (NSDate *)getTomorrowSunsetDate {
+  [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:86400]];
+  return [calendar sunset];
 }
 
 /**
@@ -359,6 +370,20 @@
     return @"1 hour";
   }
   return [NSString stringWithFormat:@"1 hour and %d minutes",(minutes - 60)];
+}
+
+- (NSDate *)getNextSunrise {
+  if ([[self getTodaySunriseDate] timeIntervalSinceNow] > 0) {
+    return [self getTodaySunriseDate];
+  }
+  return [self getTomorrowSunriseDate];
+}
+
+- (NSDate *)getNextSunset {
+  if ([[self getTodaySunsetDate] timeIntervalSinceNow] > 0) {
+    return [self getTodaySunsetDate];
+  }
+  return [self getTomorrowSunsetDate];
 }
 
 @end

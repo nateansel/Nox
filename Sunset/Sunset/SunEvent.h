@@ -34,6 +34,7 @@
 - (NSDate *)getTodaySunsetDate;
 - (NSDate *)getTodaySunriseDate;
 - (NSDate *)getTomorrowSunriseDate;
+- (NSDate *)getTomorrowSunsetDate;
 - (NSString *)getRiseOrSetTimeString;
 - (NSString *)getTimeLeftString: (NSDate *) date;
 - (BOOL)hasSunRisenToday;
@@ -44,6 +45,8 @@
 - (NSDate *)getNextEvent;
 - (void)setNotificationsWithSeconds: (int) seconds andSunset: (BOOL) sunset andSunrise: (BOOL) sunrise;
 - (NSString *)makeStringFromSeconds: (int) seconds;
+- (NSDate *)getNextSunrise;
+- (NSDate *)getNextSunset;
 
 @end
 

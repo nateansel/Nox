@@ -18,7 +18,8 @@
 }
 
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets;
-- (NSString *)getTimeLeftString: (NSString *) nextTimeString;
+- (NSString *)getTimeLeftString;
 - (IBAction)openApp:(id)sender;
+- (BOOL)isSunriseNext;
 
 @end
