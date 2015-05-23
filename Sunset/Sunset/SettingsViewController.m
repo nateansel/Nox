@@ -14,7 +14,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
   [statusBarTimer invalidate];
   
-  bool isSet = [myDefaults objectForKey:@"isSet"];
+  bool isSet = [[myDefaults objectForKey:@"isSet"] boolValue];
   
   if(isSet) {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
@@ -92,7 +92,6 @@
   // Check to see if notifications are enabled in Settings.app for this app
   UIUserNotificationSettings *notificationSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
   
-  UIUserNotificationType *notifi = [notificationSettings types];
   if (!notificationSettings || (notificationSettings.types == UIUserNotificationTypeNone)) {
     return NO;
   }

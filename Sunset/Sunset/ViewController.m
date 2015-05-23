@@ -33,9 +33,7 @@
     // Set status bar to dark color
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
   }
-  
-  [myDefaults setBool:isSet forKey:@"isSet"];
-  
+    
   [myDefaults setDouble:[[data objectForKey:@"lat"] doubleValue] forKey:@"lat"];
   [myDefaults setDouble:[[data objectForKey:@"long"] doubleValue] forKey:@"long"];
   
@@ -123,6 +121,7 @@
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noLocationWarning) name:@"location" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationWarning) name:@"noLocation" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
   
   if (sunEventObject == nil) {
     sunEventObject = [[SunEvent alloc] init];
