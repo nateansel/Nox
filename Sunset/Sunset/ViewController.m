@@ -49,10 +49,10 @@
   // synchronize the settings
   [myDefaults synchronize];
   
-//  ViewController *viewController = self;
-//  if (!(viewController.isViewLoaded && viewController.view.window)) {
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
-//  }
+  ViewController *viewController = self;
+  if (!(viewController.isViewLoaded && viewController.view.window)) {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+  }
 }
 
 - (void)noLocationWarning {

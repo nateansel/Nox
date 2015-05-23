@@ -105,7 +105,7 @@
  *
  */
 - (void)changeStatusBarColor {
-  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
   latitide.text = [NSString stringWithFormat:@"Lat: %.5f", [myDefaults doubleForKey:@"lat"]];
   longitude.text = [NSString stringWithFormat:@"Long: %.5f", [myDefaults doubleForKey:@"long"]];
 }
