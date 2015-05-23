@@ -26,13 +26,15 @@
     orangeGradientLayer.hidden = true;
     blueGradientLayer.hidden = false;
     // Set status bar to light color
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
   } else {
     orangeGradientLayer.hidden = false;
     blueGradientLayer.hidden = true;
     // Set status bar to dark color
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
   }
+  
+  [myDefaults setBool:isSet forKey:@"isSet"];
   
   [myDefaults setDouble:[[data objectForKey:@"lat"] doubleValue] forKey:@"lat"];
   [myDefaults setDouble:[[data objectForKey:@"long"] doubleValue] forKey:@"long"];
@@ -48,6 +50,11 @@
   
   // synchronize the settings
   [myDefaults synchronize];
+  
+//  ViewController *viewController = self;
+//  if (!(viewController.isViewLoaded && viewController.view.window)) {
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+//  }
 }
 
 - (void)noLocationWarning {
@@ -113,8 +120,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
-  
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noLocationWarning) name:@"location" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationWarning) name:@"noLocation" object:nil];

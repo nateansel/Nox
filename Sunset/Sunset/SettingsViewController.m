@@ -11,10 +11,17 @@
 @implementation SettingsViewController
 
 - (IBAction)dismissSettingsView:(id)sender {
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
-                                                      object:nil];
   [self dismissViewControllerAnimated:YES completion:nil];
   [statusBarTimer invalidate];
+  
+  bool isSet = [myDefaults objectForKey:@"isSet"];
+  
+  if(isSet) {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+  }
+  else {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+  }
 }
 
 /**
