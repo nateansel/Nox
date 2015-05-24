@@ -289,7 +289,7 @@
 				2E3C72541B026263003FD3F0 /* CoreLocation.framework */,
 				2E3C722D1B0254CB003FD3F0 /* Sunset */,
 				2E3C72471B0254CB003FD3F0 /* SunsetTests */,
-				2EE61F921B0430BE002FC960 /* Sunset Widget */,
+				2EE61F921B0430BE002FC960 /* Sunset */,
 				2EE61F8F1B0430BE002FC960 /* Frameworks */,
 				2E3C722C1B0254CB003FD3F0 /* Products */,
 			);
@@ -569,7 +569,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2EE61F921B0430BE002FC960 /* Sunset Widget */ = {
+		2EE61F921B0430BE002FC960 /* Sunset */ = {
 			isa = PBXGroup;
 			children = (
 				2E36CCB11B05467900B55335 /* Sunset Widget.entitlements */,
@@ -578,6 +578,7 @@
 				2EE61F981B0430BE002FC960 /* MainInterface.storyboard */,
 				2EE61F931B0430BE002FC960 /* Supporting Files */,
 			);
+			name = Sunset;
 			path = "Sunset Widget";
 			sourceTree = "<group>";
 		};
@@ -858,7 +859,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0620;
-				ORGANIZATIONNAME = "Chase McCoy";
+				ORGANIZATIONNAME = "Cosmic Owl Studio";
 				TargetAttributes = {
 					2E3C722A1B0254CB003FD3F0 = {
 						CreatedOnToolsVersion = 6.2;
