@@ -50,6 +50,7 @@
 		2EE61F9C1B0430BE002FC960 /* Sunset Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2EE61F8E1B0430BE002FC960 /* Sunset Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D820909D1B0674DA00E0C359 /* SunEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D820909C1B0674DA00E0C359 /* SunEvent.m */; };
 		D831F2681B0BC0A300992ACA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D831F2661B0BC0A300992ACA /* SettingsViewController.m */; };
+		D897EFA91B1234DA00035D82 /* NotificationsSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D897EFA81B1234DA00035D82 /* NotificationsSettingsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +251,8 @@
 		D820909C1B0674DA00E0C359 /* SunEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunEvent.m; sourceTree = "<group>"; };
 		D831F2651B0BC0A300992ACA /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D831F2661B0BC0A300992ACA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D897EFA71B1234DA00035D82 /* NotificationsSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsSettingsTableViewController.h; sourceTree = "<group>"; };
+		D897EFA81B1234DA00035D82 /* NotificationsSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsSettingsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,8 @@
 		2E3C722D1B0254CB003FD3F0 /* Sunset */ = {
 			isa = PBXGroup;
 			children = (
+				D897EFA71B1234DA00035D82 /* NotificationsSettingsTableViewController.h */,
+				D897EFA81B1234DA00035D82 /* NotificationsSettingsTableViewController.m */,
 				2E36CCB21B0546C400B55335 /* Sunset.entitlements */,
 				2E3C72321B0254CB003FD3F0 /* AppDelegate.h */,
 				2E3C72331B0254CB003FD3F0 /* AppDelegate.m */,
@@ -952,6 +957,7 @@
 				2E72CC821B03FDBB0082F991 /* NSCalendar+hebrewYearTypes.m in Sources */,
 				2E72CC8C1B03FDBB0082F991 /* KCDaf.m in Sources */,
 				2E72CC991B03FDBB0082F991 /* trigonometry.c in Sources */,
+				D897EFA91B1234DA00035D82 /* NotificationsSettingsTableViewController.m in Sources */,
 				2E72CC7F1B03FDBB0082F991 /* NSCalendar+Components.m in Sources */,
 				2E72CC901B03FDBB0082F991 /* KCSefiraFormatter.m in Sources */,
 				2E72CC881B03FDBB0082F991 /* NSDateComponents+AllComponents.m in Sources */,

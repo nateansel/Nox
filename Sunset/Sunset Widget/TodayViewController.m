@@ -38,21 +38,17 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
-    
-    // If an error is encountered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
+  // Perform any setup necessary in order to update the view.
+  
+  // If an error is encountered, use NCUpdateResultFailed
+  // If there's no update required, use NCUpdateResultNoData
+  // If there's an update, use NCUpdateResultNewData
   
   countdown.text = [self getTimeLeftString];
   timeLabel.text = [myDefaults objectForKey:@"time"];
   willSet.text = [myDefaults objectForKey:@"riseOrSet"];
   
-  if ([self isSunriseNext]) {
-    [countdown setHidden:NO];
-  }
-  
-    completionHandler(NCUpdateResultNewData);
+  completionHandler(NCUpdateResultNewData);
 }
 
 /**
@@ -61,7 +57,7 @@
  *
  * @return NSString representation of the countdown to the next sun event
  */
-- (NSString *)getTimeLeftString {\
+- (NSString *)getTimeLeftString {
   // declare some variables
   double tempTimeNum;
   int hours, minutes;
