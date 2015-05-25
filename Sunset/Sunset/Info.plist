@@ -54,6 +54,8 @@
 			<string>com.sunset.sunrise</string>
 		</dict>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>Nox</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
