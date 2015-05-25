@@ -30,6 +30,6 @@
 		<string>com.apple.widget-extension</string>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Need to get your location</string>
+	<string>The app needs to get your location so it can determine when the sun will set and rise.</string>
 </dict>
 </plist>
