@@ -77,7 +77,6 @@
                                                otherButtonTitles: nil];
     sunsetNotificationSetting.on = NO;
     sunriseNotificationSetting.on = NO;
-    backgroundNotifications.on = NO;
     [errorAlert show];
   }
 }
@@ -134,7 +133,6 @@
   // Set the initial state for on-screen objects and labels
   sunsetNotificationSetting.on = [myDefaults boolForKey:@"sunsetNotificationSetting"];
   sunriseNotificationSetting.on = [myDefaults boolForKey:@"sunriseNotificationSetting"];
-  backgroundNotifications.on = [myDefaults boolForKey:@"backgroundNotifications"];
   latitide.text = [NSString stringWithFormat:@"Lat: %.5f", [myDefaults doubleForKey:@"lat"]];
   longitude.text = [NSString stringWithFormat:@"Long: %.5f", [myDefaults doubleForKey:@"long"]];
   
@@ -142,7 +140,6 @@
   if(![self notificationsEnabled]) {
     sunsetNotificationSetting.on = NO;
     sunriseNotificationSetting.on = NO;
-    backgroundNotifications.on = NO;
   }
   
   // set the value of the stepper to the saved value in myDefaults
@@ -202,20 +199,6 @@
   NSString *URL = @"http://d.pr/i/13KHZ+";
   NSURL *myURL = [NSURL URLWithString:URL];
   [[UIApplication sharedApplication] openURL:myURL];
-}
-
-- (IBAction)changeBackgroundNotificationsSetting:(id)sender {
-  // Check to see if notifications are allowed or not
-  [self checkNotifications];
-  
-  // Change the settings in myDefaults based on the switch's position
-  if ([backgroundNotifications isOn]) {
-    [myDefaults setBool:YES forKey:@"backgroundNotifications"];
-    [myDefaults synchronize];
-  } else {
-    [myDefaults setBool:NO forKey:@"backgroundNotifications"];
-    [myDefaults synchronize];
-  }
 }
 
 /*
