@@ -84,11 +84,11 @@
  * @author Nate
  */
 - (void)updateLocation {
-  locationManager = [[CLLocationManager alloc] init];
-  locationManager.delegate = self;
-  locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-  locationManager.distanceFilter = 500; // meters
-  [locationManager requestAlwaysAuthorization];
+  _locationManager = [[CLLocationManager alloc] init];
+  _locationManager.delegate = self;
+  _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+  _locationManager.distanceFilter = 500; // meters
+  [self.locationManager requestAlwaysAuthorization];
   
   if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted
       || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
@@ -102,7 +102,7 @@
     [data setValue:@"YES" forKey:@"updateColors"];
   }
   
-  [locationManager startUpdatingLocation];
+  [self.locationManager startUpdatingLocation];
 }
 
 /**
@@ -110,7 +110,7 @@
  * @author Nate
  */
 - (void)stopUpdatingLocation {
-  [locationManager stopUpdatingLocation];
+  [self.locationManager stopUpdatingLocation];
 }
 
 /**

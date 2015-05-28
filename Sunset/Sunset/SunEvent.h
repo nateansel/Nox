@@ -15,13 +15,14 @@
 #import <UIKit/UIKit.h>
 
 @interface SunEvent : NSObject <CLLocationManagerDelegate> {
-  CLLocationManager *locationManager;
   KCAstronomicalCalendar *calendar;
   KCGeoLocation *location;
   CLLocation *currentLocation;
   NSUserDefaults *myDefaults;
   NSMutableDictionary *data;
 }
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (SunEvent *)init;
 - (void)locationManager:(CLLocationManager *) manager

@@ -28,5 +28,6 @@
 - (NSString *)makeStringFromMinuteInt: (int) minutes;
 - (IBAction)bishopButton:(id)sender;
 - (void)changeStatusBarColor;
+- (void)notificationChange;
 
 @end

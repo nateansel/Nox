@@ -41,6 +41,8 @@
     [myDefaults setBool:NO forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
   }
+  
+  [self notificationChange];
 }
 
 /**
@@ -60,6 +62,8 @@
     [myDefaults setBool:NO forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
   }
+  
+  [self notificationChange];
 }
 
 /**
@@ -147,7 +151,7 @@
   
   // Fix for off colored status bar in settings page
   UIView *fixItView = [[UIView alloc] init];
-  fixItView.frame = CGRectMake(0, 0, 320, 20);
+  fixItView.frame = CGRectMake(0, 0, 620, 20);
   fixItView.backgroundColor = [UIColor colorWithRed:0.973 green:0.973 blue:0.973 alpha:1]; //change this to match your navigation bar
   [self.view addSubview:fixItView];
 
@@ -171,6 +175,8 @@
   notificationTime.text = [self makeStringFromMinuteInt:(int) stepper.value];
   [myDefaults setDouble:stepper.value forKey:@"notificationTimeCustomization"];
   [myDefaults synchronize];
+  
+  [self notificationChange];
 }
 
 /**
@@ -200,6 +206,18 @@
   NSURL *myURL = [NSURL URLWithString:URL];
   [[UIApplication sharedApplication] openURL:myURL];
 }
+
+/**
+ * Updates notifications when a user makes a change to the settings.
+ * @author Chase
+ *
+ */
+- (void)notificationChange {
+  [[UIApplication sharedApplication] cancelAllLocalNotifications];
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"setNotifications"
+                                                      object:nil];
+  }
 
 /*
 #pragma mark - Navigation

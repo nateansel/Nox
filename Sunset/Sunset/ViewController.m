@@ -122,10 +122,11 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noLocationWarning) name:@"location" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationWarning) name:@"noLocation" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNotifications) name:@"setNotifications" object:nil];
   
-  if (sunEventObject == nil) {
+ if (sunEventObject == nil) {
     sunEventObject = [[SunEvent alloc] init];
-  }
+ }
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
@@ -133,6 +134,8 @@
   [self refresh];
   
   [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(updateView:) userInfo:nil repeats:YES];
+  
+  [self updateView:nil];
 }
 
 - (void)didReceiveMemoryWarning {

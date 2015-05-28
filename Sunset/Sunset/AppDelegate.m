@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+@import CoreLocation;
 
 @interface AppDelegate ()
 
@@ -25,16 +26,24 @@
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
   }
   
+  
+  CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+  locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+  locationManager.distanceFilter = 500; // meters
+  [locationManager requestAlwaysAuthorization];
+  
   return YES;
 }
 
--(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
   ViewController *viewController = (ViewController *)self.window.rootViewController;
   NSUserDefaults *myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
   [viewController fetchNewDataWithCompletionHandler:^(UIBackgroundFetchResult result) {
     completionHandler(result);
   }];
+  
+  [self setNotifications];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
