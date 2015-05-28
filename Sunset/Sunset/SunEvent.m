@@ -118,9 +118,22 @@
     [data setValue:@"YES" forKey:@"updateColors"];
   }
   
+  
   [self.locationManager startUpdatingLocation];
   [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
                                                       object:nil];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+  if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusNotDetermined) {
+    [self.locationManager requestAlwaysAuthorization];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"noLocation"
+                                                        object:nil];
+    [data setValue:@"NO" forKey:@"updateColors"];
+  }
+  else {
+    [self.locationManager startUpdatingLocation];
+  }
 }
 
 /**
