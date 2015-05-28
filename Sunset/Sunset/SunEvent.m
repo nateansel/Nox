@@ -36,6 +36,11 @@
   currentLocation = [locations lastObject];
   [self updateCalendar];
   [self updateDictionary];
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"location"
+                                                        object:nil];
+  [data setValue:@"YES" forKey:@"updateColors"];
+
 
   // ISSUE: Need to run this notication every minute. Probably will have to use a timer
   // If I do use a timer, maybe just updateView in the timer?
@@ -90,7 +95,13 @@
   _locationManager.distanceFilter = 500; // meters
   [self.locationManager requestAlwaysAuthorization];
   
-  if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted
+  if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"launchView"
+                                                        object:nil];
+    [data setValue:@"NO" forKey:@"updateColors"];
+    [self.locationManager requestAlwaysAuthorization];
+  }
+  else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted
       || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"noLocation"
                                                         object:nil];
@@ -103,6 +114,8 @@
   }
   
   [self.locationManager startUpdatingLocation];
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
+                                                      object:nil];
 }
 
 /**

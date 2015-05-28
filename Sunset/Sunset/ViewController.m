@@ -70,6 +70,13 @@
   willSet.hidden = YES;
 }
 
+- (void)setupLaunchView {
+  noLocation.hidden = YES;
+  timeLabel.hidden = YES;
+  timeUntil.hidden = YES;
+  willSet.hidden = YES;
+}
+
 // Sets up the gradient layers
 - (void)setupGradients {
   orangeGradientLayer = [BackgroundLayer orangeGradient];
@@ -123,6 +130,7 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationWarning) name:@"noLocation" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNotifications) name:@"setNotifications" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupLaunchView) name:@"launchView" object:nil];
   
  if (sunEventObject == nil) {
     sunEventObject = [[SunEvent alloc] init];

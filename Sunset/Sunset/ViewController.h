@@ -45,6 +45,7 @@
 
 - (BOOL)getNotificationSetting;
 - (void)setNotifications;
+- (void)setupLaunchView;
 
 @end
 
