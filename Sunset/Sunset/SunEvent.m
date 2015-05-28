@@ -49,6 +49,11 @@
   
   [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
   [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
+  
+  [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
+  [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
+  [myDefaults synchronize];
+  
 }
 
 - (void)locationManager:(CLLocationManager*)manager

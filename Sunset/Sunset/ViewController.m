@@ -34,8 +34,8 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
   }
     
-  [myDefaults setDouble:[[data objectForKey:@"lat"] doubleValue] forKey:@"lat"];
-  [myDefaults setDouble:[[data objectForKey:@"long"] doubleValue] forKey:@"long"];
+//  [myDefaults setDouble:[[data objectForKey:@"lat"] doubleValue] forKey:@"lat"];
+//  [myDefaults setDouble:[[data objectForKey:@"long"] doubleValue] forKey:@"long"];
   
   // make a string representation of the next sun event for the today widget
 //  NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
