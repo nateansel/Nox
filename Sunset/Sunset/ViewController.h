@@ -47,5 +47,7 @@
 - (void)setNotifications;
 - (void)setupLaunchView;
 
+- (void)refreshNotifications;
+
 @end
 

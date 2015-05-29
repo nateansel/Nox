@@ -11,7 +11,7 @@
 @implementation SettingsViewController
 
 - (IBAction)dismissSettingsView:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:^{[self notificationChange];}];
   [statusBarTimer invalidate];
   
   bool isSet = [[myDefaults objectForKey:@"isSet"] boolValue];
@@ -41,8 +41,6 @@
     [myDefaults setBool:NO forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
   }
-  
-  [self notificationChange];
 }
 
 /**
@@ -62,8 +60,6 @@
     [myDefaults setBool:NO forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
   }
-  
-  [self notificationChange];
 }
 
 /**
@@ -175,8 +171,6 @@
   notificationTime.text = [self makeStringFromMinuteInt:(int) stepper.value];
   [myDefaults setDouble:stepper.value forKey:@"notificationTimeCustomization"];
   [myDefaults synchronize];
-  
-  [self notificationChange];
 }
 
 /**
@@ -213,8 +207,6 @@
  *
  */
 - (void)notificationChange {
-  [[UIApplication sharedApplication] cancelAllLocalNotifications];
-  
   [[NSNotificationCenter defaultCenter] postNotificationName:@"setNotifications"
                                                       object:nil];
   }

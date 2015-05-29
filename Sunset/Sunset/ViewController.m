@@ -122,6 +122,11 @@
                                    andSunrise: [myDefaults boolForKey:@"sunriseNotificationSetting"]];
 }
 
+- (void)refreshNotifications {
+  [[UIApplication sharedApplication] cancelAllLocalNotifications];
+  [self setNotifications];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
@@ -129,7 +134,7 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noLocationWarning) name:@"location" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationWarning) name:@"noLocation" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setNotifications) name:@"setNotifications" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshNotifications) name:@"setNotifications" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupLaunchView) name:@"launchView" object:nil];
   
  if (sunEventObject == nil) {

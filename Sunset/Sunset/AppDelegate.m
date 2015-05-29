@@ -26,12 +26,6 @@
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
   }
   
-  
-  CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-  locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-  locationManager.distanceFilter = 500; // meters
-  [locationManager requestAlwaysAuthorization];
-  
   return YES;
 }
 
