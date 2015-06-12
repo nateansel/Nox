@@ -21,5 +21,6 @@
 - (NSString *)getTimeLeftString;
 - (IBAction)openApp:(id)sender;
 - (BOOL)isSunriseNext;
+- (BOOL)isExpired;
 
 @end

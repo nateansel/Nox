@@ -48,6 +48,14 @@
   timeLabel.text = [myDefaults objectForKey:@"time"];
   willSet.text = [myDefaults objectForKey:@"riseOrSet"];
   
+  if ([self isExpired]) {
+    countdown.text = @"Open the app to refresh.";
+  }
+  else {
+    countdown.text = [self getTimeLeftString];
+    //countdown.text = @"Open the app to refresh.";
+  }
+  
   completionHandler(NCUpdateResultNewData);
 }
 
@@ -130,6 +138,19 @@
   return ([[myDefaults objectForKey:@"nextSunrise"] timeIntervalSinceNow] > 0)
          && [[myDefaults objectForKey:@"nextSunset"] timeIntervalSinceNow] >
             [[myDefaults objectForKey:@"nextSunrise"] timeIntervalSinceNow];
+}
+
+/**
+ * Determines if the stored sunrise and sunset data are in the past,
+ * and have thus expired.
+ *
+ * @author Chase
+ *
+ * @return BOOL if the data is expired
+ */
+- (BOOL)isExpired {
+  return ([[myDefaults objectForKey:@"nextSunrise"] timeIntervalSinceNow] < 0)
+          && ([[myDefaults objectForKey:@"nextSunset"] timeIntervalSinceNow] < 0);
 }
 
 @end
