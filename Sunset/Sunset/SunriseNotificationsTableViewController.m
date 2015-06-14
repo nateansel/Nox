@@ -25,11 +25,6 @@
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
-  if ([myDefaults objectForKey:@"sunriseNotificationsArray"] == nil) {
-    [myDefaults setObject:[[NSArray alloc] init] forKey:@"sunriseNotificationsArray"];
-    [myDefaults synchronize];
-  }
-  
   tableData = [[myDefaults objectForKey:@"sunriseNotificationsArray"] mutableCopy];
 }
 
@@ -66,8 +61,8 @@
 - (void)addItem:(id)sender {
   
   [self showPickerWithSender:sender
-           initialSelection0:0
-           initialSelection1:1
+           initialSelection0:1
+           initialSelection1:0
                    deleteRow:-1
      currentValueBeingEdited:-1];
 }
@@ -149,7 +144,7 @@
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.editingAccessoryType = UITableViewCellAccessoryDetailButton;
   }
@@ -172,6 +167,10 @@
   } else {
     cell.textLabel.text = [NSString stringWithFormat:@"%d minutes", minutes];
   }
+  
+  
+  cell.detailTextLabel.text = @"hello";
+  
   return cell;
 }
 

@@ -155,6 +155,12 @@
   return [calendar sunset];
 }
 
+- (void)refreshUpcomingSunEvents {
+  for (int i = 0; i < 31; i++) {
+    <#statements#>
+  }
+}
+
 /**
  * Retrieve a NSDate object of today's sunrise.
  * @author Nate

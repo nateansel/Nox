@@ -69,17 +69,17 @@
   
   // show the count for sunrise notifications
   if ([myDefaults objectForKey:@"sunriseNotificationsArray"] == nil) {
-    sunriseNotificationCount.text = @"0";
-  } else {
-    sunriseNotificationCount.text = [NSString stringWithFormat:@"%lu",(unsigned long) [[myDefaults objectForKey:@"sunriseNotificationsArray"] count]];
+    [myDefaults setObject:[[NSArray alloc] initWithObjects:@"60", nil] forKey:@"sunriseNotificationsArray"];
+    [myDefaults synchronize];
   }
+  sunriseNotificationCount.text = [NSString stringWithFormat:@"%lu",(unsigned long) [[myDefaults objectForKey:@"sunriseNotificationsArray"] count]];
   
   // show the count for sunset notifications
   if ([myDefaults objectForKey:@"sunsetNotificationsArray"] == nil) {
-    sunsetNotificationCount.text = @"0";
-  } else {
-    sunsetNotificationCount.text = [NSString stringWithFormat:@"%lu",(unsigned long) [[myDefaults objectForKey:@"sunsetNotificationsArray"] count]];
+    [myDefaults setObject:[[NSArray alloc] initWithObjects:@"60", nil] forKey:@"sunsetNotificationsArray"];
+    [myDefaults synchronize];
   }
+  sunsetNotificationCount.text = [NSString stringWithFormat:@"%lu",(unsigned long) [[myDefaults objectForKey:@"sunsetNotificationsArray"] count]];
 }
 
 - (void)didReceiveMemoryWarning {

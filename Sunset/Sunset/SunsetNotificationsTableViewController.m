@@ -21,11 +21,6 @@
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
-  if ([myDefaults objectForKey:@"sunsetNotificationsArray"] == nil) {
-    [myDefaults setObject:[[NSArray alloc] init] forKey:@"sunsetNotificationsArray"];
-    [myDefaults synchronize];
-  }
-  
   tableData = [[myDefaults objectForKey:@"sunsetNotificationsArray"] mutableCopy];
 }
 
@@ -62,8 +57,8 @@
 - (void)addItem:(id)sender {
   
   [self showPickerWithSender:sender
-           initialSelection0:0
-           initialSelection1:1
+           initialSelection0:1
+           initialSelection1:0
                    deleteRow:-1
      currentValueBeingEdited:-1];
 }
