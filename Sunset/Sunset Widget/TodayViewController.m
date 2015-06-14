@@ -48,10 +48,19 @@
   timeLabel.text = [myDefaults objectForKey:@"time"];
   willSet.text = [myDefaults objectForKey:@"riseOrSet"];
   
+  expired.hidden = YES;
+  
   if ([self isExpired]) {
-    countdown.text = @"Open the app to refresh.";
+    willSet.hidden = YES;
+    timeLabel.hidden = YES;
+    countdown.hidden = YES;
+    expired.hidden = NO;
   }
   else {
+    willSet.hidden = NO;
+    timeLabel.hidden = NO;
+    countdown.hidden = NO;
+    expired.hidden = YES;
     countdown.text = [self getTimeLeftString];
     //countdown.text = @"Open the app to refresh.";
   }

@@ -12,6 +12,7 @@
   IBOutlet UILabel *willSet;
   IBOutlet UILabel *timeLabel;
   IBOutlet UILabel *countdown;
+  IBOutlet UILabel *expired;
   NSDate *sunrise;
   NSDate *sunset;
   NSUserDefaults *myDefaults;

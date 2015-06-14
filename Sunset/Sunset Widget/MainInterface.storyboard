@@ -32,8 +32,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open the app to refresh." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xtO-FR-Sx1">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 hours until sunset." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xtO-FR-Sx1">
                                 <rect key="frame" x="45" y="100" width="231" height="33"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The app's data has expired. Tap here to open the app and refresh." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ae6-ED-j7g">
+                                <rect key="frame" x="21" y="59" width="279" height="42"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -49,17 +55,21 @@
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ae6-ED-j7g" secondAttribute="centerY" id="2Oj-CO-2zu"/>
                             <constraint firstItem="Fwm-QN-fbm" firstAttribute="bottom" secondItem="FKl-LY-JtV" secondAttribute="top" id="6ZE-hg-hW0"/>
                             <constraint firstItem="xtO-FR-Sx1" firstAttribute="centerX" secondItem="XeR-4i-D8e" secondAttribute="centerX" id="6yS-Lw-IXp"/>
                             <constraint firstItem="XeR-4i-D8e" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="18" id="Dxe-W1-Jig"/>
                             <constraint firstItem="SG8-qT-qwk" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="12" id="FQJ-Ql-PTS"/>
+                            <constraint firstAttribute="centerY" secondItem="ae6-ED-j7g" secondAttribute="centerY" id="GRi-Ae-3kj"/>
                             <constraint firstItem="xtO-FR-Sx1" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="29" id="Id2-IE-JZa"/>
                             <constraint firstItem="xtO-FR-Sx1" firstAttribute="centerX" secondItem="Fwm-QN-fbm" secondAttribute="centerX" id="P2l-hc-fNm"/>
+                            <constraint firstAttribute="centerX" secondItem="ae6-ED-j7g" secondAttribute="centerX" id="Rtr-Ap-N4H"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="xtO-FR-Sx1" secondAttribute="bottom" constant="27" id="aG2-0U-s1c"/>
                             <constraint firstItem="XeR-4i-D8e" firstAttribute="centerX" secondItem="SG8-qT-qwk" secondAttribute="centerX" id="bY8-4S-4IC"/>
                             <constraint firstItem="SG8-qT-qwk" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="70" id="df5-FH-H5E"/>
                             <constraint firstItem="Fwm-QN-fbm" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="grX-pc-tIh"/>
                             <constraint firstItem="xtO-FR-Sx1" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="gx1-Bi-1v6"/>
+                            <constraint firstAttribute="centerX" secondItem="ae6-ED-j7g" secondAttribute="centerX" id="mZH-6x-5fN"/>
                             <constraint firstItem="Fwm-QN-fbm" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="shj-BF-ntl"/>
                             <constraint firstItem="xtO-FR-Sx1" firstAttribute="top" secondItem="SG8-qT-qwk" secondAttribute="bottom" constant="67" id="vpg-gS-vlE"/>
                             <constraint firstItem="XeR-4i-D8e" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="yQd-8I-O9W"/>
@@ -74,6 +84,7 @@
                     <size key="freeformSize" width="320" height="160"/>
                     <connections>
                         <outlet property="countdown" destination="xtO-FR-Sx1" id="0Uy-dJ-D1W"/>
+                        <outlet property="expired" destination="ae6-ED-j7g" id="SXw-tJ-RNh"/>
                         <outlet property="timeLabel" destination="XeR-4i-D8e" id="oXE-gH-cye"/>
                         <outlet property="willSet" destination="SG8-qT-qwk" id="Hdh-Yd-Suz"/>
                     </connections>
