@@ -15,8 +15,10 @@
   IBOutlet UILabel *sunsetNotificationCount;
   
   NSUserDefaults *myDefaults;
+  NSTimer *statusBarTimer;
 }
 
 - (IBAction)dismissSettingsView:(id)sender;
+- (void)changeStatusBarColor;
 
 @end

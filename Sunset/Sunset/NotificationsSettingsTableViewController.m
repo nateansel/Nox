@@ -16,10 +16,34 @@
 
 - (IBAction)dismissSettingsView:(id)sender {
   [self dismissViewControllerAnimated:YES completion:nil];
+  
+  bool isSet = [[myDefaults objectForKey:@"isSet"] boolValue];
+  
+  [statusBarTimer invalidate];
+  
+  if(isSet) {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+  }
+  else {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+  }
+
+}
+
+/**
+ * Changes the status bar color every second while in the Settings View.
+ * (A fix for the root view refreshing while the Settings View is still pulled up)
+ * @author Chase
+ *
+ */
+- (void)changeStatusBarColor {
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
@@ -36,6 +60,8 @@
   } else {
     sunsetNotificationCount.text = [NSString stringWithFormat:@"%lu",(unsigned long) [[myDefaults objectForKey:@"sunsetNotificationsArray"] count]];
   }
+  
+  statusBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeStatusBarColor) userInfo:nil repeats:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
