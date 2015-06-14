@@ -44,6 +44,14 @@
 		2E72CC971B03FDBB0082F991 /* KCGeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72CC6B1B03FDBB0082F991 /* KCGeoLocation.m */; };
 		2E72CC981B03FDBB0082F991 /* KCSunriseAndSunsetCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72CC6D1B03FDBB0082F991 /* KCSunriseAndSunsetCalculator.m */; };
 		2E72CC991B03FDBB0082F991 /* trigonometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E72CC701B03FDBB0082F991 /* trigonometry.c */; };
+		2E7A59201B2DD2C5002B3C66 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A590F1B2DD2C5002B3C66 /* AbstractActionSheetPicker.m */; };
+		2E7A59211B2DD2C5002B3C66 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A59111B2DD2C5002B3C66 /* ActionSheetCustomPicker.m */; };
+		2E7A59221B2DD2C5002B3C66 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A59141B2DD2C5002B3C66 /* ActionSheetDatePicker.m */; };
+		2E7A59231B2DD2C5002B3C66 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A59161B2DD2C5002B3C66 /* ActionSheetDistancePicker.m */; };
+		2E7A59241B2DD2C5002B3C66 /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A59181B2DD2C5002B3C66 /* ActionSheetLocalePicker.m */; };
+		2E7A59251B2DD2C5002B3C66 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A591B1B2DD2C5002B3C66 /* ActionSheetStringPicker.m */; };
+		2E7A59261B2DD2C5002B3C66 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A591D1B2DD2C5002B3C66 /* DistancePickerView.m */; };
+		2E7A59271B2DD2C5002B3C66 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A591F1B2DD2C5002B3C66 /* SWActionSheet.m */; };
 		2EE61F911B0430BE002FC960 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE61F901B0430BE002FC960 /* NotificationCenter.framework */; };
 		2EE61F971B0430BE002FC960 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE61F961B0430BE002FC960 /* TodayViewController.m */; };
 		2EE61F991B0430BE002FC960 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EE61F981B0430BE002FC960 /* MainInterface.storyboard */; };
@@ -172,6 +180,24 @@
 		2E72CC7C1B03FDBB0082F991 /* KCZenith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCZenith.h; sourceTree = "<group>"; };
 		2E72CC7D1B03FDBB0082F991 /* KCZenithExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCZenithExtended.h; sourceTree = "<group>"; };
 		2E72CC7E1B03FDBB0082F991 /* KosherCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KosherCocoa.h; sourceTree = "<group>"; };
+		2E7A590E1B2DD2C5002B3C66 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		2E7A590F1B2DD2C5002B3C66 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		2E7A59101B2DD2C5002B3C66 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		2E7A59111B2DD2C5002B3C66 /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		2E7A59121B2DD2C5002B3C66 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		2E7A59131B2DD2C5002B3C66 /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		2E7A59141B2DD2C5002B3C66 /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		2E7A59151B2DD2C5002B3C66 /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		2E7A59161B2DD2C5002B3C66 /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		2E7A59171B2DD2C5002B3C66 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		2E7A59181B2DD2C5002B3C66 /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePicker.m; sourceTree = "<group>"; };
+		2E7A59191B2DD2C5002B3C66 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
+		2E7A591A1B2DD2C5002B3C66 /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		2E7A591B1B2DD2C5002B3C66 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		2E7A591C1B2DD2C5002B3C66 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		2E7A591D1B2DD2C5002B3C66 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		2E7A591E1B2DD2C5002B3C66 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
+		2E7A591F1B2DD2C5002B3C66 /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		2EE61F8E1B0430BE002FC960 /* Sunset Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sunset Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE61F901B0430BE002FC960 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		2EE61F941B0430BE002FC960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -560,9 +586,35 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		2E7A590D1B2DD2C5002B3C66 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				2E7A590E1B2DD2C5002B3C66 /* AbstractActionSheetPicker.h */,
+				2E7A590F1B2DD2C5002B3C66 /* AbstractActionSheetPicker.m */,
+				2E7A59101B2DD2C5002B3C66 /* ActionSheetCustomPicker.h */,
+				2E7A59111B2DD2C5002B3C66 /* ActionSheetCustomPicker.m */,
+				2E7A59121B2DD2C5002B3C66 /* ActionSheetCustomPickerDelegate.h */,
+				2E7A59131B2DD2C5002B3C66 /* ActionSheetDatePicker.h */,
+				2E7A59141B2DD2C5002B3C66 /* ActionSheetDatePicker.m */,
+				2E7A59151B2DD2C5002B3C66 /* ActionSheetDistancePicker.h */,
+				2E7A59161B2DD2C5002B3C66 /* ActionSheetDistancePicker.m */,
+				2E7A59171B2DD2C5002B3C66 /* ActionSheetLocalePicker.h */,
+				2E7A59181B2DD2C5002B3C66 /* ActionSheetLocalePicker.m */,
+				2E7A59191B2DD2C5002B3C66 /* ActionSheetPicker.h */,
+				2E7A591A1B2DD2C5002B3C66 /* ActionSheetStringPicker.h */,
+				2E7A591B1B2DD2C5002B3C66 /* ActionSheetStringPicker.m */,
+				2E7A591C1B2DD2C5002B3C66 /* DistancePickerView.h */,
+				2E7A591D1B2DD2C5002B3C66 /* DistancePickerView.m */,
+				2E7A591E1B2DD2C5002B3C66 /* SWActionSheet.h */,
+				2E7A591F1B2DD2C5002B3C66 /* SWActionSheet.m */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
 		2EE61F8F1B0430BE002FC960 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E7A590D1B2DD2C5002B3C66 /* Pickers */,
 				2EEA57E41B04452900075930 /* KosherCocoa */,
 				2EE61F901B0430BE002FC960 /* NotificationCenter.framework */,
 			);
@@ -941,18 +993,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E72CC921B03FDBB0082F991 /* KCComplexZmanimCalendar.m in Sources */,
+				2E7A59201B2DD2C5002B3C66 /* AbstractActionSheetPicker.m in Sources */,
 				2E72CC961B03FDBB0082F991 /* KCAstronomicalCalendar.m in Sources */,
 				2E72CC981B03FDBB0082F991 /* KCSunriseAndSunsetCalculator.m in Sources */,
 				2E3C72371B0254CB003FD3F0 /* ViewController.m in Sources */,
 				2E72CC8A1B03FDBB0082F991 /* KCJewishCalendar.m in Sources */,
 				2E72CC811B03FDBB0082F991 /* NSCalendar+DateManipulation.m in Sources */,
 				2E72CC841B03FDBB0082F991 /* NSCalendar+Ranges.m in Sources */,
+				2E7A59211B2DD2C5002B3C66 /* ActionSheetCustomPicker.m in Sources */,
 				2E3C72341B0254CB003FD3F0 /* AppDelegate.m in Sources */,
 				2E72CC891B03FDBB0082F991 /* KCAstronomicalCalendar+DateManipulation.m in Sources */,
 				2E72CC931B03FDBB0082F991 /* KCZman.m in Sources */,
 				2E72CC911B03FDBB0082F991 /* KCSefiratHaomerCalculator.m in Sources */,
 				2E72CC851B03FDBB0082F991 /* NSDate+Components.m in Sources */,
 				2E72CC871B03FDBB0082F991 /* NSDate+Description.m in Sources */,
+				2E7A59241B2DD2C5002B3C66 /* ActionSheetLocalePicker.m in Sources */,
+				2E7A59251B2DD2C5002B3C66 /* ActionSheetStringPicker.m in Sources */,
 				2E72CC8E1B03FDBB0082F991 /* KCParasha.m in Sources */,
 				2E72CC821B03FDBB0082F991 /* NSCalendar+hebrewYearTypes.m in Sources */,
 				2E72CC8C1B03FDBB0082F991 /* KCDaf.m in Sources */,
@@ -965,12 +1021,16 @@
 				2E72CC861B03FDBB0082F991 /* NSDate+ConvenientDates.m in Sources */,
 				2E72CC971B03FDBB0082F991 /* KCGeoLocation.m in Sources */,
 				2E72CC831B03FDBB0082F991 /* NSCalendar+Juncture.m in Sources */,
+				2E7A59221B2DD2C5002B3C66 /* ActionSheetDatePicker.m in Sources */,
+				2E7A59261B2DD2C5002B3C66 /* DistancePickerView.m in Sources */,
 				2E72CC8D1B03FDBB0082F991 /* KCDafYomiCalculator.m in Sources */,
 				2E36CCB01B05304900B55335 /* BackgroundLayer.m in Sources */,
 				2E72CC8B1B03FDBB0082F991 /* KCJewishHoliday.m in Sources */,
 				2E72CC8F1B03FDBB0082F991 /* KCParashatHashavuaCalculator.m in Sources */,
+				2E7A59271B2DD2C5002B3C66 /* SWActionSheet.m in Sources */,
 				2E72CC951B03FDBB0082F991 /* KCAstronomicalCalculator.m in Sources */,
 				D820909D1B0674DA00E0C359 /* SunEvent.m in Sources */,
+				2E7A59231B2DD2C5002B3C66 /* ActionSheetDistancePicker.m in Sources */,
 				D831F2681B0BC0A300992ACA /* SettingsViewController.m in Sources */,
 				2E3C72311B0254CB003FD3F0 /* main.m in Sources */,
 				2E72CC941B03FDBB0082F991 /* KCZmanimCalendar.m in Sources */,
