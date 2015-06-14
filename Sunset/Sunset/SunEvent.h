@@ -48,6 +48,7 @@
 - (NSString *)makeStringFromSeconds: (int) seconds;
 - (NSDate *)getNextSunrise;
 - (NSDate *)getNextSunset;
+- (void)refreshUpcomingSunEvents;
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 

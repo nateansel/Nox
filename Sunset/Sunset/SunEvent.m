@@ -155,12 +155,6 @@
   return [calendar sunset];
 }
 
-- (void)refreshUpcomingSunEvents {
-  for (int i = 0; i < 31; i++) {
-    <#statements#>
-  }
-}
-
 /**
  * Retrieve a NSDate object of today's sunrise.
  * @author Nate
@@ -421,6 +415,36 @@
     return [self getTodaySunsetDate];
   }
   return [self getTomorrowSunsetDate];
+}
+
+- (void)refreshUpcomingSunEvents {
+  NSMutableArray *upcomingSunrises;
+  NSMutableArray *upcomingSunsets;
+  int startDate;
+  
+  if ([[self getTodaySunriseDate] timeIntervalSinceNow] > 0) {
+    startDate = 0;
+  } else {
+    startDate = 1;
+  }
+  for (int i = startDate; i < (31 + startDate); i++) {
+    [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
+    [upcomingSunrises addObject:[calendar sunrise]];
+  }
+  
+  if ([[self getTodaySunsetDate] timeIntervalSinceNow] > 0) {
+    startDate = 0;
+  } else {
+    startDate = 1;
+  }
+  for (int i = startDate; i < (31 + startDate); i++) {
+    [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
+    [upcomingSunsets addObject:[calendar sunset]];
+  }
+  
+  [myDefaults setObject:[NSArray arrayWithArray:upcomingSunrises] forKey:@"upcomingSunrises"];
+  [myDefaults setObject:[NSArray arrayWithArray:upcomingSunsets] forKey:@"upcomingSunsets"];
+  [myDefaults synchronize];
 }
 
 @end
