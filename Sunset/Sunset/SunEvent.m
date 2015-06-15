@@ -503,7 +503,6 @@
   [myDefaults setObject:upcomingSunrises forKey:@"upcomingSunrises"];
   [myDefaults setObject:[NSArray arrayWithArray:upcomingSunsets] forKey:@"upcomingSunsets"];
   [myDefaults synchronize];
-  NSLog(@"upcomingSunrises count: %d",(int) [[myDefaults objectForKey:@"upcomingSunrises"] count]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -546,7 +545,7 @@
           if ([notification.fireDate timeIntervalSinceNow] > 0) {
             [[UIApplication sharedApplication] scheduleLocalNotification:notification];
             
-            NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+            //NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
           }
         }
       }
@@ -562,10 +561,22 @@
           if ([notification.fireDate timeIntervalSinceNow] > 0) {
             [[UIApplication sharedApplication] scheduleLocalNotification:notification];
             
-            NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+            //NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
           }
         }
       }
+    }
+    
+    // after all notifications have fired remind the user to open the app to continue recieving notifications
+    NSDate *fireDate = [notification.fireDate dateByAddingTimeInterval:7200];
+    notification = [[UILocalNotification alloc] init];
+    notification.fireDate = fireDate;
+    notification.alertBody = @"Please open the app to refresh the data and continue receiving notifications.";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    if ([notification.fireDate timeIntervalSinceNow] > 0) {
+      [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+      
+      //NSLog([@"End of notifications " stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
     }
   }
 }

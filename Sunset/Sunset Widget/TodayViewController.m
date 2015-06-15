@@ -43,10 +43,34 @@
   // If an error is encountered, use NCUpdateResultFailed
   // If there's no update required, use NCUpdateResultNoData
   // If there's an update, use NCUpdateResultNewData
+  NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  BOOL sunriseNext = YES;
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+  [dateFormatter setDateFormat:@"h:mm a"];
+  NSDate *sunEventDate;
   
-  countdown.text = [self getTimeLeftString];
-  timeLabel.text = [myDefaults objectForKey:@"time"];
-  willSet.text = [myDefaults objectForKey:@"riseOrSet"];
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0
+        && [[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow]
+           > [[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow]) {
+      sunEventDate = [upcomingSunrises objectAtIndex:i];
+      sunriseNext = YES;
+      break;
+    } else if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      sunEventDate = [upcomingSunsets objectAtIndex:i];
+      sunriseNext = NO;
+      break;
+    }
+  }
+  
+  countdown.text = [self getTimeLeftString: sunEventDate];
+  timeLabel.text = [dateFormatter stringFromDate:sunEventDate];
+  if ([self isSunriseNext]) {
+    willSet.text = @"The sun will rise at";
+  } else {
+    willSet.text = @"The sun will set at";
+  }
   
   expired.hidden = YES;
   
@@ -55,14 +79,11 @@
     timeLabel.hidden = YES;
     countdown.hidden = YES;
     expired.hidden = NO;
-  }
-  else {
+  } else {
     willSet.hidden = NO;
     timeLabel.hidden = NO;
     countdown.hidden = NO;
     expired.hidden = YES;
-    countdown.text = [self getTimeLeftString];
-    //countdown.text = @"Open the app to refresh.";
   }
   
   completionHandler(NCUpdateResultNewData);
@@ -74,27 +95,32 @@
  *
  * @return NSString representation of the countdown to the next sun event
  */
-- (NSString *)getTimeLeftString {
+- (NSString *)getTimeLeftString:(NSDate *)date {
   // declare some variables
   double tempTimeNum;
   int hours, minutes;
   NSString *minuteString, *riseOrSet;
-  NSDate *date;
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
   [dateFormatter setDateFormat:@"h:mm a"];
   
-  if ([self isSunriseNext]) {
-    date = [myDefaults objectForKey:@"nextSunrise"];
-    riseOrSet = @"until the sun rises";
-    [myDefaults setObject:@"The sun will rise at" forKey:@"riseOrSet"];
-  } else {
-    date = [myDefaults objectForKey:@"nextSunset"];
-    riseOrSet = @"of sunlight left";
-    [myDefaults setObject:@"The sun will set at" forKey:@"riseOrSet"];
-  }
+//  if ([self isSunriseNext]) {
+//    date = [myDefaults objectForKey:@"nextSunrise"];
+//    riseOrSet = @"until the sun rises";
+//    [myDefaults setObject:@"The sun will rise at" forKey:@"riseOrSet"];
+//  } else {
+//    date = [myDefaults objectForKey:@"nextSunset"];
+//    riseOrSet = @"of sunlight left";
+//    [myDefaults setObject:@"The sun will set at" forKey:@"riseOrSet"];
+//  }
+                     //
+//  [myDefaults setObject:[dateFormatter stringFromDate:date] forKey:@"time"];
+//  [myDefaults synchronize];
   
-  [myDefaults setObject:[dateFormatter stringFromDate:date] forKey:@"time"];
-  [myDefaults synchronize];
+  if ([self isSunriseNext]) {
+    riseOrSet = @"until the sun rises";
+  } else {
+    riseOrSet = @"of sunlight left";
+  }
   
   tempTimeNum = [date timeIntervalSinceNow];      // the time difference between event and now in seconds
   hours = ((int) tempTimeNum) / 3600;             // integer division with total seconds / seconds per hour
@@ -141,12 +167,21 @@
  * @return BOOL if the sunrise is next
  */
 - (BOOL)isSunriseNext {
-  // make sure nextSunrise is in the future
-  // make sure nextSunrise is closer to present than nextSunset
-  // if both of those conditions are met, then the next sun event to occur is sunrise
-  return ([[myDefaults objectForKey:@"nextSunrise"] timeIntervalSinceNow] > 0)
-         && [[myDefaults objectForKey:@"nextSunset"] timeIntervalSinceNow] >
-            [[myDefaults objectForKey:@"nextSunrise"] timeIntervalSinceNow];
+  // cycle through both arrays to determine which event is coming next
+  NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0
+        && [[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow]
+           > [[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow]) {
+      return YES;
+    } else if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      return NO;
+    }
+  }
+  
+  // just to appease the compiler
+  return NO;
 }
 
 /**
@@ -155,11 +190,20 @@
  *
  * @author Chase
  *
- * @return BOOL if the data is expired
+ * @return BOOl if the data is expired
  */
 - (BOOL)isExpired {
-  return ([[myDefaults objectForKey:@"nextSunrise"] timeIntervalSinceNow] < 0)
-          && ([[myDefaults objectForKey:@"nextSunset"] timeIntervalSinceNow] < 0);
+  // cycle through both arrays to determine which event is coming next
+  NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  if ([[upcomingSunrises objectAtIndex:59] timeIntervalSinceNow] > 0) {
+    return NO;
+  }
+  if ([[upcomingSunsets objectAtIndex:59] timeIntervalSinceNow] > 0) {
+    return NO;
+  }
+  
+  return YES;
 }
 
 @end

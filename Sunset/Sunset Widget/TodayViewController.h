@@ -18,9 +18,9 @@
   NSUserDefaults *myDefaults;
 }
 
-- (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets;
-- (NSString *)getTimeLeftString;
 - (IBAction)openApp:(id)sender;
+- (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets;
+- (NSString *)getTimeLeftString:(NSDate *)date;
 - (BOOL)isSunriseNext;
 - (BOOL)isExpired;
 
