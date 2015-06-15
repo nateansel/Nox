@@ -11,27 +11,27 @@
 @implementation CreditsViewController
 
 - (void)viewDidLoad {
-  NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                    attribute:NSLayoutAttributeLeading
-                                                                    relatedBy:0
-                                                                       toItem:self.view
-                                                                    attribute:NSLayoutAttributeLeft
-                                                                   multiplier:1.0
-                                                                     constant:0];
-  [self.view addConstraint:leftConstraint];
-  
-  NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:self.contentView
-                                                                     attribute:NSLayoutAttributeTrailing
-                                                                     relatedBy:0
-                                                                        toItem:self.view
-                                                                     attribute:NSLayoutAttributeRight
-                                                                    multiplier:1.0
-                                                                      constant:0];
-  [self.view addConstraint:rightConstraint];
+  blackGradient = [BackgroundLayer blackGradient];
+  blackGradient.frame = self.view.bounds;
+  [self.view.layer insertSublayer:blackGradient atIndex:0];
+}
+
+- (IBAction)dismissCreditsView:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)websiteURL:(id)sender {
   NSURL *url = [[NSURL alloc] initWithString: @"http://cosmicowl.co" ];
+  [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)chaseTwitter:(id)sender {
+  NSURL *url = [[NSURL alloc] initWithString: @"http://twitter.com/chase_mccoy"];
+  [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)nathanTwitter:(id)sender {
+  NSURL *url = [[NSURL alloc] initWithString: @"http://twitter.com/nathan3o4"];
   [[UIApplication sharedApplication] openURL:url];
 }
 

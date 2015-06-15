@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "BackgroundLayer.h"
 
 @interface CreditsViewController : UIViewController {
+  CAGradientLayer *blackGradient;
 }
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
 
+- (IBAction)dismissCreditsView:(id)sender;
 - (IBAction)websiteURL:(id)sender;
+- (IBAction)chaseTwitter:(id)sender;
+- (IBAction)nathanTwitter:(id)sender;
 
 @end

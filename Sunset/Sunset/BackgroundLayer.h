@@ -13,6 +13,7 @@
 
 + (CAGradientLayer*) blueGradient;
 + (CAGradientLayer*) orangeGradient;
++ (CAGradientLayer*) blackGradient;
 
 + (NSArray*) getColorsForBlueGradient;
 + (NSArray*) getColorsForOrangeGradient;

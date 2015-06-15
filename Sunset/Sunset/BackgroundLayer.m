@@ -69,5 +69,25 @@
   return locations;
 }
 
+// Black gradient background
++ (CAGradientLayer*) blackGradient {
+  
+  UIColor *colorOne = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+  UIColor *colorTwo = [UIColor colorWithRed:0.198 green:0.198 blue:0.198 alpha:1];
+  
+  NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
+  NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
+  NSNumber *stopTwo = [NSNumber numberWithFloat:1.0];
+  
+  NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, nil];
+  
+  CAGradientLayer *headerLayer = [CAGradientLayer layer];
+  headerLayer.colors = colors;
+  headerLayer.locations = locations;
+  
+  return headerLayer;
+}
+
+
 
 @end
