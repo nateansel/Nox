@@ -14,6 +14,12 @@
   blackGradient = [BackgroundLayer blackGradient];
   blackGradient.frame = self.view.bounds;
   [self.view.layer insertSublayer:blackGradient atIndex:0];
+  
+  [[UIApplication sharedApplication] setStatusBarHidden:YES]; 
+}
+
+-(BOOL)prefersStatusBarHidden{
+  return YES;
 }
 
 - (IBAction)dismissCreditsView:(id)sender {

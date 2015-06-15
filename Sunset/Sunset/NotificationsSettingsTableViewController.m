@@ -182,6 +182,8 @@
     [myDefaults synchronize];
   }
   sunsetNotificationCount.text = [NSString stringWithFormat:@"%d",(int) [[myDefaults objectForKey:@"sunsetNotificationsArray"] count]];
+  
+  [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
