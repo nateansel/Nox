@@ -141,9 +141,23 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshNotifications) name:@"setNotifications" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupLaunchView) name:@"launchView" object:nil];
   
- if (sunEventObject == nil) {
+  NSArray *timeDisplaySettings = @[
+                                    @{ UIFontFeatureTypeIdentifierKey: @(6),
+                                       UIFontFeatureSelectorIdentifierKey: @(1)
+                                       },
+                                    @{ UIFontFeatureTypeIdentifierKey: @(17),
+                                       UIFontFeatureSelectorIdentifierKey: @(1)
+                                       }];
+  UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:60];
+  UIFontDescriptor *originalDescriptor = [font fontDescriptor];
+  UIFontDescriptor *timerDescriptor =[originalDescriptor fontDescriptorByAddingAttributes: @{ UIFontDescriptorFeatureSettingsAttribute: timeDisplaySettings }];
+  UIFont *timeFont = [UIFont fontWithDescriptor: timerDescriptor size:0.0];
+  
+  timeLabel.font = timeFont;
+  
+  if (sunEventObject == nil) {
     sunEventObject = [[SunEvent alloc] init];
- }
+  }
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
