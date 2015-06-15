@@ -53,6 +53,8 @@
 		2E7A59251B2DD2C5002B3C66 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A591B1B2DD2C5002B3C66 /* ActionSheetStringPicker.m */; };
 		2E7A59261B2DD2C5002B3C66 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A591D1B2DD2C5002B3C66 /* DistancePickerView.m */; };
 		2E7A59271B2DD2C5002B3C66 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A591F1B2DD2C5002B3C66 /* SWActionSheet.m */; };
+		2E8EE09B1B2F2E6C00A90BBC /* AttributionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8EE09A1B2F2E6C00A90BBC /* AttributionsViewController.m */; };
+		2E8EE09D1B2F2F2400A90BBC /* attributions.html in Resources */ = {isa = PBXBuildFile; fileRef = 2E8EE09C1B2F2F2400A90BBC /* attributions.html */; };
 		2EA5CFC11B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5CFBC1B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.m */; };
 		2EA5CFC21B2DD68B00C43FE6 /* SunriseNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5CFBE1B2DD68B00C43FE6 /* SunriseNotificationsTableViewController.m */; };
 		2EA5CFC31B2DD68B00C43FE6 /* SunsetNotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5CFC01B2DD68B00C43FE6 /* SunsetNotificationsTableViewController.m */; };
@@ -203,6 +205,9 @@
 		2E7A591D1B2DD2C5002B3C66 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
 		2E7A591E1B2DD2C5002B3C66 /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
 		2E7A591F1B2DD2C5002B3C66 /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
+		2E8EE0991B2F2E6C00A90BBC /* AttributionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributionsViewController.h; sourceTree = "<group>"; };
+		2E8EE09A1B2F2E6C00A90BBC /* AttributionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributionsViewController.m; sourceTree = "<group>"; };
+		2E8EE09C1B2F2F2400A90BBC /* attributions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = attributions.html; sourceTree = "<group>"; };
 		2EA5CFBB1B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsSettingsTableViewController.h; sourceTree = "<group>"; };
 		2EA5CFBC1B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsSettingsTableViewController.m; sourceTree = "<group>"; };
 		2EA5CFBD1B2DD68B00C43FE6 /* SunriseNotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunriseNotificationsTableViewController.h; sourceTree = "<group>"; };
@@ -357,6 +362,9 @@
 				2E3C72381B0254CB003FD3F0 /* Main.storyboard */,
 				2E60D1291B2E557800C16E5C /* CreditsViewController.h */,
 				2E60D12A1B2E557800C16E5C /* CreditsViewController.m */,
+				2E8EE0991B2F2E6C00A90BBC /* AttributionsViewController.h */,
+				2E8EE09A1B2F2E6C00A90BBC /* AttributionsViewController.m */,
+				2E8EE09C1B2F2F2400A90BBC /* attributions.html */,
 				2EA5CFBB1B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.h */,
 				2EA5CFBC1B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.m */,
 				2EA5CFBD1B2DD68B00C43FE6 /* SunriseNotificationsTableViewController.h */,
@@ -979,6 +987,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8EE09D1B2F2F2400A90BBC /* attributions.html in Resources */,
 				2E3C723A1B0254CB003FD3F0 /* Main.storyboard in Resources */,
 				2E3C723F1B0254CB003FD3F0 /* LaunchScreen.xib in Resources */,
 				2E3C723C1B0254CB003FD3F0 /* Images.xcassets in Resources */,
@@ -1049,6 +1058,7 @@
 				2E72CC951B03FDBB0082F991 /* KCAstronomicalCalculator.m in Sources */,
 				D820909D1B0674DA00E0C359 /* SunEvent.m in Sources */,
 				2E7A59231B2DD2C5002B3C66 /* ActionSheetDistancePicker.m in Sources */,
+				2E8EE09B1B2F2E6C00A90BBC /* AttributionsViewController.m in Sources */,
 				D831F2681B0BC0A300992ACA /* SettingsViewController.m in Sources */,
 				2E3C72311B0254CB003FD3F0 /* main.m in Sources */,
 				2E72CC941B03FDBB0082F991 /* KCZmanimCalendar.m in Sources */,
