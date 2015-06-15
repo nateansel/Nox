@@ -55,12 +55,24 @@
 }
 
 - (void)addItem:(id)sender {
-  
-  [self showPickerWithSender:sender
-           initialSelection0:1
-           initialSelection1:0
-                   deleteRow:-1
-     currentValueBeingEdited:-1];
+  if (tableData.count == 20) {
+    UIAlertController *maxErrorAlert = [UIAlertController alertControllerWithTitle:@"Notification Limit"
+                                                                           message:@"You have reached the maximum amount of notifications supported."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:nil];
+    [maxErrorAlert addAction:defaultAction];
+    [self presentViewController:maxErrorAlert
+                       animated:YES
+                     completion:nil];
+  } else {
+    [self showPickerWithSender:sender
+             initialSelection0:1
+             initialSelection1:0
+                     deleteRow:-1
+       currentValueBeingEdited:-1];
+  }
 }
 
 - (void)showPickerWithSender:(id)sender initialSelection0:(int)initialSelection0 initialSelection1:(int)initialSelection1 deleteRow:(int)rowToDelete currentValueBeingEdited:(int)editValueToCheck {
@@ -78,15 +90,15 @@
                                        NSInteger minutes = [selectedValue0 integerValue] * 60 + [selectedValue1 integerValue];
                                        if (editValueToCheck != (int) minutes) {
                                          if ([self isItemDuplicate:(int) minutes]) {
-                                           UIAlertController *duplicateErrorAlert = [UIAlertController alertControllerWithTitle:@"Duplicate Time"
+                                           UIAlertController *duplicateErrorAlert = [UIAlertController alertControllerWithTitle:@"Duplicate Notification"
                                                                                                                         message:@"You already have a notification set up for that time. Please choose another time or cancel."
                                                                                                                  preferredStyle:UIAlertControllerStyleAlert];
                                            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Try Again"
                                                                                                    style:UIAlertActionStyleDefault
                                                                                                  handler:^(UIAlertAction *action) {
                                                                                                    [self showPickerWithSender:sender
-                                                                                                            initialSelection0:initialSelection0
-                                                                                                            initialSelection1:initialSelection1
+                                                                                                            initialSelection0:(int) [selectedValue0 integerValue]
+                                                                                                            initialSelection1:(int) [selectedValue1 integerValue] / 5
                                                                                                                     deleteRow:rowToDelete
                                                                                                       currentValueBeingEdited:editValueToCheck];
                                                                                                  }];
