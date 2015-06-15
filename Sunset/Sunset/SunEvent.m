@@ -31,6 +31,8 @@
   return self;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 - (void)locationManager:(CLLocationManager *) manager
      didUpdateLocations:(NSArray *)locations{
   currentLocation = [locations lastObject];
@@ -56,6 +58,8 @@
   
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 - (void)locationManager:(CLLocationManager*)manager
         didFailWithError:(NSError *)error {
   if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted
@@ -77,6 +81,8 @@
   NSLog(@"Error: %@",error.description);
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * Update the KCAstronomicalCalendar object.
  * @author Nate
@@ -88,6 +94,8 @@
                                     andTimeZone:[NSTimeZone systemTimeZone]];
   calendar = [[KCAstronomicalCalendar alloc] initWithLocation:location];
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Updates the location via the locationManager.
@@ -124,6 +132,8 @@
                                                       object:nil];
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusNotDetermined) {
     [self.locationManager requestAlwaysAuthorization];
@@ -136,6 +146,8 @@
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * Tells the locaiton manager to stop updating the location.
  * @author Nate
@@ -143,6 +155,8 @@
 - (void)stopUpdatingLocation {
   [self.locationManager stopUpdatingLocation];
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Retrieve a NSDate object of today's sunset.
@@ -155,6 +169,8 @@
   return [calendar sunset];
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * Retrieve a NSDate object of today's sunrise.
  * @author Nate
@@ -165,6 +181,8 @@
   [calendar setWorkingDate:[NSDate date]];
   return [calendar sunrise];
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Retrieve a NSDate object of tomorrow's sunrise.
@@ -177,6 +195,8 @@
   return [calendar sunrise];
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * Retrieve a NSDate object of tomorrow's sunset.
  * @author Nate
@@ -187,6 +207,8 @@
   [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:86400]];
   return [calendar sunset];
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Retreve the time that the sun will either rise or set at.
@@ -214,6 +236,8 @@
             [dateFormatter stringFromDate:[self getTomorrowSunriseDate]]];
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Creates and returns a string representation of the time left until the next sun event.
@@ -288,6 +312,8 @@
   return currentLocation.coordinate.longitude;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * Creates a temporary dictionary with values pertaining to information about sunrise and sunset times.
  * @author Nate
@@ -330,6 +356,8 @@
   return data;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 - (NSDate *)getNextEvent {
   if (![self hasSunRisenToday]) {
     // the sun hasn't risen today
@@ -342,6 +370,8 @@
     return [self getTomorrowSunriseDate];
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 - (void)setNotificationsWithSeconds: (int) seconds andSunset: (BOOL) sunset andSunrise: (BOOL) sunrise {
   [self setNotifications];
@@ -395,6 +425,9 @@
 //  }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////
+
 - (NSString *)makeStringFromSeconds: (int) seconds {
   int minutes = seconds / 60;
   int hours = minutes / 60;
@@ -418,6 +451,8 @@
     }
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 - (NSDate *)getNextSunrise {
   if ([[self getTodaySunriseDate] timeIntervalSinceNow] > 0) {
@@ -450,7 +485,7 @@
   } else {
     startDate = 1;
   }
-  for (int i = startDate; i < (31 + startDate); i++) {
+  for (int i = startDate; i < (61 + startDate); i++) {
     [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
     [upcomingSunrises addObject:[calendar sunrise]];
   }
@@ -460,7 +495,7 @@
   } else {
     startDate = 1;
   }
-  for (int i = startDate; i < (31 + startDate); i++) {
+  for (int i = startDate; i < (61 + startDate); i++) {
     [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
     [upcomingSunsets addObject:[calendar sunset]];
   }
@@ -468,7 +503,7 @@
   [myDefaults setObject:upcomingSunrises forKey:@"upcomingSunrises"];
   [myDefaults setObject:[NSArray arrayWithArray:upcomingSunsets] forKey:@"upcomingSunsets"];
   [myDefaults synchronize];
-  NSLog(@"upcomingSunrises count: %lul",[[myDefaults objectForKey:@"upcomingSunrises"] count]);
+  NSLog(@"upcomingSunrises count: %d",(int) [[myDefaults objectForKey:@"upcomingSunrises"] count]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -484,39 +519,52 @@
   NSArray *sunsetNotificationsArray = [myDefaults objectForKey:@"sunsetNotificationsArray"];
   NSArray *upcomingSunrise = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunset = [myDefaults objectForKey:@"upcomingSunsets"];
-  int sunriseNotificationNum = (int) sunriseNotificationsArray.count;
-  int sunsetNotificationNum = (int) sunsetNotificationsArray.count;
-  int numNotificationsPerEvent = 60 / (sunriseNotificationNum + sunsetNotificationNum);
-  
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
-  NSString *sunriseTestString = @"Sunrise -- ";
-  NSString *sunsetTestString = @"Sunset  -- ";
-  
+  int sunriseNotificationNum = 0;
+  int sunsetNotificationNum = 0;
   if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
-    for (int i = 0; i < sunriseNotificationsArray.count; i++) {
-      for (int j = 0; j < numNotificationsPerEvent; j++) {
-        notification = [[UILocalNotification alloc] init];
-        notification.fireDate = [[upcomingSunrise objectAtIndex:j] dateByAddingTimeInterval:([[sunriseNotificationsArray objectAtIndex:i] integerValue] * -60)];
-        notification.alertBody = [[self makeStringFromSeconds:((int) [[sunriseNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" until sunrise."];
-        notification.soundName = UILocalNotificationDefaultSoundName;
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-        
-        NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
-      }
-    }
+    sunriseNotificationNum = (int) sunriseNotificationsArray.count;
+  }
+  if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
+    sunsetNotificationNum = (int) sunsetNotificationsArray.count;
   }
   
-  if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
-    for (int i = 0; i < sunsetNotificationsArray.count; i++) {
-      for (int j = 0; j < numNotificationsPerEvent; j++) {
-        notification = [[UILocalNotification alloc] init];
-        notification.fireDate = [[upcomingSunset objectAtIndex:j] dateByAddingTimeInterval:([[sunsetNotificationsArray objectAtIndex:i] integerValue] * -60)];
-        notification.alertBody = [[self makeStringFromSeconds:((int) [[sunsetNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" of sunlight left."];
-        notification.soundName = UILocalNotificationDefaultSoundName;
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-        
-        NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+  if (sunriseNotificationNum != 0 || sunsetNotificationNum != 0) {
+    int numNotificationsPerEvent = 60 / (sunriseNotificationNum + sunsetNotificationNum);
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
+    NSString *sunriseTestString = @"Sunrise -- ";
+    NSString *sunsetTestString = @"Sunset  -- ";
+    
+    if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
+      for (int i = 0; i < sunriseNotificationsArray.count; i++) {
+        for (int j = 0; j < numNotificationsPerEvent; j++) {
+          notification = [[UILocalNotification alloc] init];
+          notification.fireDate = [[upcomingSunrise objectAtIndex:j] dateByAddingTimeInterval:([[sunriseNotificationsArray objectAtIndex:i] integerValue] * -60)];
+          notification.alertBody = [[self makeStringFromSeconds:((int) [[sunriseNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" until sunrise."];
+          notification.soundName = UILocalNotificationDefaultSoundName;
+          if ([notification.fireDate timeIntervalSinceNow] > 0) {
+            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+            
+            NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+          }
+        }
+      }
+    }
+    
+    if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
+      for (int i = 0; i < sunsetNotificationsArray.count; i++) {
+        for (int j = 0; j < numNotificationsPerEvent; j++) {
+          notification = [[UILocalNotification alloc] init];
+          notification.fireDate = [[upcomingSunset objectAtIndex:j] dateByAddingTimeInterval:([[sunsetNotificationsArray objectAtIndex:i] integerValue] * -60)];
+          notification.alertBody = [[self makeStringFromSeconds:((int) [[sunsetNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" of sunlight left."];
+          notification.soundName = UILocalNotificationDefaultSoundName;
+          if ([notification.fireDate timeIntervalSinceNow] > 0) {
+            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+            
+            NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+          }
+        }
       }
     }
   }

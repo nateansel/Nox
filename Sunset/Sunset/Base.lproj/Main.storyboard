@@ -268,14 +268,14 @@
         <scene sceneID="ecM-OL-5IQ">
             <objects>
                 <tableViewController id="XJg-AT-drm" customClass="NotificationsSettingsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="71e-6R-TWo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="71e-6R-TWo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="" footerTitle="Sunrise can send you a notification before the sunrise and sunset. Use these switches to turn notifications on or off." id="Jrh-N8-Xd4">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wkR-hQ-iBd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="wkR-hQ-iBd">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wkR-hQ-iBd" id="Ui2-LJ-v8G">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -302,7 +302,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8de-Uo-9ak">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="8de-Uo-9ak">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8de-Uo-9ak" id="gev-jV-pdx">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -446,6 +446,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="notificationCell0" destination="wkR-hQ-iBd" id="6Sg-Yr-ltV"/>
+                        <outlet property="notificationCell1" destination="8de-Uo-9ak" id="PGU-Kz-RnW"/>
                         <outlet property="sunriseNotificationCount" destination="RKX-pV-fuR" id="xIG-DH-iwe"/>
                         <outlet property="sunriseNotificationSetting" destination="rch-ht-brg" id="byd-TO-PmS"/>
                         <outlet property="sunsetNotificationCount" destination="EGr-rF-FhY" id="kdH-Nm-7GL"/>
