@@ -181,7 +181,8 @@
  * @return A string representation of those minutes
  */
 - (NSString *)makeStringFromMinuteInt: (int) minutes {
-  // If less than an hour, display minutes, otherwise display "1 hour" for 60 minutes and hour and minutes for everything else
+  // If less than an hour, display minutes, otherwise display "1 hour" for 60
+  //   minutes and hour and minutes for everything else
   if (minutes < 60) {
     return [NSString stringWithFormat:@"%d minutes", minutes];
   } else if (minutes == 60) {
@@ -209,7 +210,7 @@
 - (void)notificationChange {
   [[NSNotificationCenter defaultCenter] postNotificationName:@"setNotifications"
                                                       object:nil];
-  }
+}
 
 /*
 #pragma mark - Navigation

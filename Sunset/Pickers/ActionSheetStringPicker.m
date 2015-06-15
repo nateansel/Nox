@@ -32,6 +32,7 @@
 @property (nonatomic,assign) NSInteger selectedIndex0;
 @property (nonatomic,assign) NSInteger selectedIndex1;
 @property (nonatomic,assign) NSArray *duplicatesArrayToCheck;
+@property (nonatomic,assign) UIPickerView *picker;
 @end
 
 @implementation ActionSheetStringPicker
@@ -128,16 +129,16 @@
 
     //need to keep a reference to the picker so we can clear the DataSource / Delegate when dismissing
     self.pickerView = stringPicker;
+    self.picker = stringPicker;
 
     return stringPicker;
 }
 
 - (void)notifyTarget:(id)target didSucceedWithAction:(SEL)successAction origin:(id)origin {
     if (self.onActionSheetDone) {
-      if (self.selectedIndex0 == 0 && self.selectedIndex1 == 0) {
-        self.selectedIndex1 = 1;
-        self.pickerView;
-      }
+//      if (self.selectedIndex0 == 0 && self.selectedIndex1 == 0) {
+//        self.selectedIndex1 = 1;
+//      }
       id selectedObject0 = ([self.data[0] count] > 0) ? (self.data)[0][(NSUInteger) self.selectedIndex0] : nil;
       id selectedObject1 = ([self.data[1] count] > 0) ? (self.data)[1][(NSUInteger) self.selectedIndex1] : nil;
       _onActionSheetDone(self, selectedObject0, selectedObject1);
@@ -174,6 +175,11 @@
   } else {
     self.selectedIndex1 = row;
   }
+  
+  if (self.selectedIndex0 == 0 && self.selectedIndex1 == 0) {
+    self.selectedIndex1 = 1;
+    [self.picker selectRow:1 inComponent:1 animated:YES];
+  }
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -187,17 +193,17 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
   id obj = self.data[component][row];
 
-    // return the object if it is already a NSString,
-    // otherwise, return the description, just like the toString() method in Java
-    // else, return nil to prevent exception
+  // return the object if it is already a NSString,
+  // otherwise, return the description, just like the toString() method in Java
+  // else, return nil to prevent exception
 
-    if ([obj isKindOfClass:[NSString class]])
-        return obj;
+  if ([obj isKindOfClass:[NSString class]])
+      return obj;
 
-    if ([obj respondsToSelector:@selector(description)])
-        return [obj performSelector:@selector(description)];
+  if ([obj respondsToSelector:@selector(description)])
+      return [obj performSelector:@selector(description)];
 
-    return nil;
+  return nil;
 }
 
 //- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {

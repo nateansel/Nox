@@ -344,63 +344,79 @@
 }
 
 - (void)setNotificationsWithSeconds: (int) seconds andSunset: (BOOL) sunset andSunrise: (BOOL) sunrise {
-  UILocalNotification *notification;
-  int sunriseStartDate, sunsetStartDate;
+  [self setNotifications];
   
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
-  NSString *sunriseTestString = @"Sunrise -- ";
-  NSString *sunsetTestString = @"Sunset  -- ";
   
-  // Determines the first day on which a notification will be scheduled
-  // 0 = today
-  // 1 = tomorrow
-  if (![self hasSunRisenToday] && ([[self getTodaySunriseDate] timeIntervalSinceNow] > 3600)) {
-    sunriseStartDate = 0;
-  } else {
-    sunriseStartDate = 1;
-  }
-    
-  if (![self hasSunSetToday] && ([[self getTodaySunsetDate] timeIntervalSinceNow] > 3600)) {
-    sunsetStartDate = 0;
-  } else {
-    sunsetStartDate = 1;
-  }
-  
-  if (sunrise) {
-    for (int i = sunriseStartDate; i < 30; i++) {
-      notification = [[UILocalNotification alloc] init];
-      [calendar setWorkingDate:[[NSDate date] dateByAddingTimeInterval:(86400 * i)]];
-      notification.fireDate = [[calendar sunrise] dateByAddingTimeInterval:-seconds];
-      notification.alertBody = [[self makeStringFromSeconds:seconds] stringByAppendingString:@" until sunrise."];
-      notification.soundName = UILocalNotificationDefaultSoundName;
-      [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-      NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:[[calendar sunrise] dateByAddingTimeInterval:-seconds]]]);
-    }
-  }
-  
-  if (sunset) {
-    for (int j = sunsetStartDate; j < 30; j++) {
-      notification = [[UILocalNotification alloc] init];
-      [calendar setWorkingDate:[[NSDate date] dateByAddingTimeInterval:(86400 * j)]];
-      notification.fireDate = [[calendar sunset] dateByAddingTimeInterval:-seconds];
-      notification.alertBody = [[self makeStringFromSeconds:seconds] stringByAppendingString:@" of sunlight left."];
-      notification.soundName = UILocalNotificationDefaultSoundName;
-      [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-      NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:[[calendar sunset] dateByAddingTimeInterval:-seconds]]]);
-    }
-  }
+//  UILocalNotification *notification;
+//  int sunriseStartDate, sunsetStartDate;
+//  
+//  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//  [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
+//  NSString *sunriseTestString = @"Sunrise -- ";
+//  NSString *sunsetTestString = @"Sunset  -- ";
+//  
+//  // Determines the first day on which a notification will be scheduled
+//  // 0 = today
+//  // 1 = tomorrow
+//  if (![self hasSunRisenToday] && ([[self getTodaySunriseDate] timeIntervalSinceNow] > 3600)) {
+//    sunriseStartDate = 0;
+//  } else {
+//    sunriseStartDate = 1;
+//  }
+//    
+//  if (![self hasSunSetToday] && ([[self getTodaySunsetDate] timeIntervalSinceNow] > 3600)) {
+//    sunsetStartDate = 0;
+//  } else {
+//    sunsetStartDate = 1;
+//  }
+//  
+//  if (sunrise) {
+//    for (int i = sunriseStartDate; i < 30; i++) {
+//      notification = [[UILocalNotification alloc] init];
+//      [calendar setWorkingDate:[[NSDate date] dateByAddingTimeInterval:(86400 * i)]];
+//      notification.fireDate = [[calendar sunrise] dateByAddingTimeInterval:-seconds];
+//      notification.alertBody = [[self makeStringFromSeconds:seconds] stringByAppendingString:@" until sunrise."];
+//      notification.soundName = UILocalNotificationDefaultSoundName;
+//      [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+//      //NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:[[calendar sunrise] dateByAddingTimeInterval:-seconds]]]);
+//    }
+//  }
+//  
+//  if (sunset) {
+//    for (int j = sunsetStartDate; j < 30; j++) {
+//      notification = [[UILocalNotification alloc] init];
+//      [calendar setWorkingDate:[[NSDate date] dateByAddingTimeInterval:(86400 * j)]];
+//      notification.fireDate = [[calendar sunset] dateByAddingTimeInterval:-seconds];
+//      notification.alertBody = [[self makeStringFromSeconds:seconds] stringByAppendingString:@" of sunlight left."];
+//      notification.soundName = UILocalNotificationDefaultSoundName;
+//      [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+//      //NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:[[calendar sunset] dateByAddingTimeInterval:-seconds]]]);
+//    }
+//  }
 }
 
 - (NSString *)makeStringFromSeconds: (int) seconds {
   int minutes = seconds / 60;
+  int hours = minutes / 60;
+  minutes -= (hours * 60);
   
-  if (minutes < 60) {
+  if (hours == 0) {
     return [NSString stringWithFormat:@"%d minutes", minutes];
-  } else if (minutes == 60) {
-    return @"1 hour";
+  } else {
+    if (minutes == 0) {
+      if (hours == 1) {
+        return @"1 hour";
+      } else {
+        return [NSString stringWithFormat:@"%d hours", hours ];
+      }
+    } else {
+      if (hours == 1) {
+        return [NSString stringWithFormat:@"1 hour and %d minutes", minutes ];
+      } else {
+        return [NSString stringWithFormat:@"%d hours and %d minutes", hours, minutes ];
+      }
+    }
   }
-  return [NSString stringWithFormat:@"1 hour and %d minutes",(minutes - 60)];
 }
 
 - (NSDate *)getNextSunrise {
@@ -417,9 +433,16 @@
   return [self getTomorrowSunsetDate];
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Refreshes the values in myDefaults for upcomingSunrises and upcomingSunsets.
+ * @author Nate
+ *
+ */
 - (void)refreshUpcomingSunEvents {
-  NSMutableArray *upcomingSunrises;
-  NSMutableArray *upcomingSunsets;
+  NSMutableArray *upcomingSunrises = [[NSMutableArray alloc] init];
+  NSMutableArray *upcomingSunsets = [[NSMutableArray alloc] init];
   int startDate;
   
   if ([[self getTodaySunriseDate] timeIntervalSinceNow] > 0) {
@@ -442,9 +465,61 @@
     [upcomingSunsets addObject:[calendar sunset]];
   }
   
-  [myDefaults setObject:[NSArray arrayWithArray:upcomingSunrises] forKey:@"upcomingSunrises"];
+  [myDefaults setObject:upcomingSunrises forKey:@"upcomingSunrises"];
   [myDefaults setObject:[NSArray arrayWithArray:upcomingSunsets] forKey:@"upcomingSunsets"];
   [myDefaults synchronize];
+  NSLog(@"upcomingSunrises count: %lul",[[myDefaults objectForKey:@"upcomingSunrises"] count]);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Sets the notifications.
+ * @author Nate
+ *
+ */
+- (void)setNotifications {
+  UILocalNotification *notification;
+  NSArray *sunriseNotificationsArray = [myDefaults objectForKey:@"sunriseNotificationsArray"];
+  NSArray *sunsetNotificationsArray = [myDefaults objectForKey:@"sunsetNotificationsArray"];
+  NSArray *upcomingSunrise = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSArray *upcomingSunset = [myDefaults objectForKey:@"upcomingSunsets"];
+  int sunriseNotificationNum = (int) sunriseNotificationsArray.count;
+  int sunsetNotificationNum = (int) sunsetNotificationsArray.count;
+  int numNotificationsPerEvent = 60 / (sunriseNotificationNum + sunsetNotificationNum);
+  
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
+  NSString *sunriseTestString = @"Sunrise -- ";
+  NSString *sunsetTestString = @"Sunset  -- ";
+  
+  if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
+    for (int i = 0; i < sunriseNotificationsArray.count; i++) {
+      for (int j = 0; j < numNotificationsPerEvent; j++) {
+        notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [[upcomingSunrise objectAtIndex:j] dateByAddingTimeInterval:([[sunriseNotificationsArray objectAtIndex:i] integerValue] * -60)];
+        notification.alertBody = [[self makeStringFromSeconds:((int) [[sunriseNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" until sunrise."];
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        
+        NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+      }
+    }
+  }
+  
+  if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
+    for (int i = 0; i < sunsetNotificationsArray.count; i++) {
+      for (int j = 0; j < numNotificationsPerEvent; j++) {
+        notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [[upcomingSunset objectAtIndex:j] dateByAddingTimeInterval:([[sunsetNotificationsArray objectAtIndex:i] integerValue] * -60)];
+        notification.alertBody = [[self makeStringFromSeconds:((int) [[sunsetNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" of sunlight left."];
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        
+        NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+      }
+    }
+  }
 }
 
 @end

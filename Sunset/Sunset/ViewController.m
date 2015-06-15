@@ -49,6 +49,8 @@
   // synchronize the settings
   [myDefaults synchronize];
   
+  [sunEventObject refreshUpcomingSunEvents];
+  
   ViewController *viewController = self;
   if (!(viewController.isViewLoaded && viewController.view.window)) {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
@@ -118,6 +120,7 @@
 }
 
 - (void)setNotifications {
+  NSLog(@"Set Notifications");
   [sunEventObject setNotificationsWithSeconds: (int) (60 * [myDefaults doubleForKey:@"notificationTimeCustomization"])
                                     andSunset: [myDefaults boolForKey:@"sunsetNotificationSetting"]
                                    andSunrise: [myDefaults boolForKey:@"sunriseNotificationSetting"]];

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NotificationsSettingsTableViewController : UITableViewController {
-  IBOutlet UISwitch *sunsetNotificationsSwitch;
-  IBOutlet UISwitch *sunriseNotificationsSwitch;
+  IBOutlet UISwitch *sunriseNotificationSetting;
+  IBOutlet UISwitch *sunsetNotificationSetting;
   IBOutlet UILabel *sunriseNotificationCount;
   IBOutlet UILabel *sunsetNotificationCount;
   
@@ -18,7 +18,12 @@
   NSTimer *statusBarTimer;
 }
 
+- (IBAction)changeSunriseNotificationSetting:(id)sender;
+- (IBAction)changeSunsetNotificationSetting:(id)sender;
 - (IBAction)dismissSettingsView:(id)sender;
 - (void)changeStatusBarColor;
+- (void)checkNotifications;
+- (BOOL)notificationsEnabled;
+- (void)notificationChange;
 
 @end

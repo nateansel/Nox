@@ -170,7 +170,7 @@
   
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setDateFormat:@"h:mm a"];
-  NSDate *nextSunrise = [[[myDefaults objectForKey:@"upcomingSunrises"] objectAtIndex:0] dateByAddingTimeInterval:(minutes * -60)];
+  NSDate *nextSunrise = [[[myDefaults objectForKey:@"upcomingSunrises"] objectAtIndex:0] dateByAddingTimeInterval:((minutes + hours * 60) * -60)];
   cell.detailTextLabel.text = [dateFormatter stringFromDate:nextSunrise];
   
   return cell;

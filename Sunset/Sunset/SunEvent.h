@@ -49,6 +49,7 @@
 - (NSDate *)getNextSunrise;
 - (NSDate *)getNextSunset;
 - (void)refreshUpcomingSunEvents;
+- (void)setNotifications;
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 
