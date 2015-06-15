@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +28,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aph-zF-CVU">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aph-zF-CVU">
                                 <rect key="frame" x="272" y="562" width="57" height="30"/>
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,6 +59,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSo-yA-9oW">
+                                <rect key="frame" x="269" y="550" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iZj-KJ-ucf"/>
+                                    <constraint firstAttribute="width" secondItem="HSo-yA-9oW" secondAttribute="height" multiplier="31:15" id="qqn-zc-w2O"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="sun"/>
+                                <connections>
+                                    <segue destination="7nm-ES-7Gx" kind="show" id="nOM-87-A0I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92315423488616943" green="0.49462920427322388" blue="0.021579567342996597" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -71,6 +83,8 @@
                             <constraint firstItem="T4h-pk-06P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="L9K-zH-5KK"/>
                             <constraint firstAttribute="centerX" secondItem="T4h-pk-06P" secondAttribute="centerX" id="MB8-Yc-Jzx"/>
                             <constraint firstItem="uq7-2P-jnL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MlY-qM-BUH"/>
+                            <constraint firstAttribute="bottom" secondItem="HSo-yA-9oW" secondAttribute="bottom" constant="20" symbolic="YES" id="Yvc-vs-J5a"/>
+                            <constraint firstAttribute="centerX" secondItem="HSo-yA-9oW" secondAttribute="centerX" id="a0M-1k-hY8"/>
                             <constraint firstItem="Dfx-TC-eTy" firstAttribute="top" secondItem="uq7-2P-jnL" secondAttribute="bottom" constant="56" id="dOG-k5-V4e"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aph-zF-CVU" secondAttribute="bottom" constant="8" symbolic="YES" id="dgu-Qe-fHW"/>
                             <constraint firstItem="ybK-N2-xde" firstAttribute="top" secondItem="Dfx-TC-eTy" secondAttribute="bottom" constant="-291" id="du5-4l-Yda"/>
@@ -1039,5 +1053,9 @@
     </scenes>
     <resources>
         <image name="owl" width="140" height="140"/>
+        <image name="sun" width="62" height="31"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rJL-9N-bNd"/>
+    </inferredMetricsTieBreakers>
 </document>
