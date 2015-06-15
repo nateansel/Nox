@@ -783,18 +783,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIy-1i-8SR">
-                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="leading" secondItem="Xgg-qY-l3A" secondAttribute="leadingMargin" id="EWC-Dv-tyt"/>
-                            <constraint firstItem="j9B-ve-k26" firstAttribute="top" secondItem="ZIy-1i-8SR" secondAttribute="bottom" id="Yrr-6Z-4gA"/>
-                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="trailing" secondItem="Xgg-qY-l3A" secondAttribute="trailingMargin" id="fyG-vz-yQJ"/>
-                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="top" secondItem="Mq4-pT-Lfk" secondAttribute="bottom" id="h50-iv-d0n"/>
+                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="bottom" secondItem="j9B-ve-k26" secondAttribute="top" id="3In-Hm-bbW"/>
+                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="top" secondItem="Mq4-pT-Lfk" secondAttribute="bottom" id="Atr-6P-qib"/>
+                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="leading" secondItem="Xgg-qY-l3A" secondAttribute="leading" id="Ckf-rV-Q0z"/>
+                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="top" secondItem="Mq4-pT-Lfk" secondAttribute="bottom" id="DIB-Bv-FYW"/>
+                            <constraint firstItem="j9B-ve-k26" firstAttribute="top" secondItem="ZIy-1i-8SR" secondAttribute="bottom" id="DZc-D9-s4n"/>
+                            <constraint firstAttribute="trailing" secondItem="ZIy-1i-8SR" secondAttribute="trailing" id="E1U-Px-rWq"/>
+                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="top" secondItem="Mq4-pT-Lfk" secondAttribute="bottom" constant="-65" id="HSJ-gS-vZ1"/>
+                            <constraint firstItem="ZIy-1i-8SR" firstAttribute="leading" secondItem="Xgg-qY-l3A" secondAttribute="leading" id="KuZ-60-uLz"/>
+                            <constraint firstAttribute="trailing" secondItem="ZIy-1i-8SR" secondAttribute="trailing" id="Lei-5F-Aqw"/>
+                            <constraint firstItem="j9B-ve-k26" firstAttribute="top" secondItem="ZIy-1i-8SR" secondAttribute="bottom" id="NCo-Nf-ipk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3In-Hm-bbW"/>
+                                <exclude reference="Atr-6P-qib"/>
+                                <exclude reference="Ckf-rV-Q0z"/>
+                                <exclude reference="DIB-Bv-FYW"/>
+                                <exclude reference="Lei-5F-Aqw"/>
+                                <exclude reference="DZc-D9-s4n"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Attributions" id="bTw-jd-dq7">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-16"/>
