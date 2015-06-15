@@ -17,6 +17,7 @@
 		2E3C723F1B0254CB003FD3F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E3C723D1B0254CB003FD3F0 /* LaunchScreen.xib */; };
 		2E3C724B1B0254CB003FD3F0 /* SunsetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C724A1B0254CB003FD3F0 /* SunsetTests.m */; };
 		2E3C72551B026263003FD3F0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3C72541B026263003FD3F0 /* CoreLocation.framework */; };
+		2E60D12B1B2E557800C16E5C /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E60D12A1B2E557800C16E5C /* CreditsViewController.m */; };
 		2E72CC7F1B03FDBB0082F991 /* NSCalendar+Components.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72CC2F1B03FDBA0082F991 /* NSCalendar+Components.m */; };
 		2E72CC801B03FDBB0082F991 /* NSCalendar+DateComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72CC311B03FDBA0082F991 /* NSCalendar+DateComparison.m */; };
 		2E72CC811B03FDBB0082F991 /* NSCalendar+DateManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E72CC331B03FDBA0082F991 /* NSCalendar+DateManipulation.m */; };
@@ -113,6 +114,8 @@
 		2E3C72491B0254CB003FD3F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E3C724A1B0254CB003FD3F0 /* SunsetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SunsetTests.m; sourceTree = "<group>"; };
 		2E3C72541B026263003FD3F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2E60D1291B2E557800C16E5C /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
+		2E60D12A1B2E557800C16E5C /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		2E72CC2C1B03FDBA0082F991 /* MBCalendarCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCalendarCategories.h; sourceTree = "<group>"; };
 		2E72CC2E1B03FDBA0082F991 /* NSCalendar+Components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+Components.h"; sourceTree = "<group>"; };
 		2E72CC2F1B03FDBA0082F991 /* NSCalendar+Components.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+Components.m"; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				2E36CCAE1B05304900B55335 /* BackgroundLayer.h */,
 				2E36CCAF1B05304900B55335 /* BackgroundLayer.m */,
 				2E3C72381B0254CB003FD3F0 /* Main.storyboard */,
+				2E60D1291B2E557800C16E5C /* CreditsViewController.h */,
+				2E60D12A1B2E557800C16E5C /* CreditsViewController.m */,
 				2EA5CFBB1B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.h */,
 				2EA5CFBC1B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.m */,
 				2EA5CFBD1B2DD68B00C43FE6 /* SunriseNotificationsTableViewController.h */,
@@ -1023,6 +1028,7 @@
 				2E72CC821B03FDBB0082F991 /* NSCalendar+hebrewYearTypes.m in Sources */,
 				2EA5CFC11B2DD68B00C43FE6 /* NotificationsSettingsTableViewController.m in Sources */,
 				2E72CC8C1B03FDBB0082F991 /* KCDaf.m in Sources */,
+				2E60D12B1B2E557800C16E5C /* CreditsViewController.m in Sources */,
 				2E72CC991B03FDBB0082F991 /* trigonometry.c in Sources */,
 				2EA5CFC31B2DD68B00C43FE6 /* SunsetNotificationsTableViewController.m in Sources */,
 				2E72CC7F1B03FDBB0082F991 /* NSCalendar+Components.m in Sources */,
