@@ -16,8 +16,12 @@
   [self.view.layer insertSublayer:blackGradient atIndex:0];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [[UIApplication sharedApplication] setStatusBarHidden:YES];
+- (void)viewWillAppear:(BOOL)animated {
+  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
 
 - (IBAction)dismissCreditsView:(id)sender {

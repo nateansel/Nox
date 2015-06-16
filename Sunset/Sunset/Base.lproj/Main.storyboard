@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -483,7 +483,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl" translatesAutoresizingMaskIntoConstraints="NO" id="SLS-ku-1LB">
-                                <rect key="frame" x="230" y="39" width="140" height="140"/>
+                                <rect key="frame" x="230" y="45" width="140" height="140"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="WBI-67-IVZ"/>
@@ -491,7 +491,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Cosmic Owl Production" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXx-Ja-P9P">
-                                <rect key="frame" x="144" y="194" width="312" height="21"/>
+                                <rect key="frame" x="144" y="200" width="312" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="U1h-3g-hnf"/>
@@ -502,7 +502,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anC-V8-HV9">
-                                <rect key="frame" x="224" y="223" width="152" height="16"/>
+                                <rect key="frame" x="224" y="229" width="152" height="16"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="5lP-Cv-Zlh"/>
@@ -534,7 +534,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brought to you by your friendly neighborhood developers:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlL-k7-D6v">
-                                <rect key="frame" x="172" y="261" width="257" height="52"/>
+                                <rect key="frame" x="172" y="274" width="257" height="52"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="L30-01-LTQ"/>
@@ -545,7 +545,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaF-nQ-PIH">
-                                <rect key="frame" x="247" y="347" width="107" height="13"/>
+                                <rect key="frame" x="247" y="360" width="107" height="13"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="VP9-tU-aBR"/>
@@ -559,8 +559,30 @@
                                     <action selector="chaseTwitter:" destination="xny-1j-OfV" eventType="touchUpInside" id="NzX-fT-f0p"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chase McCoy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQA-1A-zgj">
+                                <rect key="frame" x="226" y="334" width="149" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="Qgt-nB-15h"/>
+                                    <constraint firstAttribute="height" constant="24" id="xKE-FC-ie2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nathan Ansel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-CW-6oA">
+                                <rect key="frame" x="225" y="398" width="149" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="Hbh-VV-uiq"/>
+                                    <constraint firstAttribute="height" constant="24" id="LPD-3s-N0a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k08-py-U3h">
-                                <rect key="frame" x="257" y="411" width="85" height="13"/>
+                                <rect key="frame" x="257" y="424" width="85" height="13"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="7y0-C0-7Rn"/>
@@ -574,28 +596,6 @@
                                     <action selector="nathanTwitter:" destination="xny-1j-OfV" eventType="touchUpInside" id="KYR-OE-JZ3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chase McCoy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQA-1A-zgj">
-                                <rect key="frame" x="226" y="321" width="149" height="24"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="Qgt-nB-15h"/>
-                                    <constraint firstAttribute="height" constant="24" id="xKE-FC-ie2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nathan Ansel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-CW-6oA">
-                                <rect key="frame" x="225" y="385" width="149" height="24"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="Hbh-VV-uiq"/>
-                                    <constraint firstAttribute="height" constant="24" id="LPD-3s-N0a"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -609,15 +609,23 @@
                             <constraint firstAttribute="centerX" secondItem="SLS-ku-1LB" secondAttribute="centerX" id="NcZ-a4-56y"/>
                             <constraint firstItem="k08-py-U3h" firstAttribute="top" secondItem="c7A-CW-6oA" secondAttribute="bottom" constant="2" id="UBJ-BC-oSd"/>
                             <constraint firstAttribute="centerX" secondItem="k08-py-U3h" secondAttribute="centerX" id="Vzr-4s-Ift"/>
+                            <constraint firstItem="xAP-Me-VxR" firstAttribute="top" secondItem="k08-py-U3h" secondAttribute="top" constant="115" id="WB4-fI-Ka7"/>
                             <constraint firstAttribute="bottom" secondItem="xAP-Me-VxR" secondAttribute="bottom" constant="20" symbolic="YES" id="jR9-7v-Bwq"/>
                             <constraint firstItem="xXx-Ja-P9P" firstAttribute="top" secondItem="SLS-ku-1LB" secondAttribute="bottom" constant="15" id="k5X-25-7Sc"/>
-                            <constraint firstItem="SLS-ku-1LB" firstAttribute="top" secondItem="jry-6a-Z5X" secondAttribute="bottom" constant="19" id="lgb-yp-zlS"/>
+                            <constraint firstItem="SLS-ku-1LB" firstAttribute="top" secondItem="jry-6a-Z5X" secondAttribute="bottom" constant="25" id="lgb-yp-zlS"/>
                             <constraint firstAttribute="centerX" secondItem="yaF-nQ-PIH" secondAttribute="centerX" id="nfT-Qe-024"/>
                             <constraint firstAttribute="centerX" secondItem="anC-V8-HV9" secondAttribute="centerX" id="o1A-v4-iiF"/>
                             <constraint firstItem="yaF-nQ-PIH" firstAttribute="top" secondItem="tQA-1A-zgj" secondAttribute="bottom" constant="2" id="odj-tO-cab"/>
+                            <constraint firstItem="xAP-Me-VxR" firstAttribute="top" secondItem="k08-py-U3h" secondAttribute="bottom" constant="102" id="paY-z7-KLs"/>
                             <constraint firstAttribute="centerX" secondItem="xAP-Me-VxR" secondAttribute="centerX" id="qdP-5z-vFC"/>
-                            <constraint firstItem="hlL-k7-D6v" firstAttribute="top" secondItem="anC-V8-HV9" secondAttribute="bottom" constant="22" id="zpO-GR-RxF"/>
+                            <constraint firstItem="hlL-k7-D6v" firstAttribute="top" secondItem="anC-V8-HV9" secondAttribute="bottom" constant="29" id="zpO-GR-RxF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WB4-fI-Ka7"/>
+                                <exclude reference="paY-z7-KLs"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mainView" destination="Puz-SX-5sk" id="rmJ-FN-GG5"/>
