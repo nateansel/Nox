@@ -153,7 +153,7 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.accessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 19, 1)];
     cell.editingAccessoryType = UITableViewCellAccessoryDetailButton;
   }
   

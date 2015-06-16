@@ -142,48 +142,53 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
   // #warning Potentially incomplete method implementation.
   // Return the number of sections.
-  return 1;
+  return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   // #warning Incomplete method implementation.
   // Return the number of rows in the section.
-  return [tableData count];
+  if (section == 1) {
+    return [tableData count];
+  }
+  return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"Cell";
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  if (cell == nil) {
-    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.editingAccessoryType = UITableViewCellAccessoryDetailButton;
-  }
-  
-  NSString *minuteString;
-  int minutes = (int) [[tableData objectAtIndex:indexPath.row] integerValue];
-  int hours = minutes / 60;
-  if (hours > 0) {
-    minutes = minutes - (60 * hours);
-    if (minutes > 0) {
-      minuteString = [NSString stringWithFormat:@" %d minutes",minutes];
-    } else {
-      minuteString = @"";
+  if (indexPath.section == 1) {
+    if (cell == nil) {
+      cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+      cell.accessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 19, 1)];
+      cell.editingAccessoryType = UITableViewCellAccessoryDetailButton;
     }
-    if (hours == 1) {
-      cell.textLabel.text = [NSString stringWithFormat:@"%d hour%@", hours, minuteString];
+    
+    NSString *minuteString;
+    int minutes = (int) [[tableData objectAtIndex:indexPath.row] integerValue];
+    int hours = minutes / 60;
+    if (hours > 0) {
+      minutes = minutes - (60 * hours);
+      if (minutes > 0) {
+        minuteString = [NSString stringWithFormat:@" %d minutes",minutes];
+      } else {
+        minuteString = @"";
+      }
+      if (hours == 1) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%d hour%@", hours, minuteString];
+      } else {
+        cell.textLabel.text = [NSString stringWithFormat:@"%d hours%@", hours, minuteString];
+      }
     } else {
-      cell.textLabel.text = [NSString stringWithFormat:@"%d hours%@", hours, minuteString];
+      cell.textLabel.text = [NSString stringWithFormat:@"%d minutes", minutes];
     }
-  } else {
-    cell.textLabel.text = [NSString stringWithFormat:@"%d minutes", minutes];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"h:mm a"];
+    NSDate *nextSunrise = [[[myDefaults objectForKey:@"upcomingSunrises"] objectAtIndex:0] dateByAddingTimeInterval:((minutes + hours * 60) * -60)];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:nextSunrise];
   }
-  
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:@"h:mm a"];
-  NSDate *nextSunrise = [[[myDefaults objectForKey:@"upcomingSunrises"] objectAtIndex:0] dateByAddingTimeInterval:((minutes + hours * 60) * -60)];
-  cell.detailTextLabel.text = [dateFormatter stringFromDate:nextSunrise];
   
   return cell;
 }

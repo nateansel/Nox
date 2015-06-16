@@ -163,10 +163,6 @@
     sunsetNotificationCount.textColor = [UIColor grayColor];
   }
   
-  // set the switch cell types to not highlight when selected
-  notificationCell0.selectionStyle = UITableViewCellSelectionStyleNone;
-  notificationCell1.selectionStyle = UITableViewCellSelectionStyleNone;
-  
   statusBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeStatusBarColor) userInfo:nil repeats:YES];
 }
 
