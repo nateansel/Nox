@@ -213,6 +213,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     // Delete the row from the data source
     [tableData removeObjectAtIndex:indexPath.row];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [myDefaults setObject:tableData forKey:@"sunsetNotificationsArray"];
+    [myDefaults synchronize];
   } else if (editingStyle == UITableViewCellEditingStyleInsert) {
     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
