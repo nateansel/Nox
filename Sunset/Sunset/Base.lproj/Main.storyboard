@@ -449,9 +449,6 @@
                     <navigationItem key="navigationItem" title="Settings" id="ceh-Zg-kEr">
                         <barButtonItem key="leftBarButtonItem" title="Secret" id="3ln-pd-Fdg">
                             <color key="tintColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="iVN-Lq-SjV" kind="show" id="6up-hz-xeW"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="pXu-Fb-4WJ">
                             <connections>
