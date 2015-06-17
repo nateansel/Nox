@@ -11,6 +11,7 @@
 @interface SunsetNotificationsViewController : UIViewController {
   NSUserDefaults *myDefaults;
   NSMutableArray *data;
+  UIColor *customBlueColor;
 }
 
 - (IBAction)buttonClicked:(id)sender;

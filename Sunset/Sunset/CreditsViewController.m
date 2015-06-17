@@ -11,6 +11,8 @@
 @implementation CreditsViewController
 
 - (void)viewDidLoad {
+  [super viewDidLoad];
+  
   blackGradient = [BackgroundLayer blackGradient];
   blackGradient.frame = self.view.bounds;
   [self.view.layer insertSublayer:blackGradient atIndex:0];

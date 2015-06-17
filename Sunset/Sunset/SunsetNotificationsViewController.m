@@ -34,22 +34,29 @@
   
   for (int i = 1; i < 13; i++) {
     UIButton *currentButton = (UIButton *) [self.view viewWithTag:i];
+    
+    customBlueColor = [UIColor colorWithRed:0.167 green:0.623 blue:0.969 alpha:1];
+    currentButton.layer.cornerRadius = 10;
+    [currentButton.layer setBorderWidth:3.0f];
+    [currentButton.layer setBorderColor:customBlueColor.CGColor];
+    
     [currentButton setSelected:[[data objectAtIndex:i] boolValue]];
     [currentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [currentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [currentButton setBackgroundColor:([[data objectAtIndex:i] boolValue]) ? [UIColor grayColor] : [UIColor lightGrayColor]];
+    [currentButton setTitleColor:customBlueColor forState:UIControlStateNormal];
+    [currentButton setBackgroundColor:([[data objectAtIndex:i] boolValue]) ? customBlueColor : [UIColor whiteColor]];
   }
+  
 }
 
 - (IBAction)buttonClicked:(id)sender {
   if ([sender isSelected]) {
     [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:0]];
     [sender setSelected:NO];
-    [sender setBackgroundColor:[UIColor lightGrayColor]];
+    [sender setBackgroundColor:[UIColor whiteColor]];
   } else {
     [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:1]];
     [sender setSelected:YES];
-    [sender setBackgroundColor:[UIColor grayColor]];
+    [sender setBackgroundColor:customBlueColor];
   }
   
   [myDefaults setObject:data forKey:@"newSunsetNotificationsArray"];
