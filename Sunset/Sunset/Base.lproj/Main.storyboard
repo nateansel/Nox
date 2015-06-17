@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -397,7 +397,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dAF-Id-R9N" kind="show" id="uSc-K7-ugl"/>
+                                            <segue destination="3N5-tv-nZy" kind="show" id="bF0-La-KDn"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -630,14 +630,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPB-cb-MaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="1720"/>
+            <point key="canvasLocation" x="1109" y="1864"/>
         </scene>
         <!--Sunrise Notifications-->
         <scene sceneID="XdE-pV-Cvu">
             <objects>
                 <tableViewController id="S2q-Df-Joe" customClass="SunriseNotificationsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Qt-sA-A6M">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -667,11 +667,275 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sunrise Notifications" id="BX0-j4-Cew"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdi-Oy-XI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="517"/>
+            <point key="canvasLocation" x="1967" y="260"/>
+        </scene>
+        <!--Sunset Notifications-->
+        <scene sceneID="j7D-Sx-wXs">
+            <objects>
+                <viewController id="3N5-tv-nZy" customClass="SunsetNotificationsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qu4-IX-nNu"/>
+                        <viewControllerLayoutGuide type="bottom" id="jsx-fy-ThU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JUd-x0-Mjw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-Wb-2Lu">
+                                <rect key="frame" x="208" y="72" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="30 min">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="tCe-B8-OFO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Rk6-zm-SyQ">
+                                <rect key="frame" x="400" y="72" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="45 min">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="Y2j-Xa-b4R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MWl-FO-PCE">
+                                <rect key="frame" x="16" y="204" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="1 hour">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="t8o-oG-j8z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wW3-A2-33p">
+                                <rect key="frame" x="208" y="204" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <string key="title">1 hour
+15 min</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="Lfm-Up-mhe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4qb-9l-mms">
+                                <rect key="frame" x="400" y="204" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <string key="title">1 hour
+30 min</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="1p1-TR-2Do"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-kl-Rw0">
+                                <rect key="frame" x="16" y="336" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <string key="title">1 hour
+45 min</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="FXZ-Ph-gfY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-lf-ZSz">
+                                <rect key="frame" x="208" y="336" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="2 hours">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="Wlg-4p-KPU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9WY-Sj-GNM">
+                                <rect key="frame" x="400" y="336" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <string key="title">2 hours
+15 min</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="f2z-Mu-6Ju"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="S17-0i-LbF">
+                                <rect key="frame" x="16" y="468" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <string key="title">2 hours
+30 min</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="Fw2-TN-5VR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Xpq-cK-nYx">
+                                <rect key="frame" x="208" y="468" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <string key="title">2 hours
+45 min</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="JFc-yg-jcO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-Hf-kF8">
+                                <rect key="frame" x="400" y="468" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="3 hours">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="BzX-5e-yVb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XfB-ly-poR">
+                                <rect key="frame" x="16" y="72" width="184" height="124"/>
+                                <color key="backgroundColor" red="0.81881313131313127" green="0.81881313131313127" blue="0.81881313131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="15 min">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3N5-tv-nZy" eventType="touchUpInside" id="LmL-5m-r7o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9WY-Sj-GNM" firstAttribute="top" secondItem="4qb-9l-mms" secondAttribute="bottom" constant="8" id="2fT-Sk-A4C"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="XfB-ly-poR" secondAttribute="height" id="6Og-CN-hG2"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="4qb-9l-mms" secondAttribute="width" id="8o2-9n-D0C"/>
+                            <constraint firstItem="ieh-Wb-2Lu" firstAttribute="leading" secondItem="XfB-ly-poR" secondAttribute="trailing" constant="8" id="8rj-kE-zFs"/>
+                            <constraint firstItem="Rk6-zm-SyQ" firstAttribute="top" secondItem="Qu4-IX-nNu" secondAttribute="bottom" constant="8" id="8uY-II-Cii"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="tn8-Hf-kF8" secondAttribute="width" id="8vo-XL-fTY"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="Pw4-lf-ZSz" secondAttribute="width" id="99h-mX-ZZE"/>
+                            <constraint firstItem="ieh-Wb-2Lu" firstAttribute="top" secondItem="Qu4-IX-nNu" secondAttribute="bottom" constant="8" id="9Jm-SP-POu"/>
+                            <constraint firstItem="Xpq-cK-nYx" firstAttribute="top" secondItem="Pw4-lf-ZSz" secondAttribute="bottom" constant="8" id="C8v-a7-8mu"/>
+                            <constraint firstItem="9WY-Sj-GNM" firstAttribute="trailing" secondItem="JUd-x0-Mjw" secondAttribute="trailingMargin" id="CRH-hd-kqE"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="Rk6-zm-SyQ" secondAttribute="height" id="CRQ-J8-r1B"/>
+                            <constraint firstItem="jsx-fy-ThU" firstAttribute="top" secondItem="Xpq-cK-nYx" secondAttribute="bottom" constant="8" id="Dvp-ft-V5m"/>
+                            <constraint firstAttribute="centerX" secondItem="ieh-Wb-2Lu" secondAttribute="centerX" id="EQY-1w-8p5"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="leading" secondItem="JUd-x0-Mjw" secondAttribute="leadingMargin" id="GZH-Sj-ovM"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="MWl-FO-PCE" secondAttribute="height" id="ITS-cg-Qa8"/>
+                            <constraint firstItem="Xpq-cK-nYx" firstAttribute="leading" secondItem="S17-0i-LbF" secondAttribute="trailing" constant="8" id="JYV-pv-2At"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="XfB-ly-poR" secondAttribute="width" id="LSl-cE-2Lw"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="4qb-9l-mms" secondAttribute="height" id="LWF-9a-GNg"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="wW3-A2-33p" secondAttribute="width" id="MHw-80-l7W"/>
+                            <constraint firstItem="tn8-Hf-kF8" firstAttribute="leading" secondItem="Xpq-cK-nYx" secondAttribute="trailing" constant="8" id="OOd-h8-9Tn"/>
+                            <constraint firstItem="wW3-A2-33p" firstAttribute="top" secondItem="ieh-Wb-2Lu" secondAttribute="bottom" constant="8" id="PvN-Ch-gwl"/>
+                            <constraint firstItem="jsx-fy-ThU" firstAttribute="top" secondItem="tn8-Hf-kF8" secondAttribute="bottom" constant="8" id="SXn-Y8-H3P"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="wW3-A2-33p" secondAttribute="height" id="Sqg-BO-KXs"/>
+                            <constraint firstItem="XfB-ly-poR" firstAttribute="top" secondItem="Qu4-IX-nNu" secondAttribute="bottom" constant="8" id="TbX-ox-PvC"/>
+                            <constraint firstItem="MWl-FO-PCE" firstAttribute="top" secondItem="XfB-ly-poR" secondAttribute="bottom" constant="8" id="V02-Ob-Ka2"/>
+                            <constraint firstAttribute="centerX" secondItem="Pw4-lf-ZSz" secondAttribute="centerX" id="Vho-8v-fF6"/>
+                            <constraint firstItem="Rk6-zm-SyQ" firstAttribute="trailing" secondItem="JUd-x0-Mjw" secondAttribute="trailingMargin" id="W44-g0-cIy"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="RTj-kl-Rw0" secondAttribute="height" id="YAc-Vt-K7K"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="Rk6-zm-SyQ" secondAttribute="width" id="Z49-XL-xmI"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="top" secondItem="RTj-kl-Rw0" secondAttribute="bottom" constant="8" id="aDl-aB-dir"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="Xpq-cK-nYx" secondAttribute="height" id="aZW-wT-Xoc"/>
+                            <constraint firstItem="Rk6-zm-SyQ" firstAttribute="leading" secondItem="ieh-Wb-2Lu" secondAttribute="trailing" constant="8" id="eLr-CI-vQF"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="RTj-kl-Rw0" secondAttribute="width" id="fOn-t2-zxX"/>
+                            <constraint firstAttribute="centerX" secondItem="wW3-A2-33p" secondAttribute="centerX" id="gYy-tN-uCR"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="tn8-Hf-kF8" secondAttribute="height" id="huH-I3-GjO"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="MWl-FO-PCE" secondAttribute="width" id="iXK-cL-aiG"/>
+                            <constraint firstItem="MWl-FO-PCE" firstAttribute="leading" secondItem="JUd-x0-Mjw" secondAttribute="leadingMargin" id="jNh-1g-usB"/>
+                            <constraint firstItem="Pw4-lf-ZSz" firstAttribute="leading" secondItem="RTj-kl-Rw0" secondAttribute="trailing" constant="8" id="jeW-RY-ZbF"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="ieh-Wb-2Lu" secondAttribute="width" id="jee-9I-gRz"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="9WY-Sj-GNM" secondAttribute="height" id="lzD-tj-rkx"/>
+                            <constraint firstItem="tn8-Hf-kF8" firstAttribute="top" secondItem="9WY-Sj-GNM" secondAttribute="bottom" constant="8" id="mNa-b2-sD6"/>
+                            <constraint firstAttribute="centerX" secondItem="Xpq-cK-nYx" secondAttribute="centerX" id="mZu-sw-Dwt"/>
+                            <constraint firstItem="4qb-9l-mms" firstAttribute="trailing" secondItem="JUd-x0-Mjw" secondAttribute="trailingMargin" id="mzb-yx-UyN"/>
+                            <constraint firstItem="9WY-Sj-GNM" firstAttribute="leading" secondItem="Pw4-lf-ZSz" secondAttribute="trailing" constant="8" id="nLL-FP-Y1D"/>
+                            <constraint firstItem="4qb-9l-mms" firstAttribute="leading" secondItem="wW3-A2-33p" secondAttribute="trailing" constant="8" id="nqt-Tx-j2V"/>
+                            <constraint firstItem="jsx-fy-ThU" firstAttribute="top" secondItem="S17-0i-LbF" secondAttribute="bottom" constant="8" id="oPf-Nc-dsK"/>
+                            <constraint firstItem="wW3-A2-33p" firstAttribute="leading" secondItem="MWl-FO-PCE" secondAttribute="trailing" constant="8" id="ozB-2p-hYW"/>
+                            <constraint firstItem="4qb-9l-mms" firstAttribute="top" secondItem="Rk6-zm-SyQ" secondAttribute="bottom" constant="8" id="pKj-uA-Kgj"/>
+                            <constraint firstItem="RTj-kl-Rw0" firstAttribute="top" secondItem="MWl-FO-PCE" secondAttribute="bottom" constant="8" id="pQF-0K-IEL"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="ieh-Wb-2Lu" secondAttribute="height" id="qPQ-EK-7Ob"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="Xpq-cK-nYx" secondAttribute="width" id="rc0-H5-DR2"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="height" secondItem="Pw4-lf-ZSz" secondAttribute="height" id="sr8-aZ-VqM"/>
+                            <constraint firstItem="Pw4-lf-ZSz" firstAttribute="top" secondItem="wW3-A2-33p" secondAttribute="bottom" constant="8" id="w0P-1C-uDc"/>
+                            <constraint firstItem="tn8-Hf-kF8" firstAttribute="trailing" secondItem="JUd-x0-Mjw" secondAttribute="trailingMargin" id="wMM-zA-6hV"/>
+                            <constraint firstItem="RTj-kl-Rw0" firstAttribute="leading" secondItem="JUd-x0-Mjw" secondAttribute="leadingMargin" id="x11-5f-SNq"/>
+                            <constraint firstItem="XfB-ly-poR" firstAttribute="leading" secondItem="JUd-x0-Mjw" secondAttribute="leadingMargin" id="x6g-5m-vwq"/>
+                            <constraint firstItem="S17-0i-LbF" firstAttribute="width" secondItem="9WY-Sj-GNM" secondAttribute="width" id="zgK-IR-1d3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sunset Notifications" id="cAp-Yg-4Mg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WiO-w6-AdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1967" y="990"/>
+        </scene>
+        <!--Sunset Notifications-->
+        <scene sceneID="HVP-rv-6gM">
+            <objects>
+                <collectionViewController id="Xum-Gb-Hd6" customClass="SunsetNotificationsCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="0Ch-fQ-2TB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0p8-Ag-3Gv">
+                            <size key="itemSize" width="150" height="110"/>
+                            <size key="headerReferenceSize" width="0.0" height="10"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SJ5-IP-ih0">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="198" height="110"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="customSize" width="198" height="110"/>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xiF-ah-Gb1">
+                            <rect key="frame" x="0.0" y="64" width="600" height="1"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="Xum-Gb-Hd6" id="Aew-kS-KC7"/>
+                            <outlet property="delegate" destination="Xum-Gb-Hd6" id="aBc-Lw-0OW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Sunset Notifications" id="dbM-eS-x5g"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVS-sr-pGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2655" y="-188"/>
         </scene>
         <!--Sunset Notifications-->
         <scene sceneID="02F-xe-r8f">
@@ -752,7 +1016,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMY-av-CvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779" y="1720"/>
+            <point key="canvasLocation" x="1785" y="1864"/>
         </scene>
         <!--Credits-->
         <scene sceneID="yzv-cX-kct">

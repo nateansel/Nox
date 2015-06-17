@@ -64,6 +64,8 @@
 		2EE61F9C1B0430BE002FC960 /* Sunset Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2EE61F8E1B0430BE002FC960 /* Sunset Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D820909D1B0674DA00E0C359 /* SunEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D820909C1B0674DA00E0C359 /* SunEvent.m */; };
 		D831F2681B0BC0A300992ACA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D831F2661B0BC0A300992ACA /* SettingsViewController.m */; };
+		D8A3EF971B31E0A5009738AD /* SunsetNotificationsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3EF961B31E0A5009738AD /* SunsetNotificationsCollectionViewController.m */; };
+		D8A3EF9A1B3202DF009738AD /* SunsetNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3EF991B3202DF009738AD /* SunsetNotificationsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +295,10 @@
 		D820909C1B0674DA00E0C359 /* SunEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunEvent.m; sourceTree = "<group>"; };
 		D831F2651B0BC0A300992ACA /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		D831F2661B0BC0A300992ACA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D8A3EF951B31E0A5009738AD /* SunsetNotificationsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SunsetNotificationsCollectionViewController.h; path = Sunset/SunsetNotificationsCollectionViewController.h; sourceTree = "<group>"; };
+		D8A3EF961B31E0A5009738AD /* SunsetNotificationsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SunsetNotificationsCollectionViewController.m; path = Sunset/SunsetNotificationsCollectionViewController.m; sourceTree = "<group>"; };
+		D8A3EF981B3202DF009738AD /* SunsetNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SunsetNotificationsViewController.h; path = Sunset/SunsetNotificationsViewController.h; sourceTree = "<group>"; };
+		D8A3EF991B3202DF009738AD /* SunsetNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SunsetNotificationsViewController.m; path = Sunset/SunsetNotificationsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +332,10 @@
 		2E3C72221B0254CB003FD3F0 = {
 			isa = PBXGroup;
 			children = (
+				D8A3EF951B31E0A5009738AD /* SunsetNotificationsCollectionViewController.h */,
+				D8A3EF961B31E0A5009738AD /* SunsetNotificationsCollectionViewController.m */,
+				D8A3EF981B3202DF009738AD /* SunsetNotificationsViewController.h */,
+				D8A3EF991B3202DF009738AD /* SunsetNotificationsViewController.m */,
 				2E3C72541B026263003FD3F0 /* CoreLocation.framework */,
 				2E3C722D1B0254CB003FD3F0 /* Sunset */,
 				2E3C72471B0254CB003FD3F0 /* SunsetTests */,
@@ -1017,6 +1027,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E72CC921B03FDBB0082F991 /* KCComplexZmanimCalendar.m in Sources */,
+				D8A3EF9A1B3202DF009738AD /* SunsetNotificationsViewController.m in Sources */,
 				2E7A59201B2DD2C5002B3C66 /* AbstractActionSheetPicker.m in Sources */,
 				2E72CC961B03FDBB0082F991 /* KCAstronomicalCalendar.m in Sources */,
 				2E72CC981B03FDBB0082F991 /* KCSunriseAndSunsetCalculator.m in Sources */,
@@ -1030,6 +1041,7 @@
 				2E72CC931B03FDBB0082F991 /* KCZman.m in Sources */,
 				2E72CC911B03FDBB0082F991 /* KCSefiratHaomerCalculator.m in Sources */,
 				2E72CC851B03FDBB0082F991 /* NSDate+Components.m in Sources */,
+				D8A3EF971B31E0A5009738AD /* SunsetNotificationsCollectionViewController.m in Sources */,
 				2E72CC871B03FDBB0082F991 /* NSDate+Description.m in Sources */,
 				2E7A59241B2DD2C5002B3C66 /* ActionSheetLocalePicker.m in Sources */,
 				2E7A59251B2DD2C5002B3C66 /* ActionSheetStringPicker.m in Sources */,
