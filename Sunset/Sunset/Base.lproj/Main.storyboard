@@ -476,7 +476,7 @@
                         <viewControllerLayoutGuide type="bottom" id="iAZ-sz-rJb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Puz-SX-5sk">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="44" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="owl" translatesAutoresizingMaskIntoConstraints="NO" id="SLS-ku-1LB">
@@ -579,6 +579,12 @@
                                     <action selector="nathanTwitter:" destination="xny-1j-OfV" eventType="touchUpInside" id="KYR-OE-JZ3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgZ-Ja-86u">
+                                <rect key="frame" x="16" y="8" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -600,8 +606,8 @@
                             <constraint firstItem="hlL-k7-D6v" firstAttribute="top" secondItem="anC-V8-HV9" secondAttribute="bottom" constant="29" id="zpO-GR-RxF"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="mainView" destination="Puz-SX-5sk" id="rmJ-FN-GG5"/>
                     </connections>
@@ -1568,8 +1574,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Xcz-ig-dFV"/>
                                 <exclude reference="Jrv-ta-InQ"/>
+                                <exclude reference="Xcz-ig-dFV"/>
                             </mask>
                         </variation>
                     </view>
