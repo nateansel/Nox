@@ -88,6 +88,24 @@
   return headerLayer;
 }
 
+// Gradient for notification buttons
++ (CAGradientLayer*) buttonGradient {
+  UIColor *colorOne = [UIColor colorWithRed:0.333 green:0.674 blue:0.933 alpha:1];
+  UIColor *colorTwo = [UIColor colorWithRed:0.213 green:0.585 blue:0.868 alpha:1];
+  
+  NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
+  NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
+  NSNumber *stopTwo = [NSNumber numberWithFloat:1.0];
+  
+  NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, nil];
+  
+  CAGradientLayer *headerLayer = [CAGradientLayer layer];
+  headerLayer.colors = colors;
+  headerLayer.locations = locations;
+  
+  return headerLayer;
+}
+
 
 
 @end

@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundLayer.h"
 
 @interface SunsetNotificationsViewController : UIViewController {
   NSUserDefaults *myDefaults;
   NSMutableArray *data;
   UIColor *customBlueColor;
+
 }
 
 - (IBAction)buttonClicked:(id)sender;
+- (void)setGradientBackground:(UIButton*)currentButton;
 
 @end

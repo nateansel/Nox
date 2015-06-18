@@ -14,6 +14,7 @@
 + (CAGradientLayer*) blueGradient;
 + (CAGradientLayer*) orangeGradient;
 + (CAGradientLayer*) blackGradient;
++ (CAGradientLayer*) buttonGradient;
 
 + (NSArray*) getColorsForBlueGradient;
 + (NSArray*) getColorsForOrangeGradient;
