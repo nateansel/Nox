@@ -515,7 +515,8 @@
 - (void)setNotifications {
   UILocalNotification *notification;
   NSArray *sunriseNotificationsArray = [myDefaults objectForKey:@"sunriseNotificationsArray"];
-  NSArray *sunsetNotificationsArray = [myDefaults objectForKey:@"sunsetNotificationsArray"];
+  NSArray *sunsetNotificationsArray = [myDefaults objectForKey:@"newSunsetNotificationsArray"];
+  //NSArray *sunsetNotificationsArray = [myDefaults objectForKey:@"sunsetNotificationsArray"];
   NSArray *upcomingSunrise = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunset = [myDefaults objectForKey:@"upcomingSunsets"];
   int sunriseNotificationNum = 0;
@@ -524,7 +525,12 @@
     sunriseNotificationNum = (int) sunriseNotificationsArray.count;
   }
   if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
-    sunsetNotificationNum = (int) sunsetNotificationsArray.count;
+    for (int i = 1; i < 13; i++) {
+      if ([[sunsetNotificationsArray objectAtIndex:i] boolValue]) {
+        sunsetNotificationNum++;
+      }
+    }
+    //sunsetNotificationNum = (int) sunsetNotificationsArray.count;
   }
   
   if (sunriseNotificationNum != 0 || sunsetNotificationNum != 0) {
@@ -552,20 +558,38 @@
     }
     
     if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
-      for (int i = 0; i < sunsetNotificationsArray.count; i++) {
-        for (int j = 0; j < numNotificationsPerEvent; j++) {
-          notification = [[UILocalNotification alloc] init];
-          notification.fireDate = [[upcomingSunset objectAtIndex:j] dateByAddingTimeInterval:([[sunsetNotificationsArray objectAtIndex:i] integerValue] * -60)];
-          notification.alertBody = [[self makeStringFromSeconds:((int) [[sunsetNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" of sunlight left."];
-          notification.soundName = UILocalNotificationDefaultSoundName;
-          if ([notification.fireDate timeIntervalSinceNow] > 0) {
-            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-            
-            //NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+      for (int i = 1; i < 13; i++) {
+        if ([[sunsetNotificationsArray objectAtIndex:i] boolValue]) {
+          for (int j = 0; j < numNotificationsPerEvent; j++) {
+            notification = [[UILocalNotification alloc] init];
+            notification.fireDate = [[upcomingSunset objectAtIndex:j] dateByAddingTimeInterval:( i * 15 * -60)];
+            notification.alertBody = [[self makeStringFromSeconds:((int) i * 15 * 60)] stringByAppendingString:@" of sunlight left."];
+            notification.soundName = UILocalNotificationDefaultSoundName;
+            if ([notification.fireDate timeIntervalSinceNow] > 0) {
+              [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+
+              NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+            }
           }
         }
       }
     }
+    
+//    if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
+//      for (int i = 0; i < sunsetNotificationsArray.count; i++) {
+//        for (int j = 0; j < numNotificationsPerEvent; j++) {
+//          notification = [[UILocalNotification alloc] init];
+//          notification.fireDate = [[upcomingSunset objectAtIndex:j] dateByAddingTimeInterval:([[sunsetNotificationsArray objectAtIndex:i] integerValue] * -60)];
+//          notification.alertBody = [[self makeStringFromSeconds:((int) [[sunsetNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" of sunlight left."];
+//          notification.soundName = UILocalNotificationDefaultSoundName;
+//          if ([notification.fireDate timeIntervalSinceNow] > 0) {
+//            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+//            
+//            //NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+//          }
+//        }
+//      }
+//    }
     
     // after all notifications have fired remind the user to open the app to continue recieving notifications
     NSDate *fireDate = [notification.fireDate dateByAddingTimeInterval:7200];

@@ -12,6 +12,8 @@
 
 @interface CreditsViewController : UIViewController {
   CAGradientLayer *blackGradient;
+  UIColor *originalColor;
+  UIColor *originalTentColor;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;

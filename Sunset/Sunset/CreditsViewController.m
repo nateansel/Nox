@@ -19,11 +19,19 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+  originalColor = self.navigationController.navigationBar.barTintColor;
+  originalTentColor = self.navigationController.navigationBar.tintColor;
+  self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+  self.navigationController.navigationBar.translucent = NO;
+  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-  [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+  [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+  self.navigationController.navigationBar.barTintColor = originalColor;
+  self.navigationController.navigationBar.translucent = YES;
+  self.navigationController.navigationBar.tintColor = originalTentColor;
 }
 
 - (IBAction)dismissCreditsView:(id)sender {

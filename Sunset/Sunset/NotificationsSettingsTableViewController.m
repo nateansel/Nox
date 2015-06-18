@@ -169,6 +169,7 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   
+  int count = 0;
   // show the count for sunrise notifications
   if ([myDefaults objectForKey:@"sunriseNotificationsArray"] == nil) {
     [myDefaults setObject:[[NSArray alloc] initWithObjects:@"60", nil] forKey:@"sunriseNotificationsArray"];
@@ -181,7 +182,14 @@
     [myDefaults setObject:[[NSArray alloc] initWithObjects:@"60", nil] forKey:@"sunsetNotificationsArray"];
     [myDefaults synchronize];
   }
-  sunsetNotificationCount.text = [NSString stringWithFormat:@"%d",(int) [[myDefaults objectForKey:@"sunsetNotificationsArray"] count]];
+  
+  count = 0;
+  for (int i = 1; i < 13; i++) {
+    if ([[[myDefaults objectForKey:@"newSunsetNotificationsArray"] objectAtIndex:i] boolValue]) {
+      count++;
+    }
+  }
+  sunsetNotificationCount.text = [NSString stringWithFormat:@"%d", count];
   
   [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
