@@ -66,7 +66,7 @@
     [currentButton.layer setBorderColor:customBlueColor.CGColor];
     
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDuration:0.3];
     currentButton.backgroundColor = [UIColor whiteColor];
     [UIView commitAnimations];
   } else {
@@ -76,7 +76,7 @@
     UIButton *currentButton = (UIButton *)sender;
     
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDuration:0.3];
     currentButton.backgroundColor = customBlueColor;
     [UIView commitAnimations];
   }
