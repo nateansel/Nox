@@ -43,9 +43,9 @@
     [currentButton setSelected:[[data objectAtIndex:i] boolValue]];
     [currentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [currentButton setTitleColor:customBlueColor forState:UIControlStateNormal];
-//    [currentButton setBackgroundColor:([[data objectAtIndex:i] boolValue]) ? customBlueColor : [UIColor whiteColor]];
+    [currentButton setBackgroundColor:([[data objectAtIndex:i] boolValue]) ? customBlueColor : [UIColor whiteColor]];
     
-    ([[data objectAtIndex:i] boolValue]) ? [self setGradientBackground:currentButton] : [currentButton setBackgroundColor:[UIColor whiteColor]];
+//    ([[data objectAtIndex:i] boolValue]) ? [self setGradientBackground:currentButton] : [currentButton setBackgroundColor:[UIColor whiteColor]];
   }
 }
 
@@ -61,16 +61,24 @@
   if ([sender isSelected]) {
     [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:0]];
     [sender setSelected:NO];
-    [sender setBackgroundColor:[UIColor whiteColor]];
     UIButton *currentButton = (UIButton *)sender;
-//    for (CALayer *layer in [currentButton.layer.sublayers copy]) {
-//      [layer removeFromSuperlayer];
-//    }
-    [[currentButton.layer.sublayers objectAtIndex:0] removeFromSuperlayer];
+    //[[currentButton.layer.sublayers objectAtIndex:0] removeFromSuperlayer];
+    [currentButton.layer setBorderColor:customBlueColor.CGColor];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    currentButton.backgroundColor = [UIColor whiteColor];
+    [UIView commitAnimations];
   } else {
     [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:1]];
     [sender setSelected:YES];
-    [self setGradientBackground:sender];
+    //[self setGradientBackground:sender];
+    UIButton *currentButton = (UIButton *)sender;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    currentButton.backgroundColor = customBlueColor;
+    [UIView commitAnimations];
   }
   
   [myDefaults setObject:data forKey:@"newSunsetNotificationsArray"];

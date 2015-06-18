@@ -60,12 +60,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSo-yA-9oW">
-                                <rect key="frame" x="269" y="550" width="62" height="30"/>
+                                <rect key="frame" x="16" y="521" width="568" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="iZj-KJ-ucf"/>
-                                    <constraint firstAttribute="width" secondItem="HSo-yA-9oW" secondAttribute="height" multiplier="31:15" id="qqn-zc-w2O"/>
+                                    <constraint firstAttribute="height" constant="71" id="iZj-KJ-ucf"/>
+                                    <constraint firstAttribute="width" secondItem="HSo-yA-9oW" secondAttribute="height" multiplier="31:15" constant="421.26666666666665" id="qqn-zc-w2O"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="sun"/>
+                                <state key="normal" image="sun"/>
                                 <connections>
                                     <segue destination="7nm-ES-7Gx" kind="show" id="nOM-87-A0I"/>
                                 </connections>
@@ -83,7 +83,7 @@
                             <constraint firstItem="T4h-pk-06P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="L9K-zH-5KK"/>
                             <constraint firstAttribute="centerX" secondItem="T4h-pk-06P" secondAttribute="centerX" id="MB8-Yc-Jzx"/>
                             <constraint firstItem="uq7-2P-jnL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MlY-qM-BUH"/>
-                            <constraint firstAttribute="bottom" secondItem="HSo-yA-9oW" secondAttribute="bottom" constant="20" symbolic="YES" id="Yvc-vs-J5a"/>
+                            <constraint firstAttribute="bottom" secondItem="HSo-yA-9oW" secondAttribute="bottom" constant="8" id="Yvc-vs-J5a"/>
                             <constraint firstAttribute="centerX" secondItem="HSo-yA-9oW" secondAttribute="centerX" id="a0M-1k-hY8"/>
                             <constraint firstItem="Dfx-TC-eTy" firstAttribute="top" secondItem="uq7-2P-jnL" secondAttribute="bottom" constant="56" id="dOG-k5-V4e"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aph-zF-CVU" secondAttribute="bottom" constant="8" symbolic="YES" id="dgu-Qe-fHW"/>
