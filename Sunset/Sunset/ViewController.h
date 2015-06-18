@@ -48,6 +48,7 @@
 - (void)setupLaunchView;
 
 - (void)refreshNotifications;
+- (NSString *)getTimeString:(NSDate *)date;
 
 @end
 

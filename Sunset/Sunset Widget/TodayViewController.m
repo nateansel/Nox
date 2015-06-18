@@ -80,7 +80,8 @@
   }
   
   countdown.text = [self getTimeLeftString: sunEventDate];
-  timeLabel.text = [dateFormatter stringFromDate:sunEventDate];
+//  timeLabel.text = [dateFormatter stringFromDate:sunEventDate];
+  timeLabel.text = [self getTimeString:sunEventDate];
   if ([self isSunriseNext]) {
     willSet.text = @"The sun will rise at";
   } else {
@@ -219,6 +220,56 @@
   }
   
   return YES;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *
+ * @author Nate
+ *
+ * @param
+ * @return
+ */
+- (NSString *)getTimeString:(NSDate *)date {
+  NSString *hourString, *minuteString, *amOrPM;
+  int hours;
+  BOOL isAM = YES;
+  unsigned unitFlags = NSCalendarUnitHour | NSCalendarUnitMinute;
+  NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+  NSDateComponents *components = [calendar components:unitFlags fromDate:date];
+  
+  minuteString = [NSString stringWithFormat:@"%d", (int) [components minute]];
+  if ([components minute] < 10) {
+    minuteString = [@"0" stringByAppendingString:minuteString];
+  }
+  
+  // format the time for 24h time
+  if ([myDefaults boolForKey:@"24h"]) {
+    hourString = [NSString stringWithFormat:@"%d", (int) [components hour]];
+    if ([components hour] < 10) {
+      hourString = [@"0" stringByAppendingString:hourString];
+    }
+    return [hourString stringByAppendingString:[@":" stringByAppendingString:minuteString]];
+  }
+  
+  // format the time for 12h time
+  hours = (int) [components hour];
+  minuteString = [NSString stringWithFormat:@"%d", (int) [components minute]];
+  if (hours >= 12) {
+    hourString = [NSString stringWithFormat:@"%d", hours - 12];
+    isAM = NO;
+  } else if (hours == 0) {
+    hourString = [NSString stringWithFormat:@"%d", 12];
+  } else {
+    hourString = [NSString stringWithFormat:@"%d", hours];
+  }
+  amOrPM = (isAM) ? @" AM" : @" PM";
+  if ([components minute] < 10) {
+    minuteString = [@"0" stringByAppendingString:minuteString];
+  }
+  
+  return [hourString stringByAppendingString:[@":" stringByAppendingString:[minuteString stringByAppendingString:amOrPM]]];
 }
 
 @end

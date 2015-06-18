@@ -287,6 +287,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
+                            <tableViewSection id="BK4-5r-aDV">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="YNa-wj-N7A">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YNa-wj-N7A" id="4VW-KE-NTx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24 hour time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toz-J3-CI0">
+                                                    <rect key="frame" x="8" y="11" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJH-6T-KCZ">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="changeHourSetting:" destination="XJg-AT-drm" eventType="valueChanged" id="Z4k-KE-8ec"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="eJH-6T-KCZ" secondAttribute="trailing" constant="8" id="cNG-BO-YcS"/>
+                                                <constraint firstItem="eJH-6T-KCZ" firstAttribute="top" secondItem="4VW-KE-NTx" secondAttribute="top" constant="6" id="kkV-5v-7aI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="" footerTitle="Sunrise can send you a notification before the sunrise and sunset. Use these switches to turn notifications on or off." id="Jrh-N8-Xd4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="wkR-hQ-iBd">
@@ -457,6 +485,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="hourSetting" destination="eJH-6T-KCZ" id="gbf-yp-HLL"/>
                         <outlet property="sunriseNotificationCount" destination="RKX-pV-fuR" id="xIG-DH-iwe"/>
                         <outlet property="sunriseNotificationSetting" destination="rch-ht-brg" id="byd-TO-PmS"/>
                         <outlet property="sunsetNotificationCount" destination="EGr-rF-FhY" id="kdH-Nm-7GL"/>

@@ -23,5 +23,6 @@
 - (NSString *)getTimeLeftString:(NSDate *)date;
 - (BOOL)isSunriseNext;
 - (BOOL)isExpired;
+- (NSString *)getTimeString:(NSDate *)date;
 
 @end

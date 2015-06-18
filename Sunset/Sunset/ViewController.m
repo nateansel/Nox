@@ -14,7 +14,7 @@
 - (void)updateView:(NSNotification *) notification {
   NSMutableDictionary *data = [sunEventObject updateDictionary];
   
-  timeLabel.text = [data objectForKey:@"time"];
+  timeLabel.text = [self getTimeString:[sunEventObject getNextEvent]];
   NSLog(@"*****%@*****\n", [data objectForKey:@"time"]);
   timeUntil.text = [data objectForKey:@"timeLeft"];
   willSet.text = [data objectForKey:@"riseOrSet"];
@@ -129,6 +129,51 @@
 - (void)refreshNotifications {
   [[UIApplication sharedApplication] cancelAllLocalNotifications];
   [self setNotifications];
+}
+
+- (NSString *)getTimeString:(NSDate *)date {
+  NSString *hourString, *minuteString, *amOrPM;
+  int hours;
+  BOOL isAM = YES;
+  unsigned unitFlags = NSCalendarUnitHour | NSCalendarUnitMinute;
+  NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+  NSDateComponents *components = [calendar components:unitFlags fromDate:date];
+  
+  minuteString = [NSString stringWithFormat:@"%d", (int) [components minute]];
+  if ([components minute] < 10) {
+    minuteString = [@"0" stringByAppendingString:minuteString];
+  }
+  
+  // format the time for 24h time
+  if ([myDefaults boolForKey:@"24h"]) {
+    hourString = [NSString stringWithFormat:@"%d", (int) [components hour]];
+    if ([components hour] < 10) {
+      hourString = [@"0" stringByAppendingString:hourString];
+    }
+    return [hourString stringByAppendingString:[@":" stringByAppendingString:minuteString]];
+  }
+  
+  // format the time for 12h time
+  hours = (int) [components hour];
+  minuteString = [NSString stringWithFormat:@"%d", (int) [components minute]];
+  if (hours >= 12) {
+    hourString = [NSString stringWithFormat:@"%d", hours - 12];
+    isAM = NO;
+  } else if (hours == 0) {
+    hourString = [NSString stringWithFormat:@"%d", 12];
+  } else {
+    hourString = [NSString stringWithFormat:@"%d", hours];
+  }
+  amOrPM = (isAM) ? @" AM" : @" PM";
+  if ([components minute] < 10) {
+    minuteString = [@"0" stringByAppendingString:minuteString];
+  }
+  
+  return [hourString stringByAppendingString:[@":" stringByAppendingString:[minuteString stringByAppendingString:amOrPM]]];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [self updateView:nil];
 }
 
 - (void)viewDidLoad {

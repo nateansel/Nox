@@ -29,6 +29,23 @@
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *
+ * @author Nate
+ *
+ * @param
+ * @return
+ */
+- (IBAction)changeHourSetting:(id)sender {
+  [myDefaults setBool:hourSetting.on forKey:@"24h"];
+  [myDefaults synchronize];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
 /**
  * When the sunrise notification switch is triggered, this function updates the settings in myDefaults.
  * @author Nate
@@ -162,6 +179,9 @@
     sunsetNotificationSetting.on = NO;
     sunsetNotificationCount.textColor = [UIColor grayColor];
   }
+  
+  // check value for 24h switch
+  hourSetting.on = [myDefaults boolForKey:@"24h"];
   
   statusBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeStatusBarColor) userInfo:nil repeats:YES];
 }
