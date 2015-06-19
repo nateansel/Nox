@@ -146,6 +146,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  originalBarColor = self.navigationController.navigationBar.barTintColor;
+  
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
@@ -168,12 +170,6 @@
   
   // check value for 24h switch
   hourSetting.on = [myDefaults boolForKey:@"24h"];
-  
-  statusBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeStatusBarColor) userInfo:nil repeats:YES];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
   
   int count = 0;
   // show the count for sunrise notifications
@@ -228,7 +224,79 @@
   }
   sunsetNotificationCount.text = [NSString stringWithFormat:@"%d", count];
   
+  statusBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeStatusBarColor) userInfo:nil repeats:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  [self.navigationController.navigationBar setHidden:NO];
+  
+  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
+  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
+  [self.navigationController.navigationBar setTranslucent:YES];
+  
   [[UIApplication sharedApplication] setStatusBarHidden:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  [[UIApplication sharedApplication] setStatusBarHidden:NO];
+  [self.navigationController.navigationBar setHidden:NO];
+  
+  int count = 0;
+  // show the count for sunrise notifications
+  if ([myDefaults objectForKey:@"newSunriseNotificationsArray"] == nil) {
+    [myDefaults setObject:@[ [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:1],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],] forKey:@"newSunriseNotificationsArray"];
+    [myDefaults synchronize];
+  }
+  
+  // show the count for sunset notifications
+  if ([myDefaults objectForKey:@"newSunsetNotificationsArray"] == nil) {
+    [myDefaults setObject:@[ [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:1],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],] forKey:@"newSunsetNotificationsArray"];
+    [myDefaults synchronize];
+  }
+  
+  count = 0;
+  for (int i = 1; i < 13; i++) {
+    if ([[[myDefaults objectForKey:@"newSunriseNotificationsArray"] objectAtIndex:i] boolValue]) {
+      count++;
+    }
+  }
+  sunriseNotificationCount.text = [NSString stringWithFormat:@"%d", count];
+  
+  count = 0;
+  for (int i = 1; i < 13; i++) {
+    if ([[[myDefaults objectForKey:@"newSunsetNotificationsArray"] objectAtIndex:i] boolValue]) {
+      count++;
+    }
+  }
+  sunsetNotificationCount.text = [NSString stringWithFormat:@"%d", count];
 }
 
 - (void)didReceiveMemoryWarning {

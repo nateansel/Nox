@@ -12,7 +12,7 @@
 
 @interface CreditsViewController : UIViewController {
   CAGradientLayer *blackGradient;
-  UIColor *originalColor;
+  UIColor *originalBarColor;
   UIColor *originalTentColor;
 }
 

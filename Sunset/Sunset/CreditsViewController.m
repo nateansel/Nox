@@ -13,30 +13,41 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  
+}
+
+- (void)viewWillAppear:(BOOL)animated {
   blackGradient = [BackgroundLayer blackGradient];
   blackGradient.frame = self.view.bounds;
   [self.view.layer insertSublayer:blackGradient atIndex:0];
-  self.navigationController.navigationBarHidden = YES;
-}
-
-//- (void)viewWillAppear:(BOOL)animated {
+  
+  [self.navigationController.navigationBar setHidden:YES];
+//  originalBarColor = self.navigationController.navigationBar.barTintColor;
+//  [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+//  [self.navigationController.navigationBar setTranslucent:NO];
+//  [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 //  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-//  originalColor = self.navigationController.navigationBar.barTintColor;
-//  originalTentColor = self.navigationController.navigationBar.tintColor;
-//  self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-//  self.navigationController.navigationBar.translucent = NO;
-//  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//}
+}
 //
 //- (void)viewDidDisappear:(BOOL)animated {
+//  [super viewDidDisappear:animated];
+//  
+//  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
+//  [self.navigationController.navigationBar setTranslucent:YES];
+//  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
 //  [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-//  self.navigationController.navigationBar.barTintColor = originalColor;
-//  self.navigationController.navigationBar.translucent = YES;
-//  self.navigationController.navigationBar.tintColor = originalTentColor;
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//  [super viewWillDisappear:animated];
+//  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
+//  [self.navigationController.navigationBar setTranslucent:YES];
+//  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
+//  [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 //}
 
 - (IBAction)dismissCreditsView:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)websiteURL:(id)sender {

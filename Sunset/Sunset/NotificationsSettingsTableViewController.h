@@ -17,6 +17,8 @@
   
   NSUserDefaults *myDefaults;
   NSTimer *statusBarTimer;
+  
+  UIColor *originalBarColor;
 }
 
 - (IBAction)changeHourSetting:(id)sender;

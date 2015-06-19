@@ -296,17 +296,25 @@
   return [NSString stringWithFormat:@"%d minutes %@", minutes, riseOrSet];
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 - (BOOL)hasSunRisenToday {
   return ([[self getTodaySunriseDate] timeIntervalSinceNow] < 0);
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 - (BOOL)hasSunSetToday {
   return ([[self getTodaySunsetDate] timeIntervalSinceNow] < 0);
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 - (double)getLatitude {
   return currentLocation.coordinate.latitude;
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 - (double)getLongitude {
   return currentLocation.coordinate.longitude;
@@ -514,9 +522,8 @@
  */
 - (void)setNotifications {
   UILocalNotification *notification;
-  NSArray *sunriseNotificationsArray = [myDefaults objectForKey:@"sunriseNotificationsArray"];
+  NSArray *sunriseNotificationsArray = [myDefaults objectForKey:@"newSunriseNotificationsArray"];
   NSArray *sunsetNotificationsArray = [myDefaults objectForKey:@"newSunsetNotificationsArray"];
-  //NSArray *sunsetNotificationsArray = [myDefaults objectForKey:@"sunsetNotificationsArray"];
   NSArray *upcomingSunrise = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunset = [myDefaults objectForKey:@"upcomingSunsets"];
   int sunriseNotificationNum = 0;
@@ -527,7 +534,6 @@
         sunriseNotificationNum++;
       }
     }
-    //sunriseNotificationNum = (int) sunriseNotificationsArray.count;
   }
   if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
     for (int i = 1; i < 13; i++) {
@@ -535,7 +541,6 @@
         sunsetNotificationNum++;
       }
     }
-    //sunsetNotificationNum = (int) sunsetNotificationsArray.count;
   }
   
   if (sunriseNotificationNum != 0 || sunsetNotificationNum != 0) {
@@ -547,8 +552,11 @@
     NSString *sunsetTestString = @"Sunset  -- ";
     
     if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
+      // for each possible notification
       for (int i = 1; i < 13; i++) {
+        // see if it's turned on
         if ([[sunriseNotificationsArray objectAtIndex:i] boolValue]) {
+          // if so set the correct number of notifications
           for (int j = 0; j < numNotificationsPerEvent; j++) {
             notification = [[UILocalNotification alloc] init];
             notification.fireDate = [[upcomingSunrise objectAtIndex:j] dateByAddingTimeInterval:( i * 15 * -60)];
