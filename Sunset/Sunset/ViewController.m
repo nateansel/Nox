@@ -212,6 +212,9 @@
   [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(updateView:) userInfo:nil repeats:YES];
   
   [self updateView:nil];
+  
+  self.view.layer.cornerRadius = 8;
+  self.view.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {
