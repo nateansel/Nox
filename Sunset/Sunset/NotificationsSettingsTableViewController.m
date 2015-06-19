@@ -150,20 +150,6 @@
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
-  // show the count for sunrise notifications
-  if ([myDefaults objectForKey:@"sunriseNotificationsArray"] == nil) {
-    sunriseNotificationCount.text = @"0";
-  } else {
-    sunriseNotificationCount.text = [NSString stringWithFormat:@"%lu",(unsigned long) [[myDefaults objectForKey:@"sunriseNotificationsArray"] count]];
-  }
-  
-  // show the count for sunset notifications
-  if ([myDefaults objectForKey:@"sunsetNotificationsArray"] == nil) {
-    sunsetNotificationCount.text = @"0";
-  } else {
-    sunsetNotificationCount.text = [NSString stringWithFormat:@"%lu",(unsigned long) [[myDefaults objectForKey:@"sunsetNotificationsArray"] count]];
-  }
-  
   // check the switch values
   if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
     sunriseNotificationSetting.on = YES;
@@ -191,17 +177,48 @@
   
   int count = 0;
   // show the count for sunrise notifications
-  if ([myDefaults objectForKey:@"sunriseNotificationsArray"] == nil) {
-    [myDefaults setObject:[[NSArray alloc] initWithObjects:@"60", nil] forKey:@"sunriseNotificationsArray"];
+  if ([myDefaults objectForKey:@"newSunriseNotificationsArray"] == nil) {
+    [myDefaults setObject:@[ [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:1],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],] forKey:@"newSunriseNotificationsArray"];
     [myDefaults synchronize];
   }
-  sunriseNotificationCount.text = [NSString stringWithFormat:@"%d",(int) [[myDefaults objectForKey:@"sunriseNotificationsArray"] count]];
   
   // show the count for sunset notifications
-  if ([myDefaults objectForKey:@"sunsetNotificationsArray"] == nil) {
-    [myDefaults setObject:[[NSArray alloc] initWithObjects:@"60", nil] forKey:@"sunsetNotificationsArray"];
+  if ([myDefaults objectForKey:@"newSunsetNotificationsArray"] == nil) {
+    [myDefaults setObject:@[ [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:1],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],
+                             [NSNumber numberWithBool:0],] forKey:@"newSunsetNotificationsArray"];
     [myDefaults synchronize];
   }
+  
+  count = 0;
+  for (int i = 1; i < 13; i++) {
+    if ([[[myDefaults objectForKey:@"newSunriseNotificationsArray"] objectAtIndex:i] boolValue]) {
+      count++;
+    }
+  }
+  sunriseNotificationCount.text = [NSString stringWithFormat:@"%d", count];
   
   count = 0;
   for (int i = 1; i < 13; i++) {

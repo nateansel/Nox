@@ -522,7 +522,12 @@
   int sunriseNotificationNum = 0;
   int sunsetNotificationNum = 0;
   if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
-    sunriseNotificationNum = (int) sunriseNotificationsArray.count;
+    for (int i = 1; i < 13; i++) {
+      if ([[sunriseNotificationsArray objectAtIndex:i] boolValue]) {
+        sunriseNotificationNum++;
+      }
+    }
+    //sunriseNotificationNum = (int) sunriseNotificationsArray.count;
   }
   if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
     for (int i = 1; i < 13; i++) {
@@ -542,16 +547,18 @@
     NSString *sunsetTestString = @"Sunset  -- ";
     
     if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
-      for (int i = 0; i < sunriseNotificationsArray.count; i++) {
-        for (int j = 0; j < numNotificationsPerEvent; j++) {
-          notification = [[UILocalNotification alloc] init];
-          notification.fireDate = [[upcomingSunrise objectAtIndex:j] dateByAddingTimeInterval:([[sunriseNotificationsArray objectAtIndex:i] integerValue] * -60)];
-          notification.alertBody = [[self makeStringFromSeconds:((int) [[sunriseNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" until sunrise."];
-          notification.soundName = UILocalNotificationDefaultSoundName;
-          if ([notification.fireDate timeIntervalSinceNow] > 0) {
-            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-            
-            //NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+      for (int i = 1; i < 13; i++) {
+        if ([[sunriseNotificationsArray objectAtIndex:i] boolValue]) {
+          for (int j = 0; j < numNotificationsPerEvent; j++) {
+            notification = [[UILocalNotification alloc] init];
+            notification.fireDate = [[upcomingSunrise objectAtIndex:j] dateByAddingTimeInterval:( i * 15 * -60)];
+            notification.alertBody = [[self makeStringFromSeconds:((int) i * 15 * 60)] stringByAppendingString:@" until sunrise."];
+            notification.soundName = UILocalNotificationDefaultSoundName;
+            if ([notification.fireDate timeIntervalSinceNow] > 0) {
+              [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+              
+              NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+            }
           }
         }
       }
@@ -575,6 +582,22 @@
       }
     }
     
+//    if ([myDefaults boolForKey:@"sunriseNotificationSetting"]) {
+//      for (int i = 0; i < sunriseNotificationsArray.count; i++) {
+//        for (int j = 0; j < numNotificationsPerEvent; j++) {
+//          notification = [[UILocalNotification alloc] init];
+//          notification.fireDate = [[upcomingSunrise objectAtIndex:j] dateByAddingTimeInterval:([[sunriseNotificationsArray objectAtIndex:i] integerValue] * -60)];
+//          notification.alertBody = [[self makeStringFromSeconds:((int) [[sunriseNotificationsArray objectAtIndex:i] integerValue] * 60)] stringByAppendingString:@" until sunrise."];
+//          notification.soundName = UILocalNotificationDefaultSoundName;
+//          if ([notification.fireDate timeIntervalSinceNow] > 0) {
+//            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+//            
+//            //NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+//          }
+//        }
+//      }
+//    }
+//    
 //    if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
 //      for (int i = 0; i < sunsetNotificationsArray.count; i++) {
 //        for (int j = 0; j < numNotificationsPerEvent; j++) {

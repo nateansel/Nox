@@ -65,6 +65,7 @@
 		D820909D1B0674DA00E0C359 /* SunEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D820909C1B0674DA00E0C359 /* SunEvent.m */; };
 		D831F2681B0BC0A300992ACA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D831F2661B0BC0A300992ACA /* SettingsViewController.m */; };
 		D8A3EF9A1B3202DF009738AD /* SunsetNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3EF991B3202DF009738AD /* SunsetNotificationsViewController.m */; };
+		D8A3EF9D1B344693009738AD /* SunriseNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A3EF9C1B344693009738AD /* SunriseNotificationsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +297,8 @@
 		D831F2661B0BC0A300992ACA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		D8A3EF981B3202DF009738AD /* SunsetNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunsetNotificationsViewController.h; sourceTree = "<group>"; };
 		D8A3EF991B3202DF009738AD /* SunsetNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunsetNotificationsViewController.m; sourceTree = "<group>"; };
+		D8A3EF9B1B344693009738AD /* SunriseNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunriseNotificationsViewController.h; sourceTree = "<group>"; };
+		D8A3EF9C1B344693009738AD /* SunriseNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SunriseNotificationsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,8 @@
 				2E36CCAE1B05304900B55335 /* BackgroundLayer.h */,
 				2E36CCAF1B05304900B55335 /* BackgroundLayer.m */,
 				2E3C72381B0254CB003FD3F0 /* Main.storyboard */,
+				D8A3EF9B1B344693009738AD /* SunriseNotificationsViewController.h */,
+				D8A3EF9C1B344693009738AD /* SunriseNotificationsViewController.m */,
 				D8A3EF981B3202DF009738AD /* SunsetNotificationsViewController.h */,
 				D8A3EF991B3202DF009738AD /* SunsetNotificationsViewController.m */,
 				2E60D1291B2E557800C16E5C /* CreditsViewController.h */,
@@ -1038,6 +1043,7 @@
 				2E72CC851B03FDBB0082F991 /* NSDate+Components.m in Sources */,
 				2E72CC871B03FDBB0082F991 /* NSDate+Description.m in Sources */,
 				2E7A59241B2DD2C5002B3C66 /* ActionSheetLocalePicker.m in Sources */,
+				D8A3EF9D1B344693009738AD /* SunriseNotificationsViewController.m in Sources */,
 				2E7A59251B2DD2C5002B3C66 /* ActionSheetStringPicker.m in Sources */,
 				2E72CC8E1B03FDBB0082F991 /* KCParasha.m in Sources */,
 				2E72CC821B03FDBB0082F991 /* NSCalendar+hebrewYearTypes.m in Sources */,
