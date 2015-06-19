@@ -213,8 +213,8 @@
   
   [self updateView:nil];
   
-//  self.view.layer.cornerRadius = 8;
-//  self.view.clipsToBounds = YES;
+  self.view.layer.cornerRadius = 8;
+  self.view.clipsToBounds = YES;
   
 }
 
