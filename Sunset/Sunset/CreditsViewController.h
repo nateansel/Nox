@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "BackgroundLayer.h"
 
-@interface CreditsViewController : UIViewController {
+@interface CreditsViewController : UIViewController <UIGestureRecognizerDelegate> {
   CAGradientLayer *blackGradient;
   UIColor *originalBarColor;
   UIColor *originalTentColor;

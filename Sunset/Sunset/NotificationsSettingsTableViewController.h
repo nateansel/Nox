@@ -15,6 +15,12 @@
   IBOutlet UILabel *sunriseNotificationCount;
   IBOutlet UILabel *sunsetNotificationCount;
   
+  IBOutlet UITableViewCell *sunriseNotificationCell;
+  IBOutlet UITableViewCell *sunsetNotificationCell;
+  
+  IBOutlet UILabel *sunriseLabel;
+  IBOutlet UILabel *sunsetLabel;
+  
   NSUserDefaults *myDefaults;
   NSTimer *statusBarTimer;
   

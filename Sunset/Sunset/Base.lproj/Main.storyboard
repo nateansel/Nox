@@ -483,8 +483,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="hourSetting" destination="eJH-6T-KCZ" id="gbf-yp-HLL"/>
+                        <outlet property="sunriseLabel" destination="ckB-J0-nS1" id="ftI-ik-azy"/>
+                        <outlet property="sunriseNotificationCell" destination="zhK-HT-Tg1" id="2gt-49-eiv"/>
                         <outlet property="sunriseNotificationCount" destination="RKX-pV-fuR" id="xIG-DH-iwe"/>
                         <outlet property="sunriseNotificationSetting" destination="rch-ht-brg" id="byd-TO-PmS"/>
+                        <outlet property="sunsetLabel" destination="lj4-73-hSE" id="BaN-El-UoC"/>
+                        <outlet property="sunsetNotificationCell" destination="9a2-og-BqD" id="enr-pk-XxP"/>
                         <outlet property="sunsetNotificationCount" destination="EGr-rF-FhY" id="kdH-Nm-7GL"/>
                         <outlet property="sunsetNotificationSetting" destination="U3D-5J-Sbe" id="UG7-Zm-9py"/>
                     </connections>

@@ -57,11 +57,15 @@
   
   // Change the settings in myDefaults based on the switch's position
   if ([sunriseNotificationSetting isOn]) {
-    sunriseNotificationCount.textColor = [UIColor blackColor];
+    sunriseNotificationCount.textColor = [UIColor darkTextColor];
+    sunriseLabel.textColor = [UIColor darkTextColor];
+    [sunriseNotificationCell setUserInteractionEnabled:YES];
     [myDefaults setBool:YES forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
   } else {
     sunriseNotificationCount.textColor = [UIColor grayColor];
+    sunriseLabel.textColor = [UIColor grayColor];
+    [sunriseNotificationCell setUserInteractionEnabled:NO];
     [myDefaults setBool:NO forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
   }
@@ -78,11 +82,15 @@
   
   // Change the settings in myDefaults based on the switch's position
   if ([sunsetNotificationSetting isOn]) {
-    sunsetNotificationCount.textColor = [UIColor blackColor];
+    sunsetNotificationCount.textColor = [UIColor darkTextColor];
+    sunsetLabel.textColor = [UIColor darkTextColor];
+    [sunsetNotificationCell setUserInteractionEnabled:YES];
     [myDefaults setBool:YES forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
   } else {
     sunsetNotificationCount.textColor = [UIColor grayColor];
+    sunsetLabel.textColor = [UIColor grayColor];
+    [sunsetNotificationCell setUserInteractionEnabled:NO];
     [myDefaults setBool:NO forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
   }
@@ -158,6 +166,8 @@
   } else {
     sunriseNotificationSetting.on = NO;
     sunriseNotificationCount.textColor = [UIColor grayColor];
+    sunriseLabel.textColor = [UIColor grayColor];
+    [sunriseNotificationCell setUserInteractionEnabled:NO];
   }
   
   // check the switch values
@@ -166,6 +176,10 @@
   } else {
     sunsetNotificationSetting.on = NO;
     sunsetNotificationCount.textColor = [UIColor grayColor];
+    sunsetLabel.textColor = [UIColor grayColor];
+    [sunsetNotificationCell setUserInteractionEnabled:NO];
+    
+//    sunsetNotificationCell.selectionStyle = UITableViewCellSelectionStyleNone;
   }
   
   // check value for 24h switch
