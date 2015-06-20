@@ -51,8 +51,11 @@
   
   [sunEventObject refreshUpcomingSunEvents];
   
-  ViewController *viewController = self;
-  if (!(viewController.isViewLoaded && viewController.view.window)) {
+//  if (!(self.isViewLoaded && self.view.window)) {
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+//  }
+  
+  if (!(self.isViewLoaded)) {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
   }
 }
