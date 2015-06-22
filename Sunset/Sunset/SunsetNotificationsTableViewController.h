@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ActionSheetStringPicker.h"
 
 @interface SunsetNotificationsTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
   NSMutableArray *tableData;

@@ -79,50 +79,50 @@
   NSArray *data = @[ @[@"0",@"1",@"2"],
                      @[@"0",@"5",@"10",@"15",@"20",@"25",@"30",@"35",@"40",@"45",@"50",@"55"]];
   
-  [ActionSheetStringPicker showPickerWithTitle:@"Select a time"
-                                          rows:data
-                             initialSelection0:initialSelection0
-                             initialSelection1:initialSelection1
-                                     doneBlock:^(ActionSheetStringPicker *picker, id selectedValue0, id selectedValue1) {
-                                       NSLog(@"Picker: %@", picker);
-                                       NSLog(@"Selected Value: %@", selectedValue0);
-                                       NSLog(@"Selected Value: %@", selectedValue1);
-                                       NSInteger minutes = [selectedValue0 integerValue] * 60 + [selectedValue1 integerValue];
-                                       if (editValueToCheck != (int) minutes) {
-                                         if ([self isItemDuplicate:(int) minutes]) {
-                                           UIAlertController *duplicateErrorAlert = [UIAlertController alertControllerWithTitle:@"Duplicate Notification"
-                                                                                                                        message:@"You already have a notification set up for that time. Please choose another time or cancel."
-                                                                                                                 preferredStyle:UIAlertControllerStyleAlert];
-                                           UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Try Again"
-                                                                                                   style:UIAlertActionStyleDefault
-                                                                                                 handler:^(UIAlertAction *action) {
-                                                                                                   [self showPickerWithSender:sender
-                                                                                                            initialSelection0:(int) [selectedValue0 integerValue]
-                                                                                                            initialSelection1:(int) [selectedValue1 integerValue] / 5
-                                                                                                                    deleteRow:rowToDelete
-                                                                                                      currentValueBeingEdited:editValueToCheck];
-                                                                                                 }];
-                                           UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-                                                                                                  style:UIAlertActionStyleCancel
-                                                                                                handler:^(UIAlertAction *cancel) {}];
-                                           [duplicateErrorAlert addAction:defaultAction];
-                                           [duplicateErrorAlert addAction:cancelAction];
-                                           [self presentViewController:duplicateErrorAlert
-                                                              animated:YES
-                                                            completion:nil];
-                                         } else {
-                                           if (rowToDelete != -1) {
-                                             [tableData removeObjectAtIndex:rowToDelete];
-                                           }
-                                           [self addObjectAtCorrectIndex:(int) minutes];
-                                           [self.tableView reloadData];
-                                         }
-                                       }
-                                     }
-                                   cancelBlock:^(ActionSheetStringPicker *picker) {
-                                     NSLog(@"Block Picker Canceled");
-                                   }
-                                        origin:sender];
+//  [ActionSheetStringPicker showPickerWithTitle:@"Select a time"
+//                                          rows:data
+//                             initialSelection0:initialSelection0
+//                             initialSelection1:initialSelection1
+//                                     doneBlock:^(ActionSheetStringPicker *picker, id selectedValue0, id selectedValue1) {
+//                                       NSLog(@"Picker: %@", picker);
+//                                       NSLog(@"Selected Value: %@", selectedValue0);
+//                                       NSLog(@"Selected Value: %@", selectedValue1);
+//                                       NSInteger minutes = [selectedValue0 integerValue] * 60 + [selectedValue1 integerValue];
+//                                       if (editValueToCheck != (int) minutes) {
+//                                         if ([self isItemDuplicate:(int) minutes]) {
+//                                           UIAlertController *duplicateErrorAlert = [UIAlertController alertControllerWithTitle:@"Duplicate Notification"
+//                                                                                                                        message:@"You already have a notification set up for that time. Please choose another time or cancel."
+//                                                                                                                 preferredStyle:UIAlertControllerStyleAlert];
+//                                           UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Try Again"
+//                                                                                                   style:UIAlertActionStyleDefault
+//                                                                                                 handler:^(UIAlertAction *action) {
+//                                                                                                   [self showPickerWithSender:sender
+//                                                                                                            initialSelection0:(int) [selectedValue0 integerValue]
+//                                                                                                            initialSelection1:(int) [selectedValue1 integerValue] / 5
+//                                                                                                                    deleteRow:rowToDelete
+//                                                                                                      currentValueBeingEdited:editValueToCheck];
+//                                                                                                 }];
+//                                           UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+//                                                                                                  style:UIAlertActionStyleCancel
+//                                                                                                handler:^(UIAlertAction *cancel) {}];
+//                                           [duplicateErrorAlert addAction:defaultAction];
+//                                           [duplicateErrorAlert addAction:cancelAction];
+//                                           [self presentViewController:duplicateErrorAlert
+//                                                              animated:YES
+//                                                            completion:nil];
+//                                         } else {
+//                                           if (rowToDelete != -1) {
+//                                             [tableData removeObjectAtIndex:rowToDelete];
+//                                           }
+//                                           [self addObjectAtCorrectIndex:(int) minutes];
+//                                           [self.tableView reloadData];
+//                                         }
+//                                       }
+//                                     }
+//                                   cancelBlock:^(ActionSheetStringPicker *picker) {
+//                                     NSLog(@"Block Picker Canceled");
+//                                   }
+//                                        origin:sender];
 }
 
 - (BOOL)isItemDuplicate:(int)object {
