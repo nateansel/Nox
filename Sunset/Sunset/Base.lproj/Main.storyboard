@@ -66,6 +66,7 @@
                                     <constraint firstAttribute="width" secondItem="HSo-yA-9oW" secondAttribute="height" multiplier="31:15" constant="421.26666666666665" id="qqn-zc-w2O"/>
                                 </constraints>
                                 <state key="normal" image="sun"/>
+                                <state key="highlighted" image="sun-pressed"/>
                                 <connections>
                                     <segue destination="7nm-ES-7Gx" kind="show" id="8B1-md-FuA"/>
                                 </connections>
@@ -1657,6 +1658,7 @@
     <resources>
         <image name="owl" width="140" height="140"/>
         <image name="sun" width="80" height="39"/>
+        <image name="sun-pressed" width="80" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rJL-9N-bNd"/>
