@@ -59,7 +59,7 @@
 
 - (IBAction)buttonClicked:(id)sender {
   if ([sender isSelected]) {
-    [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:0]];
+    [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:NO]];
     [sender setSelected:NO];
     UIButton *currentButton = (UIButton *)sender;
     //[[currentButton.layer.sublayers objectAtIndex:0] removeFromSuperlayer];
@@ -70,7 +70,7 @@
     currentButton.backgroundColor = [UIColor whiteColor];
     [UIView commitAnimations];
   } else {
-    [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:1]];
+    [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:YES]];
     [sender setSelected:YES];
     //[self setGradientBackground:sender];
     UIButton *currentButton = (UIButton *)sender;
