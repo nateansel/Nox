@@ -154,6 +154,13 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  CALayer *gradientLayer = [BackgroundLayer blueGradient];
+  //gradientLayer.frame = self.view.bounds;
+  UIWindow* theWindow = [[UIApplication sharedApplication] keyWindow];
+  UIViewController *rvc = theWindow.rootViewController;
+  gradientLayer.frame = rvc.view.bounds;
+  [self.view.layer insertSublayer:gradientLayer atIndex:0];
+  
   originalBarColor = self.navigationController.navigationBar.barTintColor;
   
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
@@ -246,7 +253,10 @@
   
   [self.navigationController.navigationBar setHidden:NO];
   
-  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
+  //[self.navigationController.navigationBar setBarTintColor:originalBarColor];
+  
+  [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+  
   [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
   [self.navigationController.navigationBar setTranslucent:YES];
   

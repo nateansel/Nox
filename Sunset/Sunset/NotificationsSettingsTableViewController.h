@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundLayer.h"
 
 @interface NotificationsSettingsTableViewController : UITableViewController {
   IBOutlet UISwitch *hourSetting;
