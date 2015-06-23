@@ -604,6 +604,8 @@
       NSLog([@"End of notifications " stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
     }
   }
+  
+  [myDefaults setObject:[NSDate dateWithTimeIntervalSinceNow:86400] forKey:@"scheduleNotificationsOnDate"];
 }
 
 @end

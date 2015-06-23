@@ -31,7 +31,6 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
   ViewController *viewController = (ViewController *)self.window.rootViewController;
-  NSUserDefaults *myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
   [viewController fetchNewDataWithCompletionHandler:^(UIBackgroundFetchResult result) {
     completionHandler(result);
@@ -61,8 +60,6 @@
   
   ViewController *viewController = (ViewController *)self.window.rootViewController;
   
-  [[UIApplication sharedApplication] cancelAllLocalNotifications];
-  
   [viewController refresh];
   
 }
@@ -79,11 +76,14 @@
 }
 
 - (void)setNotifications {
-  [[UIApplication sharedApplication] cancelAllLocalNotifications];
-  
-  ViewController *viewController = (ViewController *)self.window.rootViewController;
-  
-  [viewController setNotifications];
+  NSUserDefaults *myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
+  if ([[myDefaults objectForKey:@"scheduleNotificationsOnDate"] timeIntervalSinceNow] < 0) {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    ViewController *viewController = (ViewController *)self.window.rootViewController;
+    
+    [viewController setNotifications];
+  }
 }
 
 @end
