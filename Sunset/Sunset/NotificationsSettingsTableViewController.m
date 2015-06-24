@@ -154,8 +154,16 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  CGFloat topLayoutGuide = self.topLayoutGuide.length;
-  self.tableView.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
+//  CGFloat topLayoutGuide = self.topLayoutGuide.length;
+//  self.tableView.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
+//  CALayer *gradientLayer = [BackgroundLayer blueGradient];
+//  //gradientLayer.frame = self.view.bounds;
+//  UIWindow* theWindow = [[UIApplication sharedApplication] keyWindow];
+//  UIViewController *rvc = theWindow.rootViewController;
+//  gradientLayer.frame = rvc.view.bounds;
+//  [self.view.layer insertSublayer:gradientLayer atIndex:0];
+//  
+//  originalBarColor = self.navigationController.navigationBar.barTintColor;
   
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
   
@@ -265,6 +273,7 @@
 //  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
 //  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
 //  [self.navigationController.navigationBar setTranslucent:YES];
+
   
   [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
