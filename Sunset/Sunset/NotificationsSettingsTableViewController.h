@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundLayer.h"
 
 @interface NotificationsSettingsTableViewController : UITableViewController {
   IBOutlet UISwitch *hourSetting;
@@ -25,6 +26,9 @@
   NSTimer *statusBarTimer;
   
   UIColor *originalBarColor;
+  
+  CALayer* orangeGradientLayer;
+  CALayer* blueGradientLayer;
 }
 
 - (IBAction)changeHourSetting:(id)sender;
@@ -35,5 +39,6 @@
 - (void)checkNotifications;
 - (BOOL)notificationsEnabled;
 - (void)notificationChange;
+- (UIView *)addGradientLayer;
 
 @end

@@ -154,7 +154,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  originalBarColor = self.navigationController.navigationBar.barTintColor;
+  CGFloat topLayoutGuide = self.topLayoutGuide.length;
+  self.tableView.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
   
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
   
@@ -239,6 +240,21 @@
   sunsetNotificationCount.text = [NSString stringWithFormat:@"%d", count];
   
   statusBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeStatusBarColor) userInfo:nil repeats:YES];
+  
+//  [self addGradientLayer];
+  
+//  orangeGradientLayer = [BackgroundLayer orangeGradient];
+//  blueGradientLayer = [BackgroundLayer blueGradient];
+//  orangeGradientLayer.frame = self.view.bounds;
+//  blueGradientLayer.frame = self.view.bounds;
+//  [self.view.layer insertSublayer:orangeGradientLayer atIndex:0];
+//  [self.view.layer insertSublayer:blueGradientLayer atIndex:1];
+//  
+//  blueGradientLayer.hidden = YES;
+//  orangeGradientLayer.hidden = NO;
+//  orangeGradientLayer = [BackgroundLayer orangeGradient];
+  //  [self.view.layer insertSublayer:orangeGradientLayer atIndex:0];
+  
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -246,15 +262,53 @@
   
   [self.navigationController.navigationBar setHidden:NO];
   
-  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
-  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
-  [self.navigationController.navigationBar setTranslucent:YES];
+//  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
+//  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
+//  [self.navigationController.navigationBar setTranslucent:YES];
   
   [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
+- (UIView *)addGradientLayer {
+  UIView* backView = [[UIView alloc] initWithFrame:self.view.frame];
+  orangeGradientLayer = [BackgroundLayer orangeGradient];
+  [backView.layer addSublayer:orangeGradientLayer];
+//  [self.view.layer insertSublayer:orangeGradientLayer atIndex:0];
+  //  UIBezierPath *path = [UIBezierPath bezierPathWithRect:backView.bounds];
+  //  [backView.layer addSublayer:[BackgroundLayer orangeGradient]];
+  //  backView.layer.masksToBounds = NO;
+  //  backView.layer.shadowColor = [UIColor blackColor].CGColor;
+  //  backView.layer.shadowOpacity = 1;
+  //  backView.layer.shadowOffset = CGSizeMake(-5,-5);
+  //  backView.layer.shadowRadius = 20;
+  //  backView.layer.shadowPath = path.CGPath;
+  //  backView.layer.shouldRasterize = YES;
+  //  [self.view.superview addSubview:backView];
+//  [self.view.layer insertSublayer:orangeGradientLayer atIndex:0];
+  orangeGradientLayer.hidden = NO;
+  
+  //  [self.view.superview bringSubviewToFront:self.view];
+  return backView;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  
+//  self.view.backgroundColor = [UIColor clearColor];
+//  [self addGradientLayer];
+//  [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+//  [self.navigationController.navigationBar setTranslucent:NO];
+//  [self.navigationController.navigationBar setOpaque:NO];
+//  [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+//  [self.tableView setBackgroundView:nil];
+//  [self.tableView setBackgroundColor:[UIColor clearColor]];
+  UIImageView *backView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+  backView.image = [UIImage imageNamed:@"tableViewBackground"];
+  //  UIImageView *navView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 45)];
+  //  navView.image = [UIImage imageNamed:@"navBarBackground"];
+  self.tableView.backgroundView = backView;
+  [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBarBackground" ] forBarMetrics:UIBarMetricsDefault];
+  orangeGradientLayer.hidden = NO;
   
   [[UIApplication sharedApplication] setStatusBarHidden:NO];
   [self.navigationController.navigationBar setHidden:NO];
