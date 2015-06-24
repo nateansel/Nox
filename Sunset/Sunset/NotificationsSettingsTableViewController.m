@@ -164,6 +164,12 @@
 //  [self.view.layer insertSublayer:gradientLayer atIndex:0];
 //  
 //  originalBarColor = self.navigationController.navigationBar.barTintColor;
+
+//  CALayer *gradientLayer = [BackgroundLayer blueGradient];
+//  gradientLayer.frame = self.view.bounds;
+//  [self.tableView.layer insertSublayer:gradientLayer atIndex:0];
+
+  originalBarColor = self.navigationController.navigationBar.barTintColor;
   
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
   

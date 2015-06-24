@@ -30,8 +30,8 @@
 }
 
 + (NSArray*) getColorsForBlueGradient {
-  UIColor *colorOne = [UIColor colorWithRed:0.377 green:0 blue:0.917 alpha:1];
-  UIColor *colorTwo = [UIColor colorWithRed:0.506 green:0.046 blue:0.726 alpha:1];
+  UIColor *colorOne = [UIColor colorWithRed:0.270 green:0.310 blue:0.887 alpha:1.000];
+  UIColor *colorTwo = [UIColor colorWithRed:0.440 green:0.203 blue:0.721 alpha:1.000];
   NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
   return colors;
 }
