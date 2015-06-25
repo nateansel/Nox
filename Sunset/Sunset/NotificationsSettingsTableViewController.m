@@ -86,7 +86,7 @@
   // Change the settings in myDefaults based on the switch's position
   if ([sunsetNotificationSetting isOn]) {
     sunsetNotificationCount.textColor = [UIColor darkTextColor];
-    sunsetLabel.textColor = [UIColor darkTextColor];
+    sunsetLabel.textColor = [UIColor whiteColor];
     [sunsetNotificationCell setUserInteractionEnabled:YES];
     [myDefaults setBool:YES forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
