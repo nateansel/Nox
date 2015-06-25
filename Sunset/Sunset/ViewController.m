@@ -21,13 +21,14 @@
   
   bool isSet = [[data objectForKey:@"isSet"] boolValue];
   bool updateColors = [[data objectForKey:@"updateColors"] boolValue];
+  bool updateStatusBar = [myDefaults boolForKey:@"updateStatusBar"];
   
-  if (isSet && updateColors) {
+  if (isSet && updateColors && updateStatusBar) {
     orangeGradientLayer.hidden = true;
     blueGradientLayer.hidden = false;
     // Set status bar to light color
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-  } else {
+  } else if (!(isSet) && updateColors && updateStatusBar) {
     orangeGradientLayer.hidden = false;
     blueGradientLayer.hidden = true;
     // Set status bar to dark color
@@ -55,9 +56,9 @@
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
 //  }
   
-  if (!(self.isViewLoaded)) {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
-  }
+//  if (!(self.isViewLoaded)) {
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+//  }
 }
 
 - (void)noLocationWarning {
@@ -208,6 +209,7 @@
   }
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
+  [myDefaults setBool:YES forKey:@"updateStatusBar"];
   
   [self setupGradients];
   [self refresh];
@@ -219,6 +221,10 @@
   self.view.layer.cornerRadius = 8;
   self.view.clipsToBounds = YES;
   
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+  [self updateView:nil];
 }
 
 - (void)didReceiveMemoryWarning {

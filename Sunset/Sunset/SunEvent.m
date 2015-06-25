@@ -42,12 +42,6 @@
   [[NSNotificationCenter defaultCenter] postNotificationName:@"location"
                                                         object:nil];
   [data setValue:@"YES" forKey:@"updateColors"];
-
-
-  // ISSUE: Need to run this notication every minute. Probably will have to use a timer
-  // If I do use a timer, maybe just updateView in the timer?
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
-                                        object:nil];
   
   [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
   [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
@@ -55,6 +49,9 @@
   [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
   [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
   [myDefaults synchronize];
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
+                                                      object:nil];
   
 }
 
@@ -75,6 +72,8 @@
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles: nil];
     [errorAlert show];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
+                                                        object:nil];
   }
 
   // Display error message as a popup alert

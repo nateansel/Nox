@@ -13,6 +13,7 @@
   NSUserDefaults *myDefaults;
   NSMutableArray *data;
   UIColor *customBlueColor;
+  UIColor *customWhiteColor;
 
 }
 

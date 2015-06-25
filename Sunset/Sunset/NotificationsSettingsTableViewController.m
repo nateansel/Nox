@@ -27,6 +27,9 @@
   else {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
   }
+  
+  [myDefaults setBool:YES forKey:@"updateStatusBar"];
+  [myDefaults synchronize];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -57,14 +60,14 @@
   
   // Change the settings in myDefaults based on the switch's position
   if ([sunriseNotificationSetting isOn]) {
-    sunriseNotificationCount.textColor = [UIColor darkTextColor];
-    sunriseLabel.textColor = [UIColor darkTextColor];
+    sunriseNotificationCount.textColor = [UIColor whiteColor];
+    sunriseLabel.textColor = [UIColor whiteColor];
     [sunriseNotificationCell setUserInteractionEnabled:YES];
     [myDefaults setBool:YES forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
   } else {
-    sunriseNotificationCount.textColor = [UIColor grayColor];
-    sunriseLabel.textColor = [UIColor grayColor];
+    sunriseNotificationCount.textColor = [UIColor lightGrayColor];
+    sunriseLabel.textColor = [UIColor lightGrayColor];
     [sunriseNotificationCell setUserInteractionEnabled:NO];
     [myDefaults setBool:NO forKey:@"sunriseNotificationSetting"];
     [myDefaults synchronize];
@@ -88,8 +91,8 @@
     [myDefaults setBool:YES forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
   } else {
-    sunsetNotificationCount.textColor = [UIColor grayColor];
-    sunsetLabel.textColor = [UIColor grayColor];
+    sunsetNotificationCount.textColor = [UIColor lightGrayColor];
+    sunsetLabel.textColor = [UIColor lightGrayColor];
     [sunsetNotificationCell setUserInteractionEnabled:NO];
     [myDefaults setBool:NO forKey:@"sunsetNotificationSetting"];
     [myDefaults synchronize];
@@ -138,7 +141,7 @@
  *
  */
 - (void)changeStatusBarColor {
-  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
 }
 
 /**
@@ -168,10 +171,12 @@
 //  CALayer *gradientLayer = [BackgroundLayer blueGradient];
 //  gradientLayer.frame = self.view.bounds;
 //  [self.tableView.layer insertSublayer:gradientLayer atIndex:0];
+  
+  [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
   originalBarColor = self.navigationController.navigationBar.barTintColor;
   
-  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
   
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   
@@ -180,8 +185,8 @@
     sunriseNotificationSetting.on = YES;
   } else {
     sunriseNotificationSetting.on = NO;
-    sunriseNotificationCount.textColor = [UIColor grayColor];
-    sunriseLabel.textColor = [UIColor grayColor];
+    sunriseNotificationCount.textColor = [UIColor lightGrayColor];
+    sunriseLabel.textColor = [UIColor lightGrayColor];
     [sunriseNotificationCell setUserInteractionEnabled:NO];
   }
   
@@ -190,8 +195,8 @@
     sunsetNotificationSetting.on = YES;
   } else {
     sunsetNotificationSetting.on = NO;
-    sunsetNotificationCount.textColor = [UIColor grayColor];
-    sunsetLabel.textColor = [UIColor grayColor];
+    sunsetNotificationCount.textColor = [UIColor lightGrayColor];
+    sunsetLabel.textColor = [UIColor lightGrayColor];
     [sunsetNotificationCell setUserInteractionEnabled:NO];
     
 //    sunsetNotificationCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -282,6 +287,9 @@
 
   
   [[UIApplication sharedApplication] setStatusBarHidden:NO];
+  
+  [myDefaults setBool:NO forKey:@"updateStatusBar"];
+  [myDefaults synchronize];
 }
 
 - (UIView *)addGradientLayer {
@@ -317,7 +325,9 @@
 //  [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
 //  [self.tableView setBackgroundView:nil];
 //  [self.tableView setBackgroundColor:[UIColor clearColor]];
-  UIImageView *backView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+  
+  //UIImageView *backView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+  UIImageView *backView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   backView.image = [UIImage imageNamed:@"tableViewBackground"];
   //  UIImageView *navView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 45)];
   //  navView.image = [UIImage imageNamed:@"navBarBackground"];
