@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>866F5E0F-E878-4829-8B7F-379423EA808C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Sunset</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>B159E0AA4AB99CB01A604A7343A373F646DC8DE3</key>
 		<string>https://github.com/nathan3o4/Sunset-Countdown.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Sunset/Sunset.xcodeproj/project.xcworkspace</string>
+	<string>Sunset/Sunset.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B159E0AA4AB99CB01A604A7343A373F646DC8DE3</key>

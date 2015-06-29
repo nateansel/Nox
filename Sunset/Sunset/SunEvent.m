@@ -517,7 +517,6 @@
 /**
  * Sets the notifications.
  * @author Nate
- *
  */
 - (void)setNotifications {
   [[UIApplication sharedApplication] cancelAllLocalNotifications];

@@ -14,41 +14,25 @@
   [super viewDidLoad];
   
   [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
-  if ([myDefaults objectForKey:@"newSunriseNotificationsArray"] == nil) {
-    [myDefaults setObject:@[ [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],
-                             [NSNumber numberWithBool:0],] forKey:@"newSunriseNotificationsArray"];
-  }
-  
   data = [[myDefaults objectForKey:@"newSunriseNotificationsArray"] mutableCopy];
   
+  // set up each of the buttons on the page
   for (int i = 1; i < 13; i++) {
     UIButton *currentButton = (UIButton *) [self.view viewWithTag:i];
     
+    // set up the borders of the buttons
     customBlueColor = [UIColor colorWithRed:0.167 green:0.623 blue:0.969 alpha:1];
     customWhiteColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.35];
     currentButton.layer.cornerRadius = 10;
     [currentButton.layer setBorderWidth:2.0f];
     [currentButton.layer setBorderColor:[UIColor whiteColor].CGColor];
     
+    // set the colors for the buttons
     [currentButton setSelected:[[data objectAtIndex:i] boolValue]];
     [currentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [currentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [currentButton setBackgroundColor:([[data objectAtIndex:i] boolValue]) ? customWhiteColor : [UIColor clearColor]];
-    
-    //    ([[data objectAtIndex:i] boolValue]) ? [self setGradientBackground:currentButton] : [currentButton setBackgroundColor:[UIColor whiteColor]];
   }
 }
 
@@ -60,38 +44,47 @@
   currentButton.clipsToBounds = YES;
 }
 
+/**
+ * Detects which button was clicked and changes the subsequent setting.
+ * @author Nate
+ */
 - (IBAction)buttonClicked:(id)sender {
+  // if the button was selected before
   if ([sender isSelected]) {
+    // deselect the button
     [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:NO]];
     [sender setSelected:NO];
     UIButton *currentButton = (UIButton *)sender;
-    //[[currentButton.layer.sublayers objectAtIndex:0] removeFromSuperlayer];
     [currentButton.layer setBorderColor:[UIColor whiteColor].CGColor];
     
+    // animate the change in colors
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];
     currentButton.backgroundColor = [UIColor clearColor];
     [UIView commitAnimations];
+  // if the button was not selected before
   } else {
+    // select the button
     [data replaceObjectAtIndex:[sender tag] withObject:[NSNumber numberWithBool:YES]];
     [sender setSelected:YES];
-    //[self setGradientBackground:sender];
     UIButton *currentButton = (UIButton *)sender;
     
+    // animate the change in colors
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];
     currentButton.backgroundColor = customWhiteColor;
     [UIView commitAnimations];
   }
   
+  // sync the changes
   [myDefaults setObject:data forKey:@"newSunriseNotificationsArray"];
-  
-  NSLog(@"Button pressed: %@", [sender currentTitle]);
+  [myDefaults synchronize];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   
+  // set up the gradient behind the view
   UIImageView *backView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   backView.image = [UIImage imageNamed:@"tableViewBackground"];
   [self.view addSubview:backView];

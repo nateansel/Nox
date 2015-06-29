@@ -12,39 +12,15 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-  blackGradient = [BackgroundLayer blackGradient];
-  blackGradient.frame = self.view.bounds;
+  blackGradient = [BackgroundLayer blueGradient];
+  blackGradient.frame = self.view.frame;
   [self.view.layer insertSublayer:blackGradient atIndex:0];
-  
-  [self.navigationController.navigationBar setHidden:YES];
-//  originalBarColor = self.navigationController.navigationBar.barTintColor;
-//  [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
-//  [self.navigationController.navigationBar setTranslucent:NO];
-//  [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-//  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+  [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBarBackground" ] forBarMetrics:UIBarMetricsDefault];
+  [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
-//
-//- (void)viewDidDisappear:(BOOL)animated {
-//  [super viewDidDisappear:animated];
-//  
-//  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
-//  [self.navigationController.navigationBar setTranslucent:YES];
-//  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
-//  [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated {
-//  [super viewWillDisappear:animated];
-//  [self.navigationController.navigationBar setBarTintColor:originalBarColor];
-//  [self.navigationController.navigationBar setTranslucent:YES];
-//  [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:0 green:0.47843137254901963 blue:1 alpha:1]];
-//  [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-//}
 
 - (IBAction)dismissCreditsView:(id)sender {
   [self.navigationController popViewControllerAnimated:YES];

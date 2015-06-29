@@ -34,31 +34,12 @@
     // Set status bar to dark color
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
   }
-    
-//  [myDefaults setDouble:[[data objectForKey:@"lat"] doubleValue] forKey:@"lat"];
-//  [myDefaults setDouble:[[data objectForKey:@"long"] doubleValue] forKey:@"long"];
-  
-  // make a string representation of the next sun event for the today widget
-//  NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-//  [formatter setDateFormat:@"MM/dd/yyyy hh:mm a"];
-//  NSLog([formatter stringFromDate:[sunEventObject getNextEvent]]);
-//  [myDefaults setObject:[sunEventObject getNextEvent] forKey:@"nextSunEvent"];
   
   [myDefaults setObject:[sunEventObject getNextSunrise] forKey:@"nextSunrise"];
   [myDefaults setObject:[sunEventObject getNextSunset] forKey:@"nextSunset"];
-  
-  // synchronize the settings
   [myDefaults synchronize];
   
   [sunEventObject refreshUpcomingSunEvents];
-  
-//  if (!(self.isViewLoaded && self.view.window)) {
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
-//  }
-  
-//  if (!(self.isViewLoaded)) {
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
-//  }
 }
 
 - (void)noLocationWarning {
@@ -182,16 +163,15 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
   
+  // set up notification handlers
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noLocationWarning) name:@"location" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationWarning) name:@"noLocation" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshNotifications) name:@"setNotifications" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupLaunchView) name:@"launchView" object:nil];
   
-  NSArray *timeDisplaySettings = @[
-                                    @{ UIFontFeatureTypeIdentifierKey: @(6),
+  NSArray *timeDisplaySettings = @[ @{ UIFontFeatureTypeIdentifierKey: @(6),
                                        UIFontFeatureSelectorIdentifierKey: @(1)
                                        },
                                     @{ UIFontFeatureTypeIdentifierKey: @(17),

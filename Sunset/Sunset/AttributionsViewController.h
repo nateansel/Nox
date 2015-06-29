@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BackgroundLayer.h"
 
 @interface AttributionsViewController : UIViewController
 

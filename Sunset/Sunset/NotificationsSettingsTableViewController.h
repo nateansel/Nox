@@ -39,6 +39,5 @@
 - (void)checkNotifications;
 - (BOOL)notificationsEnabled;
 - (void)notificationChange;
-- (UIView *)addGradientLayer;
 
 @end
