@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -49,19 +50,19 @@
                                     <segue destination="7nm-ES-7Gx" kind="show" id="rJL-9N-bNd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.5 hours until the sun sets" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-TC-eTy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2.5 hours until the sun sets" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-TC-eTy">
                                 <rect key="frame" x="16" y="255" width="568" height="64"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the sun will set at" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-2P-jnL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="the sun will set at" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-2P-jnL">
                                 <rect key="frame" x="16" y="157" width="568" height="42"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4h-pk-06P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4h-pk-06P">
                                 <rect key="frame" x="16" y="187" width="568" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="78" id="Lj9-L3-NJt"/>
@@ -218,7 +219,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number of notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-pV-fuR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="number of notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-pV-fuR">
                                                     <rect key="frame" x="382" y="11" width="177" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -246,7 +247,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olz-BT-Ici">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sunset Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olz-BT-Ici">
                                                     <rect key="frame" x="8" y="11" width="154" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -281,7 +282,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number of notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGr-rF-FhY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="number of notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGr-rF-FhY">
                                                     <rect key="frame" x="382" y="11" width="177" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -386,16 +387,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="owl" translatesAutoresizingMaskIntoConstraints="NO" id="SLS-ku-1LB">
-                                <rect key="frame" x="230" y="45" width="140" height="140"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgZ-Ja-86u">
+                                <rect key="frame" x="16" y="8" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl" translatesAutoresizingMaskIntoConstraints="NO" id="SLS-ku-1LB">
+                                <rect key="frame" x="230" y="89" width="140" height="140"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="WBI-67-IVZ"/>
                                     <constraint firstAttribute="width" constant="140" id="wJE-mf-4Q3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A Cosmic Owl Production" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXx-Ja-P9P">
-                                <rect key="frame" x="144" y="200" width="312" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Cosmic Owl Production" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXx-Ja-P9P">
+                                <rect key="frame" x="144" y="235" width="312" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="U1h-3g-hnf"/>
@@ -405,8 +412,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anC-V8-HV9">
-                                <rect key="frame" x="224" y="229" width="152" height="16"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anC-V8-HV9">
+                                <rect key="frame" x="224" y="264" width="152" height="16"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="5lP-Cv-Zlh"/>
@@ -423,8 +430,8 @@
                                     <action selector="websiteURL:" destination="xny-1j-OfV" eventType="touchUpInside" id="R5k-ZR-f1f"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Brought to you by your friendly neighborhood developers:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlL-k7-D6v">
-                                <rect key="frame" x="172" y="274" width="257" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brought to you by your friendly neighborhood developers:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlL-k7-D6v">
+                                <rect key="frame" x="172" y="291" width="257" height="52"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="L30-01-LTQ"/>
@@ -434,8 +441,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaF-nQ-PIH">
-                                <rect key="frame" x="247" y="360" width="107" height="13"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaF-nQ-PIH">
+                                <rect key="frame" x="247" y="377" width="107" height="13"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="VP9-tU-aBR"/>
@@ -449,8 +456,8 @@
                                     <action selector="chaseTwitter:" destination="xny-1j-OfV" eventType="touchUpInside" id="NzX-fT-f0p"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chase McCoy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQA-1A-zgj">
-                                <rect key="frame" x="226" y="334" width="149" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chase McCoy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQA-1A-zgj">
+                                <rect key="frame" x="226" y="351" width="149" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="Qgt-nB-15h"/>
@@ -460,8 +467,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nathan Ansel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-CW-6oA">
-                                <rect key="frame" x="225" y="398" width="149" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nathan Ansel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-CW-6oA">
+                                <rect key="frame" x="226" y="407" width="149" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="Hbh-VV-uiq"/>
@@ -471,11 +478,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k08-py-U3h">
-                                <rect key="frame" x="257" y="424" width="85" height="13"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k08-py-U3h">
+                                <rect key="frame" x="249" y="432" width="103" height="13"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="7y0-C0-7Rn"/>
+                                    <constraint firstAttribute="width" constant="103" id="7y0-C0-7Rn"/>
                                     <constraint firstAttribute="height" constant="13" id="FdI-cq-YJo"/>
                                 </constraints>
                                 <state key="normal" title="@nathan3o4">
@@ -486,31 +493,25 @@
                                     <action selector="nathanTwitter:" destination="xny-1j-OfV" eventType="touchUpInside" id="KYR-OE-JZ3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgZ-Ja-86u">
-                                <rect key="frame" x="16" y="8" width="22" height="22"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="anC-V8-HV9" firstAttribute="top" secondItem="xXx-Ja-P9P" secondAttribute="bottom" constant="8" id="5mH-tU-Uhp"/>
-                            <constraint firstItem="c7A-CW-6oA" firstAttribute="top" secondItem="yaF-nQ-PIH" secondAttribute="bottom" constant="25" id="9Cj-N4-dLg"/>
+                            <constraint firstItem="c7A-CW-6oA" firstAttribute="top" secondItem="yaF-nQ-PIH" secondAttribute="bottom" constant="17" id="9Cj-N4-dLg"/>
                             <constraint firstAttribute="centerX" secondItem="c7A-CW-6oA" secondAttribute="centerX" id="9Fq-cL-Ks7"/>
                             <constraint firstAttribute="centerX" secondItem="tQA-1A-zgj" secondAttribute="centerX" id="Dra-5C-Tbm"/>
                             <constraint firstAttribute="centerX" secondItem="xXx-Ja-P9P" secondAttribute="centerX" id="IeT-z9-d1a"/>
                             <constraint firstAttribute="centerX" secondItem="hlL-k7-D6v" secondAttribute="centerX" id="Jk7-bd-plf"/>
                             <constraint firstItem="tQA-1A-zgj" firstAttribute="top" secondItem="hlL-k7-D6v" secondAttribute="bottom" constant="8" id="MRG-uS-nXi"/>
                             <constraint firstAttribute="centerX" secondItem="SLS-ku-1LB" secondAttribute="centerX" id="NcZ-a4-56y"/>
-                            <constraint firstItem="k08-py-U3h" firstAttribute="top" secondItem="c7A-CW-6oA" secondAttribute="bottom" constant="2" id="UBJ-BC-oSd"/>
+                            <constraint firstItem="k08-py-U3h" firstAttribute="top" secondItem="c7A-CW-6oA" secondAttribute="bottom" constant="1" id="UBJ-BC-oSd"/>
                             <constraint firstAttribute="centerX" secondItem="k08-py-U3h" secondAttribute="centerX" id="Vzr-4s-Ift"/>
-                            <constraint firstItem="xXx-Ja-P9P" firstAttribute="top" secondItem="SLS-ku-1LB" secondAttribute="bottom" constant="15" id="k5X-25-7Sc"/>
+                            <constraint firstItem="xXx-Ja-P9P" firstAttribute="top" secondItem="SLS-ku-1LB" secondAttribute="bottom" constant="6" id="k5X-25-7Sc"/>
                             <constraint firstItem="SLS-ku-1LB" firstAttribute="top" secondItem="jry-6a-Z5X" secondAttribute="bottom" constant="25" id="lgb-yp-zlS"/>
                             <constraint firstAttribute="centerX" secondItem="yaF-nQ-PIH" secondAttribute="centerX" id="nfT-Qe-024"/>
                             <constraint firstAttribute="centerX" secondItem="anC-V8-HV9" secondAttribute="centerX" id="o1A-v4-iiF"/>
                             <constraint firstItem="yaF-nQ-PIH" firstAttribute="top" secondItem="tQA-1A-zgj" secondAttribute="bottom" constant="2" id="odj-tO-cab"/>
-                            <constraint firstItem="hlL-k7-D6v" firstAttribute="top" secondItem="anC-V8-HV9" secondAttribute="bottom" constant="29" id="zpO-GR-RxF"/>
+                            <constraint firstItem="hlL-k7-D6v" firstAttribute="top" secondItem="anC-V8-HV9" secondAttribute="bottom" constant="11" id="zpO-GR-RxF"/>
                         </constraints>
                     </view>
                     <connections>
@@ -535,11 +536,11 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIy-1i-8SR">
                                 <rect key="frame" x="0.0" y="-1" width="600" height="601"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.53164213895797729" green="0.2682364284992218" blue="0.93276047706604004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZIy-1i-8SR" firstAttribute="bottom" secondItem="j9B-ve-k26" secondAttribute="top" id="3In-Hm-bbW"/>
                             <constraint firstItem="ZIy-1i-8SR" firstAttribute="top" secondItem="Mq4-pT-Lfk" secondAttribute="bottom" id="Atr-6P-qib"/>
@@ -586,7 +587,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ycJ-Gd-ycV">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ycJ-Gd-ycV">
                                 <rect key="frame" x="16" y="263" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="1 hour">
@@ -597,7 +598,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="4O7-81-WUM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="q6S-qb-84D">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="q6S-qb-84D">
                                 <rect key="frame" x="400" y="263" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -610,7 +611,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="phc-UH-hrN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TkK-xm-wmf">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TkK-xm-wmf">
                                 <rect key="frame" x="16" y="371" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -623,7 +624,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="EIt-jL-tni"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YCL-Zj-wUL">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YCL-Zj-wUL">
                                 <rect key="frame" x="208" y="371" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="2 hours">
@@ -634,7 +635,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="USq-Yq-AA4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8a0-82-baZ">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8a0-82-baZ">
                                 <rect key="frame" x="400" y="371" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -647,7 +648,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="L74-9D-xKs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-eh-IA0">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-eh-IA0">
                                 <rect key="frame" x="16" y="479" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -660,7 +661,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="lnF-N5-NEO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6j5-4q-dyH">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6j5-4q-dyH">
                                 <rect key="frame" x="208" y="479" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -673,7 +674,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="c6c-mb-bAV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="12" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-K4-CIW">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-K4-CIW">
                                 <rect key="frame" x="400" y="479" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="3 hours">
@@ -684,7 +685,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="lpu-K1-IZg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9gh-qH-Rpe">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9gh-qH-Rpe">
                                 <rect key="frame" x="208" y="155" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="30 min">
@@ -695,7 +696,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="B9V-O5-KjY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-vA-Sco">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-vA-Sco">
                                 <rect key="frame" x="400" y="155" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="45 min">
@@ -706,7 +707,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="sq4-IF-csI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-qy-5zO">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-qy-5zO">
                                 <rect key="frame" x="16" y="155" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="15 min">
@@ -716,7 +717,7 @@
                                     <action selector="buttonClicked:" destination="Fyo-Ma-a3J" eventType="touchUpInside" id="Gzj-ed-H2z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select how long before the sunset you would like to receive a notification. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keE-Gs-Eru">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select how long before the sunset you would like to receive a notification. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keE-Gs-Eru">
                                 <rect key="frame" x="16" y="72" width="568" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="W4I-7v-oXV"/>
@@ -725,7 +726,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uBZ-l3-vfR">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uBZ-l3-vfR">
                                 <rect key="frame" x="208" y="263" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -835,7 +836,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-ah-LXt">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-ah-LXt">
                                 <rect key="frame" x="16" y="263" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="1 hour">
@@ -846,7 +847,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="zN0-TT-vzh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-BG-S2G">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-BG-S2G">
                                 <rect key="frame" x="400" y="263" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -859,7 +860,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="BFq-2p-4wS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gbn-4c-KZj">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gbn-4c-KZj">
                                 <rect key="frame" x="16" y="371" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -872,7 +873,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="7CV-yV-pgb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BES-Yx-w7H">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BES-Yx-w7H">
                                 <rect key="frame" x="208" y="371" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="2 hours">
@@ -883,7 +884,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="sUy-c0-Uff"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xWl-GK-IH1">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xWl-GK-IH1">
                                 <rect key="frame" x="400" y="371" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -896,7 +897,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="ey2-oA-2B7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0PP-8f-tGy">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0PP-8f-tGy">
                                 <rect key="frame" x="16" y="479" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -909,7 +910,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="UTk-sJ-J7J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-sG-6o6">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-sG-6o6">
                                 <rect key="frame" x="208" y="479" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -922,7 +923,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="N3c-mY-Y5T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="12" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="a9F-UE-Jg5">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="a9F-UE-Jg5">
                                 <rect key="frame" x="400" y="479" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="3 hours">
@@ -933,7 +934,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="5Ed-DZ-3qu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dN9-r8-wL4">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dN9-r8-wL4">
                                 <rect key="frame" x="208" y="155" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="30 min">
@@ -944,7 +945,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="D1I-AX-EA1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-lJ-Qhs">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-lJ-Qhs">
                                 <rect key="frame" x="400" y="155" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="45 min">
@@ -955,7 +956,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="oWe-Mj-LSf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="C4a-nm-Ylo">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="C4a-nm-Ylo">
                                 <rect key="frame" x="16" y="155" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="15 min">
@@ -965,7 +966,7 @@
                                     <action selector="buttonClicked:" destination="aoy-KU-8X2" eventType="touchUpInside" id="FGV-Cr-oX8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select how long before the sunrise you would like to receive a notification. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2q-6Z-tYP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select how long before the sunrise you would like to receive a notification. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2q-6Z-tYP">
                                 <rect key="frame" x="16" y="72" width="568" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="bWi-pS-6tb"/>
@@ -974,7 +975,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-9k-0S0">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-9k-0S0">
                                 <rect key="frame" x="208" y="263" width="184" height="100"/>
                                 <color key="backgroundColor" red="0.8188131313" green="0.8188131313" blue="0.8188131313" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
