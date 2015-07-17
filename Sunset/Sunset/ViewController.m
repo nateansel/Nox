@@ -158,6 +158,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   [self updateView:nil];
 }
 
@@ -204,6 +205,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
   [self updateView:nil];
 }
 

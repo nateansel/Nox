@@ -11,6 +11,7 @@
 @implementation AttributionsViewController
 
 - (void)viewDidLoad {
+  [super viewDidLoad];
 //  NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"attributions" ofType:@"html"];
 //  NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
 //  

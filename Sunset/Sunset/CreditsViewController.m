@@ -15,6 +15,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   blackGradient = [BackgroundLayer blueGradient];
   blackGradient.frame = self.view.frame;
   [self.view.layer insertSublayer:blackGradient atIndex:0];
