@@ -12,11 +12,41 @@
 @implementation ViewController
 
 - (void)updateView:(NSNotification *) notification {
+  if (myDefaults == nil) {
+    myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
+  }
   NSMutableDictionary *data = [sunEventObject updateDictionary];
+  [sunEventObject refreshUpcomingSunEvents];
   
-  timeLabel.text = [self getTimeString:[sunEventObject getNextEvent]];
-  NSLog(@"*****%@*****\n", [data objectForKey:@"time"]);
-  timeUntil.text = [data objectForKey:@"timeLeft"];
+  // Set up the variables to be used to determine the next sun event
+  NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  NSDate *sunEventDate, *nextSunrise, *nextSunset;
+  
+  // find the next sunrise and the next sunset
+  for (int i = 0; i < 61; i++) {
+    // 68.48889 16.67833  --  Norway coordinates to test this code
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunrise = [upcomingSunrises objectAtIndex:i];
+      break;
+    }
+  }
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunset = [upcomingSunsets objectAtIndex:i];
+      break;
+    }
+  }
+  
+  // compare the next sunrise against the next sunset to see which comes first
+  if ([nextSunrise timeIntervalSinceNow] < [nextSunset timeIntervalSinceNow]) {
+    sunEventDate = nextSunrise;
+  } else {
+    sunEventDate = nextSunset;
+  }
+  
+  timeLabel.text = [self getTimeString:sunEventDate];
+  timeUntil.text = [self getTimeLeftString:sunEventDate];
   willSet.text = [data objectForKey:@"riseOrSet"];
   
   bool isSet = [[data objectForKey:@"isSet"] boolValue];
@@ -38,8 +68,6 @@
   [myDefaults setObject:[sunEventObject getNextSunrise] forKey:@"nextSunrise"];
   [myDefaults setObject:[sunEventObject getNextSunset] forKey:@"nextSunset"];
   [myDefaults synchronize];
-  
-  [sunEventObject refreshUpcomingSunEvents];
 }
 
 - (void)noLocationWarning {
@@ -157,7 +185,125 @@
   return [hourString stringByAppendingString:[@":" stringByAppendingString:[minuteString stringByAppendingString:amOrPM]]];
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Updates the values in myDefaults and returns a string representation of the countdown to the next sun event.
+ * @author Nate
+ *
+ * @return NSString representation of the countdown to the next sun event
+ */
+- (NSString *)getTimeLeftString:(NSDate *)date {
+  // declare some variables
+  double tempTimeNum;
+  int days, hours, minutes;
+  NSString *dayString, *minuteString, *riseOrSet;
+  
+  // Let's start building a string! Starting with the end first? Okay!
+  if ([self isSunriseNext]) {
+    riseOrSet = @"until the sun rises";
+  } else {
+    riseOrSet = @"of sunlight left";
+  }
+  
+  // Do some calculations!
+  tempTimeNum = [date timeIntervalSinceNow];      // the time difference between event and now in seconds
+  hours = ((int) tempTimeNum) / 3600;             // integer division with total seconds / seconds per hour
+  minutes = (tempTimeNum - (hours * 3600)) / 60;  // integer division with the remaining seconds / seconds per minute
+  days = hours / 24;
+  hours -= days * 24;
+  
+  // Determine how many days left
+  if (days > 0) {
+    if (days == 1) {
+      dayString = @"1 day ";
+    } else {
+      dayString = [NSString stringWithFormat:@"%d days ",days];
+    }
+  } else {
+    dayString = @"";
+  }
+  
+  // Determine how to display the minutes in fractions
+  if (minutes > 45) {
+    // Increase the hour variable to compensate for not showing minutes (rounding up an hour)
+    hours++;
+    minuteString = @"";
+  } else if (minutes > 30) {
+    minuteString = @"¾";
+  } else if (minutes > 15) {
+    minuteString = @"½";
+  } else {
+    minuteString = @"¼";
+  }
+  
+  // If more than 45 minutes left until the sunrise or sunset
+  if (hours > 0) {
+    if (hours == 1 && minutes > 45) {
+      return [NSString stringWithFormat:@"%@%d%@ hour %@.", dayString, hours, minuteString, riseOrSet];
+    }
+    return [NSString stringWithFormat:@"%@%d%@ hours %@.", dayString, hours, minuteString, riseOrSet];
+  }
+  
+  // If the sunrise or sunset is about to happen (4 or less minutes to event)
+  if (minutes < 5) {
+    if ([self isSunriseNext]) {
+      return @"Sunrise is imminent";
+    } else {
+      return @"Sunset is imminent";
+    }
+  }
+  
+  // If there is less than an hour but more than 4 minutes left before the sunrise or sunset
+  return [NSString stringWithFormat:@"%d minutes %@", minutes, riseOrSet];
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Determines if a sunrise is the next sun event to occur.
+ * @author Nate
+ *
+ * @return BOOL if the sunrise is next
+ */
+- (BOOL)isSunriseNext {
+  BOOL sunriseNext = YES;
+  NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  NSDate *nextSunrise, *nextSunset;
+  
+  // find the next sunrise and the next sunset
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunrise = [upcomingSunrises objectAtIndex:i];
+      break;
+    }
+  }
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunset = [upcomingSunsets objectAtIndex:i];
+      break;
+    }
+  }
+  
+  // compare the next sunrise against the next sunset to see which comes first
+  if ([nextSunrise timeIntervalSinceNow] < [nextSunset timeIntervalSinceNow]) {
+    sunriseNext = YES
+  } else {
+    sunriseNext = NO;
+  }
+  
+  return sunriseNext;
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
 - (void)viewWillAppear:(BOOL)animated {
+  myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   [super viewWillAppear:animated];
   [self updateView:nil];
 }

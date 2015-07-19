@@ -16,6 +16,7 @@
 
 @interface SunEvent : NSObject <CLLocationManagerDelegate> {
   KCAstronomicalCalendar *calendar;
+  KCAstronomicalCalendar *calculationsCalendar;
   KCGeoLocation *location;
   CLLocation *currentLocation;
   NSUserDefaults *myDefaults;
@@ -26,9 +27,9 @@
 
 - (SunEvent *)init;
 - (void)locationManager:(CLLocationManager *) manager
-        didUpdateLocations:(NSArray *)locations;
+     didUpdateLocations:(NSArray *)locations;
 - (void)locationManager:(CLLocationManager *)manager
-        didFailWithError:(NSError *)error;
+       didFailWithError:(NSError *)error;
 - (void)updateCalendar;
 - (void)updateLocation;
 - (void)stopUpdatingLocation;
@@ -49,6 +50,7 @@
 - (NSDate *)getNextSunrise;
 - (NSDate *)getNextSunset;
 - (void)refreshUpcomingSunEvents;
+- (BOOL)isValidSunEventForDayFromNow: (int) dayNum andSunrise: (BOOL) testSunrise;
 - (void)setNotifications;
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;

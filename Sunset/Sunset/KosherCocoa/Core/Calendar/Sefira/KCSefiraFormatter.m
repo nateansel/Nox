@@ -8,7 +8,7 @@
 
 #import "KCSefiraFormatter.h"
 
-#warning This class isn't finished yet.
+//#warning This class isn't finished yet.
 
 @interface KCSefiraFormatter ()
 

@@ -83,7 +83,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * Update the KCAstronomicalCalendar object.
+ * Update the KCAstronomicalCalendar objects.
  * @author Nate
  */
 - (void)updateCalendar {
@@ -92,6 +92,7 @@
                                     andLongitude:currentLocation.coordinate.longitude
                                     andTimeZone:[NSTimeZone systemTimeZone]];
   calendar = [[KCAstronomicalCalendar alloc] initWithLocation:location];
+  calculationsCalendar = [[KCAstronomicalCalendar alloc] initWithLocation:location];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -485,37 +486,65 @@
 - (void)refreshUpcomingSunEvents {
   NSMutableArray *upcomingSunrises = [[NSMutableArray alloc] init];
   NSMutableArray *upcomingSunsets = [[NSMutableArray alloc] init];
-  int startDate;
+  int daysSkipped = 0;
   
-  if ([[self getTodaySunriseDate] timeIntervalSinceNow] > 0) {
-    startDate = 0;
-  } else {
-    startDate = 1;
+  for (int i = 0; i < (61 + daysSkipped); i++) {
+    if ([self isValidSunEventForNumDaysFromNow:i andSunrise:YES]) {
+      [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
+      [upcomingSunrises addObject:[calendar sunrise]];
+    } else {
+      daysSkipped++;
+    }
   }
-  for (int i = startDate; i < (61 + startDate); i++) {
-    [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
-    [upcomingSunrises addObject:[calendar sunrise]];
-  }
-  
-  if ([[self getTodaySunsetDate] timeIntervalSinceNow] > 0) {
-    startDate = 0;
-  } else {
-    startDate = 1;
-  }
-  for (int i = startDate; i < (61 + startDate); i++) {
-    [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
-    [upcomingSunsets addObject:[calendar sunset]];
+
+  daysSkipped = 0;
+  for (int i = 0; i < (61 + daysSkipped); i++) {
+    if ([self isValidSunEventForNumDaysFromNow:i andSunrise:NO]) {
+      [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
+      [upcomingSunsets addObject:[calendar sunset]];
+    } else {
+      daysSkipped++;
+    }
   }
   
   [myDefaults setObject:upcomingSunrises forKey:@"upcomingSunrises"];
-  [myDefaults setObject:[NSArray arrayWithArray:upcomingSunsets] forKey:@"upcomingSunsets"];
+  [myDefaults setObject:upcomingSunsets forKey:@"upcomingSunsets"];
   [myDefaults synchronize];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
+- (BOOL)isValidSunEventForNumDaysFromNow: (int) dayNum andSunrise: (BOOL) testSunrise {
+  [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * dayNum)]];
+  
+  // if the sunrise and sunset is the same date they are invalid
+  if ([[calendar sunrise] isEqualToDate:[calendar sunset]]) {
+    return NO;
+  }
+  
+  // set up the calculations calendar for the day before the day testing and a dateformatter
+  [calculationsCalendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * (dayNum - 1))]];
+  NSDateFormatter *df = [[NSDateFormatter alloc] init];
+  [df setDateFormat:@"HH:mm"];
+  
+  // if you are testing for a sunrise
+  if (testSunrise) {
+    // test to see if the sunrise for this day matches with the time from the day before, if so the day is invalid
+    if ([[df stringFromDate:[calendar sunrise]] isEqualToString:[df stringFromDate:[calculationsCalendar sunset]]]) {
+      return NO;
+    }
+  } else {
+    // same for if you're testing sunset, compare it to the time of the previous day.
+    if ([[df stringFromDate:[calendar sunset]] isEqualToString:[df stringFromDate:[calculationsCalendar sunrise]]]) {
+      return NO;
+    }
+  }
+  
+  return YES;
+}
+
 /**
- * Sets the notifications.
+ * Cancels all previous notifications and sets the new notifications.
  * @author Nate
  */
 - (void)setNotifications {
@@ -565,7 +594,7 @@
             if ([notification.fireDate timeIntervalSinceNow] > 0) {
               [[UIApplication sharedApplication] scheduleLocalNotification:notification];
               
-              NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+              //NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
             }
           }
         }
@@ -583,7 +612,7 @@
             if ([notification.fireDate timeIntervalSinceNow] > 0) {
               [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 
-              NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+              //NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
             }
           }
         }
@@ -599,7 +628,7 @@
     if ([notification.fireDate timeIntervalSinceNow] > 0) {
       [[UIApplication sharedApplication] scheduleLocalNotification:notification];
       
-      NSLog([@"End of notifications " stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
+      //NSLog([@"End of notifications " stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
     }
   }
   

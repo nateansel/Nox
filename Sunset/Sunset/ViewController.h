@@ -49,6 +49,8 @@
 
 - (void)refreshNotifications;
 - (NSString *)getTimeString:(NSDate *)date;
+- (NSString *)getTimeLeftString:(NSDate *)date;
+- (BOOL)isSunriseNext;
 
 @end
 

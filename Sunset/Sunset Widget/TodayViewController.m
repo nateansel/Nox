@@ -61,11 +61,32 @@
   NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
   BOOL sunriseNext = YES;
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-  [dateFormatter setDateFormat:@"h:mm a"];
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:@"MM-dd h:mm a"];
+  NSDateFormatter *df = [[NSDateFormatter alloc] init];
+  [df setDateFormat:@"MM-dd h:mm a"];
   NSDate *sunEventDate;
   
+  
   for (int i = 0; i < 61; i++) {
+    // 68.48889 16.67833  --  Norway coordinates to test this code
+    while ([[upcomingSunrises objectAtIndex:i] isEqualToDate:[upcomingSunsets objectAtIndex:i]]) {
+      i++;
+    }
+    
+    
+    NSLog([dateFormatter stringFromDate:[upcomingSunrises objectAtIndex:i]]);
+    NSLog([dateFormatter stringFromDate:[upcomingSunsets objectAtIndex:i]]);
+    if ((i > 0) ? [[df stringFromDate:[upcomingSunrises objectAtIndex:i]] isEqualToString:[df stringFromDate:[upcomingSunsets objectAtIndex:i-1]]] : NO) {
+      sunEventDate = [upcomingSunsets objectAtIndex:i];
+      sunriseNext = NO;
+      break;
+    } else if ((i > 0) ? [[df stringFromDate:[upcomingSunsets objectAtIndex:i]] isEqualToString:[df stringFromDate:[upcomingSunrises objectAtIndex:i-1]]] : NO) {
+      sunEventDate = [upcomingSunrises objectAtIndex:i];
+      sunriseNext = YES;
+      break;
+    }
+    
     if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0
         && [[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow]
            > [[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow]) {
@@ -80,7 +101,6 @@
   }
   
   countdown.text = [self getTimeLeftString: sunEventDate];
-//  timeLabel.text = [dateFormatter stringFromDate:sunEventDate];
   timeLabel.text = [self getTimeString:sunEventDate];
   if ([self isSunriseNext]) {
     willSet.text = @"The sun will rise at";
@@ -114,23 +134,8 @@
 - (NSString *)getTimeLeftString:(NSDate *)date {
   // declare some variables
   double tempTimeNum;
-  int hours, minutes;
-  NSString *minuteString, *riseOrSet;
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-  [dateFormatter setDateFormat:@"h:mm a"];
-  
-//  if ([self isSunriseNext]) {
-//    date = [myDefaults objectForKey:@"nextSunrise"];
-//    riseOrSet = @"until the sun rises";
-//    [myDefaults setObject:@"The sun will rise at" forKey:@"riseOrSet"];
-//  } else {
-//    date = [myDefaults objectForKey:@"nextSunset"];
-//    riseOrSet = @"of sunlight left";
-//    [myDefaults setObject:@"The sun will set at" forKey:@"riseOrSet"];
-//  }
-                     //
-//  [myDefaults setObject:[dateFormatter stringFromDate:date] forKey:@"time"];
-//  [myDefaults synchronize];
+  int days, hours, minutes;
+  NSString *dayString, *minuteString, *riseOrSet;
   
   if ([self isSunriseNext]) {
     riseOrSet = @"until the sun rises";
@@ -141,6 +146,15 @@
   tempTimeNum = [date timeIntervalSinceNow];      // the time difference between event and now in seconds
   hours = ((int) tempTimeNum) / 3600;             // integer division with total seconds / seconds per hour
   minutes = (tempTimeNum - (hours * 3600)) / 60;  // integer division with the remaining seconds / seconds per minute
+  days = hours / 24;
+  hours -= days * 24;
+  
+  // Determine how many days left
+  if (days > 0) {
+    dayString = [NSString stringWithFormat:@"%d days ",days];
+  } else {
+    dayString = @"";
+  }
   
   // Determine how to display the minutes
   if (minutes > 45) {
@@ -158,9 +172,9 @@
   // If more than 45 minutes left until the sunrise or sunset
   if (hours > 0) {
     if (hours == 1 && minutes > 45) {
-      return [NSString stringWithFormat:@"%d%@ hour %@.", hours, minuteString, riseOrSet];
+      return [NSString stringWithFormat:@"%@%d%@ hour %@.", dayString, hours, minuteString, riseOrSet];
     }
-    return [NSString stringWithFormat:@"%d%@ hours %@.", hours, minuteString, riseOrSet];
+    return [NSString stringWithFormat:@"%@%d%@ hours %@.", dayString, hours, minuteString, riseOrSet];
   }
   
   // If the sunrise or sunset is about to happen (4 or less minutes to event)
@@ -186,18 +200,32 @@
   // cycle through both arrays to determine which event is coming next
   NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  BOOL sunriseNext = YES;
+  NSDateFormatter *df = [[NSDateFormatter alloc] init];
+  [df setDateFormat:@"MM-dd h:mm a"];
+  
   for (int i = 0; i < 61; i++) {
+    while ([[upcomingSunrises objectAtIndex:i] isEqualToDate:[upcomingSunsets objectAtIndex:i]]) {
+      i++;
+    }
+    
+    if ((i > 0) ? [[df stringFromDate:[upcomingSunrises objectAtIndex:i]] isEqualToString:[df stringFromDate:[upcomingSunsets objectAtIndex:i-1]]] : NO) {
+      sunriseNext = NO;
+      break;
+    }
+    
     if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0
         && [[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow]
-           > [[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow]) {
-      return YES;
+        > [[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow]) {
+      sunriseNext = YES;
+      break;
     } else if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
-      return NO;
+      sunriseNext = NO;
+      break;
     }
   }
   
-  // just to appease the compiler
-  return NO;
+  return sunriseNext;
 }
 
 /**
