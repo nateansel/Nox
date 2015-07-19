@@ -290,7 +290,7 @@
   
   // compare the next sunrise against the next sunset to see which comes first
   if ([nextSunrise timeIntervalSinceNow] < [nextSunset timeIntervalSinceNow]) {
-    sunriseNext = YES
+    sunriseNext = YES;
   } else {
     sunriseNext = NO;
   }
