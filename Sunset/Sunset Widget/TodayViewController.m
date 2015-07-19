@@ -20,10 +20,16 @@
   return UIEdgeInsetsZero;
 }
 
+
+
+
 - (IBAction)openApp:(id)sender {
   NSURL *appURL = [NSURL URLWithString:@"sunset://"];
   [self.extensionContext openURL:appURL completionHandler:nil];
 }
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,13 +50,18 @@
     UIFont *timeFont = [UIFont fontWithDescriptor: timerDescriptor size:0.0];
   
     timeLabel.font = timeFont;
-
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
   // Perform any setup necessary in order to update the view.
@@ -61,43 +72,27 @@
   NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
   BOOL sunriseNext = YES;
-  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:@"MM-dd h:mm a"];
-  NSDateFormatter *df = [[NSDateFormatter alloc] init];
-  [df setDateFormat:@"MM-dd h:mm a"];
-  NSDate *sunEventDate;
+  NSDate *sunEventDate, *nextSunrise, *nextSunset;
   
-  
+  // find the next sunrise and the next sunset
   for (int i = 0; i < 61; i++) {
-    // 68.48889 16.67833  --  Norway coordinates to test this code
-    while ([[upcomingSunrises objectAtIndex:i] isEqualToDate:[upcomingSunsets objectAtIndex:i]]) {
-      i++;
-    }
-    
-    
-    NSLog([dateFormatter stringFromDate:[upcomingSunrises objectAtIndex:i]]);
-    NSLog([dateFormatter stringFromDate:[upcomingSunsets objectAtIndex:i]]);
-    if ((i > 0) ? [[df stringFromDate:[upcomingSunrises objectAtIndex:i]] isEqualToString:[df stringFromDate:[upcomingSunsets objectAtIndex:i-1]]] : NO) {
-      sunEventDate = [upcomingSunsets objectAtIndex:i];
-      sunriseNext = NO;
-      break;
-    } else if ((i > 0) ? [[df stringFromDate:[upcomingSunsets objectAtIndex:i]] isEqualToString:[df stringFromDate:[upcomingSunrises objectAtIndex:i-1]]] : NO) {
-      sunEventDate = [upcomingSunrises objectAtIndex:i];
-      sunriseNext = YES;
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunrise = [upcomingSunrises objectAtIndex:i];
       break;
     }
-    
-    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0
-        && [[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow]
-           > [[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow]) {
-      sunEventDate = [upcomingSunrises objectAtIndex:i];
-      sunriseNext = YES;
-      break;
-    } else if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
-      sunEventDate = [upcomingSunsets objectAtIndex:i];
-      sunriseNext = NO;
+  }
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunset = [upcomingSunsets objectAtIndex:i];
       break;
     }
+  }
+  
+  // compare the next sunrise against the next sunset to see which comes first
+  if ([nextSunrise timeIntervalSinceNow] < [nextSunset timeIntervalSinceNow]) {
+    sunEventDate = nextSunrise;
+  } else {
+    sunEventDate = nextSunset;
   }
   
   countdown.text = [self getTimeLeftString: sunEventDate];
@@ -124,6 +119,9 @@
   
   completionHandler(NCUpdateResultNewData);
 }
+
+
+
 
 /**
  * Updates the values in myDefaults and returns a string representation of the countdown to the next sun event.
@@ -190,6 +188,9 @@
   return [NSString stringWithFormat:@"%d minutes %@", minutes, riseOrSet];
 }
 
+
+
+
 /**
  * Determines if a sunrise is the next sun event to occur.
  * @author Nate
@@ -228,6 +229,9 @@
   return sunriseNext;
 }
 
+
+
+
 /**
  * Determines if the stored sunrise and sunset data are in the past,
  * and have thus expired.
@@ -250,7 +254,8 @@
   return YES;
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
 
 /**
  *
@@ -299,5 +304,7 @@
   
   return [hourString stringByAppendingString:[@":" stringByAppendingString:[minuteString stringByAppendingString:amOrPM]]];
 }
+
+
 
 @end
