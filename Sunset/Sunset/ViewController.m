@@ -70,12 +70,20 @@
   [myDefaults synchronize];
 }
 
+
+
+
+
 - (void)noLocationWarning {
   noLocation.hidden = YES;
   timeLabel.hidden = NO;
   timeUntil.hidden = NO;
   willSet.hidden = NO;
 }
+
+
+
+
 
 - (void)locationWarning {
   noLocation.text = @"You need to enable location services in Settings for the app to work properly.";
@@ -85,6 +93,10 @@
   willSet.hidden = YES;
 }
 
+
+
+
+
 - (void)setupLaunchView {
   noLocation.hidden = YES;
   timeLabel.hidden = YES;
@@ -92,7 +104,14 @@
   willSet.hidden = YES;
 }
 
-// Sets up the gradient layers
+
+
+
+
+/**
+ * Sets up the gradients to be used in the main screen
+ * @author Chased
+ */
 - (void)setupGradients {
   orangeGradientLayer = [BackgroundLayer orangeGradient];
   blueGradientLayer = [BackgroundLayer blueGradient];
@@ -105,6 +124,10 @@
   orangeGradientLayer.hidden = false;
 }
 
+
+
+
+
 // Starts the locationManager with ALWAYS authorization
 -(void)refresh {
   [sunEventObject updateLocation];
@@ -112,6 +135,10 @@
   [sunEventObject refreshUpcomingSunEvents];
   // [self updateView:nil];
 }
+
+
+
+
 
 // I use this for cases when the app is closed or the background refresh ends
 // and the location service needs to be stopped
@@ -128,10 +155,27 @@
   completionHandler(UIBackgroundFetchResultNewData);
 }
 
+
+
+
+/**
+ * Returns the notification setting held in myDefaults.
+ * @author Nate
+ *
+ * @return A boolean as to the setting's state
+ */
 - (BOOL)getNotificationSetting {
   return [myDefaults boolForKey:@"notificationSetting"];
 }
 
+
+
+
+
+/**
+ * Tells the SunEvent object to create notifications
+ * @author Nate
+ */
 - (void)setNotifications {
   NSLog(@"Set Notifications");
   [sunEventObject setNotificationsWithSeconds: (int) (60 * [myDefaults doubleForKey:@"notificationTimeCustomization"])
@@ -139,11 +183,28 @@
                                    andSunrise: [myDefaults boolForKey:@"sunriseNotificationSetting"]];
 }
 
+
+
+
+/**
+ * Clear all previously scheduled notifications and set new ones.
+ * @author Nate
+ */
 - (void)refreshNotifications {
   [[UIApplication sharedApplication] cancelAllLocalNotifications];
   [self setNotifications];
 }
 
+
+
+
+/**
+ * Returns the time from a date object in a string format.
+ * @author Nate
+ *
+ * @param date A NSDate object of the time to be converted
+ * @return A string representation of the time that was converted
+ */
 - (NSString *)getTimeString:(NSDate *)date {
   NSString *hourString, *minuteString, *amOrPM;
   int hours;
@@ -185,7 +246,9 @@
   return [hourString stringByAppendingString:[@":" stringByAppendingString:[minuteString stringByAppendingString:amOrPM]]];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Updates the values in myDefaults and returns a string representation of the countdown to the next sun event.
@@ -260,7 +323,7 @@
 
 
 
-////////////////////////////////////////////////////////////////////////////////
+
 
 /**
  * Determines if a sunrise is the next sun event to occur.
@@ -300,13 +363,17 @@
 
 
 
-////////////////////////////////////////////////////////////////////////////////
+
 
 - (void)viewWillAppear:(BOOL)animated {
   myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   [super viewWillAppear:animated];
   [self updateView:nil];
 }
+
+
+
+
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -347,13 +414,20 @@
   
   self.view.layer.cornerRadius = 8;
   self.view.clipsToBounds = YES;
-  
 }
+
+
+
+
 
 - (void) viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   [self updateView:nil];
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

@@ -31,7 +31,9 @@
   return self;
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 - (void)locationManager:(CLLocationManager *) manager
      didUpdateLocations:(NSArray *)locations{
@@ -55,7 +57,9 @@
   
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 - (void)locationManager:(CLLocationManager*)manager
         didFailWithError:(NSError *)error {
@@ -80,7 +84,9 @@
   NSLog(@"Error: %@",error.description);
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Update the KCAstronomicalCalendar objects.
@@ -89,17 +95,19 @@
 - (void)updateCalendar {
   // Had to put this stuff here because calendar was coming up nil in the old location
   location = [[KCGeoLocation alloc] initWithLatitude:currentLocation.coordinate.latitude
-                                    andLongitude:currentLocation.coordinate.longitude
-                                    andTimeZone:[NSTimeZone systemTimeZone]];
+                                        andLongitude:currentLocation.coordinate.longitude
+                                         andTimeZone:[NSTimeZone systemTimeZone]];
   calendar = [[KCAstronomicalCalendar alloc] initWithLocation:location];
   calculationsCalendar = [[KCAstronomicalCalendar alloc] initWithLocation:location];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Updates the location via the locationManager.
- * @author Nate
+ * @author Chase
  */
 - (void)updateLocation {
   _locationManager = [[CLLocationManager alloc] init];
@@ -132,7 +140,9 @@
                                                       object:nil];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted || status == kCLAuthorizationStatusNotDetermined) {
@@ -146,17 +156,21 @@
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Tells the locaiton manager to stop updating the location.
- * @author Nate
+ * @author Chase
  */
 - (void)stopUpdatingLocation {
   [self.locationManager stopUpdatingLocation];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Retrieve a NSDate object of today's sunset.
@@ -169,7 +183,9 @@
   return [calendar sunset];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Retrieve a NSDate object of today's sunrise.
@@ -182,7 +198,9 @@
   return [calendar sunrise];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Retrieve a NSDate object of tomorrow's sunrise.
@@ -195,7 +213,9 @@
   return [calendar sunrise];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Retrieve a NSDate object of tomorrow's sunset.
@@ -208,7 +228,9 @@
   return [calendar sunset];
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Retreve the time that the sun will either rise or set at.
@@ -222,22 +244,21 @@
   
   if (![self hasSunRisenToday]) {
     // the sun hasn't risen today
-    return [NSString stringWithFormat:@"%@",
-            [dateFormatter stringFromDate:[self getTodaySunriseDate]]];
+    return [dateFormatter stringFromDate:[self getTodaySunriseDate]];
     
   } else if (![self hasSunSetToday]) {
     // the sun has not set today
-    return [NSString stringWithFormat:@"%@",
-            [dateFormatter stringFromDate:[self getTodaySunsetDate]]];
+    return [dateFormatter stringFromDate:[self getTodaySunsetDate]];
     
   } else {
     // the sun has already set today
-    return [NSString stringWithFormat:@"%@",
-            [dateFormatter stringFromDate:[self getTomorrowSunriseDate]]];
+    return [dateFormatter stringFromDate:[self getTomorrowSunriseDate]];
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Creates and returns a string representation of the time left until the next sun event.
@@ -252,10 +273,11 @@
   int hours, minutes;
   NSString *minuteString, *riseOrSet;
   
-  tempTimeNum = [date timeIntervalSinceNow];  // the time difference between event and now in seconds
-  hours = ((int) tempTimeNum) / 3600;  // integer division with total seconds / seconds per hour
+  tempTimeNum = [date timeIntervalSinceNow];      // the time difference between event and now in seconds
+  hours = ((int) tempTimeNum) / 3600;             // integer division with total seconds / seconds per hour
   minutes = (tempTimeNum - (hours * 3600)) / 60;  // integer division with the remaining seconds / seconds per minute
   
+  // Determine the end of the string
   if (![self hasSunRisenToday] || [self hasSunSetToday]) {
     riseOrSet = @"until the sun rises";
   } else {
@@ -264,8 +286,7 @@
   
   // Determine how to display the minutes
   if (minutes > 45) {
-    // Increase the hour variable to compensate for not showing minutes
-    hours++;
+    hours++;                  // Increase the hour variable to compensate for not showing minutes
     minuteString = @"";
   } else if (minutes > 30) {
     minuteString = @"¾";
@@ -296,31 +317,61 @@
   return [NSString stringWithFormat:@"%d minutes %@", minutes, riseOrSet];
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ * Determine if the sun has risen yet or not.
+ * @author Nate
+ *
+ * @return True if the sun has risen today, false otherwise
+ */
 - (BOOL)hasSunRisenToday {
   return ([[self getTodaySunriseDate] timeIntervalSinceNow] < 0);
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ * Determine if the sun has set yet or not.
+ * @author Nate
+ *
+ * @return True if the sun has set today, false otherwise
+ */
 - (BOOL)hasSunSetToday {
   return ([[self getTodaySunsetDate] timeIntervalSinceNow] < 0);
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ * Returns the current latitude of the user's device
+ * @author Nate
+ *
+ * @return A double of the current latitude of the device.
+ */
 - (double)getLatitude {
   return currentLocation.coordinate.latitude;
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ * Returns the current longitude of the user's device
+ * @author Nate
+ *
+ * @return A double of the current longitude of the device.
+ */
 - (double)getLongitude {
   return currentLocation.coordinate.longitude;
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * Creates a temporary dictionary with values pertaining to information about sunrise and sunset times.
@@ -364,78 +415,68 @@
   return data;
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ * Returns the next Sun Event to occur.
+ * @author Nate
+ *
+ * @return A NSDate object of the next sun event
+ */
 - (NSDate *)getNextEvent {
-  if (![self hasSunRisenToday]) {
-    // the sun hasn't risen today
-    return [self getTodaySunriseDate];
-  } else if (![self hasSunSetToday]) {
-    // the sun has not set today
-    return [self getTodaySunsetDate];
-  } else {
-    // the sun has set today
-    return [self getTomorrowSunriseDate];
+  NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  NSDate *nextSunrise, *nextSunset;
+  
+  // find the next sunrise and the next sunset
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunrise = [upcomingSunrises objectAtIndex:i];
+      break;
+    }
   }
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunset = [upcomingSunsets objectAtIndex:i];
+      break;
+    }
+  }
+  
+  // compare the next sunrise against the next sunset to see which comes first
+  if ([nextSunrise timeIntervalSinceNow] < [nextSunset timeIntervalSinceNow]) {
+    return nextSunrise;
+  }
+  return nextSunset;
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+/**
+ * Sets notifications before sunsets and sunrises in the future a set amount of seconds before each event
+ * @author Nate
+ *
+ * @param seconds The number of seconds before the sun events which the notificications should be set
+ * @param sunset If notifications should be set for sunsets
+ * @param sunrise If notificaitons should be set for sunrises
+ */
 - (void)setNotificationsWithSeconds: (int) seconds andSunset: (BOOL) sunset andSunrise: (BOOL) sunrise {
   [self setNotifications];
-  
-  
-//  UILocalNotification *notification;
-//  int sunriseStartDate, sunsetStartDate;
-//  
-//  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//  [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
-//  NSString *sunriseTestString = @"Sunrise -- ";
-//  NSString *sunsetTestString = @"Sunset  -- ";
-//  
-//  // Determines the first day on which a notification will be scheduled
-//  // 0 = today
-//  // 1 = tomorrow
-//  if (![self hasSunRisenToday] && ([[self getTodaySunriseDate] timeIntervalSinceNow] > 3600)) {
-//    sunriseStartDate = 0;
-//  } else {
-//    sunriseStartDate = 1;
-//  }
-//    
-//  if (![self hasSunSetToday] && ([[self getTodaySunsetDate] timeIntervalSinceNow] > 3600)) {
-//    sunsetStartDate = 0;
-//  } else {
-//    sunsetStartDate = 1;
-//  }
-//  
-//  if (sunrise) {
-//    for (int i = sunriseStartDate; i < 30; i++) {
-//      notification = [[UILocalNotification alloc] init];
-//      [calendar setWorkingDate:[[NSDate date] dateByAddingTimeInterval:(86400 * i)]];
-//      notification.fireDate = [[calendar sunrise] dateByAddingTimeInterval:-seconds];
-//      notification.alertBody = [[self makeStringFromSeconds:seconds] stringByAppendingString:@" until sunrise."];
-//      notification.soundName = UILocalNotificationDefaultSoundName;
-//      [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-//      //NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:[[calendar sunrise] dateByAddingTimeInterval:-seconds]]]);
-//    }
-//  }
-//  
-//  if (sunset) {
-//    for (int j = sunsetStartDate; j < 30; j++) {
-//      notification = [[UILocalNotification alloc] init];
-//      [calendar setWorkingDate:[[NSDate date] dateByAddingTimeInterval:(86400 * j)]];
-//      notification.fireDate = [[calendar sunset] dateByAddingTimeInterval:-seconds];
-//      notification.alertBody = [[self makeStringFromSeconds:seconds] stringByAppendingString:@" of sunlight left."];
-//      notification.soundName = UILocalNotificationDefaultSoundName;
-//      [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-//      //NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:[[calendar sunset] dateByAddingTimeInterval:-seconds]]]);
-//    }
-//  }
 }
 
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ * Returns a string representation of an amount of seconds (in hours and minutes).
+ * @author Nate
+ *
+ * @param seconds The number of seconds to convert to a string format
+ * @return A NSString object of the seconds converted to hours and minutes - Ex. "2 hours and 30 minutes"
+ */
 - (NSString *)makeStringFromSeconds: (int) seconds {
   int minutes = seconds / 60;
   int hours = minutes / 60;
@@ -460,44 +501,80 @@
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+/**
+ * Finds the next sunrise to occur and returns it.
+ * @author Nate
+ *
+ * @return A NSDate object of the next sunrise to occur
+ */
 - (NSDate *)getNextSunrise {
-  if ([[self getTodaySunriseDate] timeIntervalSinceNow] > 0) {
-    return [self getTodaySunriseDate];
+  NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
+  NSDate *nextSunrise;
+  
+  // find the next sunrise
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunrise = [upcomingSunrises objectAtIndex:i];
+      break;
+    }
   }
-  return [self getTomorrowSunriseDate];
+  return nextSunrise;
 }
 
+
+
+
+/**
+ * Finds the next sunset to occur and returns it.
+ * @author Nate
+ *
+ * @return A NSDate object of the next sunrise to occur
+ */
 - (NSDate *)getNextSunset {
-  if ([[self getTodaySunsetDate] timeIntervalSinceNow] > 0) {
-    return [self getTodaySunsetDate];
+  NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  NSDate *nextSunset;
+  
+  // find the next sunset
+  for (int i = 0; i < 61; i++) {
+    if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunset = [upcomingSunsets objectAtIndex:i];
+      break;
+    }
   }
-  return [self getTomorrowSunsetDate];
+  return nextSunset;
 }
 
-////////////////////////////////////////////////////////////////////////////////
+
+
 
 /**
  * Refreshes the values in myDefaults for upcomingSunrises and upcomingSunsets.
  * @author Nate
- *
  */
 - (void)refreshUpcomingSunEvents {
   NSMutableArray *upcomingSunrises = [[NSMutableArray alloc] init];
   NSMutableArray *upcomingSunsets = [[NSMutableArray alloc] init];
-  int daysSkipped = 0;
+  int daysSkipped = 0;      // this variable keeps up with how many days have been
+                            //   skipped because of invalidity. These skipped days
+                            //   are then added on to the end of the of the array
+                            //   so that there are always 60 sun events in each array
+  
   
   for (int i = 0; i < (61 + daysSkipped); i++) {
+    // if this day is valid, add it to the array
     if ([self isValidSunEventForNumDaysFromNow:i andSunrise:YES]) {
       [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
       [upcomingSunrises addObject:[calendar sunrise]];
     } else {
-      daysSkipped++;
+      daysSkipped++;        // increment daysSkipped to account for this skipped day
     }
   }
 
-  daysSkipped = 0;
+  daysSkipped = 0;          // reset daysSkipped for use with sunsets
   for (int i = 0; i < (61 + daysSkipped); i++) {
     if ([self isValidSunEventForNumDaysFromNow:i andSunrise:NO]) {
       [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
@@ -512,8 +589,17 @@
   [myDefaults synchronize];
 }
 
-////////////////////////////////////////////////////////////////////////////////
 
+
+
+/**
+ * Checks to see if a sun event for a number of days from today is valid
+ * @author Nate
+ *
+ * @param dayNum The number of days from now to test (positive or negative)
+ * @param testSunrise Whether or not you are testing the sunrise
+ * @return A boolean value of the validaty of the sun event
+ */
 - (BOOL)isValidSunEventForNumDaysFromNow: (int) dayNum andSunrise: (BOOL) testSunrise {
   [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * dayNum)]];
   
@@ -525,23 +611,37 @@
   // set up the calculations calendar for the day before the day testing and a dateformatter
   [calculationsCalendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * (dayNum - 1))]];
   NSDateFormatter *df = [[NSDateFormatter alloc] init];
-  [df setDateFormat:@"HH:mm"];
+  [df setDateFormat:@"HH:mm:ss"];
   
   // if you are testing for a sunrise
   if (testSunrise) {
-    // test to see if the sunrise for this day matches with the time from the day before, if so the day is invalid
+    // test to see if the sunrise for this day matches with the time of the sunset from the day before, if so the day is invalid
+    if ([[df stringFromDate:[calendar sunrise]] isEqualToString:[df stringFromDate:[calculationsCalendar sunset]]]) {
+      return NO;
+    }
+    // test to see if the sunrise for this day match with the time for the sunset for the day after, if so the day is invalid
+    [calculationsCalendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * (dayNum + 1))]];
     if ([[df stringFromDate:[calendar sunrise]] isEqualToString:[df stringFromDate:[calculationsCalendar sunset]]]) {
       return NO;
     }
   } else {
-    // same for if you're testing sunset, compare it to the time of the previous day.
+    // same for if you're testing sunset, compare it to the time of the opposite sun event of the previous day
+    if ([[df stringFromDate:[calendar sunset]] isEqualToString:[df stringFromDate:[calculationsCalendar sunrise]]]) {
+      return NO;
+    }
+    // same as above, compare the sunset of today with the sunrise of tomorrow.
+    [calculationsCalendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * (dayNum + 1))]];
     if ([[df stringFromDate:[calendar sunset]] isEqualToString:[df stringFromDate:[calculationsCalendar sunrise]]]) {
       return NO;
     }
   }
   
+  // if you get to this point then it must be a valid sun event
   return YES;
 }
+
+
+
 
 /**
  * Cancels all previous notifications and sets the new notifications.
@@ -593,14 +693,13 @@
             notification.soundName = UILocalNotificationDefaultSoundName;
             if ([notification.fireDate timeIntervalSinceNow] > 0) {
               [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-              
-              //NSLog([sunriseTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
             }
           }
         }
       }
     }
     
+    // same logic as before, this time for sunsets
     if ([myDefaults boolForKey:@"sunsetNotificationSetting"]) {
       for (int i = 1; i < 13; i++) {
         if ([[sunsetNotificationsArray objectAtIndex:i] boolValue]) {
@@ -611,8 +710,6 @@
             notification.soundName = UILocalNotificationDefaultSoundName;
             if ([notification.fireDate timeIntervalSinceNow] > 0) {
               [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-
-              //NSLog([sunsetTestString stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
             }
           }
         }
@@ -627,11 +724,10 @@
     notification.soundName = UILocalNotificationDefaultSoundName;
     if ([notification.fireDate timeIntervalSinceNow] > 0) {
       [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-      
-      //NSLog([@"End of notifications " stringByAppendingString:[dateFormatter stringFromDate:notification.fireDate]]);
     }
   }
   
+  // update the next time to set notifications
   [myDefaults setObject:[NSDate dateWithTimeIntervalSinceNow:86400] forKey:@"scheduleNotificationsOnDate"];
 }
 

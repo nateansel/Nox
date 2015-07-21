@@ -241,9 +241,10 @@
  * @return BOOl if the data is expired
  */
 - (BOOL)isExpired {
-  // cycle through both arrays to determine which event is coming next
   NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
+  
+  // test the last item in both arrays to see if they are in the past
   if ([[upcomingSunrises objectAtIndex:59] timeIntervalSinceNow] > 0) {
     return NO;
   }
@@ -251,6 +252,7 @@
     return NO;
   }
   
+  // if this point is reached the data is expired
   return YES;
 }
 
@@ -258,11 +260,11 @@
 
 
 /**
- *
+ * Returns the time from a date object in a string format.
  * @author Nate
  *
- * @param
- * @return
+ * @param date A NSDate object of the time to be converted
+ * @return A string representation of the time that was converted
  */
 - (NSString *)getTimeString:(NSDate *)date {
   NSString *hourString, *minuteString, *amOrPM;
@@ -272,6 +274,7 @@
   NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
   NSDateComponents *components = [calendar components:unitFlags fromDate:date];
   
+  // add a 0 to the front of the minutes if it is a single digit (less than 10)
   minuteString = [NSString stringWithFormat:@"%d", (int) [components minute]];
   if ([components minute] < 10) {
     minuteString = [@"0" stringByAppendingString:minuteString];
@@ -302,6 +305,7 @@
     minuteString = [@"0" stringByAppendingString:minuteString];
   }
   
+  // return the 12h formated time
   return [hourString stringByAppendingString:[@":" stringByAppendingString:[minuteString stringByAppendingString:amOrPM]]];
 }
 
