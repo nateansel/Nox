@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>866F5E0F-E878-4829-8B7F-379423EA808C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Sunset</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9D2AC042C854D40C9B639BD661D4A8ECC956B79A</key>
+		<string>https://github.com/nathan3o4/Learning-Obj-C.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Sunset/Sunset.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9D2AC042C854D40C9B639BD661D4A8ECC956B79A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nathan3o4/Learning-Obj-C.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9D2AC042C854D40C9B639BD661D4A8ECC956B79A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9D2AC042C854D40C9B639BD661D4A8ECC956B79A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Learning%20Obj-C</string>
+		</dict>
+	</array>
+</dict>
+</plist>

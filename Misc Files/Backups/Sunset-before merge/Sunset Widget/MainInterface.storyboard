@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 AM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="XeR-4i-D8e">
+                                <rect key="frame" x="72" y="37" width="176" height="53"/>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the sun has set" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xtO-FR-Sx1">
+                                <rect key="frame" x="65" y="98" width="191" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="lgk-VE-eB0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the sun will set at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SG8-qT-qwk">
+                                <rect key="frame" x="86" y="14" width="149" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PRh-eB-NVI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SG8-qT-qwk" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="70" id="5Qy-Cp-5Vq"/>
+                            <constraint firstItem="xtO-FR-Sx1" firstAttribute="top" secondItem="XeR-4i-D8e" secondAttribute="bottom" constant="8" symbolic="YES" id="AWE-Ho-Z3F"/>
+                            <constraint firstItem="SG8-qT-qwk" firstAttribute="centerX" secondItem="XeR-4i-D8e" secondAttribute="centerX" id="BfO-8O-TPH"/>
+                            <constraint firstItem="SG8-qT-qwk" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="14" id="Cch-gO-N8Q"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="xtO-FR-Sx1" secondAttribute="bottom" constant="15" id="QUf-4n-kbl"/>
+                            <constraint firstItem="XeR-4i-D8e" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="56" id="ZN7-sF-ZKy"/>
+                            <constraint firstItem="xtO-FR-Sx1" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="dQH-cn-ilP"/>
+                            <constraint firstItem="XeR-4i-D8e" firstAttribute="centerX" secondItem="xtO-FR-Sx1" secondAttribute="centerX" id="dnu-bn-9lJ"/>
+                            <constraint firstItem="xtO-FR-Sx1" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="49" id="qHd-Ne-4do"/>
+                            <constraint firstItem="XeR-4i-D8e" firstAttribute="top" secondItem="SG8-qT-qwk" secondAttribute="bottom" constant="2" id="wZi-Bu-flJ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="140"/>
+                    <connections>
+                        <outlet property="countdown" destination="xtO-FR-Sx1" id="0Uy-dJ-D1W"/>
+                        <outlet property="timeLabel" destination="XeR-4i-D8e" id="oXE-gH-cye"/>
+                        <outlet property="willSet" destination="SG8-qT-qwk" id="Hdh-Yd-Suz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="285"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

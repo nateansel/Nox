@@ -1,0 +1,52 @@
+//
+//  SunEvent.h
+//  Sunset
+//
+//  Created by Nathan Ansel on 5/15/15.
+//  Copyright (c) 2015 Chase McCoy. All rights reserved.
+//
+
+#ifndef Sunset_SunEvent_h
+#define Sunset_SunEvent_h
+
+
+@import CoreLocation;
+#import "KosherCocoa.h"
+#import <UIKit/UIKit.h>
+
+@interface SunEvent : NSObject <CLLocationManagerDelegate> {
+  CLLocationManager *locationManager;
+  KCAstronomicalCalendar *calendar;
+  KCGeoLocation *location;
+  CLLocation *currentLocation;
+  NSUserDefaults *myDefaults;
+  NSMutableDictionary *data;
+  
+  NSDate *sunrise;
+  NSDate *sunset;
+}
+
+- (SunEvent*)init;
+- (void)locationManager:(CLLocationManager*) manager
+        didUpdateLocations:(NSArray *)locations;
+- (void)locationManager:(CLLocationManager*)manager
+        didFailWithError:(NSError *)error;
+- (void)updateCalendar;
+- (void)updateLocation;
+- (void)stopUpdatingLocation;
+- (NSDate*)getTodaySunsetDate;
+- (NSDate*)getTodaySunriseDate;
+- (NSDate*)getTomorrowSunriseDate;
+- (NSString*)getRiseOrSetTimeString;
+- (NSString*)getTimeLeftString: (NSDate*) date;
+- (BOOL)hasSunRisenToday;
+- (BOOL)hasSunSetToday;
+- (double)getLatitude;
+- (double)getLongitude;
+- (NSMutableDictionary*)updateDictionary;
+
+@end
+
+
+
+#endif
