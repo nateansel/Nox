@@ -16,7 +16,6 @@
     myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   }
   NSMutableDictionary *data = [sunEventObject updateDictionary];
-  [sunEventObject refreshUpcomingSunEvents];
   
   // Set up the variables to be used to determine the next sun event
   NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
@@ -24,14 +23,14 @@
   NSDate *sunEventDate, *nextSunrise, *nextSunset;
   
   // find the next sunrise and the next sunset
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunrises.count; i++) {
     // 68.48889 16.67833  --  Norway coordinates to test this code
     if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunrise = [upcomingSunrises objectAtIndex:i];
       break;
     }
   }
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunsets.count; i++) {
     if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunset = [upcomingSunsets objectAtIndex:i];
       break;
@@ -133,7 +132,6 @@
   [sunEventObject updateLocation];
   [sunEventObject updateDictionary];
   [sunEventObject refreshUpcomingSunEvents];
-  // [self updateView:nil];
 }
 
 
@@ -338,13 +336,13 @@
   NSDate *nextSunrise, *nextSunset;
   
   // find the next sunrise and the next sunset
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunrises.count; i++) {
     if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunrise = [upcomingSunrises objectAtIndex:i];
       break;
     }
   }
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunsets.count; i++) {
     if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunset = [upcomingSunsets objectAtIndex:i];
       break;
@@ -366,9 +364,8 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-  myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
+  // myDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.nathanchase.sunset"];
   [super viewWillAppear:animated];
-  [self updateView:nil];
 }
 
 

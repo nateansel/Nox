@@ -75,13 +75,13 @@
   NSDate *sunEventDate, *nextSunrise, *nextSunset;
   
   // find the next sunrise and the next sunset
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunrises.count; i++) {
     if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunrise = [upcomingSunrises objectAtIndex:i];
       break;
     }
   }
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunsets.count; i++) {
     if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunset = [upcomingSunsets objectAtIndex:i];
       break;
@@ -198,32 +198,30 @@
  * @return BOOL if the sunrise is next
  */
 - (BOOL)isSunriseNext {
-  // cycle through both arrays to determine which event is coming next
+  BOOL sunriseNext = YES;
   NSArray *upcomingSunrises = [myDefaults objectForKey:@"upcomingSunrises"];
   NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
-  BOOL sunriseNext = YES;
-  NSDateFormatter *df = [[NSDateFormatter alloc] init];
-  [df setDateFormat:@"MM-dd h:mm a"];
+  NSDate *nextSunrise, *nextSunset;
   
-  for (int i = 0; i < 61; i++) {
-    while ([[upcomingSunrises objectAtIndex:i] isEqualToDate:[upcomingSunsets objectAtIndex:i]]) {
-      i++;
-    }
-    
-    if ((i > 0) ? [[df stringFromDate:[upcomingSunrises objectAtIndex:i]] isEqualToString:[df stringFromDate:[upcomingSunsets objectAtIndex:i-1]]] : NO) {
-      sunriseNext = NO;
+  // find the next sunrise and the next sunset
+  for (int i = 0; i < upcomingSunrises.count; i++) {
+    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunrise = [upcomingSunrises objectAtIndex:i];
       break;
     }
-    
-    if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0
-        && [[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow]
-        > [[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow]) {
-      sunriseNext = YES;
-      break;
-    } else if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
-      sunriseNext = NO;
+  }
+  for (int i = 0; i < upcomingSunsets.count; i++) {
+    if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
+      nextSunset = [upcomingSunsets objectAtIndex:i];
       break;
     }
+  }
+  
+  // compare the next sunrise against the next sunset to see which comes first
+  if ([nextSunrise timeIntervalSinceNow] < [nextSunset timeIntervalSinceNow]) {
+    sunriseNext = YES;
+  } else {
+    sunriseNext = NO;
   }
   
   return sunriseNext;
@@ -245,10 +243,10 @@
   NSArray *upcomingSunsets = [myDefaults objectForKey:@"upcomingSunsets"];
   
   // test the last item in both arrays to see if they are in the past
-  if ([[upcomingSunrises objectAtIndex:59] timeIntervalSinceNow] > 0) {
+  if ([[upcomingSunrises objectAtIndex:(upcomingSunrises.count - 1)] timeIntervalSinceNow] > 0) {
     return NO;
   }
-  if ([[upcomingSunsets objectAtIndex:59] timeIntervalSinceNow] > 0) {
+  if ([[upcomingSunsets objectAtIndex:(upcomingSunrises.count - 1)] timeIntervalSinceNow] > 0) {
     return NO;
   }
   

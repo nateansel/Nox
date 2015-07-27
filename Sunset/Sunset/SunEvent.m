@@ -430,13 +430,13 @@
   NSDate *nextSunrise, *nextSunset;
   
   // find the next sunrise and the next sunset
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunrises.count; i++) {
     if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunrise = [upcomingSunrises objectAtIndex:i];
       break;
     }
   }
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunsets.count; i++) {
     if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunset = [upcomingSunsets objectAtIndex:i];
       break;
@@ -516,7 +516,7 @@
   NSDate *nextSunrise;
   
   // find the next sunrise
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunrises.count; i++) {
     if ([[upcomingSunrises objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunrise = [upcomingSunrises objectAtIndex:i];
       break;
@@ -539,7 +539,7 @@
   NSDate *nextSunset;
   
   // find the next sunset
-  for (int i = 0; i < 61; i++) {
+  for (int i = 0; i < upcomingSunsets.count; i++) {
     if ([[upcomingSunsets objectAtIndex:i] timeIntervalSinceNow] > 0) {
       nextSunset = [upcomingSunsets objectAtIndex:i];
       break;
@@ -556,6 +556,8 @@
  * @author Nate
  */
 - (void)refreshUpcomingSunEvents {
+  NSLog(@"refreshUpcomingSunEvents");
+  
   NSMutableArray *upcomingSunrises = [[NSMutableArray alloc] init];
   NSMutableArray *upcomingSunsets = [[NSMutableArray alloc] init];
   int daysSkipped = 0;      // this variable keeps up with how many days have been
@@ -564,7 +566,7 @@
                             //   so that there are always 60 sun events in each array
   
   
-  for (int i = 0; i < (61 + daysSkipped); i++) {
+  for (int i = 0; i < (16 + daysSkipped); i++) {
     // if this day is valid, add it to the array
     if ([self isValidSunEventForNumDaysFromNow:i andSunrise:YES]) {
       [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
@@ -575,7 +577,7 @@
   }
 
   daysSkipped = 0;          // reset daysSkipped for use with sunsets
-  for (int i = 0; i < (61 + daysSkipped); i++) {
+  for (int i = 0; i < (16 + daysSkipped); i++) {
     if ([self isValidSunEventForNumDaysFromNow:i andSunrise:NO]) {
       [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * i)]];
       [upcomingSunsets addObject:[calendar sunset]];
@@ -601,6 +603,10 @@
  * @return A boolean value of the validaty of the sun event
  */
 - (BOOL)isValidSunEventForNumDaysFromNow: (int) dayNum andSunrise: (BOOL) testSunrise {
+//  static int methodCounter = 0;
+//  methodCounter++;
+//  NSLog(@"isValid %d",methodCounter);
+  
   [calendar setWorkingDate:[NSDate dateWithTimeIntervalSinceNow:(86400 * dayNum)]];
   
   // if the sunrise and sunset is the same date they are invalid
@@ -674,6 +680,9 @@
   
   if (sunriseNotificationNum != 0 || sunsetNotificationNum != 0) {
     int numNotificationsPerEvent = 60 / (sunriseNotificationNum + sunsetNotificationNum);
+    if (numNotificationsPerEvent > 15) {
+      numNotificationsPerEvent = 15;
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd h:mm a"];
