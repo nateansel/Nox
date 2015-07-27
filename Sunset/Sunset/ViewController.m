@@ -381,6 +381,7 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"refreshView" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshNotifications) name:@"setNotifications" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupLaunchView) name:@"launchView" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:UIApplicationWillEnterForegroundNotification object:nil];
   
   NSArray *timeDisplaySettings = @[ @{ UIFontFeatureTypeIdentifierKey: @(6),
                                        UIFontFeatureSelectorIdentifierKey: @(1)
