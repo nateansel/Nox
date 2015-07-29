@@ -131,7 +131,6 @@
 -(void)refresh {
   [sunEventObject updateLocation];
   [sunEventObject updateDictionary];
-  [sunEventObject refreshUpcomingSunEvents];
 }
 
 

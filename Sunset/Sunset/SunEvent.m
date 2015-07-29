@@ -40,9 +40,10 @@
   currentLocation = [locations lastObject];
   [self updateCalendar];
   [self updateDictionary];
+  [self refreshUpcomingSunEvents];
   
   [[NSNotificationCenter defaultCenter] postNotificationName:@"location"
-                                                        object:nil];
+                                                      object:nil];
   [data setValue:@"YES" forKey:@"updateColors"];
   
   [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
@@ -136,8 +137,6 @@
   
   
   [self.locationManager startUpdatingLocation];
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
-                                                      object:nil];
 }
 
 
