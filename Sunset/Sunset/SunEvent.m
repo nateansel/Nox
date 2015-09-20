@@ -38,23 +38,30 @@
 - (void)locationManager:(CLLocationManager *) manager
      didUpdateLocations:(NSArray *)locations{
   currentLocation = [locations lastObject];
-  [self updateCalendar];
-  [self updateDictionary];
-  [self refreshUpcomingSunEvents];
-  
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"location"
-                                                      object:nil];
-  [data setValue:@"YES" forKey:@"updateColors"];
-  
-  [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
-  [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
-  
-  [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
-  [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
-  [myDefaults synchronize];
-  
-  [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
-                                                      object:nil];
+  if ([self isLocationValid:currentLocation]) {
+    NSLog(@"current location is valid");
+    [self updateCalendar];
+    [self updateDictionary];
+    [self refreshUpcomingSunEvents];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"location"
+                                                        object:nil];
+    [data setValue:@"YES" forKey:@"updateColors"];
+    
+    [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
+    [data setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
+    
+    [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude] forKey:@"lat"];
+    [myDefaults setValue:[NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude] forKey:@"long"];
+    //[myDefaults setObject:currentLocation forKey:@"currentLocation"];
+    [myDefaults synchronize];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView"
+                                                        object:nil];
+  }
+  else {
+    NSLog(@"Current location is not valid!"):
+  }
   
 }
 
@@ -737,6 +744,28 @@
   
   // update the next time to set notifications
   [myDefaults setObject:[NSDate dateWithTimeIntervalSinceNow:86400] forKey:@"scheduleNotificationsOnDate"];
+}
+
+
+
+
+
+/**
+ *
+ * @author Nate
+ *
+ * @param
+ * @return
+ */
+- (BOOL)isLocationValid:(CLLocation *)myLocation {
+  if ([myLocation.timestamp timeIntervalSinceNow] < 15
+      && (myLocation.coordinate.latitude > 0.00001
+          || myLocation.coordinate.latitude < -0.00001)
+      && (myLocation.coordinate.longitude > 0.00001
+          || myLocation.coordinate.longitude < -0.00001)) {
+        return YES;
+      }
+  return NO;
 }
 
 @end

@@ -52,6 +52,7 @@
 - (void)refreshUpcomingSunEvents;
 - (BOOL)isValidSunEventForDayFromNow: (int) dayNum andSunrise: (BOOL) testSunrise;
 - (void)setNotifications;
+- (BOOL)isLocationValid:(CLLocation *)myLocation;
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 
