@@ -12,6 +12,7 @@
 		2E2209821CE90481002BF7EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209801CE90481002BF7EB /* Main.storyboard */; };
 		2E2209841CE90481002BF7EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209831CE90481002BF7EB /* Assets.xcassets */; };
 		2E2209871CE90481002BF7EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209851CE90481002BF7EB /* LaunchScreen.storyboard */; };
+		2E22098F1CE90779002BF7EB /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22098E1CE90779002BF7EB /* SunEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2E2209831CE90481002BF7EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E2209861CE90481002BF7EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E2209881CE90481002BF7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E22098E1CE90779002BF7EB /* SunEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +58,21 @@
 			children = (
 				2E22097C1CE90481002BF7EB /* AppDelegate.swift */,
 				2E22097E1CE90481002BF7EB /* ViewController.swift */,
+				2E2209901CE907B1002BF7EB /* Models */,
 				2E2209801CE90481002BF7EB /* Main.storyboard */,
 				2E2209831CE90481002BF7EB /* Assets.xcassets */,
 				2E2209851CE90481002BF7EB /* LaunchScreen.storyboard */,
 				2E2209881CE90481002BF7EB /* Info.plist */,
 			);
 			path = Nox;
+			sourceTree = "<group>";
+		};
+		2E2209901CE907B1002BF7EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E22098E1CE90779002BF7EB /* SunEvent.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E22098F1CE90779002BF7EB /* SunEvent.swift in Sources */,
 				2E22097F1CE90481002BF7EB /* ViewController.swift in Sources */,
 				2E22097D1CE90481002BF7EB /* AppDelegate.swift in Sources */,
 			);
