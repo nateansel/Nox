@@ -60,7 +60,7 @@
                                                         object:nil];
   }
   else {
-    NSLog(@"Current location is not valid!"):
+    NSLog(@"Current location is not valid!");
   }
   
 }

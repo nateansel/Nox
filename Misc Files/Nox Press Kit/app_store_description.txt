@@ -1,0 +1,11 @@
+Nox is the lightning fast way to find out when the sun will rise or set at your location. Quickly check how many hours of daylight are left, and get notified when you want about upcoming sunrises and sunsets.
+
+Features:
+
+• Notification center widget
+• Customizable notifications
+• No internet connection required
+• Support for 12 and 24 hour time
+• Beautiful, easy-to-read design
+
+If you find Nox useful, we would really appreciate an honest App Store review. Your review will help others find the app, which will help us continue to improve it.
