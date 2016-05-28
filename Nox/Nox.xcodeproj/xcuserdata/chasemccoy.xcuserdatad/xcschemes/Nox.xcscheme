@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2E2209781CE90481002BF7EB"
+               BlueprintIdentifier = "2E038F821CFA5F7D00C3E97C"
                BuildableName = "Nox.app"
                BlueprintName = "Nox"
                ReferencedContainer = "container:Nox.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2E2209781CE90481002BF7EB"
+            BlueprintIdentifier = "2E038F821CFA5F7D00C3E97C"
             BuildableName = "Nox.app"
             BlueprintName = "Nox"
             ReferencedContainer = "container:Nox.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2E2209781CE90481002BF7EB"
+            BlueprintIdentifier = "2E038F821CFA5F7D00C3E97C"
             BuildableName = "Nox.app"
             BlueprintName = "Nox"
             ReferencedContainer = "container:Nox.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2E2209781CE90481002BF7EB"
+            BlueprintIdentifier = "2E038F821CFA5F7D00C3E97C"
             BuildableName = "Nox.app"
             BlueprintName = "Nox"
             ReferencedContainer = "container:Nox.xcodeproj">

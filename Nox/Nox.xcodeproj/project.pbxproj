@@ -7,129 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E22097D1CE90481002BF7EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22097C1CE90481002BF7EB /* AppDelegate.swift */; };
-		2E22097F1CE90481002BF7EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22097E1CE90481002BF7EB /* ViewController.swift */; };
-		2E2209821CE90481002BF7EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209801CE90481002BF7EB /* Main.storyboard */; };
-		2E2209841CE90481002BF7EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209831CE90481002BF7EB /* Assets.xcassets */; };
-		2E2209871CE90481002BF7EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209851CE90481002BF7EB /* LaunchScreen.storyboard */; };
-		2E22098F1CE90779002BF7EB /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22098E1CE90779002BF7EB /* SunEvent.swift */; };
-<<<<<<< HEAD
-		97CCC53E130225161A9FD65B /* Pods_Nox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73A9D6F7A324D0F2B3CF578 /* Pods_Nox.framework */; };
-=======
-		D83738AD1CE908D10020DE04 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738AC1CE908D10020DE04 /* Calculator.swift */; };
-		D83738AF1CE90CCA0020DE04 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738AE1CE90CCA0020DE04 /* Location.swift */; };
->>>>>>> origin/rewrite
+		2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E038F861CFA5F7D00C3E97C /* AppDelegate.swift */; };
+		2E038F891CFA5F7D00C3E97C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E038F881CFA5F7D00C3E97C /* ViewController.swift */; };
+		2E038F8C1CFA5F7D00C3E97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E038F8A1CFA5F7D00C3E97C /* Main.storyboard */; };
+		2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */; };
+		2E038F911CFA5F7D00C3E97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D55F2FC9C3683B1BA976DCC /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
-		2E2209791CE90481002BF7EB /* Nox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nox.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E22097C1CE90481002BF7EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E22097E1CE90481002BF7EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2E2209811CE90481002BF7EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2E2209831CE90481002BF7EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2E2209861CE90481002BF7EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2E2209881CE90481002BF7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E22098E1CE90779002BF7EB /* SunEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunEvent.swift; sourceTree = "<group>"; };
-		5B500B1B4981D7D1D2BDA1F7 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
-		B73A9D6F7A324D0F2B3CF578 /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D83738AC1CE908D10020DE04 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
-		D83738AE1CE90CCA0020DE04 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		2E038F831CFA5F7D00C3E97C /* Nox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E038F861CFA5F7D00C3E97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2E038F881CFA5F7D00C3E97C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E038F8B1CFA5F7D00C3E97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E038F901CFA5F7D00C3E97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2E038F921CFA5F7D00C3E97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2E2209761CE90481002BF7EB /* Frameworks */ = {
+		2E038F801CFA5F7D00C3E97C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97CCC53E130225161A9FD65B /* Pods_Nox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E2209701CE90481002BF7EB = {
+		2E038F7A1CFA5F7D00C3E97C = {
 			isa = PBXGroup;
 			children = (
-				2E22097B1CE90481002BF7EB /* Nox */,
-				2E22097A1CE90481002BF7EB /* Products */,
-				B1EAAB5060D01001B3758075 /* Pods */,
-				CF175750DAFB0F48653714FF /* Frameworks */,
+				2E038F851CFA5F7D00C3E97C /* Nox */,
+				2E038F841CFA5F7D00C3E97C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2E22097A1CE90481002BF7EB /* Products */ = {
+		2E038F841CFA5F7D00C3E97C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E2209791CE90481002BF7EB /* Nox.app */,
+				2E038F831CFA5F7D00C3E97C /* Nox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E22097B1CE90481002BF7EB /* Nox */ = {
+		2E038F851CFA5F7D00C3E97C /* Nox */ = {
 			isa = PBXGroup;
 			children = (
-				2E22097C1CE90481002BF7EB /* AppDelegate.swift */,
-				2E22097E1CE90481002BF7EB /* ViewController.swift */,
-				2E2209901CE907B1002BF7EB /* Models */,
-				D83738AB1CE908A80020DE04 /* Sun Even Retrieving */,
-				2E2209801CE90481002BF7EB /* Main.storyboard */,
-				2E2209831CE90481002BF7EB /* Assets.xcassets */,
-				2E2209851CE90481002BF7EB /* LaunchScreen.storyboard */,
-				2E2209881CE90481002BF7EB /* Info.plist */,
+				2E038F861CFA5F7D00C3E97C /* AppDelegate.swift */,
+				2E038F881CFA5F7D00C3E97C /* ViewController.swift */,
+				2E038F8A1CFA5F7D00C3E97C /* Main.storyboard */,
+				2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */,
+				2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */,
+				2E038F921CFA5F7D00C3E97C /* Info.plist */,
 			);
 			path = Nox;
-			sourceTree = "<group>";
-		};
-		2E2209901CE907B1002BF7EB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2E22098E1CE90779002BF7EB /* SunEvent.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-<<<<<<< HEAD
-		B1EAAB5060D01001B3758075 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1D55F2FC9C3683B1BA976DCC /* Pods-Nox.debug.xcconfig */,
-				5B500B1B4981D7D1D2BDA1F7 /* Pods-Nox.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		CF175750DAFB0F48653714FF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B73A9D6F7A324D0F2B3CF578 /* Pods_Nox.framework */,
-			);
-			name = Frameworks;
-=======
-		D83738AB1CE908A80020DE04 /* Sun Even Retrieving */ = {
-			isa = PBXGroup;
-			children = (
-				D83738AC1CE908D10020DE04 /* Calculator.swift */,
-				D83738AE1CE90CCA0020DE04 /* Location.swift */,
-			);
-			name = "Sun Even Retrieving";
->>>>>>> origin/rewrite
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E2209781CE90481002BF7EB /* Nox */ = {
+		2E038F821CFA5F7D00C3E97C /* Nox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E22098B1CE90481002BF7EB /* Build configuration list for PBXNativeTarget "Nox" */;
+			buildConfigurationList = 2E038F951CFA5F7D00C3E97C /* Build configuration list for PBXNativeTarget "Nox" */;
 			buildPhases = (
-				30B96C9FCEF2E33AABEE046A /* 📦 Check Pods Manifest.lock */,
-				2E2209751CE90481002BF7EB /* Sources */,
-				2E2209761CE90481002BF7EB /* Frameworks */,
-				2E2209771CE90481002BF7EB /* Resources */,
-				26E2B364A5EAFF7B3D4C9F43 /* 📦 Embed Pods Frameworks */,
-				3D712E6E58424A429B37E2CB /* 📦 Copy Pods Resources */,
+				2E038F7F1CFA5F7D00C3E97C /* Sources */,
+				2E038F801CFA5F7D00C3E97C /* Frameworks */,
+				2E038F811CFA5F7D00C3E97C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -137,25 +81,25 @@
 			);
 			name = Nox;
 			productName = Nox;
-			productReference = 2E2209791CE90481002BF7EB /* Nox.app */;
+			productReference = 2E038F831CFA5F7D00C3E97C /* Nox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2E2209711CE90481002BF7EB /* Project object */ = {
+		2E038F7B1CFA5F7D00C3E97C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Chase McCoy";
 				TargetAttributes = {
-					2E2209781CE90481002BF7EB = {
+					2E038F821CFA5F7D00C3E97C = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
 			};
-			buildConfigurationList = 2E2209741CE90481002BF7EB /* Build configuration list for PBXProject "Nox" */;
+			buildConfigurationList = 2E038F7E1CFA5F7D00C3E97C /* Build configuration list for PBXProject "Nox" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -163,105 +107,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 2E2209701CE90481002BF7EB;
-			productRefGroup = 2E22097A1CE90481002BF7EB /* Products */;
+			mainGroup = 2E038F7A1CFA5F7D00C3E97C;
+			productRefGroup = 2E038F841CFA5F7D00C3E97C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E2209781CE90481002BF7EB /* Nox */,
+				2E038F821CFA5F7D00C3E97C /* Nox */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2E2209771CE90481002BF7EB /* Resources */ = {
+		2E038F811CFA5F7D00C3E97C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E2209871CE90481002BF7EB /* LaunchScreen.storyboard in Resources */,
-				2E2209841CE90481002BF7EB /* Assets.xcassets in Resources */,
-				2E2209821CE90481002BF7EB /* Main.storyboard in Resources */,
+				2E038F911CFA5F7D00C3E97C /* LaunchScreen.storyboard in Resources */,
+				2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */,
+				2E038F8C1CFA5F7D00C3E97C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		26E2B364A5EAFF7B3D4C9F43 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30B96C9FCEF2E33AABEE046A /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3D712E6E58424A429B37E2CB /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		2E2209751CE90481002BF7EB /* Sources */ = {
+		2E038F7F1CFA5F7D00C3E97C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E22098F1CE90779002BF7EB /* SunEvent.swift in Sources */,
-				D83738AF1CE90CCA0020DE04 /* Location.swift in Sources */,
-				2E22097F1CE90481002BF7EB /* ViewController.swift in Sources */,
-				2E22097D1CE90481002BF7EB /* AppDelegate.swift in Sources */,
-				D83738AD1CE908D10020DE04 /* Calculator.swift in Sources */,
+				2E038F891CFA5F7D00C3E97C /* ViewController.swift in Sources */,
+				2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2E2209801CE90481002BF7EB /* Main.storyboard */ = {
+		2E038F8A1CFA5F7D00C3E97C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2E2209811CE90481002BF7EB /* Base */,
+				2E038F8B1CFA5F7D00C3E97C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		2E2209851CE90481002BF7EB /* LaunchScreen.storyboard */ = {
+		2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2E2209861CE90481002BF7EB /* Base */,
+				2E038F901CFA5F7D00C3E97C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -269,7 +162,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2E2209891CE90481002BF7EB /* Debug */ = {
+		2E038F931CFA5F7D00C3E97C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,7 +207,7 @@
 			};
 			name = Debug;
 		};
-		2E22098A1CE90481002BF7EB /* Release */ = {
+		2E038F941CFA5F7D00C3E97C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,9 +245,8 @@
 			};
 			name = Release;
 		};
-		2E22098C1CE90481002BF7EB /* Debug */ = {
+		2E038F961CFA5F7D00C3E97C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D55F2FC9C3683B1BA976DCC /* Pods-Nox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Nox/Info.plist;
@@ -364,9 +256,8 @@
 			};
 			name = Debug;
 		};
-		2E22098D1CE90481002BF7EB /* Release */ = {
+		2E038F971CFA5F7D00C3E97C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B500B1B4981D7D1D2BDA1F7 /* Pods-Nox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Nox/Info.plist;
@@ -379,25 +270,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E2209741CE90481002BF7EB /* Build configuration list for PBXProject "Nox" */ = {
+		2E038F7E1CFA5F7D00C3E97C /* Build configuration list for PBXProject "Nox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E2209891CE90481002BF7EB /* Debug */,
-				2E22098A1CE90481002BF7EB /* Release */,
+				2E038F931CFA5F7D00C3E97C /* Debug */,
+				2E038F941CFA5F7D00C3E97C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E22098B1CE90481002BF7EB /* Build configuration list for PBXNativeTarget "Nox" */ = {
+		2E038F951CFA5F7D00C3E97C /* Build configuration list for PBXNativeTarget "Nox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E22098C1CE90481002BF7EB /* Debug */,
-				2E22098D1CE90481002BF7EB /* Release */,
+				2E038F961CFA5F7D00C3E97C /* Debug */,
+				2E038F971CFA5F7D00C3E97C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2E2209711CE90481002BF7EB /* Project object */;
+	rootObject = 2E038F7B1CFA5F7D00C3E97C /* Project object */;
 }
