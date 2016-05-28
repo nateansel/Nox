@@ -13,7 +13,12 @@
 		2E2209841CE90481002BF7EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209831CE90481002BF7EB /* Assets.xcassets */; };
 		2E2209871CE90481002BF7EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2209851CE90481002BF7EB /* LaunchScreen.storyboard */; };
 		2E22098F1CE90779002BF7EB /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22098E1CE90779002BF7EB /* SunEvent.swift */; };
+<<<<<<< HEAD
 		97CCC53E130225161A9FD65B /* Pods_Nox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73A9D6F7A324D0F2B3CF578 /* Pods_Nox.framework */; };
+=======
+		D83738AD1CE908D10020DE04 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738AC1CE908D10020DE04 /* Calculator.swift */; };
+		D83738AF1CE90CCA0020DE04 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83738AE1CE90CCA0020DE04 /* Location.swift */; };
+>>>>>>> origin/rewrite
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,8 @@
 		2E22098E1CE90779002BF7EB /* SunEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunEvent.swift; sourceTree = "<group>"; };
 		5B500B1B4981D7D1D2BDA1F7 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
 		B73A9D6F7A324D0F2B3CF578 /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83738AC1CE908D10020DE04 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		D83738AE1CE90CCA0020DE04 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +73,7 @@
 				2E22097C1CE90481002BF7EB /* AppDelegate.swift */,
 				2E22097E1CE90481002BF7EB /* ViewController.swift */,
 				2E2209901CE907B1002BF7EB /* Models */,
+				D83738AB1CE908A80020DE04 /* Sun Even Retrieving */,
 				2E2209801CE90481002BF7EB /* Main.storyboard */,
 				2E2209831CE90481002BF7EB /* Assets.xcassets */,
 				2E2209851CE90481002BF7EB /* LaunchScreen.storyboard */,
@@ -82,6 +90,7 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		B1EAAB5060D01001B3758075 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +106,15 @@
 				B73A9D6F7A324D0F2B3CF578 /* Pods_Nox.framework */,
 			);
 			name = Frameworks;
+=======
+		D83738AB1CE908A80020DE04 /* Sun Even Retrieving */ = {
+			isa = PBXGroup;
+			children = (
+				D83738AC1CE908D10020DE04 /* Calculator.swift */,
+				D83738AE1CE90CCA0020DE04 /* Location.swift */,
+			);
+			name = "Sun Even Retrieving";
+>>>>>>> origin/rewrite
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,8 +240,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E22098F1CE90779002BF7EB /* SunEvent.swift in Sources */,
+				D83738AF1CE90CCA0020DE04 /* Location.swift in Sources */,
 				2E22097F1CE90481002BF7EB /* ViewController.swift in Sources */,
 				2E22097D1CE90481002BF7EB /* AppDelegate.swift in Sources */,
+				D83738AD1CE908D10020DE04 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
