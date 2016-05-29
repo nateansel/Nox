@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A96F80942B79EF8142A025F /* Pods_Nox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21844BA665F791144B84E2F /* Pods_Nox.framework */; };
 		2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E038F861CFA5F7D00C3E97C /* AppDelegate.swift */; };
 		2E038F891CFA5F7D00C3E97C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E038F881CFA5F7D00C3E97C /* ViewController.swift */; };
 		2E038F8C1CFA5F7D00C3E97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E038F8A1CFA5F7D00C3E97C /* Main.storyboard */; };
@@ -22,6 +23,9 @@
 		2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E038F901CFA5F7D00C3E97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E038F921CFA5F7D00C3E97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
+		C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
+		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A96F80942B79EF8142A025F /* Pods_Nox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				2E038F851CFA5F7D00C3E97C /* Nox */,
 				2E038F841CFA5F7D00C3E97C /* Products */,
+				3FE76843A0E0B6BA71F829E5 /* Pods */,
+				935D40D6F5C515DDB794C578 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Nox;
 			sourceTree = "<group>";
 		};
+		3FE76843A0E0B6BA71F829E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */,
+				C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		935D40D6F5C515DDB794C578 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E21844BA665F791144B84E2F /* Pods_Nox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E038F951CFA5F7D00C3E97C /* Build configuration list for PBXNativeTarget "Nox" */;
 			buildPhases = (
+				312CA406391B4C4795637DDF /* 📦 Check Pods Manifest.lock */,
 				2E038F7F1CFA5F7D00C3E97C /* Sources */,
 				2E038F801CFA5F7D00C3E97C /* Frameworks */,
 				2E038F811CFA5F7D00C3E97C /* Resources */,
+				1AF9856CA8E98AC27E02641F /* 📦 Embed Pods Frameworks */,
+				5D0793A46C0D321D91120B50 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AF9856CA8E98AC27E02641F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		312CA406391B4C4795637DDF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5D0793A46C0D321D91120B50 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E038F7F1CFA5F7D00C3E97C /* Sources */ = {
@@ -247,6 +322,7 @@
 		};
 		2E038F961CFA5F7D00C3E97C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Nox/Info.plist;
@@ -258,6 +334,7 @@
 		};
 		2E038F971CFA5F7D00C3E97C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Nox/Info.plist;
@@ -286,6 +363,7 @@
 				2E038F971CFA5F7D00C3E97C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
