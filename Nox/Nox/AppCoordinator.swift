@@ -16,7 +16,7 @@ class AppCoordinator {
   }
   
   func start() {
-    let vc = ViewController()
+    let vc = UIViewController()
     vc.view.backgroundColor = UIColor.orangeColor()
     navigationController.pushViewController(vc, animated: true)
   }
