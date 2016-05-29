@@ -118,6 +118,7 @@
 				2E038F811CFA5F7D00C3E97C /* Resources */,
 				1AF9856CA8E98AC27E02641F /* 📦 Embed Pods Frameworks */,
 				5D0793A46C0D321D91120B50 /* 📦 Copy Pods Resources */,
+				D81295081CFB8FDF00FF39BA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -219,6 +220,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D81295081CFB8FDF00FF39BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:|DESIGN:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

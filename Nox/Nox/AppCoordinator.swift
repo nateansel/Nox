@@ -21,3 +21,9 @@ class AppCoordinator {
     navigationController.pushViewController(vc, animated: true)
   }
 }
+
+extension AppCoordinator {
+  func setNotifications() {
+    // TODO: Needs to be implemented
+  }
+}
