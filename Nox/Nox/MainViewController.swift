@@ -9,11 +9,27 @@
 import UIKit
 import KosherCocoa
 
+protocol MainViewControllerDelegate {
+  func getCurrentSunEvent()
+  func settingsButtonTapped()
+}
+
 class MainViewController: UIViewController {
+  var delegate: MainViewControllerDelegate?
+  
+  var currentSunEvent: SunEvent? {
+    didSet {
+      // update UI
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationController?.navigationBarHidden = true
     
+    view.backgroundColor = UIColor.orangeColor()
+    
+    delegate?.getCurrentSunEvent()
   }
 }

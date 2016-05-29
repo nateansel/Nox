@@ -7,18 +7,42 @@
 //
 
 import UIKit
+import CoreLocation
 
-class AppCoordinator {
+class AppCoordinator: NSObject {
   let navigationController: UINavigationController!
+  var mainViewController: MainViewController?
+  
+  let locationManager = CLLocationManager()
   
   init(navigationController: UINavigationController) {
     self.navigationController = navigationController
+    super.init()
   }
   
   func start() {
-    let vc = UIViewController()
-    vc.view.backgroundColor = UIColor.orangeColor()
-    navigationController.pushViewController(vc, animated: true)
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    checkLocationPersmissions()
+    
+    let mainViewController = MainViewController()
+    navigationController.pushViewController(mainViewController, animated: true)
+  }
+}
+
+extension AppCoordinator: MainViewControllerDelegate {
+  func getCurrentSunEvent() {
+    if CLLocationManager.locationServicesEnabled() {
+      locationManager.requestLocation()
+    }
+    
+    if let mainViewController = mainViewController {
+      mainViewController.currentSunEvent = SunEvent.Sunrise(NSDate())
+    }
+  }
+  
+  func settingsButtonTapped() {
+    //
   }
 }
 
