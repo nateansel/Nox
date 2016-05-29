@@ -1,12 +1,15 @@
 PODS:
+  - GradientView (2.1.0)
   - KosherCocoa (3.0.6)
 
 DEPENDENCIES:
+  - GradientView
   - KosherCocoa (~> 3.0)
 
 SPEC CHECKSUMS:
+  GradientView: 4a961b8e9e1787beaf6880b9fc2dd08c6345533d
   KosherCocoa: 135cca36db10094abd0f691d4860b48f2e4aa951
 
-PODFILE CHECKSUM: 245d6eed8687e663f02b3f9be0649d41e78de2c3
+PODFILE CHECKSUM: 135c483d29c1ef1c12305b3888e5845a2b655ead
 
 COCOAPODS: 1.0.0
