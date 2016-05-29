@@ -20,5 +20,4 @@ class AppCoordinator {
     vc.view.backgroundColor = UIColor.orangeColor()
     navigationController.pushViewController(vc, animated: true)
   }
-  
 }

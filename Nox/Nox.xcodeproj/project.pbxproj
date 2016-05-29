@@ -13,6 +13,8 @@
 		2E038F911CFA5F7D00C3E97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */; };
 		2E5322D81CFB7C6B009DC03D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322D71CFB7C6B009DC03D /* AppCoordinator.swift */; };
 		2E5322DA1CFB7E4C009DC03D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322D91CFB7E4C009DC03D /* Theme.swift */; };
+		2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322DB1CFB7F65009DC03D /* MainViewController.swift */; };
+		2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5322DC1CFB7F65009DC03D /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		2E038F921CFA5F7D00C3E97C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E5322D71CFB7C6B009DC03D /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2E5322D91CFB7E4C009DC03D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2E5322DB1CFB7F65009DC03D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2E5322DC1CFB7F65009DC03D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
 		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,12 +67,22 @@
 			children = (
 				2E038F861CFA5F7D00C3E97C /* AppDelegate.swift */,
 				2E5322D71CFB7C6B009DC03D /* AppCoordinator.swift */,
+				2E5322DF1CFB7F68009DC03D /* Main View Controller */,
 				2E5322D91CFB7E4C009DC03D /* Theme.swift */,
 				2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */,
 				2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */,
 				2E038F921CFA5F7D00C3E97C /* Info.plist */,
 			);
 			path = Nox;
+			sourceTree = "<group>";
+		};
+		2E5322DF1CFB7F68009DC03D /* Main View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E5322DB1CFB7F65009DC03D /* MainViewController.swift */,
+				2E5322DC1CFB7F65009DC03D /* MainViewController.xib */,
+			);
+			name = "Main View Controller";
 			sourceTree = "<group>";
 		};
 		3FE76843A0E0B6BA71F829E5 /* Pods */ = {
@@ -150,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E038F911CFA5F7D00C3E97C /* LaunchScreen.storyboard in Resources */,
+				2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */,
 				2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +227,7 @@
 				2E5322DA1CFB7E4C009DC03D /* Theme.swift in Sources */,
 				2E5322D81CFB7C6B009DC03D /* AppCoordinator.swift in Sources */,
 				2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */,
+				2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
