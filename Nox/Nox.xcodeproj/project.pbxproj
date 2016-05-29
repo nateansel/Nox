@@ -18,6 +18,7 @@
 		2E5322E11CFB9074009DC03D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5322E01CFB9074009DC03D /* CoreLocation.framework */; };
 		2E5322E31CFB9081009DC03D /* Location Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322E21CFB9081009DC03D /* Location Manager.swift */; };
 		D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295061CFB7ECF00FF39BA /* SunEvent.swift */; };
+		D812950A1CFB940E00FF39BA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295091CFB940E00FF39BA /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
 		D81295061CFB7ECF00FF39BA /* SunEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunEvent.swift; sourceTree = "<group>"; };
+		D81295091CFB940E00FF39BA /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				2E5322E21CFB9081009DC03D /* Location Manager.swift */,
 				2E5322DF1CFB7F68009DC03D /* Main View Controller */,
 				2E5322D91CFB7E4C009DC03D /* Theme.swift */,
+				D81295091CFB940E00FF39BA /* Strings.swift */,
 				D81295061CFB7ECF00FF39BA /* SunEvent.swift */,
 				2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */,
 				2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */,
@@ -253,6 +256,7 @@
 				D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */,
 				2E5322D81CFB7C6B009DC03D /* AppCoordinator.swift in Sources */,
 				2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */,
+				D812950A1CFB940E00FF39BA /* Strings.swift in Sources */,
 				2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
