@@ -13,6 +13,19 @@ import CoreLocation
 enum SunEvent {
   case Sunrise(NSDate)
   case Sunset(NSDate)
+  
+  var date: NSDate {
+    switch self {
+    case .Sunrise(let date):
+      return date
+    case .Sunset(let date):
+      return date
+    }
+  }
+  
+  func next() -> SunEvent {
+    return SunEventService().getNextSunEvent()
+  }
 }
 
 // MARK: SunEventService
@@ -50,6 +63,23 @@ class SunEventService {
   
   // MARK: Retrieval
   
+  func getNextSunEvent() -> SunEvent {
+    var date = NSDate()
+    while true {
+      let sunrise = getSunrise(forDate: date)
+      let sunset = getSunrise(forDate: date)
+      if sunrise.date.compare(sunset.date) != .OrderedSame {
+        if sunrise.date.isInFuture {
+          return sunrise
+        }
+        if sunset.date.isInFuture {
+          return sunset
+        }
+      }
+      date = date.dateByAddingTimeInterval(NSDate.secondsInDay)
+    }
+  }
+  
   func getSunset(forDate date: NSDate) -> SunEvent {
     calendar.workingDate = date
     let sunset = calendar.sunset()
@@ -62,3 +92,14 @@ class SunEventService {
     return SunEvent.Sunset(sunrise)
   }
 }
+
+extension NSDate {
+  var isInFuture: Bool {
+    return self.timeIntervalSinceNow > 0
+  }
+  var secondsInDay: Double {
+    return 86400.0
+  }
+}
+
+
