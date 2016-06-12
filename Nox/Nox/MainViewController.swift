@@ -15,6 +15,8 @@ protocol MainViewControllerDelegate {
 }
 
 class MainViewController: UIViewController {
+  @IBOutlet var timeLabel: UILabel!
+  
   var delegate: MainViewControllerDelegate?
   
   var currentSunEvent: SunEvent? {
@@ -27,9 +29,7 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     
     navigationController?.navigationBarHidden = true
-    
-    view.backgroundColor = UIColor.orangeColor()
-    
+    view.insertSubview(Theme.Day.gradientView, atIndex: 0)
     delegate?.getCurrentSunEvent()
   }
 }

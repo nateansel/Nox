@@ -29,7 +29,7 @@ extension AppCoordinator: CLLocationManagerDelegate {
   }
   
   func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-    //
+    print("Error getting location")
   }
   
   func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
