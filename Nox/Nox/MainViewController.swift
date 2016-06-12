@@ -21,7 +21,12 @@ class MainViewController: UIViewController {
   
   var currentSunEvent: SunEvent? {
     didSet {
-      // update UI
+      switch currentSunEvent! {
+      case .Sunrise(let date):
+        timeLabel.text = "Sunrise"
+      case .Sunset(let date):
+        timeLabel.text = "Sunset"
+      }
     }
   }
 

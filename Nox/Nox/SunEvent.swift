@@ -6,7 +6,7 @@
 //  Copyright © 2016 Chase McCoy. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import KosherCocoa
 import CoreLocation
 
@@ -22,10 +22,6 @@ enum SunEvent {
       return date
     }
   }
-  
-  func next() -> SunEvent {
-    return SunEventService().getNextSunEvent()
-  }
 }
 
 // MARK: SunEventService
@@ -36,7 +32,7 @@ class SunEventService {
   
   // MARK: Properties
   
-  var location: CLLocation {
+  var location: CLLocation! {
     didSet {
       let geoLocation = KCGeoLocation(
         latitude: location.coordinate.latitude,
@@ -46,13 +42,14 @@ class SunEventService {
     }
   }
   
-  private var calendar: KCAstronomicalCalendar
+  private var calendar = KCAstronomicalCalendar()
   
   // MARK: - Methods
   
   // MARK: Init
   
-  init(location: CLLocation) {
+  convenience init(location: CLLocation) {
+    self.init()
     self.location = location
     let geoLocation = KCGeoLocation(
       latitude: location.coordinate.latitude,
@@ -67,7 +64,7 @@ class SunEventService {
     var date = NSDate()
     while true {
       let sunrise = getSunrise(forDate: date)
-      let sunset = getSunrise(forDate: date)
+      let sunset = getSunset(forDate: date)
       if sunrise.date.compare(sunset.date) != .OrderedSame {
         if sunrise.date.isInFuture {
           return sunrise
@@ -76,7 +73,7 @@ class SunEventService {
           return sunset
         }
       }
-      date = date.dateByAddingTimeInterval(NSDate.secondsInDay)
+      date = date.dateByAddingTimeInterval(NSDate().secondsInDay)
     }
   }
   
@@ -89,7 +86,7 @@ class SunEventService {
   func getSunrise(forDate date: NSDate) -> SunEvent {
     calendar.workingDate = date
     let sunrise = calendar.sunrise()
-    return SunEvent.Sunset(sunrise)
+    return SunEvent.Sunrise(sunrise)
   }
 }
 
@@ -97,9 +94,8 @@ extension NSDate {
   var isInFuture: Bool {
     return self.timeIntervalSinceNow > 0
   }
+  
   var secondsInDay: Double {
-    return 86400.0
+    return 86400.00
   }
 }
-
-

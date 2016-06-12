@@ -14,6 +14,7 @@ class AppCoordinator: NSObject {
   var mainViewController: MainViewController?
   
   let locationManager = CLLocationManager()
+  var sunEventService = SunEventService()
   
   init(navigationController: UINavigationController) {
     self.navigationController = navigationController
@@ -25,8 +26,8 @@ class AppCoordinator: NSObject {
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
     checkLocationPersmissions()
     
-    let mainViewController = MainViewController()
-    navigationController.pushViewController(mainViewController, animated: true)
+    mainViewController = MainViewController()
+    navigationController.pushViewController(mainViewController!, animated: true)
   }
 }
 

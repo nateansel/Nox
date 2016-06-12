@@ -26,6 +26,10 @@ extension AppCoordinator {
 extension AppCoordinator: CLLocationManagerDelegate {
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     print(locations.first?.coordinate.latitude)
+    
+    sunEventService.location = locations.first!
+    let next = sunEventService.getNextSunEvent()
+    mainViewController?.currentSunEvent = next
   }
   
   func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
