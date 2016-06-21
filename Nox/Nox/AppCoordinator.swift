@@ -23,7 +23,8 @@ class AppCoordinator: NSObject {
   
   func start() {
     locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+    locationManager.pausesLocationUpdatesAutomatically = false
     checkLocationPersmissions()
     
     mainViewController = MainViewController()
@@ -34,11 +35,7 @@ class AppCoordinator: NSObject {
 extension AppCoordinator: MainViewControllerDelegate {
   func getCurrentSunEvent() {
     if CLLocationManager.locationServicesEnabled() {
-      locationManager.requestLocation()
-    }
-    
-    if let mainViewController = mainViewController {
-      mainViewController.currentSunEvent = SunEvent.Sunrise(NSDate())
+      locationManager.startUpdatingLocation()
     }
   }
   

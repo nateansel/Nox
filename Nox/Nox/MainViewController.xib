@@ -17,19 +17,31 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsY-Na-rqj">
-                    <rect key="frame" x="8" y="283.5" width="584" height="32.5"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="8" y="128" width="584" height="77"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="64"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="CsY-Na-rqj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="128" id="7Nr-rS-SAL"/>
+                <constraint firstItem="CsY-Na-rqj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7Z3-un-fxf"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Een-OU-qeo"/>
                 <constraint firstAttribute="trailing" secondItem="CsY-Na-rqj" secondAttribute="trailing" constant="8" id="TFm-6W-pEl"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="UBY-x6-TgH"/>
+                <constraint firstAttribute="trailing" secondItem="CsY-Na-rqj" secondAttribute="trailing" constant="8" id="WbJ-mC-UQP"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cwH-5p-n1x"/>
+                <constraint firstItem="CsY-Na-rqj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xlu-WT-mg9"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Een-OU-qeo"/>
+                    <exclude reference="TFm-6W-pEl"/>
+                    <exclude reference="UBY-x6-TgH"/>
+                    <exclude reference="cwH-5p-n1x"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

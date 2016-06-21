@@ -34,11 +34,7 @@ class SunEventService {
   
   var location: CLLocation! {
     didSet {
-      let geoLocation = KCGeoLocation(
-        latitude: location.coordinate.latitude,
-        andLongitude: location.coordinate.longitude,
-        andTimeZone: NSTimeZone.systemTimeZone())
-      calendar.geoLocation = geoLocation
+      initializeCalendar(withLocation: location)
     }
   }
   
@@ -51,11 +47,7 @@ class SunEventService {
   convenience init(location: CLLocation) {
     self.init()
     self.location = location
-    let geoLocation = KCGeoLocation(
-      latitude: location.coordinate.latitude,
-      andLongitude: location.coordinate.longitude,
-      andTimeZone: NSTimeZone.systemTimeZone())
-    calendar = KCAstronomicalCalendar(location: geoLocation)
+    initializeCalendar(withLocation: location)
   }
   
   // MARK: Retrieval
@@ -87,6 +79,16 @@ class SunEventService {
     calendar.workingDate = date
     let sunrise = calendar.sunrise()
     return SunEvent.Sunrise(sunrise)
+  }
+  
+  // MARK: Convenience
+  
+  func initializeCalendar(withLocation location: CLLocation) {
+    let geoLocation = KCGeoLocation(
+      latitude: location.coordinate.latitude,
+      andLongitude: location.coordinate.longitude,
+      andTimeZone: NSTimeZone.systemTimeZone())
+    calendar = KCAstronomicalCalendar(location: geoLocation)
   }
 }
 
