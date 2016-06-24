@@ -35,7 +35,7 @@ extension AppCoordinator: CLLocationManagerDelegate {
   
   func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
     if status == .AuthorizedAlways {
-      locationManager.requestLocation()
+//      locationManager.requestLocation()
     }
   }
 }

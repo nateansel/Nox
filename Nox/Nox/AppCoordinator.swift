@@ -24,10 +24,11 @@ class AppCoordinator: NSObject {
   func start() {
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-    locationManager.pausesLocationUpdatesAutomatically = false
+    locationManager.distanceFilter = 1000
     checkLocationPersmissions()
     
     mainViewController = MainViewController()
+    mainViewController?.delegate = self
     navigationController.pushViewController(mainViewController!, animated: true)
   }
 }
