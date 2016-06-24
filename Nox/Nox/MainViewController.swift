@@ -31,14 +31,11 @@ class MainViewController: UIViewController {
   var currentSunEvent: SunEvent? {
     didSet {
       switch currentSunEvent! {
-      case .Sunrise(let date):
-        timeLabel.text = dateFormatter.stringFromDate(date)
-        countdownLabel.text = "8 hours until the sun rises"
-      case .Sunset(let date):
-        timeLabel.text = dateFormatter.stringFromDate(date)
-        countdownLabel.text = "8 hours until the sun sets"
+      case .Sunrise:
+        setSunriseLabels()
+      case .Sunset:
+        setSunsetLabels()
       }
-      setTheme(forSunEvent: currentSunEvent)
     }
   }
 
@@ -51,18 +48,26 @@ class MainViewController: UIViewController {
     delegate?.getCurrentSunEvent()
   }
   
-  private func setTheme(forSunEvent sunEvent: SunEvent?) {
-    if let sunEvent = sunEvent {
-      switch sunEvent {
-      case .Sunrise:
-        setNightTheme()
-      case .Sunset:
-        setDayTheme()
-      }
-    }
-    else {
-      setDayTheme()
-    }
+  private func setSunriseLabels() {
+    let date = currentSunEvent?.date
+    timeLabel.text = dateFormatter.stringFromDate(date!)
+    
+  }
+  
+  private func setSunsetLabels() {
+    let date = currentSunEvent?.date
+    timeLabel.text = dateFormatter.stringFromDate(date!)
+    
+  }
+  
+  private func countdownTextFor(sunEvent sunEvent: SunEvent) {
+    let date = sunEvent.date
+    let countdownText = ""
+    var timeUntilSunEvent = date.timeIntervalSinceNow
+    let hours = Int(timeUntilSunEvent / 3600)
+    timeUntilSunEvent %= 3600
+    let minutes = Int(timeUntilSunEvent / 60)
+    
   }
   
   private func setDayTheme() {
