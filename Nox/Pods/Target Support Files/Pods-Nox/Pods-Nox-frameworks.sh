@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GradientView/GradientView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KosherCocoa/KosherCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Static/Static.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GradientView/GradientView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KosherCocoa/KosherCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Static/Static.framework"
 fi

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '41F94DBD83BB2495467D44B26676F6B0'
-               BlueprintName = 'KosherCocoa'
+               BlueprintIdentifier = '5F2CC43E8EB05B33CF5245998AAE6FBE'
+               BlueprintName = 'Static'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'KosherCocoa.framework'>
+               BuildableName = 'Static.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

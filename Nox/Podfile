@@ -8,4 +8,5 @@ target 'Nox' do
   # Pods for Nox
   pod 'KosherCocoa', '~> 3.0'
   pod 'GradientView'
+  pod 'Static'#, git: "https://github.com/venmo/Static"
 end
