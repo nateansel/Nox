@@ -16,6 +16,7 @@ protocol MainViewControllerDelegate {
 
 class MainViewController: UIViewController {
   @IBOutlet var timeLabel: UILabel!
+  @IBOutlet var countdownLabel: UILabel!
   
   let dayGradientView = Theme.Day.gradientView
   let nightGradientView = Theme.Night.gradientView
@@ -32,8 +33,10 @@ class MainViewController: UIViewController {
       switch currentSunEvent! {
       case .Sunrise(let date):
         timeLabel.text = dateFormatter.stringFromDate(date)
+        countdownLabel.text = "8 hours until the sun rises"
       case .Sunset(let date):
         timeLabel.text = dateFormatter.stringFromDate(date)
+        countdownLabel.text = "8 hours until the sun sets"
       }
       setTheme(forSunEvent: currentSunEvent)
     }

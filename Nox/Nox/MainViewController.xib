@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Nox" customModuleProvider="target">
             <connections>
+                <outlet property="countdownLabel" destination="fkR-1Z-qqt" id="yy0-mX-e9n"/>
                 <outlet property="timeLabel" destination="CsY-Na-rqj" id="SMJ-Rz-xE4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,28 +19,44 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:31 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsY-Na-rqj">
                     <rect key="frame" x="8" y="128" width="584" height="77"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="64"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 hours until the sun rises" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-1Z-qqt">
+                    <rect key="frame" x="8" y="213" width="584" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="CsY-Na-rqj" firstAttribute="top" secondItem="fkR-1Z-qqt" secondAttribute="bottom" constant="8" id="65g-Dr-6N4"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="128" id="7Nr-rS-SAL"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7Z3-un-fxf"/>
+                <constraint firstItem="fkR-1Z-qqt" firstAttribute="top" secondItem="CsY-Na-rqj" secondAttribute="bottom" constant="8" id="BIG-bX-n2q"/>
+                <constraint firstAttribute="trailing" secondItem="fkR-1Z-qqt" secondAttribute="trailing" constant="8" id="E4t-jh-Nw9"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Een-OU-qeo"/>
+                <constraint firstItem="fkR-1Z-qqt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="GkZ-GX-Qvd"/>
+                <constraint firstItem="fkR-1Z-qqt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="NeP-5S-cOT"/>
                 <constraint firstAttribute="trailing" secondItem="CsY-Na-rqj" secondAttribute="trailing" constant="8" id="TFm-6W-pEl"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="UBY-x6-TgH"/>
                 <constraint firstAttribute="trailing" secondItem="CsY-Na-rqj" secondAttribute="trailing" constant="8" id="WbJ-mC-UQP"/>
+                <constraint firstItem="fkR-1Z-qqt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bYC-be-9ej"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cwH-5p-n1x"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xlu-WT-mg9"/>
+                <constraint firstAttribute="trailing" secondItem="fkR-1Z-qqt" secondAttribute="trailing" constant="8" id="ywh-jL-y4A"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="65g-Dr-6N4"/>
                     <exclude reference="Een-OU-qeo"/>
                     <exclude reference="TFm-6W-pEl"/>
                     <exclude reference="UBY-x6-TgH"/>
                     <exclude reference="cwH-5p-n1x"/>
+                    <exclude reference="E4t-jh-Nw9"/>
+                    <exclude reference="GkZ-GX-Qvd"/>
                 </mask>
             </variation>
         </view>
