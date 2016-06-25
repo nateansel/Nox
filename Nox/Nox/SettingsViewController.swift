@@ -10,8 +10,9 @@ import UIKit
 import Static
 
 class SettingsViewController: UIViewController {
-
   @IBOutlet weak var tableView: UITableView!
+  
+  private var dataSource = DataSource()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,9 +20,6 @@ class SettingsViewController: UIViewController {
   }
   
   private func setupTableView() {
-    let dataSource = DataSource()
-    var row = Row(text: "switch")
-    row.accessory = .View(UISwitch())
     dataSource.sections = [
       Section(rows: [Row(text: "24-Hour Time", accessory: .View(UISwitch()))]),
       Section(rows: [Row(text: "Sunrise Notifications", accessory: .View(UISwitch())),
