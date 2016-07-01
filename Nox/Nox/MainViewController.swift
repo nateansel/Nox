@@ -51,13 +51,11 @@ class MainViewController: UIViewController {
   private func setSunriseLabels() {
     let date = currentSunEvent?.date
     timeLabel.text = dateFormatter.stringFromDate(date!)
-    
   }
   
   private func setSunsetLabels() {
     let date = currentSunEvent?.date
     timeLabel.text = dateFormatter.stringFromDate(date!)
-    
   }
   
   private func countdownTextFor(sunEvent sunEvent: SunEvent) {
@@ -79,4 +77,9 @@ class MainViewController: UIViewController {
     dayGradientView.hidden = true
     nightGradientView.hidden = false
   }
+  
+  @IBAction func settingsButtonTapped(sender: UIButton) {
+    delegate?.settingsButtonTapped()
+  }
+  
 }

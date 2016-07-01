@@ -27,10 +27,9 @@ class AppCoordinator: NSObject {
     locationManager.distanceFilter = 1000
     checkLocationPersmissions()
     
-//    mainViewController = MainViewController()
-//    mainViewController?.delegate = self
-    let mainViewController = SettingsViewController()
-    navigationController.pushViewController(mainViewController, animated: true)
+    mainViewController = MainViewController()
+    mainViewController?.delegate = self
+    navigationController.pushViewController(mainViewController!, animated: true)
   }
 }
 
@@ -42,7 +41,8 @@ extension AppCoordinator: MainViewControllerDelegate {
   }
   
   func settingsButtonTapped() {
-    //
+    let settingsViewController = SettingsViewController()
+    navigationController.presentViewController(settingsViewController, animated: true, completion: nil)
   }
 }
 
