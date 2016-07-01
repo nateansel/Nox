@@ -81,5 +81,4 @@ class MainViewController: UIViewController {
   @IBAction func settingsButtonTapped(sender: UIButton) {
     delegate?.settingsButtonTapped()
   }
-  
 }

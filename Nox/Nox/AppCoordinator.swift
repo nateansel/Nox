@@ -41,8 +41,16 @@ extension AppCoordinator: MainViewControllerDelegate {
   }
   
   func settingsButtonTapped() {
-    let settingsViewController = SettingsViewController()
-    navigationController.presentViewController(settingsViewController, animated: true, completion: nil)
+    let settingsCoordinator = SettingsCoordinator()
+    settingsCoordinator.delegate = self
+    settingsCoordinator.start()
+    navigationController.presentViewController(settingsCoordinator.navigationController, animated: true, completion: nil)
+  }
+}
+
+extension AppCoordinator: SettingsDelegate {
+  func dismissSettings() {
+    navigationController.dismissViewControllerAnimated(true, completion: nil)
   }
 }
 

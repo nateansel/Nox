@@ -12,5 +12,7 @@ enum Strings {
   enum Settings {
     static let twelveHourTime = "twelveHourTime"
     static let notificationsArray = "notificationsArray"
+    static let sunriseNotificationStatus = "sunriseNotificationStatus"
+    static let sunsetNotificationStatus = "sunsetNotificationStatus"
   }
 }
