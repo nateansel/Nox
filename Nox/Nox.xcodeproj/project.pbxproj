@@ -24,6 +24,9 @@
 		D88A68421D25FC8100926725 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A68411D25FC8100926725 /* SettingsCoordinator.swift */; };
 		D88A68451D260AEE00926725 /* NotificationCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A68431D260AEE00926725 /* NotificationCustomizationViewController.swift */; };
 		D88A68461D260AEE00926725 /* NotificationCustomizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88A68441D260AEE00926725 /* NotificationCustomizationViewController.xib */; };
+		D88A68491D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A68481D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift */; };
+		D88A684C1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A684A1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift */; };
+		D88A684D1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88A684B1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		D88A68411D25FC8100926725 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		D88A68431D260AEE00926725 /* NotificationCustomizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCustomizationViewController.swift; sourceTree = "<group>"; };
 		D88A68441D260AEE00926725 /* NotificationCustomizationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCustomizationViewController.xib; sourceTree = "<group>"; };
+		D88A68481D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCustomizationCollectionViewExtras.swift; sourceTree = "<group>"; };
+		D88A684A1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCustomizationCollectionViewCell.swift; sourceTree = "<group>"; };
+		D88A684B1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCustomizationCollectionViewCell.xib; sourceTree = "<group>"; };
 		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +148,9 @@
 			children = (
 				D88A68431D260AEE00926725 /* NotificationCustomizationViewController.swift */,
 				D88A68441D260AEE00926725 /* NotificationCustomizationViewController.xib */,
+				D88A68481D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift */,
+				D88A684A1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift */,
+				D88A684B1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib */,
 			);
 			name = "Notification Customization View Controller";
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 				2E038F911CFA5F7D00C3E97C /* LaunchScreen.storyboard in Resources */,
 				2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */,
 				D88A68461D260AEE00926725 /* NotificationCustomizationViewController.xib in Resources */,
+				D88A684D1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib in Resources */,
 				2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */,
 				D88A683F1D1CCD5B00926725 /* SettingsViewController.xib in Resources */,
 			);
@@ -288,9 +298,11 @@
 				2E5322DA1CFB7E4C009DC03D /* Theme.swift in Sources */,
 				2E5322E31CFB9081009DC03D /* Location Manager.swift in Sources */,
 				D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */,
+				D88A684C1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift in Sources */,
 				2E5322D81CFB7C6B009DC03D /* AppCoordinator.swift in Sources */,
 				D88A68421D25FC8100926725 /* SettingsCoordinator.swift in Sources */,
 				D88A68451D260AEE00926725 /* NotificationCustomizationViewController.swift in Sources */,
+				D88A68491D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift in Sources */,
 				2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */,
 				D812950A1CFB940E00FF39BA /* Strings.swift in Sources */,
 				2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */,

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KosherCocoa
+//import KosherCocoa
 
 protocol MainViewControllerDelegate {
   func getCurrentSunEvent()
@@ -51,21 +51,15 @@ class MainViewController: UIViewController {
   private func setSunriseLabels() {
     let date = currentSunEvent?.date
     timeLabel.text = dateFormatter.stringFromDate(date!)
+    countdownLabel.text = String.countdownText(forSunEvent: currentSunEvent!)
+    setNightTheme()
   }
   
   private func setSunsetLabels() {
     let date = currentSunEvent?.date
     timeLabel.text = dateFormatter.stringFromDate(date!)
-  }
-  
-  private func countdownTextFor(sunEvent sunEvent: SunEvent) {
-    let date = sunEvent.date
-    let countdownText = ""
-    var timeUntilSunEvent = date.timeIntervalSinceNow
-    let hours = Int(timeUntilSunEvent / 3600)
-    timeUntilSunEvent %= 3600
-    let minutes = Int(timeUntilSunEvent / 60)
-    
+    countdownLabel.text = String.countdownText(forSunEvent: currentSunEvent!)
+    setDayTheme()
   }
   
   private func setDayTheme() {

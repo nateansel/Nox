@@ -16,3 +16,76 @@ enum Strings {
     static let sunsetNotificationStatus = "sunsetNotificationStatus"
   }
 }
+
+extension String {
+  static func countdownText(forSunEvent sunEvent: SunEvent) -> String {
+    let date = sunEvent.date
+    var timeUntilSunEvent = date.timeIntervalSinceNow
+    var hours = Int(timeUntilSunEvent / 3600)
+    timeUntilSunEvent %= 3600
+    var minutes = Int(timeUntilSunEvent / 60)
+    if minutes > 45 {
+      hours += 1
+      minutes = 0
+    }
+    let days = Int(hours / 24)
+    hours %= 24
+    
+    // Build days string
+    var dayString = ""
+    if days > 0 {
+      dayString = "\(days) day"
+      if days > 1 {
+        dayString += "s"
+      }
+      dayString += " "
+    }
+    
+    // Add minutes to string
+    var minuteString = ""
+    if minutes > 30 {
+      minuteString = "¾ "
+    }
+    else if minutes > 15 {
+      minuteString = "½ "
+    }
+    else if minutes != 0 {
+      minuteString = "¼"
+    }
+    
+    // Add hours to string
+    var hourString = ""
+    if hours > 0 {
+      hourString = "\(hours)\(minuteString) hour"
+      if hours > 1 || (hours == 1 && minuteString != "") {
+        hourString += "s"
+      }
+      hourString += " "
+    }
+    
+    if dayString != "" || hourString != "" || minuteString != "" {
+      switch sunEvent {
+      case .Sunrise:
+        return dayString + hourString + "until the sun rises."
+      case .Sunset:
+        return dayString + hourString + "of sunlight left."
+      }
+    }
+    
+    if minutes < 5 {
+      switch sunEvent {
+      case .Sunrise:
+        return "Sunrise is imminent."
+      case .Sunset:
+        return "Sunset is imminent."
+      }
+    }
+    
+    switch sunEvent {
+    case .Sunrise:
+      return "\(minutes) minutes until the sun rises."
+    case .Sunset:
+      return "\(minutes) minutes of sunlight left."
+    }
+  }
+}

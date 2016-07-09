@@ -53,7 +53,7 @@ class SettingsViewController: UIViewController {
     
     let gradientView = Theme.Night.gradientView
     view.insertSubview(gradientView, belowSubview: tableView)
-    tableView.contentInset = UIEdgeInsetsMake(navigationController?.navigationBar.frame.size.height ?? 0, 0, 0, 0)
+    tableView.contentInset = UIEdgeInsetsMake(navigationController?.navigationBar.frame.maxY ?? 0, 0, 0, 0)
     
     navigationItem.title = "Settings"
     

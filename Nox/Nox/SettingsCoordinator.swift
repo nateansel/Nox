@@ -46,11 +46,13 @@ extension SettingsCoordinator: SettingsViewControllerDelegate {
   
   func presentSunriseCustomization() {
     let vc = NotificationCustomizationViewController()
+    vc.delegate = self
     navigationController.pushViewController(vc, animated: true)
   }
   
   func presentSunsetCustomization() {
     let vc = NotificationCustomizationViewController()
+    vc.delegate = self
     navigationController.pushViewController(vc, animated: true)
   }
   
@@ -64,5 +66,21 @@ extension SettingsCoordinator: SettingsViewControllerDelegate {
   
   func doneButtonPressed(sender: UIBarButtonItem) {
     delegate?.dismissSettings()
+  }
+}
+
+extension SettingsCoordinator: NotificationCustomizationViewControllerDelegate {
+  func selected(indexPath indexPath: NSIndexPath) {
+    if var array = NSUserDefaults.standardUserDefaults().arrayForKey("sunriseNotificationSettings") as? [Bool] {
+      array[indexPath.item] = true
+      NSUserDefaults.standardUserDefaults().setObject(array, forKey: "sunriseNotificationSettings")
+    }
+  }
+  
+  func deselected(indexPath indexPath: NSIndexPath) {
+    if var array = NSUserDefaults.standardUserDefaults().arrayForKey("sunriseNotificationSettings") as? [Bool] {
+      array[indexPath.item] = false
+      NSUserDefaults.standardUserDefaults().setObject(array, forKey: "sunriseNotificationSettings")
+    }
   }
 }
