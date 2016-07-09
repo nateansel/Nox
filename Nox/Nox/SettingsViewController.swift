@@ -22,6 +22,7 @@ import Static
 
 class SettingsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
   
   var delegate: SettingsViewControllerDelegate?
   private var dataSource = DataSource()
@@ -53,11 +54,16 @@ class SettingsViewController: UIViewController {
     
     let gradientView = Theme.Night.gradientView
     view.insertSubview(gradientView, belowSubview: tableView)
-    tableView.contentInset = UIEdgeInsetsMake(navigationController?.navigationBar.frame.maxY ?? 0, 0, 0, 0)
+    tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     
     navigationItem.title = "Settings"
     
     setupTableView()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    tableViewTopConstraint.constant = navigationController?.navigationBar.frame.maxY ?? 0
   }
   
   private func setupTableView() {

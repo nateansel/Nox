@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationCustomizationViewController" customModule="Nox" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="Iq7-UP-bYs" id="ULO-Co-aay"/>
+                <outlet property="collectionViewTopConstraint" destination="8bD-3N-8th" id="Xgr-Iy-2bb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

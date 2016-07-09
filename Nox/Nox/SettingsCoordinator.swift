@@ -47,21 +47,25 @@ extension SettingsCoordinator: SettingsViewControllerDelegate {
   func presentSunriseCustomization() {
     let vc = NotificationCustomizationViewController()
     vc.delegate = self
+    vc.settingsString = Strings.Settings.sunriseNotificationSettings
     navigationController.pushViewController(vc, animated: true)
   }
   
   func presentSunsetCustomization() {
     let vc = NotificationCustomizationViewController()
     vc.delegate = self
+    vc.settingsString = Strings.Settings.sunsetNotificationSettings
     navigationController.pushViewController(vc, animated: true)
   }
   
   func presentAbout() {
-    
+    let vc = AboutViewController()
+    navigationController.pushViewController(vc, animated: true)
   }
   
   func presentCredits() {
-    
+    let vc = CreditsViewController()
+    navigationController.pushViewController(vc, animated: true)
   }
   
   func doneButtonPressed(sender: UIBarButtonItem) {
@@ -70,17 +74,17 @@ extension SettingsCoordinator: SettingsViewControllerDelegate {
 }
 
 extension SettingsCoordinator: NotificationCustomizationViewControllerDelegate {
-  func selected(indexPath indexPath: NSIndexPath) {
-    if var array = NSUserDefaults.standardUserDefaults().arrayForKey("sunriseNotificationSettings") as? [Bool] {
+  func selected(indexPath indexPath: NSIndexPath, settingsString: String) {
+    if var array = NSUserDefaults.standardUserDefaults().arrayForKey(settingsString) as? [Bool] {
       array[indexPath.item] = true
-      NSUserDefaults.standardUserDefaults().setObject(array, forKey: "sunriseNotificationSettings")
+      NSUserDefaults.standardUserDefaults().setObject(array, forKey: settingsString)
     }
   }
   
-  func deselected(indexPath indexPath: NSIndexPath) {
-    if var array = NSUserDefaults.standardUserDefaults().arrayForKey("sunriseNotificationSettings") as? [Bool] {
+  func deselected(indexPath indexPath: NSIndexPath, settingsString: String) {
+    if var array = NSUserDefaults.standardUserDefaults().arrayForKey(settingsString) as? [Bool] {
       array[indexPath.item] = false
-      NSUserDefaults.standardUserDefaults().setObject(array, forKey: "sunriseNotificationSettings")
+      NSUserDefaults.standardUserDefaults().setObject(array, forKey: settingsString)
     }
   }
 }

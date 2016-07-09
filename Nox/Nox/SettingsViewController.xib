@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Nox" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="96F-ms-R0X" id="HiZ-bT-WxX"/>
+                <outlet property="tableViewTopConstraint" destination="Y2P-JA-2Ca" id="LEm-Sm-bMt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

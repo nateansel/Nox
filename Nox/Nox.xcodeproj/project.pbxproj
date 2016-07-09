@@ -27,6 +27,10 @@
 		D88A68491D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A68481D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift */; };
 		D88A684C1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A684A1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift */; };
 		D88A684D1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88A684B1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib */; };
+		D8C9C5C41D3190B000FC14EE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C9C5C21D3190B000FC14EE /* AboutViewController.swift */; };
+		D8C9C5C51D3190B000FC14EE /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C9C5C31D3190B000FC14EE /* AboutViewController.xib */; };
+		D8C9C5C81D3190CC00FC14EE /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C9C5C61D3190CC00FC14EE /* CreditsViewController.swift */; };
+		D8C9C5C91D3190CC00FC14EE /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C9C5C71D3190CC00FC14EE /* CreditsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		D88A68481D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCustomizationCollectionViewExtras.swift; sourceTree = "<group>"; };
 		D88A684A1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCustomizationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D88A684B1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationCustomizationCollectionViewCell.xib; sourceTree = "<group>"; };
+		D8C9C5C21D3190B000FC14EE /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D8C9C5C31D3190B000FC14EE /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		D8C9C5C61D3190CC00FC14EE /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		D8C9C5C71D3190CC00FC14EE /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
 		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +105,8 @@
 				2E5322DF1CFB7F68009DC03D /* Main View Controller */,
 				D88A68401D1CCD6A00926725 /* Settings View Controller */,
 				D88A68471D260AF300926725 /* Notification Customization View Controller */,
+				D8C9C5C01D318F9500FC14EE /* About View Controller */,
+				D8C9C5C11D318F9F00FC14EE /* Credits */,
 				2E5322D91CFB7E4C009DC03D /* Theme.swift */,
 				D81295091CFB940E00FF39BA /* Strings.swift */,
 				D81295061CFB7ECF00FF39BA /* SunEvent.swift */,
@@ -153,6 +163,24 @@
 				D88A684B1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib */,
 			);
 			name = "Notification Customization View Controller";
+			sourceTree = "<group>";
+		};
+		D8C9C5C01D318F9500FC14EE /* About View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8C9C5C21D3190B000FC14EE /* AboutViewController.swift */,
+				D8C9C5C31D3190B000FC14EE /* AboutViewController.xib */,
+			);
+			name = "About View Controller";
+			sourceTree = "<group>";
+		};
+		D8C9C5C11D318F9F00FC14EE /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				D8C9C5C61D3190CC00FC14EE /* CreditsViewController.swift */,
+				D8C9C5C71D3190CC00FC14EE /* CreditsViewController.xib */,
+			);
+			name = Credits;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,11 +247,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E038F911CFA5F7D00C3E97C /* LaunchScreen.storyboard in Resources */,
+				D8C9C5C51D3190B000FC14EE /* AboutViewController.xib in Resources */,
 				2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */,
 				D88A68461D260AEE00926725 /* NotificationCustomizationViewController.xib in Resources */,
 				D88A684D1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib in Resources */,
 				2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */,
 				D88A683F1D1CCD5B00926725 /* SettingsViewController.xib in Resources */,
+				D8C9C5C91D3190CC00FC14EE /* CreditsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E5322DA1CFB7E4C009DC03D /* Theme.swift in Sources */,
+				D8C9C5C81D3190CC00FC14EE /* CreditsViewController.swift in Sources */,
 				2E5322E31CFB9081009DC03D /* Location Manager.swift in Sources */,
 				D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */,
 				D88A684C1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift in Sources */,
@@ -306,6 +337,7 @@
 				2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */,
 				D812950A1CFB940E00FF39BA /* Strings.swift in Sources */,
 				2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */,
+				D8C9C5C41D3190B000FC14EE /* AboutViewController.swift in Sources */,
 				D88A683E1D1CCD5B00926725 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

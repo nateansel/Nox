@@ -9,22 +9,24 @@
 import UIKit
 
 protocol NotificationCustomizationViewControllerDelegate {
-  func selected(indexPath indexPath: NSIndexPath)
-  func deselected(indexPath indexPath: NSIndexPath)
+  func selected(indexPath indexPath: NSIndexPath, settingsString: String)
+  func deselected(indexPath indexPath: NSIndexPath, settingsString: String)
 }
 
 class NotificationCustomizationViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
   var delegate: NotificationCustomizationViewControllerDelegate?
   let dataSource = NotificationCustomizationCollectionViewDataSource()
   let flowLayout = NotificationCustomizationCollectionViewDelegateFlowLayout()
+  var settingsString: String?
   
   override func viewDidLoad() {
     let gradientView = Theme.Night.gradientView
     view.insertSubview(gradientView, belowSubview: collectionView)
     automaticallyAdjustsScrollViewInsets = false
-    collectionView.contentInset = UIEdgeInsetsMake(navigationController?.navigationBar.frame.maxY ?? 0, 0, 8, 0)
+    collectionView.contentInset = UIEdgeInsetsMake(0, 0, 8, 0)
     
     collectionView.registerNib(UINib(nibName: String(NotificationCustomizationCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: String(NotificationCustomizationCollectionViewCell))
     collectionView.allowsMultipleSelection = true
@@ -36,8 +38,13 @@ class NotificationCustomizationViewController: UIViewController {
     selectSavedCells()
   }
   
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    collectionViewTopConstraint.constant = navigationController?.navigationBar.frame.maxY ?? 0
+  }
+  
   private func selectSavedCells() {
-    if let array = NSUserDefaults.standardUserDefaults().arrayForKey("sunriseNotificationSettings") as? [Bool] {
+    if let array = NSUserDefaults.standardUserDefaults().arrayForKey(settingsString!) as? [Bool] {
       for (i, setting) in array.enumerate() {
         if setting {
           let indexPath = NSIndexPath(forItem: i, inSection: 0)
@@ -51,7 +58,7 @@ class NotificationCustomizationViewController: UIViewController {
       let newSettings = [false, false, false, false, false, false, false, false,
                          true, false, false, false, false, false, false, false,
                          false, false, false, false, false, false, false, false, false]
-      NSUserDefaults.standardUserDefaults().setObject(newSettings, forKey: "sunriseNotificationSettings")
+      NSUserDefaults.standardUserDefaults().setObject(newSettings, forKey: settingsString!)
     }
   }
 }

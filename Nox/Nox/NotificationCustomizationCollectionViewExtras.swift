@@ -54,7 +54,11 @@ class NotificationCustomizationCollectionViewDelegateFlowLayout: NSObject, UICol
   var controller: NotificationCustomizationViewController?
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    controller?.delegate?.selected(indexPath: indexPath)
+    controller?.delegate?.selected(indexPath: indexPath, settingsString: controller!.settingsString!)
+  }
+  
+  func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+    controller?.delegate?.deselected(indexPath: indexPath, settingsString: controller!.settingsString!)
   }
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
