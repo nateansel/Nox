@@ -56,18 +56,18 @@ extension AppCoordinator: SettingsDelegate {
 
 extension AppCoordinator {
   func setNotifications() {
-    let minuteOffsets = [180,
-                         165,
-                         150,
-                         135,
-                         120,
-                         105,
-                         90,
-                         75,
-                         60,
-                         45,
-                         30,
-                         15,
+    let minuteOffsets = [-180,
+                         -165,
+                         -150,
+                         -135,
+                         -120,
+                         -105,
+                         -90,
+                         -75,
+                         -60,
+                         -45,
+                         -30,
+                         -15,
                          0,
                          15,
                          30,
@@ -82,5 +82,19 @@ extension AppCoordinator {
                          165,
                          180]
     // TODO: Needs to be implemented
+    UIApplication.sharedApplication().cancelAllLocalNotifications()
+    if NSUserDefaults.standardUserDefaults().boolForKey(Strings.Settings.sunsetNotificationStatus) {
+      if let array = NSUserDefaults.standardUserDefaults().arrayForKey(Strings.Settings.sunsetNotificationSettings) as? [Bool] {
+        for (i, setting) in array.enumerate() {
+          if setting {
+            let notification = UILocalNotification()
+            notification.alertBody = "\(abs(minuteOffsets[i])) minutes until sunset."
+            notification.fireDate = sunEventService.getNextSunEvent().date.dateByAddingTimeInterval(NSTimeInterval(minuteOffsets[i]))
+            notification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+          }
+        }
+      }
+    }
   }
 }

@@ -38,8 +38,8 @@ class NotificationCustomizationViewController: UIViewController {
     selectSavedCells()
   }
   
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
     collectionViewTopConstraint.constant = navigationController?.navigationBar.frame.maxY ?? 0
   }
   
