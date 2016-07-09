@@ -15,6 +15,7 @@ protocol MainViewControllerDelegate {
 }
 
 class MainViewController: UIViewController {
+  @IBOutlet var sunEventDescriptionLabel: UILabel!
   @IBOutlet var timeLabel: UILabel!
   @IBOutlet var countdownLabel: UILabel!
   
@@ -49,16 +50,18 @@ class MainViewController: UIViewController {
   }
   
   private func setSunriseLabels() {
+    sunEventDescriptionLabel.text = Strings.sunriseDescription
     let date = currentSunEvent?.date
     timeLabel.text = dateFormatter.stringFromDate(date!)
-    countdownLabel.text = String.countdownText(forSunEvent: currentSunEvent!)
+    countdownLabel.text = Strings.countdownText(forSunEvent: currentSunEvent!)
     setNightTheme()
   }
   
   private func setSunsetLabels() {
+    sunEventDescriptionLabel.text = Strings.sunsetDescription
     let date = currentSunEvent?.date
     timeLabel.text = dateFormatter.stringFromDate(date!)
-    countdownLabel.text = String.countdownText(forSunEvent: currentSunEvent!)
+    countdownLabel.text = Strings.countdownText(forSunEvent: currentSunEvent!)
     setDayTheme()
   }
   

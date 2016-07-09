@@ -9,6 +9,9 @@
 import Foundation
 
 enum Strings {
+  static let sunriseDescription = "The sun will rise at"
+  static let sunsetDescription = "The sun will set at"
+  
   enum Settings {
     static let twelveHourTime = "twelveHourTime"
     static let notificationsArray = "notificationsArray"
@@ -17,7 +20,7 @@ enum Strings {
   }
 }
 
-extension String {
+extension Strings {
   static func countdownText(forSunEvent sunEvent: SunEvent) -> String {
     let date = sunEvent.date
     var timeUntilSunEvent = date.timeIntervalSinceNow
