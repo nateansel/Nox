@@ -17,6 +17,8 @@
 		2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5322DC1CFB7F65009DC03D /* MainViewController.xib */; };
 		2E5322E11CFB9074009DC03D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5322E01CFB9074009DC03D /* CoreLocation.framework */; };
 		2E5322E31CFB9081009DC03D /* Location Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322E21CFB9081009DC03D /* Location Manager.swift */; };
+		2ECB3A711D3C326B007A1F77 /* PreviousSunEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */; };
+		2ECB3A731D3C328E007A1F77 /* PreviousSunEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */; };
 		D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295061CFB7ECF00FF39BA /* SunEvent.swift */; };
 		D812950A1CFB940E00FF39BA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295091CFB940E00FF39BA /* Strings.swift */; };
 		D88A683E1D1CCD5B00926725 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A683C1D1CCD5B00926725 /* SettingsViewController.swift */; };
@@ -45,6 +47,8 @@
 		2E5322DC1CFB7F65009DC03D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		2E5322E01CFB9074009DC03D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2E5322E21CFB9081009DC03D /* Location Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location Manager.swift"; sourceTree = "<group>"; };
+		2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviousSunEventView.xib; sourceTree = "<group>"; };
+		2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousSunEventView.swift; sourceTree = "<group>"; };
 		4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
 		D81295061CFB7ECF00FF39BA /* SunEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunEvent.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				D88A68401D1CCD6A00926725 /* Settings View Controller */,
 				D88A68471D260AF300926725 /* Notification Customization View Controller */,
 				D8C9C5C01D318F9500FC14EE /* About View Controller */,
+				2ECB3A6F1D3C324A007A1F77 /* Views */,
 				D8C9C5C11D318F9F00FC14EE /* Credits */,
 				2E5322D91CFB7E4C009DC03D /* Theme.swift */,
 				D81295091CFB940E00FF39BA /* Strings.swift */,
@@ -124,6 +129,15 @@
 				2E5322DC1CFB7F65009DC03D /* MainViewController.xib */,
 			);
 			name = "Main View Controller";
+			sourceTree = "<group>";
+		};
+		2ECB3A6F1D3C324A007A1F77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */,
+				2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		3FE76843A0E0B6BA71F829E5 /* Pods */ = {
@@ -251,6 +265,7 @@
 				2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */,
 				D88A68461D260AEE00926725 /* NotificationCustomizationViewController.xib in Resources */,
 				D88A684D1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib in Resources */,
+				2ECB3A711D3C326B007A1F77 /* PreviousSunEventView.xib in Resources */,
 				2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */,
 				D88A683F1D1CCD5B00926725 /* SettingsViewController.xib in Resources */,
 				D8C9C5C91D3190CC00FC14EE /* CreditsViewController.xib in Resources */,
@@ -328,6 +343,7 @@
 				2E5322DA1CFB7E4C009DC03D /* Theme.swift in Sources */,
 				D8C9C5C81D3190CC00FC14EE /* CreditsViewController.swift in Sources */,
 				2E5322E31CFB9081009DC03D /* Location Manager.swift in Sources */,
+				2ECB3A731D3C328E007A1F77 /* PreviousSunEventView.swift in Sources */,
 				D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */,
 				D88A684C1D282DF800926725 /* NotificationCustomizationCollectionViewCell.swift in Sources */,
 				2E5322D81CFB7C6B009DC03D /* AppCoordinator.swift in Sources */,

@@ -26,7 +26,6 @@ class AppCoordinator: NSObject {
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
     locationManager.distanceFilter = 1000
     checkLocationPersmissions()
-    checkNotificationPermissions()
     
     mainViewController = MainViewController()
     mainViewController?.delegate = self
