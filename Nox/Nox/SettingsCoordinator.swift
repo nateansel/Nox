@@ -37,11 +37,21 @@ extension SettingsCoordinator: SettingsViewControllerDelegate {
   }
   
   func sunriseNotificationsToggled(sender: UISwitch) {
+    if sender.on {
+      checkNotificationPermissions()
+    }
     NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: Strings.Settings.sunriseNotificationStatus)
   }
   
   func sunsetNotificationsToggled(sender: UISwitch) {
+    if sender.on {
+      checkNotificationPermissions()
+    }
     NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: Strings.Settings.sunsetNotificationStatus)
+  }
+  
+  func checkNotificationPermissions() {
+    UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil))
   }
   
   func presentSunriseCustomization() {

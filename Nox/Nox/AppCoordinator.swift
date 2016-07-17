@@ -26,6 +26,7 @@ class AppCoordinator: NSObject {
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
     locationManager.distanceFilter = 1000
     checkLocationPersmissions()
+    checkNotificationPermissions()
     
     mainViewController = MainViewController()
     mainViewController?.delegate = self
@@ -81,20 +82,75 @@ extension AppCoordinator {
                          150,
                          165,
                          180]
-    // TODO: Needs to be implemented
+    let sunriseStatus = NSUserDefaults.standardUserDefaults().boolForKey(Strings.Settings.sunriseNotificationStatus)
+    let sunsetStatus  = NSUserDefaults.standardUserDefaults().boolForKey(Strings.Settings.sunsetNotificationStatus)
+    let sunriseArray  = NSUserDefaults.standardUserDefaults().arrayForKey(Strings.Settings.sunriseNotificationSettings) as? [Bool]
+    let sunsetArray   = NSUserDefaults.standardUserDefaults().arrayForKey(Strings.Settings.sunsetNotificationSettings) as? [Bool]
+    
+    var numberOfNotifications = 0
+    if sunriseStatus, let array = sunriseArray {
+      for notification in array {
+        if notification {
+          numberOfNotifications += 1
+        }
+      }
+    }
+    if sunsetStatus, let array = sunsetArray {
+      for notification in array {
+        if notification {
+          numberOfNotifications += 1
+        }
+      }
+    }
+    
+    let sunEvents = 60 / numberOfNotifications
+    let sunrises  = sunEventService.get(numberOfSunrises: sunEvents)
+    let sunsets   = sunEventService.get(numberOfSunsets: sunEvents)
+    
     UIApplication.sharedApplication().cancelAllLocalNotifications()
-    if NSUserDefaults.standardUserDefaults().boolForKey(Strings.Settings.sunsetNotificationStatus) {
-      if let array = NSUserDefaults.standardUserDefaults().arrayForKey(Strings.Settings.sunsetNotificationSettings) as? [Bool] {
-        for (i, setting) in array.enumerate() {
-          if setting {
+    if sunriseStatus, let array = sunriseArray {
+      for (i, setting) in array.enumerate() {
+        if setting {
+          for sunrise in sunrises {
             let notification = UILocalNotification()
-            notification.alertBody = "\(abs(minuteOffsets[i])) minutes until sunset."
-            notification.fireDate = sunEventService.getNextSunEvent().date.dateByAddingTimeInterval(NSTimeInterval(minuteOffsets[i]))
+            notification.alertBody = "\(abs(minuteOffsets[i])) minutes until sunrise."
+            if minuteOffsets[i] == 0 {
+              notification.alertBody = "The sun is rising!"
+            }
+            notification.fireDate = sunrise.date.dateByAddingTimeInterval(NSTimeInterval(minuteOffsets[i] * 60))
             notification.soundName = UILocalNotificationDefaultSoundName
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
           }
         }
       }
+    }
+    if sunsetStatus, let array = sunsetArray {
+      for (i, setting) in array.enumerate() {
+        if setting {
+          for sunset in sunsets {
+            let notification = UILocalNotification()
+            notification.alertBody = "\(abs(minuteOffsets[i])) minutes until sunset."
+            if minuteOffsets[i] == 0 {
+              notification.alertBody = "The sun is setting!"
+            }
+            notification.fireDate = sunset.date.dateByAddingTimeInterval(NSTimeInterval(minuteOffsets[i] * 60))
+            notification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+          }
+        }
+      }
+    }
+    
+    print(UIApplication.sharedApplication().scheduledLocalNotifications?.last!)
+    
+    if sunsetStatus || sunriseStatus {
+      let notification = UILocalNotification()
+      notification.alertBody = "Please open the app to refresh the data and continue receiving notifications."
+      notification.fireDate = UIApplication.sharedApplication().scheduledLocalNotifications?.sort({ (first, second) -> Bool in
+        return first.fireDate?.compare(second.fireDate!) == .OrderedAscending
+      }).last?.fireDate?.dateByAddingTimeInterval(3600)
+      notification.soundName = UILocalNotificationDefaultSoundName
+      UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
   }
 }

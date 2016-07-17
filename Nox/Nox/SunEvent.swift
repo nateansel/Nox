@@ -24,6 +24,15 @@ enum SunEvent {
   }
 }
 
+extension SunEvent: Equatable {}
+func ==(lhs: SunEvent, rhs: SunEvent) -> Bool {
+  return lhs.date.compare(rhs.date) == .OrderedSame
+}
+
+func !=(lhs: SunEvent, rhs: SunEvent) -> Bool {
+  return !(lhs == rhs)
+}
+
 // MARK: SunEventService
 
 /// 
@@ -79,6 +88,38 @@ class SunEventService {
     calendar.workingDate = date
     let sunrise = calendar.sunrise()
     return SunEvent.Sunrise(sunrise)
+  }
+  
+  func get(numberOfSunrises numSunrises: Int) -> [SunEvent] {
+    var sunrises = [SunEvent]()
+    var date = NSDate().dateByAddingTimeInterval(-NSDate().secondsInDay)
+    while sunrises.count < numSunrises {
+      date = date.dateByAddingTimeInterval(date.secondsInDay)
+      let sunrise = getSunrise(forDate: date)
+      if sunrise.date.isInFuture {
+        let sunset = getSunset(forDate: date)
+        if sunrise != sunset {
+          sunrises.append(sunrise)
+        }
+      }
+    }
+    return sunrises
+  }
+  
+  func get(numberOfSunsets numSunsets: Int) -> [SunEvent] {
+    var sunsets = [SunEvent]()
+    var date = NSDate().dateByAddingTimeInterval(-NSDate().secondsInDay)
+    while sunsets.count < numSunsets {
+      date = date.dateByAddingTimeInterval(date.secondsInDay)
+      let sunset = getSunset(forDate: date)
+      if sunset.date.isInFuture {
+        let sunrise = getSunrise(forDate: date)
+        if sunset != sunrise {
+          sunsets.append(sunset)
+        }
+      }
+    }
+    return sunsets
   }
   
   // MARK: Convenience
