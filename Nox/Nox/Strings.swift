@@ -93,4 +93,26 @@ extension Strings {
       return "\(minutes) minutes of sunlight left."
     }
   }
+  
+  /// Builds a string from the number of minutes passed in.
+  ///   Example: 155 -> "2 hours 45 minutes"
+  static func timeString(fromMinutes minutes: Int) -> String {
+    let hours = minutes % 60
+    let newMinutes = minutes - (minutes % 60)
+    var hourString = ""
+    var minuteString = ""
+    if hours > 0 {
+      hourString = "\(hours) hour"
+      if hours > 1 {
+        hourString += "s"
+      }
+      if newMinutes > 0 {
+        hourString += " "
+      }
+    }
+    if newMinutes > 0 {
+      minuteString = "\(newMinutes) minutes"
+    }
+    return hourString + minuteString
+  }
 }

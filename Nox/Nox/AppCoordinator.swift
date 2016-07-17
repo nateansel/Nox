@@ -112,7 +112,7 @@ extension AppCoordinator {
         if setting {
           for sunrise in sunrises {
             let notification = UILocalNotification()
-            notification.alertBody = "\(abs(minuteOffsets[i])) minutes until sunrise."
+            notification.alertBody = "\(Strings.timeString(fromMinutes: abs(minuteOffsets[i]))) minutes until sunrise."
             if minuteOffsets[i] == 0 {
               notification.alertBody = "The sun is rising!"
             }
@@ -128,7 +128,7 @@ extension AppCoordinator {
         if setting {
           for sunset in sunsets {
             let notification = UILocalNotification()
-            notification.alertBody = "\(abs(minuteOffsets[i])) minutes until sunset."
+            notification.alertBody = "\(Strings.timeString(fromMinutes: abs(minuteOffsets[i]))) minutes until sunset."
             if minuteOffsets[i] == 0 {
               notification.alertBody = "The sun is setting!"
             }
@@ -139,8 +139,6 @@ extension AppCoordinator {
         }
       }
     }
-    
-    print(UIApplication.sharedApplication().scheduledLocalNotifications?.last!)
     
     if sunsetStatus || sunriseStatus {
       let notification = UILocalNotification()
