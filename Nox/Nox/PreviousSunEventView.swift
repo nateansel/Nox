@@ -13,7 +13,8 @@ class PreviousSunEventView: UIView {
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    NSBundle.mainBundle().loadNibNamed(String(self), owner: self, options: nil)
+    NSBundle.mainBundle().loadNibNamed(String(PreviousSunEventView), owner: self, options: nil)
+    view.frame = self.bounds
     self.addSubview(self.view)
   }
 }
