@@ -33,7 +33,38 @@
 		D8C9C5C51D3190B000FC14EE /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C9C5C31D3190B000FC14EE /* AboutViewController.xib */; };
 		D8C9C5C81D3190CC00FC14EE /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C9C5C61D3190CC00FC14EE /* CreditsViewController.swift */; };
 		D8C9C5C91D3190CC00FC14EE /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C9C5C71D3190CC00FC14EE /* CreditsViewController.xib */; };
+		D8FD3EA51D4E7EF40029AF20 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FD3EA41D4E7EF40029AF20 /* NotificationCenter.framework */; };
+		D8FD3EA81D4E7EF40029AF20 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FD3EA71D4E7EF40029AF20 /* TodayViewController.swift */; };
+		D8FD3EAB1D4E7EF40029AF20 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8FD3EA91D4E7EF40029AF20 /* MainInterface.storyboard */; };
+		D8FD3EAF1D4E7EF40029AF20 /* Nox Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D8FD3EA31D4E7EF40029AF20 /* Nox Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D8FD3EB41D4E7F2C0029AF20 /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295061CFB7ECF00FF39BA /* SunEvent.swift */; };
+		D8FD3EB51D4E7F2F0029AF20 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295091CFB940E00FF39BA /* Strings.swift */; };
+		D8FD3EB61D4E7F3B0029AF20 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322D91CFB7E4C009DC03D /* Theme.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8FD3EAD1D4E7EF40029AF20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E038F7B1CFA5F7D00C3E97C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8FD3EA21D4E7EF40029AF20;
+			remoteInfo = "Nox Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8FD3EB31D4E7EF40029AF20 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D8FD3EAF1D4E7EF40029AF20 /* Nox Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E038F831CFA5F7D00C3E97C /* Nox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +96,11 @@
 		D8C9C5C31D3190B000FC14EE /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		D8C9C5C61D3190CC00FC14EE /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		D8C9C5C71D3190CC00FC14EE /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
+		D8FD3EA31D4E7EF40029AF20 /* Nox Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nox Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FD3EA41D4E7EF40029AF20 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D8FD3EA71D4E7EF40029AF20 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D8FD3EAA1D4E7EF40029AF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D8FD3EAC1D4E7EF40029AF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +114,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8FD3EA01D4E7EF40029AF20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8FD3EA51D4E7EF40029AF20 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				2E038F851CFA5F7D00C3E97C /* Nox */,
+				D8FD3EA61D4E7EF40029AF20 /* Nox Widget */,
 				2E038F841CFA5F7D00C3E97C /* Products */,
 				3FE76843A0E0B6BA71F829E5 /* Pods */,
 				935D40D6F5C515DDB794C578 /* Frameworks */,
@@ -95,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				2E038F831CFA5F7D00C3E97C /* Nox.app */,
+				D8FD3EA31D4E7EF40029AF20 /* Nox Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +200,7 @@
 			children = (
 				2E5322E01CFB9074009DC03D /* CoreLocation.framework */,
 				E21844BA665F791144B84E2F /* Pods_Nox.framework */,
+				D8FD3EA41D4E7EF40029AF20 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,6 +244,16 @@
 			name = Credits;
 			sourceTree = "<group>";
 		};
+		D8FD3EA61D4E7EF40029AF20 /* Nox Widget */ = {
+			isa = PBXGroup;
+			children = (
+				D8FD3EA71D4E7EF40029AF20 /* TodayViewController.swift */,
+				D8FD3EA91D4E7EF40029AF20 /* MainInterface.storyboard */,
+				D8FD3EAC1D4E7EF40029AF20 /* Info.plist */,
+			);
+			path = "Nox Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,15 +268,34 @@
 				1AF9856CA8E98AC27E02641F /* [CP] Embed Pods Frameworks */,
 				5D0793A46C0D321D91120B50 /* [CP] Copy Pods Resources */,
 				D81295081CFB8FDF00FF39BA /* ShellScript */,
+				D8FD3EB31D4E7EF40029AF20 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D8FD3EAE1D4E7EF40029AF20 /* PBXTargetDependency */,
 			);
 			name = Nox;
 			productName = Nox;
 			productReference = 2E038F831CFA5F7D00C3E97C /* Nox.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D8FD3EA21D4E7EF40029AF20 /* Nox Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8FD3EB21D4E7EF40029AF20 /* Build configuration list for PBXNativeTarget "Nox Widget" */;
+			buildPhases = (
+				D8FD3E9F1D4E7EF40029AF20 /* Sources */,
+				D8FD3EA01D4E7EF40029AF20 /* Frameworks */,
+				D8FD3EA11D4E7EF40029AF20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Nox Widget";
+			productName = "Nox Widget";
+			productReference = D8FD3EA31D4E7EF40029AF20 /* Nox Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -233,6 +309,10 @@
 				TargetAttributes = {
 					2E038F821CFA5F7D00C3E97C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UCUX5A4U9R;
+					};
+					D8FD3EA21D4E7EF40029AF20 = {
+						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UCUX5A4U9R;
 					};
 				};
@@ -251,6 +331,7 @@
 			projectRoot = "";
 			targets = (
 				2E038F821CFA5F7D00C3E97C /* Nox */,
+				D8FD3EA21D4E7EF40029AF20 /* Nox Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +350,14 @@
 				2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */,
 				D88A683F1D1CCD5B00926725 /* SettingsViewController.xib in Resources */,
 				D8C9C5C91D3190CC00FC14EE /* CreditsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FD3EA11D4E7EF40029AF20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8FD3EAB1D4E7EF40029AF20 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +447,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8FD3E9F1D4E7EF40029AF20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8FD3EA81D4E7EF40029AF20 /* TodayViewController.swift in Sources */,
+				D8FD3EB61D4E7F3B0029AF20 /* Theme.swift in Sources */,
+				D8FD3EB51D4E7F2F0029AF20 /* Strings.swift in Sources */,
+				D8FD3EB41D4E7F2C0029AF20 /* SunEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8FD3EAE1D4E7EF40029AF20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8FD3EA21D4E7EF40029AF20 /* Nox Widget */;
+			targetProxy = D8FD3EAD1D4E7EF40029AF20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */ = {
@@ -367,6 +475,14 @@
 				2E038F901CFA5F7D00C3E97C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D8FD3EA91D4E7EF40029AF20 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8FD3EAA1D4E7EF40029AF20 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -462,6 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Nox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chasemccoy.Sunset;
@@ -477,11 +594,38 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Nox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chasemccoy.Sunset;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		D8FD3EB01D4E7EF40029AF20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Nox Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chasemccoy.Sunset.Nox-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D8FD3EB11D4E7EF40029AF20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Nox Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chasemccoy.Sunset.Nox-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -505,6 +649,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D8FD3EB21D4E7EF40029AF20 /* Build configuration list for PBXNativeTarget "Nox Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8FD3EB01D4E7EF40029AF20 /* Debug */,
+				D8FD3EB11D4E7EF40029AF20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
