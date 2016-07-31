@@ -12,12 +12,58 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="482" height="238"/>
+            <rect key="frame" x="0.0" y="0.0" width="482" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The sun rose today at:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5b-Pl-uMw">
+                    <rect key="frame" x="8" y="8" width="171" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:23 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAz-4Q-gEl">
+                    <rect key="frame" x="8" y="29" width="134" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:23 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lw-Ui-YoK">
+                    <rect key="frame" x="8" y="119" width="134" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-sd-q3m">
+                    <rect key="frame" x="0.0" y="80" width="434" height="2"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="IWJ-DO-VDo"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The sun rose today at:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KX-p6-E5k">
+                    <rect key="frame" x="8" y="98" width="171" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="f2w-sd-q3m" firstAttribute="top" secondItem="NAz-4Q-gEl" secondAttribute="bottom" constant="8" id="3xU-dw-1Qy"/>
+                <constraint firstItem="3KX-p6-E5k" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Fon-jY-zRX"/>
+                <constraint firstItem="f2w-sd-q3m" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G74-Cy-nY8"/>
+                <constraint firstItem="3KX-p6-E5k" firstAttribute="top" secondItem="f2w-sd-q3m" secondAttribute="bottom" constant="16" id="HNe-hF-ztf"/>
+                <constraint firstItem="9Lw-Ui-YoK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="I3z-Fd-BZR"/>
+                <constraint firstItem="NAz-4Q-gEl" firstAttribute="top" secondItem="E5b-Pl-uMw" secondAttribute="bottom" id="Lc7-Nl-vyl"/>
+                <constraint firstItem="NAz-4Q-gEl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="N5O-Q7-cg5"/>
+                <constraint firstAttribute="trailing" secondItem="f2w-sd-q3m" secondAttribute="trailing" constant="48" id="W4W-5g-QGF"/>
+                <constraint firstItem="E5b-Pl-uMw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ZPE-Em-eBQ"/>
+                <constraint firstItem="E5b-Pl-uMw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ZVs-1R-Uab"/>
+                <constraint firstItem="9Lw-Ui-YoK" firstAttribute="top" secondItem="3KX-p6-E5k" secondAttribute="bottom" id="oeU-nF-RDt"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="458" y="156"/>
+            <point key="canvasLocation" x="458" y="122"/>
         </view>
     </objects>
 </document>

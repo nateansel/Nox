@@ -261,6 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E038F951CFA5F7D00C3E97C /* Build configuration list for PBXNativeTarget "Nox" */;
 			buildPhases = (
+				B35F0443463C398E58C1DC8B /* 📦 Check Pods Manifest.lock */,
 				312CA406391B4C4795637DDF /* [CP] Check Pods Manifest.lock */,
 				2E038F7F1CFA5F7D00C3E97C /* Sources */,
 				2E038F801CFA5F7D00C3E97C /* Frameworks */,
@@ -269,6 +270,8 @@
 				5D0793A46C0D321D91120B50 /* [CP] Copy Pods Resources */,
 				D81295081CFB8FDF00FF39BA /* ShellScript */,
 				D8FD3EB31D4E7EF40029AF20 /* Embed App Extensions */,
+				CE2328F4ECB5AFEAA4A15A7E /* 📦 Embed Pods Frameworks */,
+				1A91D854087531F8ACBDC221 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,6 +367,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A91D854087531F8ACBDC221 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1AF9856CA8E98AC27E02641F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +425,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B35F0443463C398E58C1DC8B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CE2328F4ECB5AFEAA4A15A7E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D81295081CFB8FDF00FF39BA /* ShellScript */ = {
@@ -657,6 +705,7 @@
 				D8FD3EB11D4E7EF40029AF20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

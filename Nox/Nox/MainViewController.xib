@@ -15,34 +15,41 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:31 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsY-Na-rqj">
-                    <rect key="frame" x="8" y="134" width="584" height="77"/>
+                    <rect key="frame" x="8" y="134" width="398" height="77"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 hours until the sun rises" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-1Z-qqt">
-                    <rect key="frame" x="8" y="219" width="584" height="24"/>
+                    <rect key="frame" x="8" y="219" width="398" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDs-Gz-TWe">
-                    <rect key="frame" x="260" y="545" width="80" height="39"/>
+                    <rect key="frame" x="167" y="681" width="80" height="39"/>
                     <state key="normal" image="settings"/>
                     <connections>
                         <action selector="settingsButtonTapped:" destination="-1" eventType="touchUpInside" id="JBy-LV-nA6"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The sun will set at" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpG-eL-c2B">
-                    <rect key="frame" x="8" y="104" width="584" height="22"/>
+                    <rect key="frame" x="8" y="104" width="398" height="22"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGe-bE-36K" customClass="PreviousSunEventView" customModule="Nox" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="303" width="300" height="278"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="K8e-sb-fmZ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -52,6 +59,7 @@
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7Z3-un-fxf"/>
                 <constraint firstAttribute="trailing" secondItem="HpG-eL-c2B" secondAttribute="trailing" constant="8" id="95Q-0Y-VFy"/>
                 <constraint firstItem="fkR-1Z-qqt" firstAttribute="top" secondItem="CsY-Na-rqj" secondAttribute="bottom" constant="8" id="BIG-bX-n2q"/>
+                <constraint firstItem="gGe-bE-36K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C5U-hP-jHN"/>
                 <constraint firstAttribute="trailing" secondItem="fkR-1Z-qqt" secondAttribute="trailing" constant="8" id="E4t-jh-Nw9"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Een-OU-qeo"/>
                 <constraint firstItem="fkR-1Z-qqt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="GkZ-GX-Qvd"/>
@@ -63,12 +71,15 @@
                 <constraint firstItem="jDs-Gz-TWe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WdS-KK-Jbz"/>
                 <constraint firstItem="fkR-1Z-qqt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bYC-be-9ej"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cwH-5p-n1x"/>
+                <constraint firstItem="gGe-bE-36K" firstAttribute="top" secondItem="fkR-1Z-qqt" secondAttribute="bottom" constant="60" id="erB-uo-Oon"/>
                 <constraint firstItem="HpG-eL-c2B" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="104" id="mfv-gf-TvJ"/>
+                <constraint firstItem="jDs-Gz-TWe" firstAttribute="top" secondItem="gGe-bE-36K" secondAttribute="bottom" constant="100" id="oro-Vq-UG7"/>
                 <constraint firstItem="HpG-eL-c2B" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uiZ-8g-hsx"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xlu-WT-mg9"/>
                 <constraint firstAttribute="bottom" secondItem="jDs-Gz-TWe" secondAttribute="bottom" constant="16" id="xrJ-rp-Dtg"/>
                 <constraint firstAttribute="trailing" secondItem="fkR-1Z-qqt" secondAttribute="trailing" constant="8" id="ywh-jL-y4A"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="65g-Dr-6N4"/>
