@@ -42,6 +42,8 @@
 		D8FD3EB41D4E7F2C0029AF20 /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295061CFB7ECF00FF39BA /* SunEvent.swift */; };
 		D8FD3EB51D4E7F2F0029AF20 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295091CFB940E00FF39BA /* Strings.swift */; };
 		D8FD3EB61D4E7F3B0029AF20 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322D91CFB7E4C009DC03D /* Theme.swift */; };
+		D8FD3EB81D4E88590029AF20 /* NCWidgetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FD3EB71D4E88590029AF20 /* NCWidgetCoordinator.swift */; };
+		D8FD3EB91D4E89CA0029AF20 /* Location Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322E21CFB9081009DC03D /* Location Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,7 @@
 		D8FD3EA71D4E7EF40029AF20 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D8FD3EAA1D4E7EF40029AF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D8FD3EAC1D4E7EF40029AF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8FD3EB71D4E88590029AF20 /* NCWidgetCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCWidgetCoordinator.swift; sourceTree = "<group>"; };
 		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97A622C1DE9AA469003C6CC /* Pods_Nox_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB63B376CAF2BB03F519477 /* Pods-Nox Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox Widget/Pods-Nox Widget.release.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 		D8FD3EA61D4E7EF40029AF20 /* Nox Widget */ = {
 			isa = PBXGroup;
 			children = (
+				D8FD3EB71D4E88590029AF20 /* NCWidgetCoordinator.swift */,
 				D8FD3EA71D4E7EF40029AF20 /* TodayViewController.swift */,
 				D8FD3EA91D4E7EF40029AF20 /* MainInterface.storyboard */,
 				D8FD3EAC1D4E7EF40029AF20 /* Info.plist */,
@@ -559,6 +563,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FD3EB81D4E88590029AF20 /* NCWidgetCoordinator.swift in Sources */,
+				D8FD3EB91D4E89CA0029AF20 /* Location Manager.swift in Sources */,
 				D8FD3EA81D4E7EF40029AF20 /* TodayViewController.swift in Sources */,
 				D8FD3EB61D4E7F3B0029AF20 /* Theme.swift in Sources */,
 				D8FD3EB51D4E7F2F0029AF20 /* Strings.swift in Sources */,

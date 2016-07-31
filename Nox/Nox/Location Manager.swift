@@ -9,7 +9,10 @@
 import UIKit
 import CoreLocation
 
-extension AppCoordinator {
+protocol ManagesLocation {
+  var locationManager: CLLocationManager { get }
+}
+extension ManagesLocation {
   func checkLocationPersmissions() {
     switch CLLocationManager.authorizationStatus() {
     case .NotDetermined:
@@ -18,23 +21,6 @@ extension AppCoordinator {
       print("Location denied")
     default:
       break
-    }
-  }
-}
-
-extension AppCoordinator: CLLocationManagerDelegate {
-  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    sunEventService.location = locations.last!
-    mainViewController?.currentSunEvent = sunEventService.getNextSunEvent()
-  }
-  
-  func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-    print("Error getting location")
-  }
-  
-  func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-    if status == .AuthorizedAlways {
-//      locationManager.requestLocation()
     }
   }
 }
