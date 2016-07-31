@@ -10,3 +10,10 @@ target 'Nox' do
   pod 'GradientView'
   pod 'Static'#, git: "https://github.com/venmo/Static"
 end
+
+target 'Nox Widget' do
+  use_frameworks!
+  
+  pod 'KosherCocoa', '~> 3.0'
+  pod 'GradientView'
+end 

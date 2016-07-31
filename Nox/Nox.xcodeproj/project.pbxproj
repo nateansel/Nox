@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A96F80942B79EF8142A025F /* Pods_Nox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21844BA665F791144B84E2F /* Pods_Nox.framework */; };
+		1B0AD4BBE688839BC57FFFBD /* Pods_Nox_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97A622C1DE9AA469003C6CC /* Pods_Nox_Widget.framework */; };
 		2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E038F861CFA5F7D00C3E97C /* AppDelegate.swift */; };
 		2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */; };
 		2E038F911CFA5F7D00C3E97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */; };
@@ -81,6 +82,7 @@
 		2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviousSunEventView.xib; sourceTree = "<group>"; };
 		2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousSunEventView.swift; sourceTree = "<group>"; };
 		4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
+		57890B72B0F86E4941B484F0 /* Pods-Nox Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox Widget/Pods-Nox Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
 		D81295061CFB7ECF00FF39BA /* SunEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunEvent.swift; sourceTree = "<group>"; };
 		D81295091CFB940E00FF39BA /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -102,6 +104,8 @@
 		D8FD3EAA1D4E7EF40029AF20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D8FD3EAC1D4E7EF40029AF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E21844BA665F791144B84E2F /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F97A622C1DE9AA469003C6CC /* Pods_Nox_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB63B376CAF2BB03F519477 /* Pods-Nox Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox Widget/Pods-Nox Widget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8FD3EA51D4E7EF40029AF20 /* NotificationCenter.framework in Frameworks */,
+				1B0AD4BBE688839BC57FFFBD /* Pods_Nox_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +196,8 @@
 			children = (
 				4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */,
 				C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */,
+				57890B72B0F86E4941B484F0 /* Pods-Nox Widget.debug.xcconfig */,
+				FFB63B376CAF2BB03F519477 /* Pods-Nox Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 				2E5322E01CFB9074009DC03D /* CoreLocation.framework */,
 				E21844BA665F791144B84E2F /* Pods_Nox.framework */,
 				D8FD3EA41D4E7EF40029AF20 /* NotificationCenter.framework */,
+				F97A622C1DE9AA469003C6CC /* Pods_Nox_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -261,7 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E038F951CFA5F7D00C3E97C /* Build configuration list for PBXNativeTarget "Nox" */;
 			buildPhases = (
-				B35F0443463C398E58C1DC8B /* 📦 Check Pods Manifest.lock */,
+				B35F0443463C398E58C1DC8B /* [CP] Check Pods Manifest.lock */,
 				312CA406391B4C4795637DDF /* [CP] Check Pods Manifest.lock */,
 				2E038F7F1CFA5F7D00C3E97C /* Sources */,
 				2E038F801CFA5F7D00C3E97C /* Frameworks */,
@@ -287,9 +295,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8FD3EB21D4E7EF40029AF20 /* Build configuration list for PBXNativeTarget "Nox Widget" */;
 			buildPhases = (
+				58B90596FDB73ACDED965CB4 /* [CP] Check Pods Manifest.lock */,
 				D8FD3E9F1D4E7EF40029AF20 /* Sources */,
 				D8FD3EA01D4E7EF40029AF20 /* Frameworks */,
 				D8FD3EA11D4E7EF40029AF20 /* Resources */,
+				241487299559622054278C5E /* [CP] Embed Pods Frameworks */,
+				2E9920D10AB57899EE11C2AF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,7 +408,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		241487299559622054278C5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox Widget/Pods-Nox Widget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E9920D10AB57899EE11C2AF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox Widget/Pods-Nox Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		312CA406391B4C4795637DDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		58B90596FDB73ACDED965CB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,14 +483,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nox/Pods-Nox-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B35F0443463C398E58C1DC8B /* 📦 Check Pods Manifest.lock */ = {
+		B35F0443463C398E58C1DC8B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,7 +682,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Nox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chasemccoy.Sunset;
@@ -642,7 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = Nox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chasemccoy.Sunset;
@@ -653,6 +709,7 @@
 		};
 		D8FD3EB01D4E7EF40029AF20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57890B72B0F86E4941B484F0 /* Pods-Nox Widget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -666,6 +723,7 @@
 		};
 		D8FD3EB11D4E7EF40029AF20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFB63B376CAF2BB03F519477 /* Pods-Nox Widget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

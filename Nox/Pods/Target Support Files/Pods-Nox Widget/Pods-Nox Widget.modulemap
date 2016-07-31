@@ -1,0 +1,6 @@
+framework module Pods_Nox_Widget {
+  umbrella header "Pods-Nox Widget-umbrella.h"
+
+  export *
+  module * { export * }
+}

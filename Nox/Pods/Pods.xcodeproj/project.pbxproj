@@ -17,7 +17,7 @@
 		1BF3CE3404E33D56C6A4DD0672E4FE3B /* NSCalendar+Juncture.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A4F2CECE5169BDC5C334DDAE3DA4AA /* NSCalendar+Juncture.m */; };
 		2559E4E75DD6BC9A333CAC091F05B53E /* KCZmanimCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E587EDDEFD5A960EC7CC9D24591717 /* KCZmanimCalendar.m */; };
 		2750146515E369ACCD268E340B9C4B4E /* KCAstronomicalCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = F1B7F02CF7104615727C17A009280D31 /* KCAstronomicalCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C78FF8889452037410EF25194D2CFB6 /* Pods-Nox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 880323156AE0EA420A8D3CFDFAA1D014 /* Pods-Nox-dummy.m */; };
+		2C78FF8889452037410EF25194D2CFB6 /* Pods-Nox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 391C6BEBE2D7D2B070A2BC39963AAA3F /* Pods-Nox-dummy.m */; };
 		2F28C614CDD6F58EEAFBC06FD730F1A0 /* NSCalendar+DateManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = B6055622B4C43E3C17C52ED379B0D710 /* NSCalendar+DateManipulation.m */; };
 		309644C0951EA0ED76395D667360E0C6 /* NSCalendar+hebrewYearTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = BB4395B23497523E610C7B7DDB504111 /* NSCalendar+hebrewYearTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32523BC20D8F2F0E20673CF61C3CDD76 /* KCParashaReadings.h in Headers */ = {isa = PBXBuildFile; fileRef = FA7DF8F4F1C197F4DA285D051A9231BA /* KCParashaReadings.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,7 +25,7 @@
 		37ABA4AB80729B5D7AA0AD4245BDA710 /* GradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7CCE1879C0933DF91447F61011A997 /* GradientView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BF7F861868025A4804917D7FC416B55 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132E8D14D286AFF0B78908BD1F45F472 /* Row.swift */; };
 		455BF98527B5CE933F1E9B5D241ED06E /* KCComplexZmanimCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FFF08C3DDBB880E1EDEEDA5B0DB8195 /* KCComplexZmanimCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CAB659E50E1AEFFC25D813B374A36BB /* Pods-Nox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A252D9F0CE3CEC5889B99AE426364AE2 /* Pods-Nox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CAB659E50E1AEFFC25D813B374A36BB /* Pods-Nox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8F75774FB4FB8E47A53D827D57DCCF9 /* Pods-Nox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50DE2BBF73FF83731384C9AF2096C41D /* GradientView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5446C0C0B4FD1A6B79A91409AA30CA /* GradientView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51B230E82D9B319F3C643DC241DE3073 /* KCParasha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99924DE415062DD9CB79B6BA1E472A /* KCParasha.m */; };
 		52937282A1A997471681E392F194B677 /* trigonometry.h in Headers */ = {isa = PBXBuildFile; fileRef = C8408756BDD73AA50FE0946A49392C22 /* trigonometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -78,8 +78,10 @@
 		BDD6C9F4B9B708D1D75E0F71C5211C09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
 		BE5B5CC5BC5477FB0B3C14104B53BB4A /* NSCalendar+Ranges.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C964146D32255B696EF23A1BF7F22E /* NSCalendar+Ranges.m */; };
 		BEE4F8A9832F63F3F451BEA19E242182 /* KCAstronomicalCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 77ADCF2C82B7E62E6C4FA19DA53E6FE4 /* KCAstronomicalCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C240C96DA7925889E0A303F17171B065 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
 		C3B603C8DB2AE8133C7BCFD03456662F /* KCHebrewYear.h in Headers */ = {isa = PBXBuildFile; fileRef = 8148CA44C86F7F0DAEC47EA69301958D /* KCHebrewYear.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7A90BFDAB51BB377BB83BA223C39C9F /* KCGeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9509B981CA67CF99201CF483B9A55F2A /* KCGeoLocation.m */; };
+		CC1A21844F2CDE9A36CDD740025A0848 /* Pods-Nox Widget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CABE84D14732E68AF9A2A92C59D9754 /* Pods-Nox Widget-dummy.m */; };
 		CD0DC024B7C7A042BE36FE47E1CEDD3B /* KCSefiratHaomerCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = E41C1573D5C7149D5F3B95B18089BFF9 /* KCSefiratHaomerCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDB68CD27D985E905C26F3C52BC44F38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
 		D6801ED298E3351578047979AE92927D /* NSDateComponents+AllComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A9937E1327A6CD8C39874120C6F1A88 /* NSDateComponents+AllComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -93,6 +95,7 @@
 		ECBC365D04CE231523E4AFA7CF2C5284 /* KCZmanimCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = B36F2CBAEA3FE158C560780AD0C494D5 /* KCZmanimCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECDCC5BE9C1D2D388BA8992194E21CE0 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93EAE4189D066E57389D8AB5DC535F /* Section.swift */; };
 		EDCEAA50325DDFD1E69B1AE1C27076DD /* KCAstronomicalCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073593CFDB007A2EEC5D19B9E36BD86 /* KCAstronomicalCalendar.m */; };
+		EFD866D5164ADFA52E4199F7BA3C0A71 /* Pods-Nox Widget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0990838D12D333EA692E84E09C196825 /* Pods-Nox Widget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2D15D35FCB3AD3A5DF035D6D21A84DC /* NSCalendar+DateComparison.h in Headers */ = {isa = PBXBuildFile; fileRef = B522C709793605C0115D139A3CB6EAD1 /* NSCalendar+DateComparison.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4DE2314A32755F368667679D9AF44B8 /* KCConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE4FC2D3BEF0F23B009315FDB83CC96 /* KCConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5DBB83215AE3D640242DA99606FDB99 /* KCSunCalculationTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 611B556020F71A1180DA7CB407D8B443 /* KCSunCalculationTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -109,12 +112,26 @@
 			remoteGlobalIDString = D714037593A1D0448AF01C98C0203714;
 			remoteInfo = GradientView;
 		};
+		5BD637BAD4AA471A6A344840A62108BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41F94DBD83BB2495467D44B26676F6B0;
+			remoteInfo = KosherCocoa;
+		};
 		AFFB9E54970B441C34AC338A5365B4FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 41F94DBD83BB2495467D44B26676F6B0;
 			remoteInfo = KosherCocoa;
+		};
+		D6E7D15E30AF5FCE5F2B867F21721EDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D714037593A1D0448AF01C98C0203714;
+			remoteInfo = GradientView;
 		};
 		DDEFC3B5C31A9B08B6BB452F7ED2E162 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -130,43 +147,55 @@
 		02BCE4C8E8431EFD65B28006B01F30D7 /* ButtonCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonCell.swift; path = Static/ButtonCell.swift; sourceTree = "<group>"; };
 		03350515C760327F43241FD4827EDA84 /* KosherCocoa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KosherCocoa-umbrella.h"; sourceTree = "<group>"; };
 		058E49ED9CC01D0438FEBFDD8EA9CE9C /* KosherCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KosherCocoa-prefix.pch"; sourceTree = "<group>"; };
+		0990838D12D333EA692E84E09C196825 /* Pods-Nox Widget-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nox Widget-umbrella.h"; sourceTree = "<group>"; };
 		09C964146D32255B696EF23A1BF7F22E /* NSCalendar+Ranges.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+Ranges.m"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+Ranges.m"; sourceTree = "<group>"; };
+		0D64C735F7AC37FF6AF253F1E4A0931D /* Static.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Static.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F1A257390A3D52319B9DF868695E1C5 /* KCSunriseAndSunsetCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCSunriseAndSunsetCalculator.m; path = KosherCocoa/Library/Core/Solar/KCSunriseAndSunsetCalculator.m; sourceTree = "<group>"; };
 		0FFF08C3DDBB880E1EDEEDA5B0DB8195 /* KCComplexZmanimCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCComplexZmanimCalendar.h; path = KosherCocoa/Library/Core/Calendar/Zmanim/KCComplexZmanimCalendar.h; sourceTree = "<group>"; };
 		132E8D14D286AFF0B78908BD1F45F472 /* Row.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Static/Row.swift; sourceTree = "<group>"; };
+		1C890DD7160F3D9FDCAC44816A3F9003 /* Pods-Nox Widget-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nox Widget-resources.sh"; sourceTree = "<group>"; };
 		21209D9F2D88FE09098B019BC1B8FF48 /* NSCalendar+DateManipulation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+DateManipulation.h"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+DateManipulation.h"; sourceTree = "<group>"; };
 		249C051838FF8E11FA0134FB07549770 /* KCDafYomiCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCDafYomiCalculator.h; path = "KosherCocoa/Library/Core/Calendar/Daf Yomi/KCDafYomiCalculator.h"; sourceTree = "<group>"; };
 		2AE4FC2D3BEF0F23B009315FDB83CC96 /* KCConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCConstants.h; path = KosherCocoa/Library/Headers/KCConstants.h; sourceTree = "<group>"; };
 		313A1F9CFDF733B00D8D19E1050B682D /* KCSefiraFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCSefiraFormatter.h; path = KosherCocoa/Library/Core/Calendar/Sefira/KCSefiraFormatter.h; sourceTree = "<group>"; };
+		31FFA7884F6325B46339F929F58A5D1D /* Pods-Nox Widget-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nox Widget-frameworks.sh"; sourceTree = "<group>"; };
 		32599852125903081C560E184794A20A /* KCParashatHashavuaCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCParashatHashavuaCalculator.m; path = KosherCocoa/Library/Core/Calendar/Parasha/KCParashatHashavuaCalculator.m; sourceTree = "<group>"; };
+		391C6BEBE2D7D2B070A2BC39963AAA3F /* Pods-Nox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nox-dummy.m"; sourceTree = "<group>"; };
 		3B470C825FB9AD9410E7A23B2E363860 /* KCSunriseAndSunsetCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCSunriseAndSunsetCalculator.h; path = KosherCocoa/Library/Core/Solar/KCSunriseAndSunsetCalculator.h; sourceTree = "<group>"; };
 		40F11401B33867C8F58DA04A561A5213 /* KCDafYomiCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCDafYomiCalculator.m; path = "KosherCocoa/Library/Core/Calendar/Daf Yomi/KCDafYomiCalculator.m"; sourceTree = "<group>"; };
 		437F3AA72142D566C34604395282D632 /* KCJewishCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCJewishCalendar.h; path = KosherCocoa/Library/Core/Calendar/Chagim/KCJewishCalendar.h; sourceTree = "<group>"; };
-		44660610B2993F7F7D62E47B49CBBFEA /* KosherCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KosherCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		446FAFFAB9A3FEB75F0B570B67EB73AF /* NSCalendar+DateComparison.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+DateComparison.m"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+DateComparison.m"; sourceTree = "<group>"; };
 		46D014562E8B1FFDFD83D27A073347D4 /* NSDate+Components.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Components.m"; path = "KosherCocoa/Library/Categories/Foundation/NSDate/NSDate+Components.m"; sourceTree = "<group>"; };
 		46DEC05E1D167EE6C652476B0592D29E /* NSCalendar+Components.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+Components.m"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+Components.m"; sourceTree = "<group>"; };
 		49CCA1FE38F2EAA2244C20D881535D23 /* SubtitleCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubtitleCell.swift; path = Static/SubtitleCell.swift; sourceTree = "<group>"; };
 		49D3C6A04032F28B41AF92770FB2747D /* KosherCocoa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KosherCocoa.modulemap; sourceTree = "<group>"; };
+		4A775A1360A3374C70B9A1AB74CB71D5 /* Pods-Nox Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nox Widget.release.xcconfig"; sourceTree = "<group>"; };
 		4BB3D2DE3589ED5048A3CF18803D9A13 /* GradientView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientView-prefix.pch"; sourceTree = "<group>"; };
-		4FC2454A3CF9F85C393DD4FD13DDBC7C /* Pods-Nox-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nox-acknowledgements.plist"; sourceTree = "<group>"; };
+		4CABE84D14732E68AF9A2A92C59D9754 /* Pods-Nox Widget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nox Widget-dummy.m"; sourceTree = "<group>"; };
 		519022694B9B15412694071BDF64AAD2 /* KCMolad.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCMolad.h; path = KosherCocoa/Library/Headers/KCMolad.h; sourceTree = "<group>"; };
 		52A4F2CECE5169BDC5C334DDAE3DA4AA /* NSCalendar+Juncture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+Juncture.m"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+Juncture.m"; sourceTree = "<group>"; };
+		52EDC9E41AC3531508E798D13ECEA96B /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
 		53A1F50124E5785DCEF0A39218E978E5 /* NSDateComponents+AllComponents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDateComponents+AllComponents.m"; path = "KosherCocoa/Library/Categories/Foundation/NSDateComponents/NSDateComponents+AllComponents.m"; sourceTree = "<group>"; };
 		57F049C3626EBA2E1EA0CE569A9CCC06 /* CellType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellType.swift; path = Static/CellType.swift; sourceTree = "<group>"; };
+		5A1CFA9A3A910B3F8CFF8669324B1717 /* Pods-Nox-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nox-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5C56331C2E3EA4DE3806775795B07E46 /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = GradientView/GradientView.swift; sourceTree = "<group>"; };
 		5C77EE8379AEECD37F4CA03A81D63E27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA821CB6351E1C8B405E65231B12E65 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
 		6073593CFDB007A2EEC5D19B9E36BD86 /* KCAstronomicalCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCAstronomicalCalendar.m; path = KosherCocoa/Library/Core/Solar/KCAstronomicalCalendar.m; sourceTree = "<group>"; };
 		611B556020F71A1180DA7CB407D8B443 /* KCSunCalculationTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCSunCalculationTypes.h; path = KosherCocoa/Library/Headers/KCSunCalculationTypes.h; sourceTree = "<group>"; };
-		619E53AD91C7E3FBC8CD2076B660DB21 /* Pods-Nox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nox.modulemap"; sourceTree = "<group>"; };
 		6282CB14D3674977CDE47A7C1196A257 /* KCParashatHashavuaCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCParashatHashavuaCalculator.h; path = KosherCocoa/Library/Core/Calendar/Parasha/KCParashatHashavuaCalculator.h; sourceTree = "<group>"; };
 		62C814C35A70E40EF1FD398C95996BFB /* NSDate+ConvenientDates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+ConvenientDates.h"; path = "KosherCocoa/Library/Categories/Foundation/NSDate/NSDate+ConvenientDates.h"; sourceTree = "<group>"; };
+		6470EA7473AF9AC3F302248707C75B2C /* Pods-Nox Widget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nox Widget.modulemap"; sourceTree = "<group>"; };
 		64C48F7E6F8922F67C1D549111F327F1 /* KCZenithExtended.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCZenithExtended.h; path = KosherCocoa/Library/Headers/KCZenithExtended.h; sourceTree = "<group>"; };
-		64FDD24B069D59849A3EFC249623AD02 /* Pods-Nox-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nox-acknowledgements.markdown"; sourceTree = "<group>"; };
+		668BB93F79B9F78E93B0261E7436A639 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BD366686C92E6505A285C048AFFFAD9 /* NSCalendar+Juncture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+Juncture.h"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+Juncture.h"; sourceTree = "<group>"; };
+		6BFEAFDEAF57CA6037B8F7D2A038E1F4 /* GradientView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GradientView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C3C9CE68371D78A505010E1449D9ED2 /* KCTractates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCTractates.h; path = KosherCocoa/Library/Headers/KCTractates.h; sourceTree = "<group>"; };
+		7045B5DA4C896C5D3A921E1E70E726BE /* Pods-Nox Widget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nox Widget-acknowledgements.markdown"; sourceTree = "<group>"; };
 		71040DAA1E809E9B401028527D61CE24 /* KCZenith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCZenith.h; path = KosherCocoa/Library/Headers/KCZenith.h; sourceTree = "<group>"; };
+		7196C985AEC4D650B6A28E85C9880FE3 /* Pods-Nox-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nox-resources.sh"; sourceTree = "<group>"; };
 		73E668089E186F70BB5352DEC69844D9 /* Static-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Static-dummy.m"; sourceTree = "<group>"; };
+		746E51736E09C72A78CF47B8A113A32B /* Pods-Nox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nox.modulemap"; sourceTree = "<group>"; };
 		76AE98D2CC1609FF3BEF2AD73283B5F6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77821086B8C87F36692B8251F13EA9F3 /* KCParasha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCParasha.h; path = KosherCocoa/Library/Core/Calendar/Parasha/KCParasha.h; sourceTree = "<group>"; };
 		77ADCF2C82B7E62E6C4FA19DA53E6FE4 /* KCAstronomicalCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCAstronomicalCalculator.h; path = KosherCocoa/Library/Core/Solar/KCAstronomicalCalculator.h; sourceTree = "<group>"; };
@@ -176,35 +205,30 @@
 		7C99924DE415062DD9CB79B6BA1E472A /* KCParasha.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCParasha.m; path = KosherCocoa/Library/Core/Calendar/Parasha/KCParasha.m; sourceTree = "<group>"; };
 		7E46F64217183A1CA9F1E6A1CE796027 /* KCJewishHolidays.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCJewishHolidays.h; path = KosherCocoa/Library/Headers/KCJewishHolidays.h; sourceTree = "<group>"; };
 		7EB57AF40520ABE35D734480DDAC404E /* MBCalendarCategories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBCalendarCategories.h; path = KosherCocoa/Library/Categories/Foundation/MBCalendarCategories.h; sourceTree = "<group>"; };
-		7F6F4F2DFDC8419255EDCBF492F3D395 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
 		8148CA44C86F7F0DAEC47EA69301958D /* KCHebrewYear.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCHebrewYear.h; path = KosherCocoa/Library/Headers/KCHebrewYear.h; sourceTree = "<group>"; };
-		82E522786FC289624E14031E274C1F34 /* Static.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Static.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A75DFCA34D6B869B0B222A9E382BAA /* Static.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Static.modulemap; sourceTree = "<group>"; };
 		859078D0B8EAA383DE825EF914049EF0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		880323156AE0EA420A8D3CFDFAA1D014 /* Pods-Nox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nox-dummy.m"; sourceTree = "<group>"; };
 		8A93EAE4189D066E57389D8AB5DC535F /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Static/Section.swift; sourceTree = "<group>"; };
 		8A9937E1327A6CD8C39874120C6F1A88 /* NSDateComponents+AllComponents.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDateComponents+AllComponents.h"; path = "KosherCocoa/Library/Categories/Foundation/NSDateComponents/NSDateComponents+AllComponents.h"; sourceTree = "<group>"; };
 		8E53FDF6DE4AEFE60FD8B18DA6683D88 /* KCBearing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCBearing.h; path = KosherCocoa/Library/Headers/KCBearing.h; sourceTree = "<group>"; };
 		8EC214EF1446D9F179506DBCA1411A4C /* KCZman.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCZman.h; path = KosherCocoa/Library/Core/Calendar/Zmanim/KCZman.h; sourceTree = "<group>"; };
-		900567B6FFB5201193FF524172781C6B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		932AC6492D6E7D5B9EB220FCBD5E9784 /* Static.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Static.h; path = Static/Static.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		946DABDB57210067A97FEE8742AF7988 /* KosherCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KosherCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9509B981CA67CF99201CF483B9A55F2A /* KCGeoLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCGeoLocation.m; path = KosherCocoa/Library/Core/Solar/KCGeoLocation.m; sourceTree = "<group>"; };
-		996C372AAC241798D7432B19B8FC8F31 /* Pods-Nox-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nox-frameworks.sh"; sourceTree = "<group>"; };
+		965231FF9B173DCC37FF1A93A2305D86 /* Pods-Nox Widget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nox Widget-acknowledgements.plist"; sourceTree = "<group>"; };
+		98108CE78456A397C748396600D8B471 /* Pods-Nox Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nox Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		99F2FE4DAFF1B4E027D58F2B438C8291 /* KCSefiraFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCSefiraFormatter.m; path = KosherCocoa/Library/Core/Calendar/Sefira/KCSefiraFormatter.m; sourceTree = "<group>"; };
 		9CFA0499E0793681D8B927B35C00E7EC /* Value1Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value1Cell.swift; path = Static/Value1Cell.swift; sourceTree = "<group>"; };
 		9E77550E0BB1825CE5602040929020E4 /* KCAstronomicalCalendar+DateManipulation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "KCAstronomicalCalendar+DateManipulation.m"; path = "KosherCocoa/Library/Categories/KosherCocoa/KCAstronomicalCalendar+DateManipulation.m"; sourceTree = "<group>"; };
 		9EB538D1EE425D6F5311B8570F5ACF79 /* trigonometry.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = trigonometry.c; path = KosherCocoa/Library/Core/Utilities/trigonometry.c; sourceTree = "<group>"; };
 		A0B9E847D3BBBC7E59DDAC7A290D8DB1 /* Value2Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value2Cell.swift; path = Static/Value2Cell.swift; sourceTree = "<group>"; };
-		A252D9F0CE3CEC5889B99AE426364AE2 /* Pods-Nox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nox-umbrella.h"; sourceTree = "<group>"; };
 		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A3206039680EE23E60A13A0B38F3B946 /* NSCalendar+Components.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+Components.h"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+Components.h"; sourceTree = "<group>"; };
-		AA13FBE806C53991A7B0A11C079507E8 /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD014E5D2980A8BCA00C1A47613E1861 /* GradientView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GradientView.xcconfig; sourceTree = "<group>"; };
 		AD6F06F6D199BEACA07E2F2E06380BA5 /* NSDate+Description.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Description.m"; path = "KosherCocoa/Library/Categories/Foundation/NSDate/NSDate+Description.m"; sourceTree = "<group>"; };
 		B2400B9C030D4B2422EDEA6E1B88B64B /* KCAstronomicalCalendar+DateManipulation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "KCAstronomicalCalendar+DateManipulation.h"; path = "KosherCocoa/Library/Categories/KosherCocoa/KCAstronomicalCalendar+DateManipulation.h"; sourceTree = "<group>"; };
 		B36F2CBAEA3FE158C560780AD0C494D5 /* KCZmanimCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCZmanimCalendar.h; path = KosherCocoa/Library/Core/Calendar/Zmanim/KCZmanimCalendar.h; sourceTree = "<group>"; };
-		B402DBAB4DEEF5E5BEE9B41CBF40CDCB /* GradientView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GradientView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F207B70F1E5A3845EC91D412C10D2D /* KCAstronomical.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCAstronomical.h; path = KosherCocoa/Library/Headers/KCAstronomical.h; sourceTree = "<group>"; };
 		B522C709793605C0115D139A3CB6EAD1 /* NSCalendar+DateComparison.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+DateComparison.h"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+DateComparison.h"; sourceTree = "<group>"; };
 		B6055622B4C43E3C17C52ED379B0D710 /* NSCalendar+DateManipulation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+DateManipulation.m"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+DateManipulation.m"; sourceTree = "<group>"; };
@@ -216,17 +240,16 @@
 		C29F1CA9D8270719820153CA0CE96417 /* KCSefiratHaomerCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCSefiratHaomerCalculator.m; path = KosherCocoa/Library/Core/Calendar/Sefira/KCSefiratHaomerCalculator.m; sourceTree = "<group>"; };
 		C3B165C8B52A0C8B8EAF4D33D4862F3C /* KosherCocoa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KosherCocoa-dummy.m"; sourceTree = "<group>"; };
 		C46E9A5696A5ABF4E7398EFEF866395A /* DataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = Static/DataSource.swift; sourceTree = "<group>"; };
-		C7A4631AE89D2D23F53289AFC43A3658 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
 		C8408756BDD73AA50FE0946A49392C22 /* trigonometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = trigonometry.h; path = KosherCocoa/Library/Core/Utilities/trigonometry.h; sourceTree = "<group>"; };
 		CBC52A042E64479CEA1C8A7D2FADEA3C /* KosherCocoa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KosherCocoa.xcconfig; sourceTree = "<group>"; };
 		CF88048A6D849D703F95DEA2F35CA95C /* Static.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Static.xcconfig; sourceTree = "<group>"; };
 		D0E587EDDEFD5A960EC7CC9D24591717 /* KCZmanimCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCZmanimCalendar.m; path = KosherCocoa/Library/Core/Calendar/Zmanim/KCZmanimCalendar.m; sourceTree = "<group>"; };
 		D522DB80EB26F807F526203BBEC83B8B /* KCDaf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCDaf.m; path = "KosherCocoa/Library/Core/Calendar/Daf Yomi/KCDaf.m"; sourceTree = "<group>"; };
-		D8314D4DE41BC884DC435CDA22CD6C1A /* Pods-Nox-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nox-resources.sh"; sourceTree = "<group>"; };
 		DA4361BEF1EE26F48907BCCBAC3F2135 /* GradientView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GradientView.modulemap; sourceTree = "<group>"; };
 		DA5446C0C0B4FD1A6B79A91409AA30CA /* GradientView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientView-umbrella.h"; sourceTree = "<group>"; };
 		DA7CCE1879C0933DF91447F61011A997 /* GradientView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GradientView.h; path = GradientView/GradientView.h; sourceTree = "<group>"; };
 		DBF843F14862B09497F7D324E6A04E8B /* KCJewishHoliday.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCJewishHoliday.m; path = KosherCocoa/Library/Core/Calendar/Chagim/KCJewishHoliday.m; sourceTree = "<group>"; };
+		DECEBC4990E5DA7C4BE47D15FBCBB538 /* Pods-Nox-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nox-frameworks.sh"; sourceTree = "<group>"; };
 		E33A24244EBD687FA13D9143813D915E /* NSCalendar+Ranges.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+Ranges.h"; path = "KosherCocoa/Library/Categories/Foundation/NSCalendar/NSCalendar+Ranges.h"; sourceTree = "<group>"; };
 		E41C1573D5C7149D5F3B95B18089BFF9 /* KCSefiratHaomerCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCSefiratHaomerCalculator.h; path = KosherCocoa/Library/Core/Calendar/Sefira/KCSefiratHaomerCalculator.h; sourceTree = "<group>"; };
 		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -236,9 +259,14 @@
 		EC3F05DF152C9F896FC2E1BD6C01960A /* KCDaf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCDaf.h; path = "KosherCocoa/Library/Core/Calendar/Daf Yomi/KCDaf.h"; sourceTree = "<group>"; };
 		ED68D75470E8C1FA291DBE9EE65532F4 /* KCJewishHoliday.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCJewishHoliday.h; path = KosherCocoa/Library/Core/Calendar/Chagim/KCJewishHoliday.h; sourceTree = "<group>"; };
 		EE87FFEEB9646CB54CA75A9DD031CB9A /* KCZman.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KCZman.m; path = KosherCocoa/Library/Core/Calendar/Zmanim/KCZman.m; sourceTree = "<group>"; };
+		F02904BC52D4ADAF560CAA9ADF4C6B66 /* Pods-Nox-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nox-acknowledgements.plist"; sourceTree = "<group>"; };
 		F1B7F02CF7104615727C17A009280D31 /* KCAstronomicalCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCAstronomicalCalendar.h; path = KosherCocoa/Library/Core/Solar/KCAstronomicalCalendar.h; sourceTree = "<group>"; };
 		F3E774E2E211A3FDD8F95E30473DE187 /* NSDate+ConvenientDates.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ConvenientDates.m"; path = "KosherCocoa/Library/Categories/Foundation/NSDate/NSDate+ConvenientDates.m"; sourceTree = "<group>"; };
+		F8F75774FB4FB8E47A53D827D57DCCF9 /* Pods-Nox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nox-umbrella.h"; sourceTree = "<group>"; };
+		F90BF86CD8DB087B937541773CF91BA9 /* Pods_Nox_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7DF8F4F1C197F4DA285D051A9231BA /* KCParashaReadings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KCParashaReadings.h; path = KosherCocoa/Library/Headers/KCParashaReadings.h; sourceTree = "<group>"; };
+		FD545FBD80F93E52E5A8D45829425DF0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB5D9B2FD62EBE688A1722BF34145FC /* Pods_Nox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +275,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9A38C269E98AA7BCB256081DAB80D88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D362105604993A1FAE8568CE51692F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C240C96DA7925889E0A303F17171B065 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,15 +389,34 @@
 			path = KosherCocoa;
 			sourceTree = "<group>";
 		};
-		1BCA688748F1F0A23E880445183EAAB9 /* Products */ = {
+		103ECF9E6624488DB7A0AC7D6BB7C8CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B402DBAB4DEEF5E5BEE9B41CBF40CDCB /* GradientView.framework */,
-				44660610B2993F7F7D62E47B49CBBFEA /* KosherCocoa.framework */,
-				AA13FBE806C53991A7B0A11C079507E8 /* Pods_Nox.framework */,
-				82E522786FC289624E14031E274C1F34 /* Static.framework */,
+				6BFEAFDEAF57CA6037B8F7D2A038E1F4 /* GradientView.framework */,
+				946DABDB57210067A97FEE8742AF7988 /* KosherCocoa.framework */,
+				FFB5D9B2FD62EBE688A1722BF34145FC /* Pods_Nox.framework */,
+				F90BF86CD8DB087B937541773CF91BA9 /* Pods_Nox_Widget.framework */,
+				0D64C735F7AC37FF6AF253F1E4A0931D /* Static.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		13ED988E04C779F0B61D7AD522C82FFB /* Pods-Nox */ = {
+			isa = PBXGroup;
+			children = (
+				FD545FBD80F93E52E5A8D45829425DF0 /* Info.plist */,
+				746E51736E09C72A78CF47B8A113A32B /* Pods-Nox.modulemap */,
+				5A1CFA9A3A910B3F8CFF8669324B1717 /* Pods-Nox-acknowledgements.markdown */,
+				F02904BC52D4ADAF560CAA9ADF4C6B66 /* Pods-Nox-acknowledgements.plist */,
+				391C6BEBE2D7D2B070A2BC39963AAA3F /* Pods-Nox-dummy.m */,
+				DECEBC4990E5DA7C4BE47D15FBCBB538 /* Pods-Nox-frameworks.sh */,
+				7196C985AEC4D650B6A28E85C9880FE3 /* Pods-Nox-resources.sh */,
+				F8F75774FB4FB8E47A53D827D57DCCF9 /* Pods-Nox-umbrella.h */,
+				5FA821CB6351E1C8B405E65231B12E65 /* Pods-Nox.debug.xcconfig */,
+				52EDC9E41AC3531508E798D13ECEA96B /* Pods-Nox.release.xcconfig */,
+			);
+			name = "Pods-Nox";
+			path = "Target Support Files/Pods-Nox";
 			sourceTree = "<group>";
 		};
 		245FE4CD228C8512AB4136C2F35829B4 /* Support Files */ = {
@@ -376,24 +431,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KosherCocoa";
-			sourceTree = "<group>";
-		};
-		2C10AE9C416C1293E00352B2309B1831 /* Pods-Nox */ = {
-			isa = PBXGroup;
-			children = (
-				900567B6FFB5201193FF524172781C6B /* Info.plist */,
-				619E53AD91C7E3FBC8CD2076B660DB21 /* Pods-Nox.modulemap */,
-				64FDD24B069D59849A3EFC249623AD02 /* Pods-Nox-acknowledgements.markdown */,
-				4FC2454A3CF9F85C393DD4FD13DDBC7C /* Pods-Nox-acknowledgements.plist */,
-				880323156AE0EA420A8D3CFDFAA1D014 /* Pods-Nox-dummy.m */,
-				996C372AAC241798D7432B19B8FC8F31 /* Pods-Nox-frameworks.sh */,
-				D8314D4DE41BC884DC435CDA22CD6C1A /* Pods-Nox-resources.sh */,
-				A252D9F0CE3CEC5889B99AE426364AE2 /* Pods-Nox-umbrella.h */,
-				7F6F4F2DFDC8419255EDCBF492F3D395 /* Pods-Nox.debug.xcconfig */,
-				C7A4631AE89D2D23F53289AFC43A3658 /* Pods-Nox.release.xcconfig */,
-			);
-			name = "Pods-Nox";
-			path = "Target Support Files/Pods-Nox";
 			sourceTree = "<group>";
 		};
 		369A9F2C9235A657732FCC136739B39F /* Support Files */ = {
@@ -418,6 +455,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		47C3871A6171D76A21AF469DFF216714 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				13ED988E04C779F0B61D7AD522C82FFB /* Pods-Nox */,
+				983A4F7956D29E0659A8DB10E59E7782 /* Pods-Nox Widget */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		58A371726F12B7176099640455493084 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,17 +480,27 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				58A371726F12B7176099640455493084 /* Pods */,
-				1BCA688748F1F0A23E880445183EAAB9 /* Products */,
-				937818B017112408EE6E09F61D02F66B /* Targets Support Files */,
+				103ECF9E6624488DB7A0AC7D6BB7C8CA /* Products */,
+				47C3871A6171D76A21AF469DFF216714 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		937818B017112408EE6E09F61D02F66B /* Targets Support Files */ = {
+		983A4F7956D29E0659A8DB10E59E7782 /* Pods-Nox Widget */ = {
 			isa = PBXGroup;
 			children = (
-				2C10AE9C416C1293E00352B2309B1831 /* Pods-Nox */,
+				668BB93F79B9F78E93B0261E7436A639 /* Info.plist */,
+				6470EA7473AF9AC3F302248707C75B2C /* Pods-Nox Widget.modulemap */,
+				7045B5DA4C896C5D3A921E1E70E726BE /* Pods-Nox Widget-acknowledgements.markdown */,
+				965231FF9B173DCC37FF1A93A2305D86 /* Pods-Nox Widget-acknowledgements.plist */,
+				4CABE84D14732E68AF9A2A92C59D9754 /* Pods-Nox Widget-dummy.m */,
+				31FFA7884F6325B46339F929F58A5D1D /* Pods-Nox Widget-frameworks.sh */,
+				1C890DD7160F3D9FDCAC44816A3F9003 /* Pods-Nox Widget-resources.sh */,
+				0990838D12D333EA692E84E09C196825 /* Pods-Nox Widget-umbrella.h */,
+				98108CE78456A397C748396600D8B471 /* Pods-Nox Widget.debug.xcconfig */,
+				4A775A1360A3374C70B9A1AB74CB71D5 /* Pods-Nox Widget.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-Nox Widget";
+			path = "Target Support Files/Pods-Nox Widget";
 			sourceTree = "<group>";
 		};
 		AC3D168793988F9A153828C82D589497 /* Static */ = {
@@ -501,6 +557,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		323F39FCC941083E2F64F9BFAC47E351 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFD866D5164ADFA52E4199F7BA3C0A71 /* Pods-Nox Widget-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41E27140D82D6E7AB89F97ECAB9E8231 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -578,6 +642,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		41452946980CCBAE15022E35B51D2FB4 /* Pods-Nox Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EF994191B743849EF8DCD2BB1B69F38 /* Build configuration list for PBXNativeTarget "Pods-Nox Widget" */;
+			buildPhases = (
+				DB69CBE11F6D6617C5F7372E2AE190A0 /* Sources */,
+				6D362105604993A1FAE8568CE51692F1 /* Frameworks */,
+				323F39FCC941083E2F64F9BFAC47E351 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				054C2566E95223DBCF7FBA9D9BBA8924 /* PBXTargetDependency */,
+				C796144C8BDF9CE9EA32AE9A9EF59B16 /* PBXTargetDependency */,
+			);
+			name = "Pods-Nox Widget";
+			productName = "Pods-Nox Widget";
+			productReference = F90BF86CD8DB087B937541773CF91BA9 /* Pods_Nox_Widget.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		41F94DBD83BB2495467D44B26676F6B0 /* KosherCocoa */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60418189E5F25A51A41D50CAB85421A5 /* Build configuration list for PBXNativeTarget "KosherCocoa" */;
@@ -592,7 +675,7 @@
 			);
 			name = KosherCocoa;
 			productName = KosherCocoa;
-			productReference = 44660610B2993F7F7D62E47B49CBBFEA /* KosherCocoa.framework */;
+			productReference = 946DABDB57210067A97FEE8742AF7988 /* KosherCocoa.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5F2CC43E8EB05B33CF5245998AAE6FBE /* Static */ = {
@@ -609,7 +692,7 @@
 			);
 			name = Static;
 			productName = Static;
-			productReference = 82E522786FC289624E14031E274C1F34 /* Static.framework */;
+			productReference = 0D64C735F7AC37FF6AF253F1E4A0931D /* Static.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A3AA9F68F586390209F801461509DD47 /* Pods-Nox */ = {
@@ -629,7 +712,7 @@
 			);
 			name = "Pods-Nox";
 			productName = "Pods-Nox";
-			productReference = AA13FBE806C53991A7B0A11C079507E8 /* Pods_Nox.framework */;
+			productReference = FFB5D9B2FD62EBE688A1722BF34145FC /* Pods_Nox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D714037593A1D0448AF01C98C0203714 /* GradientView */ = {
@@ -646,7 +729,7 @@
 			);
 			name = GradientView;
 			productName = GradientView;
-			productReference = B402DBAB4DEEF5E5BEE9B41CBF40CDCB /* GradientView.framework */;
+			productReference = 6BFEAFDEAF57CA6037B8F7D2A038E1F4 /* GradientView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -666,13 +749,14 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1BCA688748F1F0A23E880445183EAAB9 /* Products */;
+			productRefGroup = 103ECF9E6624488DB7A0AC7D6BB7C8CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D714037593A1D0448AF01C98C0203714 /* GradientView */,
 				41F94DBD83BB2495467D44B26676F6B0 /* KosherCocoa */,
 				A3AA9F68F586390209F801461509DD47 /* Pods-Nox */,
+				41452946980CCBAE15022E35B51D2FB4 /* Pods-Nox Widget */,
 				5F2CC43E8EB05B33CF5245998AAE6FBE /* Static */,
 			);
 		};
@@ -730,6 +814,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB69CBE11F6D6617C5F7372E2AE190A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC1A21844F2CDE9A36CDD740025A0848 /* Pods-Nox Widget-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7478459E0A5798E5CE8A1209994981E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -750,6 +842,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		054C2566E95223DBCF7FBA9D9BBA8924 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GradientView;
+			target = D714037593A1D0448AF01C98C0203714 /* GradientView */;
+			targetProxy = D6E7D15E30AF5FCE5F2B867F21721EDC /* PBXContainerItemProxy */;
+		};
 		13E285AEEF5A8C94F0FFB1F460C75B4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Static;
@@ -768,13 +866,20 @@
 			target = 41F94DBD83BB2495467D44B26676F6B0 /* KosherCocoa */;
 			targetProxy = AFFB9E54970B441C34AC338A5365B4FE /* PBXContainerItemProxy */;
 		};
+		C796144C8BDF9CE9EA32AE9A9EF59B16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KosherCocoa;
+			target = 41F94DBD83BB2495467D44B26676F6B0 /* KosherCocoa */;
+			targetProxy = 5BD637BAD4AA471A6A344840A62108BB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		23401C3D715527AA6A688BA4E402ABD9 /* Debug */ = {
+		19EFF80E80C718AA088DB9EE32EBC046 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD014E5D2980A8BCA00C1A47613E1861 /* GradientView.xcconfig */;
+			baseConfigurationReference = 98108CE78456A397C748396600D8B471 /* Pods-Nox Widget.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -784,14 +889,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GradientView/GradientView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GradientView/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Nox Widget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GradientView/GradientView.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Nox Widget/Pods-Nox Widget.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GradientView;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Nox_Widget;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -801,10 +910,45 @@
 			};
 			name = Debug;
 		};
-		31553057C660BC86BB9875283C8D3680 /* Release */ = {
+		297CC1D346B49D6F2AB33950E8CD7D14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A775A1360A3374C70B9A1AB74CB71D5 /* Pods-Nox Widget.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Nox Widget/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Nox Widget/Pods-Nox Widget.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Nox_Widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2DD08E895B5529CE8FA98BC4CA94D3AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD014E5D2980A8BCA00C1A47613E1861 /* GradientView.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -940,10 +1084,11 @@
 			};
 			name = Debug;
 		};
-		8ACAA1E1EFD0732C8DB1F0EE5BA3EB54 /* Release */ = {
+		786B6E3097F0E8230979E550660F707B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CBC52A042E64479CEA1C8A7D2FADEA3C /* KosherCocoa.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -968,6 +1113,36 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		8094FF076BB6819031268F3619AEA8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBC52A042E64479CEA1C8A7D2FADEA3C /* KosherCocoa.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KosherCocoa/KosherCocoa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KosherCocoa/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KosherCocoa/KosherCocoa.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = KosherCocoa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		9D966CCD60D60CD24C64692B67A5E5D6 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1000,7 +1175,7 @@
 		};
 		BB260AA781974786E2782EF759F1F72A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7A4631AE89D2D23F53289AFC43A3658 /* Pods-Nox.release.xcconfig */;
+			baseConfigurationReference = 52EDC9E41AC3531508E798D13ECEA96B /* Pods-Nox.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1031,10 +1206,11 @@
 			};
 			name = Release;
 		};
-		E0DC7401FBB89CBA6ACBEAEF87D14C38 /* Debug */ = {
+		C2E0F2A2A567138E90E0ED9ED118946E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBC52A042E64479CEA1C8A7D2FADEA3C /* KosherCocoa.xcconfig */;
+			baseConfigurationReference = AD014E5D2980A8BCA00C1A47613E1861 /* GradientView.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1044,16 +1220,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/KosherCocoa/KosherCocoa-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KosherCocoa/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/GradientView/GradientView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GradientView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/KosherCocoa/KosherCocoa.modulemap";
+				MODULEMAP_FILE = "Target Support Files/GradientView/GradientView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = KosherCocoa;
+				PRODUCT_NAME = GradientView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1062,7 +1239,7 @@
 		};
 		FFE9439523D5C27BB9F2641EFD267C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F6F4F2DFDC8419255EDCBF492F3D395 /* Pods-Nox.debug.xcconfig */;
+			baseConfigurationReference = 5FA821CB6351E1C8B405E65231B12E65 /* Pods-Nox.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1127,8 +1304,17 @@
 		60418189E5F25A51A41D50CAB85421A5 /* Build configuration list for PBXNativeTarget "KosherCocoa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E0DC7401FBB89CBA6ACBEAEF87D14C38 /* Debug */,
-				8ACAA1E1EFD0732C8DB1F0EE5BA3EB54 /* Release */,
+				8094FF076BB6819031268F3619AEA8B1 /* Debug */,
+				786B6E3097F0E8230979E550660F707B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EF994191B743849EF8DCD2BB1B69F38 /* Build configuration list for PBXNativeTarget "Pods-Nox Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19EFF80E80C718AA088DB9EE32EBC046 /* Debug */,
+				297CC1D346B49D6F2AB33950E8CD7D14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1136,8 +1322,8 @@
 		AFA42D724A67D7AA4A073228A0D4ABF5 /* Build configuration list for PBXNativeTarget "GradientView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				23401C3D715527AA6A688BA4E402ABD9 /* Debug */,
-				31553057C660BC86BB9875283C8D3680 /* Release */,
+				C2E0F2A2A567138E90E0ED9ED118946E /* Debug */,
+				2DD08E895B5529CE8FA98BC4CA94D3AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
