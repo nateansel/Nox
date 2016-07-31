@@ -20,6 +20,7 @@
 		2E5322E31CFB9081009DC03D /* Location Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322E21CFB9081009DC03D /* Location Manager.swift */; };
 		2ECB3A711D3C326B007A1F77 /* PreviousSunEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */; };
 		2ECB3A731D3C328E007A1F77 /* PreviousSunEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */; };
+		2EE74F001D4E91BD00850C5C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE74EFF1D4E91BD00850C5C /* Extensions.swift */; };
 		D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295061CFB7ECF00FF39BA /* SunEvent.swift */; };
 		D812950A1CFB940E00FF39BA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295091CFB940E00FF39BA /* Strings.swift */; };
 		D88A683E1D1CCD5B00926725 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A683C1D1CCD5B00926725 /* SettingsViewController.swift */; };
@@ -81,6 +82,7 @@
 		2E5322E21CFB9081009DC03D /* Location Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location Manager.swift"; sourceTree = "<group>"; };
 		2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviousSunEventView.xib; sourceTree = "<group>"; };
 		2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousSunEventView.swift; sourceTree = "<group>"; };
+		2EE74EFF1D4E91BD00850C5C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
 		57890B72B0F86E4941B484F0 /* Pods-Nox Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox Widget/Pods-Nox Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				2E5322D91CFB7E4C009DC03D /* Theme.swift */,
 				D81295091CFB940E00FF39BA /* Strings.swift */,
 				D81295061CFB7ECF00FF39BA /* SunEvent.swift */,
+				2EE74EFF1D4E91BD00850C5C /* Extensions.swift */,
 				2E038F8D1CFA5F7D00C3E97C /* Assets.xcassets */,
 				2E038F8F1CFA5F7D00C3E97C /* LaunchScreen.storyboard */,
 				2E038F921CFA5F7D00C3E97C /* Info.plist */,
@@ -544,6 +547,7 @@
 				D88A68451D260AEE00926725 /* NotificationCustomizationViewController.swift in Sources */,
 				D88A68491D282BC100926725 /* NotificationCustomizationCollectionViewExtras.swift in Sources */,
 				2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */,
+				2EE74F001D4E91BD00850C5C /* Extensions.swift in Sources */,
 				D812950A1CFB940E00FF39BA /* Strings.swift in Sources */,
 				2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */,
 				D8C9C5C41D3190B000FC14EE /* AboutViewController.swift in Sources */,

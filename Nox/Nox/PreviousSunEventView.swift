@@ -15,7 +15,14 @@ class PreviousSunEventView: UIView {
     super.init(coder: aDecoder)
     NSBundle.mainBundle().loadNibNamed(String(PreviousSunEventView), owner: self, options: nil)
     view.frame = self.bounds
+    configure()
     self.addSubview(self.view)
+  }
+  
+  private func configure() {
+    self.backgroundColor = UIColor.clearColor()
+    view.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+    view.roundCorners([.TopRight, .BottomRight], radius: 12)
   }
 }
 
