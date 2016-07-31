@@ -26,7 +26,7 @@ class NotificationCustomizationViewController: UIViewController {
     let gradientView = Theme.Night.gradientView
     view.insertSubview(gradientView, belowSubview: collectionView)
     automaticallyAdjustsScrollViewInsets = false
-    collectionView.contentInset = UIEdgeInsetsMake(0, 0, 8, 0)
+    collectionView.contentInset = UIEdgeInsetsMake(8, 0, 8, 0)
     
     collectionView.registerNib(UINib(nibName: String(NotificationCustomizationCollectionViewCell), bundle: nil), forCellWithReuseIdentifier: String(NotificationCustomizationCollectionViewCell))
     collectionView.allowsMultipleSelection = true

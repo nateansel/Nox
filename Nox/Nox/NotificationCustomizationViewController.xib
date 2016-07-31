@@ -17,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Iq7-UP-bYs">
-                    <rect key="frame" x="8" y="0.0" width="584" height="600"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Iq7-UP-bYs">
+                    <rect key="frame" x="8" y="112" width="584" height="488"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Em1-be-afP">
                         <size key="itemSize" width="50" height="50"/>
@@ -27,13 +27,21 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxl-Un-2XD">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="5"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Qxl-Un-2XD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="11z-Bv-QMN"/>
                 <constraint firstItem="Iq7-UP-bYs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="2Am-dF-qAf"/>
-                <constraint firstItem="Iq7-UP-bYs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8bD-3N-8th"/>
+                <constraint firstItem="Iq7-UP-bYs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="8bD-3N-8th"/>
                 <constraint firstAttribute="trailing" secondItem="Iq7-UP-bYs" secondAttribute="trailing" constant="8" id="Knu-wo-jEW"/>
+                <constraint firstItem="Iq7-UP-bYs" firstAttribute="top" secondItem="Qxl-Un-2XD" secondAttribute="bottom" id="O7h-RA-XD4"/>
+                <constraint firstAttribute="trailing" secondItem="Qxl-Un-2XD" secondAttribute="trailing" id="P0R-1b-eDF"/>
                 <constraint firstAttribute="bottom" secondItem="Iq7-UP-bYs" secondAttribute="bottom" id="hmI-AQ-yjQ"/>
+                <constraint firstItem="Qxl-Un-2XD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="p98-FF-yJB"/>
             </constraints>
         </view>
     </objects>

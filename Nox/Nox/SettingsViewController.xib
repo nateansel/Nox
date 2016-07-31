@@ -18,17 +18,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="96F-ms-R0X">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="5" width="600" height="595"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FxZ-lk-Y8X">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="5"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="96F-ms-R0X" firstAttribute="top" secondItem="FxZ-lk-Y8X" secondAttribute="bottom" id="CzI-4a-r8v"/>
                 <constraint firstItem="96F-ms-R0X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hyn-Nu-2Sq"/>
                 <constraint firstAttribute="bottom" secondItem="96F-ms-R0X" secondAttribute="bottom" id="Sms-kz-kMv"/>
-                <constraint firstItem="96F-ms-R0X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y2P-JA-2Ca"/>
+                <constraint firstItem="96F-ms-R0X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="Y2P-JA-2Ca"/>
+                <constraint firstAttribute="trailing" secondItem="FxZ-lk-Y8X" secondAttribute="trailing" id="Zp3-nO-U60"/>
+                <constraint firstItem="FxZ-lk-Y8X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="flZ-ay-T49"/>
                 <constraint firstAttribute="trailing" secondItem="96F-ms-R0X" secondAttribute="trailing" id="scu-6P-r4F"/>
+                <constraint firstItem="FxZ-lk-Y8X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x0E-rE-zYO"/>
             </constraints>
+            <point key="canvasLocation" x="284" y="439"/>
         </view>
     </objects>
 </document>

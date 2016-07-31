@@ -97,8 +97,8 @@ extension Strings {
   /// Builds a string from the number of minutes passed in.
   ///   Example: 155 -> "2 hours 45 minutes"
   static func timeString(fromMinutes minutes: Int) -> String {
-    let hours = minutes % 60
-    let newMinutes = minutes - (minutes % 60)
+    let hours = Int(minutes / 60)
+    let newMinutes = minutes % 60
     var hourString = ""
     var minuteString = ""
     if hours > 0 {
