@@ -8,8 +8,10 @@
 
 import UIKit
 
-class PreviousSunEventView: UIView {
+class PreviousSunEventView: UIView, ViewCollapsible {
   @IBOutlet var view: UIView!
+  
+  var collapseConstraint: NSLayoutConstraint?
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)

@@ -18,6 +18,7 @@
 		2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5322DC1CFB7F65009DC03D /* MainViewController.xib */; };
 		2E5322E11CFB9074009DC03D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5322E01CFB9074009DC03D /* CoreLocation.framework */; };
 		2E5322E31CFB9081009DC03D /* Location Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5322E21CFB9081009DC03D /* Location Manager.swift */; };
+		2EAE55601D6F5A6300AEAD20 /* ViewCollapsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE555F1D6F5A6300AEAD20 /* ViewCollapsible.swift */; };
 		2ECB3A711D3C326B007A1F77 /* PreviousSunEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */; };
 		2ECB3A731D3C328E007A1F77 /* PreviousSunEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */; };
 		2EE74F001D4E91BD00850C5C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE74EFF1D4E91BD00850C5C /* Extensions.swift */; };
@@ -84,6 +85,7 @@
 		2E5322DC1CFB7F65009DC03D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		2E5322E01CFB9074009DC03D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2E5322E21CFB9081009DC03D /* Location Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location Manager.swift"; sourceTree = "<group>"; };
+		2EAE555F1D6F5A6300AEAD20 /* ViewCollapsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCollapsible.swift; sourceTree = "<group>"; };
 		2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviousSunEventView.xib; sourceTree = "<group>"; };
 		2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousSunEventView.swift; sourceTree = "<group>"; };
 		2EE74EFF1D4E91BD00850C5C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		2ECB3A6F1D3C324A007A1F77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2EAE555F1D6F5A6300AEAD20 /* ViewCollapsible.swift */,
 				2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */,
 				2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */,
 				2EEA61491D6E74A900214223 /* NextSunEventView.swift */,
@@ -560,6 +563,7 @@
 				2E038F871CFA5F7D00C3E97C /* AppDelegate.swift in Sources */,
 				2EE74F001D4E91BD00850C5C /* Extensions.swift in Sources */,
 				D812950A1CFB940E00FF39BA /* Strings.swift in Sources */,
+				2EAE55601D6F5A6300AEAD20 /* ViewCollapsible.swift in Sources */,
 				2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */,
 				2EEA614A1D6E74A900214223 /* NextSunEventView.swift in Sources */,
 				D8C9C5C41D3190B000FC14EE /* AboutViewController.swift in Sources */,

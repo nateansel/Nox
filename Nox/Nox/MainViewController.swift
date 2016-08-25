@@ -54,12 +54,14 @@ class MainViewController: UIViewController {
     view.insertSubview(nightGradientView, atIndex: 0)
     delegate?.getCurrentSunEvent()
     
+    previousSunEventView.collapseConstraint = previousSunEventViewLeadingConstraint
+    nextSunEventView.collapseConstraint = nextSunEventViewTrailingConstraint
+    
     previousSunEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(previousSunEventViewTapped)))
     nextSunEventView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nextSunEventViewTapped)))
     
-    toggleNextSunEventView()
-    togglePreviousSunEventView()
-    togglePreviousSunEventView()
+    previousSunEventView.collapseView()
+    nextSunEventView.collapseView()
   }
   
   private func setSunriseLabels() {
@@ -89,51 +91,31 @@ class MainViewController: UIViewController {
   }
   
   func previousSunEventViewTapped() {
-    togglePreviousSunEventView()
-    if nextSunEventViewIsVisible() {
-      toggleNextSunEventView()
+    if previousSunEventView.isCollapsed() {
+      previousSunEventView.showView()
+      nextSunEventView.collapseView()
+    }
+    else {
+      previousSunEventView.collapseView()
+    }
+    
+    UIView.animateWithDuration(0.3) {
+      self.view.layoutIfNeeded()
     }
   }
   
   func nextSunEventViewTapped() {
-    toggleNextSunEventView()
-    if previousSunEventViewIsVisible() {
-      togglePreviousSunEventView()
-    }
-  }
-  
-  func togglePreviousSunEventView() {
-    if previousSunEventViewLeadingConstraint.constant == 0 {
-      previousSunEventViewLeadingConstraint.constant = -(previousSunEventView.frame.size.width - 40)
+    if nextSunEventView.isCollapsed() {
+      nextSunEventView.showView()
+      previousSunEventView.collapseView()
     }
     else {
-      previousSunEventViewLeadingConstraint.constant = 0
+      nextSunEventView.collapseView()
     }
     
     UIView.animateWithDuration(0.3) {
       self.view.layoutIfNeeded()
     }
-  }
-  
-  func toggleNextSunEventView() {
-    if nextSunEventViewTrailingConstraint.constant == 0 {
-      nextSunEventViewTrailingConstraint.constant = -(nextSunEventView.frame.size.width - 40)
-    }
-    else {
-      nextSunEventViewTrailingConstraint.constant = 0
-    }
-    
-    UIView.animateWithDuration(0.3) {
-      self.view.layoutIfNeeded()
-    }
-  }
-  
-  func previousSunEventViewIsVisible() -> Bool {
-    return previousSunEventViewLeadingConstraint.constant == 0
-  }
-  
-  func nextSunEventViewIsVisible() -> Bool {
-    return nextSunEventViewTrailingConstraint.constant == 0
   }
   
   @IBAction func settingsButtonTapped(sender: UIButton) {
