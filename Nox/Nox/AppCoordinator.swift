@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class AppCoordinator: NSObject {
+class AppCoordinator: NSObject, ManagesLocation {
   let navigationController: UINavigationController!
   var mainViewController: MainViewController?
   
@@ -30,6 +30,24 @@ class AppCoordinator: NSObject {
     mainViewController = MainViewController()
     mainViewController?.delegate = self
     navigationController.pushViewController(mainViewController!, animated: true)
+  }
+}
+
+extension AppCoordinator: CLLocationManagerDelegate {
+  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    print(locations.last?.coordinate.latitude)
+    sunEventService.location = locations.last!
+    mainViewController?.currentSunEvent = sunEventService.getNextSunEvent()
+  }
+  
+  func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    print("Error getting location")
+  }
+  
+  func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    if status == .AuthorizedAlways {
+//      locationManager.requestLocation()
+    }
   }
 }
 
