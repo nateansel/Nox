@@ -21,6 +21,8 @@
 		2ECB3A711D3C326B007A1F77 /* PreviousSunEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */; };
 		2ECB3A731D3C328E007A1F77 /* PreviousSunEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */; };
 		2EE74F001D4E91BD00850C5C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE74EFF1D4E91BD00850C5C /* Extensions.swift */; };
+		2EEA614A1D6E74A900214223 /* NextSunEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEA61491D6E74A900214223 /* NextSunEventView.swift */; };
+		2EEA614C1D6E74B300214223 /* NextSunEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EEA614B1D6E74B300214223 /* NextSunEventView.xib */; };
 		D81295071CFB7ECF00FF39BA /* SunEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295061CFB7ECF00FF39BA /* SunEvent.swift */; };
 		D812950A1CFB940E00FF39BA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81295091CFB940E00FF39BA /* Strings.swift */; };
 		D88A683E1D1CCD5B00926725 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A683C1D1CCD5B00926725 /* SettingsViewController.swift */; };
@@ -83,6 +85,8 @@
 		2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviousSunEventView.xib; sourceTree = "<group>"; };
 		2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousSunEventView.swift; sourceTree = "<group>"; };
 		2EE74EFF1D4E91BD00850C5C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2EEA61491D6E74A900214223 /* NextSunEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextSunEventView.swift; sourceTree = "<group>"; };
+		2EEA614B1D6E74B300214223 /* NextSunEventView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextSunEventView.xib; sourceTree = "<group>"; };
 		4DE6288AEAF110B2C5CC1215 /* Pods-Nox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.debug.xcconfig"; sourceTree = "<group>"; };
 		57890B72B0F86E4941B484F0 /* Pods-Nox Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nox Widget/Pods-Nox Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EE095A9E53132123307087 /* Pods-Nox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nox.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nox/Pods-Nox.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			children = (
 				2ECB3A721D3C328E007A1F77 /* PreviousSunEventView.swift */,
 				2ECB3A701D3C326B007A1F77 /* PreviousSunEventView.xib */,
+				2EEA61491D6E74A900214223 /* NextSunEventView.swift */,
+				2EEA614B1D6E74B300214223 /* NextSunEventView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				2E5322DE1CFB7F65009DC03D /* MainViewController.xib in Resources */,
 				D88A68461D260AEE00926725 /* NotificationCustomizationViewController.xib in Resources */,
 				D88A684D1D282DF800926725 /* NotificationCustomizationCollectionViewCell.xib in Resources */,
+				2EEA614C1D6E74B300214223 /* NextSunEventView.xib in Resources */,
 				2ECB3A711D3C326B007A1F77 /* PreviousSunEventView.xib in Resources */,
 				2E038F8E1CFA5F7D00C3E97C /* Assets.xcassets in Resources */,
 				D88A683F1D1CCD5B00926725 /* SettingsViewController.xib in Resources */,
@@ -550,6 +557,7 @@
 				2EE74F001D4E91BD00850C5C /* Extensions.swift in Sources */,
 				D812950A1CFB940E00FF39BA /* Strings.swift in Sources */,
 				2E5322DD1CFB7F65009DC03D /* MainViewController.swift in Sources */,
+				2EEA614A1D6E74A900214223 /* NextSunEventView.swift in Sources */,
 				D8C9C5C41D3190B000FC14EE /* AboutViewController.swift in Sources */,
 				D88A683E1D1CCD5B00926725 /* SettingsViewController.swift in Sources */,
 			);

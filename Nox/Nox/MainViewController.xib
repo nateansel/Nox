@@ -8,6 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Nox" customModuleProvider="target">
             <connections>
                 <outlet property="countdownLabel" destination="fkR-1Z-qqt" id="yy0-mX-e9n"/>
+                <outlet property="nextSunEventView" destination="OPN-Jl-HXh" id="ls3-WO-rw3"/>
+                <outlet property="nextSunEventViewTrailingConstraint" destination="luU-Ru-R2i" id="ihR-jE-Wq1"/>
+                <outlet property="previousSunEventView" destination="gGe-bE-36K" id="Uz1-7m-LAB"/>
+                <outlet property="previousSunEventViewLeadingConstraint" destination="C5U-hP-jHN" id="EcP-tV-0Wh"/>
                 <outlet property="sunEventDescriptionLabel" destination="HpG-eL-c2B" id="a21-qo-Tzq"/>
                 <outlet property="timeLabel" destination="CsY-Na-rqj" id="SMJ-Rz-xE4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,10 +48,18 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGe-bE-36K" customClass="PreviousSunEventView" customModule="Nox" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="303" width="300" height="278"/>
+                    <rect key="frame" x="-200" y="303" width="300" height="278"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="K8e-sb-fmZ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPN-Jl-HXh" userLabel="Next Sun Event View" customClass="NextSunEventView" customModule="Nox" customModuleProvider="target">
+                    <rect key="frame" x="314" y="303" width="300" height="278"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="0RE-UE-LOU"/>
+                        <constraint firstAttribute="width" constant="300" id="f8e-3q-UCg"/>
                     </constraints>
                 </view>
             </subviews>
@@ -58,8 +70,9 @@
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="128" id="7Nr-rS-SAL"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7Z3-un-fxf"/>
                 <constraint firstAttribute="trailing" secondItem="HpG-eL-c2B" secondAttribute="trailing" constant="8" id="95Q-0Y-VFy"/>
+                <constraint firstItem="jDs-Gz-TWe" firstAttribute="top" secondItem="OPN-Jl-HXh" secondAttribute="bottom" constant="100" id="AQq-bI-XnL"/>
                 <constraint firstItem="fkR-1Z-qqt" firstAttribute="top" secondItem="CsY-Na-rqj" secondAttribute="bottom" constant="8" id="BIG-bX-n2q"/>
-                <constraint firstItem="gGe-bE-36K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C5U-hP-jHN"/>
+                <constraint firstItem="gGe-bE-36K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-200" id="C5U-hP-jHN"/>
                 <constraint firstAttribute="trailing" secondItem="fkR-1Z-qqt" secondAttribute="trailing" constant="8" id="E4t-jh-Nw9"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Een-OU-qeo"/>
                 <constraint firstItem="fkR-1Z-qqt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="GkZ-GX-Qvd"/>
@@ -72,6 +85,8 @@
                 <constraint firstItem="fkR-1Z-qqt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bYC-be-9ej"/>
                 <constraint firstItem="CsY-Na-rqj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cwH-5p-n1x"/>
                 <constraint firstItem="gGe-bE-36K" firstAttribute="top" secondItem="fkR-1Z-qqt" secondAttribute="bottom" constant="60" id="erB-uo-Oon"/>
+                <constraint firstItem="OPN-Jl-HXh" firstAttribute="top" secondItem="fkR-1Z-qqt" secondAttribute="bottom" constant="60" id="kTH-xe-EvW"/>
+                <constraint firstAttribute="trailing" secondItem="OPN-Jl-HXh" secondAttribute="trailing" constant="-200" id="luU-Ru-R2i"/>
                 <constraint firstItem="HpG-eL-c2B" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="104" id="mfv-gf-TvJ"/>
                 <constraint firstItem="jDs-Gz-TWe" firstAttribute="top" secondItem="gGe-bE-36K" secondAttribute="bottom" constant="100" id="oro-Vq-UG7"/>
                 <constraint firstItem="HpG-eL-c2B" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uiZ-8g-hsx"/>
